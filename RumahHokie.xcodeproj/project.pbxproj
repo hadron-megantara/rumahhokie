@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		79470D0821476409007E5090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D0721476409007E5090 /* AppDelegate.swift */; };
+		79470D0A21476409007E5090 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D0921476409007E5090 /* ViewController.swift */; };
+		79470D0D21476409007E5090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79470D0B21476409007E5090 /* Main.storyboard */; };
+		79470D0F2147640E007E5090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79470D0E2147640E007E5090 /* Assets.xcassets */; };
+		79470D122147640E007E5090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79470D102147640E007E5090 /* LaunchScreen.storyboard */; };
+		79470D1D2147640E007E5090 /* RumahHokieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D1C2147640E007E5090 /* RumahHokieTests.swift */; };
+		79470D282147640E007E5090 /* RumahHokieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D272147640E007E5090 /* RumahHokieUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		79470D192147640E007E5090 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79470CFC21476409007E5090 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79470D0321476409007E5090;
+			remoteInfo = RumahHokie;
+		};
+		79470D242147640E007E5090 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 79470CFC21476409007E5090 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 79470D0321476409007E5090;
+			remoteInfo = RumahHokie;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		79470D0421476409007E5090 /* RumahHokie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RumahHokie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79470D0721476409007E5090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		79470D0921476409007E5090 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		79470D0C21476409007E5090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		79470D0E2147640E007E5090 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		79470D112147640E007E5090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		79470D132147640E007E5090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79470D182147640E007E5090 /* RumahHokieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RumahHokieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79470D1C2147640E007E5090 /* RumahHokieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumahHokieTests.swift; sourceTree = "<group>"; };
+		79470D1E2147640E007E5090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79470D232147640E007E5090 /* RumahHokieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RumahHokieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		79470D272147640E007E5090 /* RumahHokieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumahHokieUITests.swift; sourceTree = "<group>"; };
+		79470D292147640E007E5090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		79470D0121476409007E5090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79470D152147640E007E5090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79470D202147640E007E5090 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		79470CFB21476409007E5090 = {
+			isa = PBXGroup;
+			children = (
+				79470D0621476409007E5090 /* RumahHokie */,
+				79470D1B2147640E007E5090 /* RumahHokieTests */,
+				79470D262147640E007E5090 /* RumahHokieUITests */,
+				79470D0521476409007E5090 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		79470D0521476409007E5090 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79470D0421476409007E5090 /* RumahHokie.app */,
+				79470D182147640E007E5090 /* RumahHokieTests.xctest */,
+				79470D232147640E007E5090 /* RumahHokieUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79470D0621476409007E5090 /* RumahHokie */ = {
+			isa = PBXGroup;
+			children = (
+				79470D0721476409007E5090 /* AppDelegate.swift */,
+				79470D0921476409007E5090 /* ViewController.swift */,
+				79470D0B21476409007E5090 /* Main.storyboard */,
+				79470D0E2147640E007E5090 /* Assets.xcassets */,
+				79470D102147640E007E5090 /* LaunchScreen.storyboard */,
+				79470D132147640E007E5090 /* Info.plist */,
+			);
+			path = RumahHokie;
+			sourceTree = "<group>";
+		};
+		79470D1B2147640E007E5090 /* RumahHokieTests */ = {
+			isa = PBXGroup;
+			children = (
+				79470D1C2147640E007E5090 /* RumahHokieTests.swift */,
+				79470D1E2147640E007E5090 /* Info.plist */,
+			);
+			path = RumahHokieTests;
+			sourceTree = "<group>";
+		};
+		79470D262147640E007E5090 /* RumahHokieUITests */ = {
+			isa = PBXGroup;
+			children = (
+				79470D272147640E007E5090 /* RumahHokieUITests.swift */,
+				79470D292147640E007E5090 /* Info.plist */,
+			);
+			path = RumahHokieUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		79470D0321476409007E5090 /* RumahHokie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79470D2C2147640E007E5090 /* Build configuration list for PBXNativeTarget "RumahHokie" */;
+			buildPhases = (
+				79470D0021476409007E5090 /* Sources */,
+				79470D0121476409007E5090 /* Frameworks */,
+				79470D0221476409007E5090 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RumahHokie;
+			productName = RumahHokie;
+			productReference = 79470D0421476409007E5090 /* RumahHokie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		79470D172147640E007E5090 /* RumahHokieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79470D2F2147640E007E5090 /* Build configuration list for PBXNativeTarget "RumahHokieTests" */;
+			buildPhases = (
+				79470D142147640E007E5090 /* Sources */,
+				79470D152147640E007E5090 /* Frameworks */,
+				79470D162147640E007E5090 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79470D1A2147640E007E5090 /* PBXTargetDependency */,
+			);
+			name = RumahHokieTests;
+			productName = RumahHokieTests;
+			productReference = 79470D182147640E007E5090 /* RumahHokieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		79470D222147640E007E5090 /* RumahHokieUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79470D322147640E007E5090 /* Build configuration list for PBXNativeTarget "RumahHokieUITests" */;
+			buildPhases = (
+				79470D1F2147640E007E5090 /* Sources */,
+				79470D202147640E007E5090 /* Frameworks */,
+				79470D212147640E007E5090 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				79470D252147640E007E5090 /* PBXTargetDependency */,
+			);
+			name = RumahHokieUITests;
+			productName = RumahHokieUITests;
+			productReference = 79470D232147640E007E5090 /* RumahHokieUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		79470CFC21476409007E5090 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Hadron Megantara";
+				TargetAttributes = {
+					79470D0321476409007E5090 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					79470D172147640E007E5090 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 79470D0321476409007E5090;
+					};
+					79470D222147640E007E5090 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 79470D0321476409007E5090;
+					};
+				};
+			};
+			buildConfigurationList = 79470CFF21476409007E5090 /* Build configuration list for PBXProject "RumahHokie" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 79470CFB21476409007E5090;
+			productRefGroup = 79470D0521476409007E5090 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				79470D0321476409007E5090 /* RumahHokie */,
+				79470D172147640E007E5090 /* RumahHokieTests */,
+				79470D222147640E007E5090 /* RumahHokieUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		79470D0221476409007E5090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79470D122147640E007E5090 /* LaunchScreen.storyboard in Resources */,
+				79470D0F2147640E007E5090 /* Assets.xcassets in Resources */,
+				79470D0D21476409007E5090 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79470D162147640E007E5090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79470D212147640E007E5090 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79470D0021476409007E5090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79470D0A21476409007E5090 /* ViewController.swift in Sources */,
+				79470D0821476409007E5090 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79470D142147640E007E5090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79470D1D2147640E007E5090 /* RumahHokieTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		79470D1F2147640E007E5090 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79470D282147640E007E5090 /* RumahHokieUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		79470D1A2147640E007E5090 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79470D0321476409007E5090 /* RumahHokie */;
+			targetProxy = 79470D192147640E007E5090 /* PBXContainerItemProxy */;
+		};
+		79470D252147640E007E5090 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 79470D0321476409007E5090 /* RumahHokie */;
+			targetProxy = 79470D242147640E007E5090 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		79470D0B21476409007E5090 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79470D0C21476409007E5090 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		79470D102147640E007E5090 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79470D112147640E007E5090 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		79470D2A2147640E007E5090 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		79470D2B2147640E007E5090 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		79470D2D2147640E007E5090 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RumahHokie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		79470D2E2147640E007E5090 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RumahHokie/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		79470D302147640E007E5090 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RumahHokieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RumahHokie.app/RumahHokie";
+			};
+			name = Debug;
+		};
+		79470D312147640E007E5090 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RumahHokieTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RumahHokie.app/RumahHokie";
+			};
+			name = Release;
+		};
+		79470D332147640E007E5090 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RumahHokieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RumahHokie;
+			};
+			name = Debug;
+		};
+		79470D342147640E007E5090 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RumahHokieUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = RumahHokie;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		79470CFF21476409007E5090 /* Build configuration list for PBXProject "RumahHokie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79470D2A2147640E007E5090 /* Debug */,
+				79470D2B2147640E007E5090 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79470D2C2147640E007E5090 /* Build configuration list for PBXNativeTarget "RumahHokie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79470D2D2147640E007E5090 /* Debug */,
+				79470D2E2147640E007E5090 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79470D2F2147640E007E5090 /* Build configuration list for PBXNativeTarget "RumahHokieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79470D302147640E007E5090 /* Debug */,
+				79470D312147640E007E5090 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79470D322147640E007E5090 /* Build configuration list for PBXNativeTarget "RumahHokieUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79470D332147640E007E5090 /* Debug */,
+				79470D342147640E007E5090 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 79470CFC21476409007E5090 /* Project object */;
+}
