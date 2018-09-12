@@ -1,0 +1,6 @@
+framework module Pods_RumahHokieUITests {
+  umbrella header "Pods-RumahHokieUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
