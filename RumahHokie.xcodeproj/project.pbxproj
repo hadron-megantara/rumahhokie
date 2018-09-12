@@ -15,6 +15,7 @@
 		79470D122147640E007E5090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79470D102147640E007E5090 /* LaunchScreen.storyboard */; };
 		79470D1D2147640E007E5090 /* RumahHokieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D1C2147640E007E5090 /* RumahHokieTests.swift */; };
 		79470D282147640E007E5090 /* RumahHokieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D272147640E007E5090 /* RumahHokieUITests.swift */; };
+		79470D362149279A007E5090 /* BottomMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79470D352149279A007E5090 /* BottomMenu.xib */; };
 		81E1046CF409FBF53AFA300D /* Pods_RumahHokieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC83A07F643A0AB8C408CC25 /* Pods_RumahHokieTests.framework */; };
 		CF07D608156844A86ED6C7A6 /* Pods_RumahHokieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19085F48BE8E9901235998E2 /* Pods_RumahHokieUITests.framework */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		79470D232147640E007E5090 /* RumahHokieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RumahHokieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79470D272147640E007E5090 /* RumahHokieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumahHokieUITests.swift; sourceTree = "<group>"; };
 		79470D292147640E007E5090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79470D352149279A007E5090 /* BottomMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenu.xib; sourceTree = "<group>"; };
 		97452C77B5A0E1F7F600A9C6 /* Pods-RumahHokieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieTests/Pods-RumahHokieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC83A07F643A0AB8C408CC25 /* Pods_RumahHokieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RumahHokieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26419AD2F277AEE7420E4E9 /* Pods-RumahHokieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieUITests/Pods-RumahHokieUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				79470D0721476409007E5090 /* AppDelegate.swift */,
 				79470D0921476409007E5090 /* ViewController.swift */,
 				79470D0B21476409007E5090 /* Main.storyboard */,
+				79470D352149279A007E5090 /* BottomMenu.xib */,
 				79470D0E2147640E007E5090 /* Assets.xcassets */,
 				79470D102147640E007E5090 /* LaunchScreen.storyboard */,
 				79470D132147640E007E5090 /* Info.plist */,
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79470D122147640E007E5090 /* LaunchScreen.storyboard in Resources */,
+				79470D362149279A007E5090 /* BottomMenu.xib in Resources */,
 				79470D0F2147640E007E5090 /* Assets.xcassets in Resources */,
 				79470D0D21476409007E5090 /* Main.storyboard in Resources */,
 			);
@@ -301,15 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RumahHokieTests-checkManifestLockResult.txt",
 			);
@@ -323,15 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RumahHokieUITests-checkManifestLockResult.txt",
 			);
@@ -345,15 +341,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-RumahHokie-checkManifestLockResult.txt",
 			);
@@ -367,15 +359,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RumahHokie/Pods-RumahHokie-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 			);
