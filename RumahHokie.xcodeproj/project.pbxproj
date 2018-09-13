@@ -17,6 +17,7 @@
 		79470D282147640E007E5090 /* RumahHokieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D272147640E007E5090 /* RumahHokieUITests.swift */; };
 		79470D362149279A007E5090 /* BottomMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79470D352149279A007E5090 /* BottomMenu.xib */; };
 		79470D3921499808007E5090 /* Resource in Resources */ = {isa = PBXBuildFile; fileRef = 79470D3821499808007E5090 /* Resource */; };
+		79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3A214A5E51000B4147 /* BottomMenu.swift */; };
 		81E1046CF409FBF53AFA300D /* Pods_RumahHokieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC83A07F643A0AB8C408CC25 /* Pods_RumahHokieTests.framework */; };
 		CF07D608156844A86ED6C7A6 /* Pods_RumahHokieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19085F48BE8E9901235998E2 /* Pods_RumahHokieUITests.framework */; };
 /* End PBXBuildFile section */
@@ -58,6 +59,7 @@
 		79470D292147640E007E5090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79470D352149279A007E5090 /* BottomMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenu.xib; sourceTree = "<group>"; };
 		79470D3821499808007E5090 /* Resource */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resource; sourceTree = "<group>"; };
+		79DE9B3A214A5E51000B4147 /* BottomMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenu.swift; sourceTree = "<group>"; };
 		97452C77B5A0E1F7F600A9C6 /* Pods-RumahHokieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieTests/Pods-RumahHokieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC83A07F643A0AB8C408CC25 /* Pods_RumahHokieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RumahHokieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26419AD2F277AEE7420E4E9 /* Pods-RumahHokieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieUITests/Pods-RumahHokieUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				79470D0921476409007E5090 /* ViewController.swift */,
 				79470D0B21476409007E5090 /* Main.storyboard */,
 				79470D352149279A007E5090 /* BottomMenu.xib */,
+				79DE9B3A214A5E51000B4147 /* BottomMenu.swift */,
 				79470D0E2147640E007E5090 /* Assets.xcassets */,
 				79470D102147640E007E5090 /* LaunchScreen.storyboard */,
 				79470D132147640E007E5090 /* Info.plist */,
@@ -383,6 +386,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */,
 				79470D0A21476409007E5090 /* ViewController.swift in Sources */,
 				79470D0821476409007E5090 /* AppDelegate.swift in Sources */,
 			);

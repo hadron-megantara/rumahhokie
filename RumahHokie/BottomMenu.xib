@@ -12,11 +12,53 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view contentMode="scaleToFill" restorationIdentifier="BottomMenu" id="iN0-l3-epB" customClass="BottomMenu" customModule="RumahHokie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="47"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xf0-OP-H4L">
+                    <rect key="frame" x="0.0" y="0.0" width="89" height="47"/>
+                    <state key="normal" title=""/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84a-WZ-0AR">
+                    <rect key="frame" x="89" y="0.0" width="89" height="47"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFR-3S-H3B">
+                    <rect key="frame" x="178" y="0.0" width="89" height="47"/>
+                    <state key="normal" title="Button"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smx-wx-Yrv">
+                    <rect key="frame" x="267" y="0.0" width="89" height="47"/>
+                    <state key="normal" title="Button"/>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="84a-WZ-0AR" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="3dx-ZR-4ex"/>
+                <constraint firstItem="84a-WZ-0AR" firstAttribute="width" secondItem="jFR-3S-H3B" secondAttribute="width" id="F87-tw-rAM"/>
+                <constraint firstItem="jFR-3S-H3B" firstAttribute="width" secondItem="smx-wx-Yrv" secondAttribute="width" id="G1x-ZS-d68"/>
+                <constraint firstItem="xf0-OP-H4L" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="GgP-PS-421"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="smx-wx-Yrv" secondAttribute="trailing" id="H4E-cz-Oqb"/>
+                <constraint firstItem="jFR-3S-H3B" firstAttribute="leading" secondItem="84a-WZ-0AR" secondAttribute="trailing" id="KUY-Oe-ZzH"/>
+                <constraint firstItem="smx-wx-Yrv" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="Kxo-Hn-Z4t"/>
+                <constraint firstItem="jFR-3S-H3B" firstAttribute="leading" secondItem="84a-WZ-0AR" secondAttribute="trailing" id="Lkr-QX-3v6"/>
+                <constraint firstItem="84a-WZ-0AR" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="M6D-LR-9tU"/>
+                <constraint firstItem="xf0-OP-H4L" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="O1s-2Q-vgL"/>
+                <constraint firstItem="smx-wx-Yrv" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Qc5-lD-FhF"/>
+                <constraint firstItem="jFR-3S-H3B" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="VbC-JT-0A2"/>
+                <constraint firstItem="smx-wx-Yrv" firstAttribute="leading" secondItem="jFR-3S-H3B" secondAttribute="trailing" id="Vwc-eO-i6N"/>
+                <constraint firstItem="xf0-OP-H4L" firstAttribute="width" secondItem="84a-WZ-0AR" secondAttribute="width" id="bLQ-Nw-eqm"/>
+                <constraint firstItem="xf0-OP-H4L" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="hTB-R5-6ho"/>
+                <constraint firstItem="jFR-3S-H3B" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="kwe-vW-kqT"/>
+                <constraint firstItem="84a-WZ-0AR" firstAttribute="leading" secondItem="xf0-OP-H4L" secondAttribute="trailing" id="qvg-yg-rj7"/>
+                <constraint firstItem="84a-WZ-0AR" firstAttribute="leading" secondItem="xf0-OP-H4L" secondAttribute="trailing" id="vCA-0u-9kp"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="25" y="363.5"/>
         </view>
     </objects>
 </document>

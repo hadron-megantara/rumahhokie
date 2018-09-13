@@ -9,12 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var bottomMenu: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
+    class func instanceFromNib() -> ViewController {
+        return UINib(nibName: "BottomMenu", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! ViewController
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
