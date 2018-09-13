@@ -9,6 +9,9 @@
 import UIKit
 
 class BottomMenu: UITableViewCell {
+    @IBAction func homeBtn(_ sender: UIButton) {
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

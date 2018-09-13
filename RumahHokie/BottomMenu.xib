@@ -18,19 +18,22 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xf0-OP-H4L">
                     <rect key="frame" x="0.0" y="0.0" width="89" height="47"/>
-                    <state key="normal" title=""/>
+                    <state key="normal" title=""/>
+                    <connections>
+                        <action selector="homeBtn:" destination="iN0-l3-epB" eventType="touchUpInside" id="Tal-D2-fm4"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84a-WZ-0AR">
                     <rect key="frame" x="89" y="0.0" width="89" height="47"/>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title=""/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFR-3S-H3B">
                     <rect key="frame" x="178" y="0.0" width="89" height="47"/>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title=""/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smx-wx-Yrv">
                     <rect key="frame" x="267" y="0.0" width="89" height="47"/>
-                    <state key="normal" title="Button"/>
+                    <state key="normal" title=""/>
                 </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -58,7 +61,7 @@
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="25" y="363.5"/>
+            <point key="canvasLocation" x="24" y="104"/>
         </view>
     </objects>
 </document>
