@@ -39,7 +39,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="bottomMenu" destination="PKY-7f-EmG" id="AKS-4W-MpY"/>
+                        <outlet property="bottomMenu" destination="PKY-7f-EmG" id="pR9-ek-GXs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
