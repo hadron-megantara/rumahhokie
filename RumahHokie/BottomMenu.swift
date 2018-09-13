@@ -8,11 +8,15 @@
 
 import UIKit
 
+protocol CustomViewDelegate: class {
+    func goToNextScene()
+}
+
 class BottomMenu: UITableViewCell {
     @IBAction func homeBtn(_ sender: UIButton) {
-        
+        delegate?.goToNextScene()
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
 

@@ -21,6 +21,11 @@
 		79DE9B41214A639E000B4147 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B40214A639E000B4147 /* NewsController.swift */; };
 		79DE9B43214A63E6000B4147 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B42214A63E6000B4147 /* UserController.swift */; };
 		79DE9B4B214A7518000B4147 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B47214A6A52000B4147 /* fontawesome-webfont.ttf */; };
+		79DE9B4D214A78EB000B4147 /* lost Connection.svg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B4C214A78EB000B4147 /* lost Connection.svg */; };
+		79DE9B4F214A7B97000B4147 /* Loading Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B4E214A7B96000B4147 /* Loading Screen.jpg */; };
+		79DE9B53214A7BE7000B4147 /* rumahhokie.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B50214A7BE7000B4147 /* rumahhokie.png */; };
+		79DE9B54214A7BE7000B4147 /* Watermark RH-01-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B51214A7BE7000B4147 /* Watermark RH-01-01.png */; };
+		79DE9B55214A7BE7000B4147 /* rumahhokie-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B52214A7BE7000B4147 /* rumahhokie-icon.png */; };
 		81E1046CF409FBF53AFA300D /* Pods_RumahHokieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC83A07F643A0AB8C408CC25 /* Pods_RumahHokieTests.framework */; };
 		CF07D608156844A86ED6C7A6 /* Pods_RumahHokieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19085F48BE8E9901235998E2 /* Pods_RumahHokieUITests.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +71,11 @@
 		79DE9B40214A639E000B4147 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		79DE9B42214A63E6000B4147 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		79DE9B47214A6A52000B4147 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
+		79DE9B4C214A78EB000B4147 /* lost Connection.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "lost Connection.svg"; sourceTree = "<group>"; };
+		79DE9B4E214A7B96000B4147 /* Loading Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Loading Screen.jpg"; sourceTree = "<group>"; };
+		79DE9B50214A7BE7000B4147 /* rumahhokie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rumahhokie.png; sourceTree = "<group>"; };
+		79DE9B51214A7BE7000B4147 /* Watermark RH-01-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Watermark RH-01-01.png"; sourceTree = "<group>"; };
+		79DE9B52214A7BE7000B4147 /* rumahhokie-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rumahhokie-icon.png"; sourceTree = "<group>"; };
 		97452C77B5A0E1F7F600A9C6 /* Pods-RumahHokieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieTests/Pods-RumahHokieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC83A07F643A0AB8C408CC25 /* Pods_RumahHokieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RumahHokieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26419AD2F277AEE7420E4E9 /* Pods-RumahHokieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieUITests/Pods-RumahHokieUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +197,11 @@
 			isa = PBXGroup;
 			children = (
 				79DE9B47214A6A52000B4147 /* fontawesome-webfont.ttf */,
+				79DE9B4C214A78EB000B4147 /* lost Connection.svg */,
+				79DE9B4E214A7B96000B4147 /* Loading Screen.jpg */,
+				79DE9B52214A7BE7000B4147 /* rumahhokie-icon.png */,
+				79DE9B50214A7BE7000B4147 /* rumahhokie.png */,
+				79DE9B51214A7BE7000B4147 /* Watermark RH-01-01.png */,
 			);
 			name = Resource;
 			path = "New Group";
@@ -305,6 +320,11 @@
 				79470D362149279A007E5090 /* BottomMenu.xib in Resources */,
 				79470D0F2147640E007E5090 /* Assets.xcassets in Resources */,
 				79470D0D21476409007E5090 /* Main.storyboard in Resources */,
+				79DE9B55214A7BE7000B4147 /* rumahhokie-icon.png in Resources */,
+				79DE9B4F214A7B97000B4147 /* Loading Screen.jpg in Resources */,
+				79DE9B54214A7BE7000B4147 /* Watermark RH-01-01.png in Resources */,
+				79DE9B53214A7BE7000B4147 /* rumahhokie.png in Resources */,
+				79DE9B4D214A78EB000B4147 /* lost Connection.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

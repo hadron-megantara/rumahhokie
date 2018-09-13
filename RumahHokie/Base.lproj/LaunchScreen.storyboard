@@ -18,18 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="atA-7z-0f0">
-                                <rect key="frame" x="76" y="95" width="223" height="102"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="102" id="MR5-cJ-8br"/>
-                                </constraints>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Loading Screen.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DhE-Jz-df2">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="atA-7z-0f0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="0fC-RG-Jzj"/>
-                            <constraint firstItem="atA-7z-0f0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="A0T-4t-EGS"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="atA-7z-0f0" secondAttribute="trailing" constant="76" id="W8h-PW-WwD"/>
+                            <constraint firstItem="DhE-Jz-df2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="1ON-wJ-gde"/>
+                            <constraint firstItem="DhE-Jz-df2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="NZ2-Tf-ywT"/>
+                            <constraint firstItem="DhE-Jz-df2" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="T02-I5-qLu"/>
+                            <constraint firstItem="DhE-Jz-df2" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="kLT-42-vQo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -40,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo" width="385" height="102"/>
+        <image name="Loading Screen.jpg" width="1322" height="2352"/>
     </resources>
 </document>
