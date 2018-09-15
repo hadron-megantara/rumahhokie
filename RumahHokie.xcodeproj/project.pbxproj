@@ -118,6 +118,7 @@
 		79DE9B69214CE3EF000B4147 /* bedroom.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = bedroom.svg; sourceTree = "<group>"; };
 		79DE9B6A214CE3EF000B4147 /* building_area.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = building_area.svg; sourceTree = "<group>"; };
 		79DE9B6B214CE3EF000B4147 /* bathroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bathroom.png; sourceTree = "<group>"; };
+		79DE9B81214CE822000B4147 /* RumahHokie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RumahHokie-Bridging-Header.h"; sourceTree = "<group>"; };
 		97452C77B5A0E1F7F600A9C6 /* Pods-RumahHokieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieTests/Pods-RumahHokieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC83A07F643A0AB8C408CC25 /* Pods_RumahHokieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RumahHokieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26419AD2F277AEE7420E4E9 /* Pods-RumahHokieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieUITests/Pods-RumahHokieUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +239,7 @@
 		79DE9B46214A6A46000B4147 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				79DE9B82214CE952000B4147 /* Controller */,
 				79DE9B47214A6A52000B4147 /* fontawesome-webfont.ttf */,
 				79DE9B4C214A78EB000B4147 /* lost Connection.svg */,
 				79DE9B56214CE3D3000B4147 /* Icon */,
@@ -276,6 +278,14 @@
 				79DE9B63214CE3EE000B4147 /* youtube.png */,
 			);
 			path = Icon;
+			sourceTree = "<group>";
+		};
+		79DE9B82214CE952000B4147 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				79DE9B81214CE822000B4147 /* RumahHokie-Bridging-Header.h */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -705,6 +715,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "RumahHokie/Controller/RumahHokie-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -725,6 +736,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "RumahHokie/Controller/RumahHokie-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
