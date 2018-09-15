@@ -26,6 +26,27 @@
 		79DE9B53214A7BE7000B4147 /* rumahhokie.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B50214A7BE7000B4147 /* rumahhokie.png */; };
 		79DE9B54214A7BE7000B4147 /* Watermark RH-01-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B51214A7BE7000B4147 /* Watermark RH-01-01.png */; };
 		79DE9B55214A7BE7000B4147 /* rumahhokie-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B52214A7BE7000B4147 /* rumahhokie-icon.png */; };
+		79DE9B6C214CE3EF000B4147 /* land_area.svg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B57214CE3E9000B4147 /* land_area.svg */; };
+		79DE9B6D214CE3EF000B4147 /* garage.svg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B58214CE3EA000B4147 /* garage.svg */; };
+		79DE9B6E214CE3EF000B4147 /* Icon Apps_rumah.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B59214CE3EA000B4147 /* Icon Apps_rumah.png */; };
+		79DE9B6F214CE3EF000B4147 /* bedroom.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B5A214CE3EB000B4147 /* bedroom.png */; };
+		79DE9B70214CE3EF000B4147 /* newspaper.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B5B214CE3EB000B4147 /* newspaper.png */; };
+		79DE9B71214CE3EF000B4147 /* man_with_tie.xml in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B5C214CE3EC000B4147 /* man_with_tie.xml */; };
+		79DE9B72214CE3EF000B4147 /* Icon Apps_tanah_revisi.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B5D214CE3EC000B4147 /* Icon Apps_tanah_revisi.png */; };
+		79DE9B73214CE3EF000B4147 /* Icon Apps_Komersial.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B5E214CE3EC000B4147 /* Icon Apps_Komersial.png */; };
+		79DE9B74214CE3EF000B4147 /* Icon Apps_apartemen.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B5F214CE3ED000B4147 /* Icon Apps_apartemen.png */; };
+		79DE9B75214CE3EF000B4147 /* man-with-tie.svg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B60214CE3ED000B4147 /* man-with-tie.svg */; };
+		79DE9B76214CE3EF000B4147 /* garage.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B61214CE3ED000B4147 /* garage.png */; };
+		79DE9B77214CE3EF000B4147 /* land_area.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B62214CE3ED000B4147 /* land_area.png */; };
+		79DE9B78214CE3EF000B4147 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B63214CE3EE000B4147 /* youtube.png */; };
+		79DE9B79214CE3EF000B4147 /* building_area.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B64214CE3EE000B4147 /* building_area.png */; };
+		79DE9B7A214CE3EF000B4147 /* agent_rumahhokie-02-1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B65214CE3EE000B4147 /* agent_rumahhokie-02-1024x1024.png */; };
+		79DE9B7B214CE3EF000B4147 /* bathroom.svg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B66214CE3EE000B4147 /* bathroom.svg */; };
+		79DE9B7C214CE3EF000B4147 /* Icon Apps_Properti Baru.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B67214CE3EE000B4147 /* Icon Apps_Properti Baru.png */; };
+		79DE9B7D214CE3EF000B4147 /* Icon Apps_tanah_revisi.svg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B68214CE3EF000B4147 /* Icon Apps_tanah_revisi.svg */; };
+		79DE9B7E214CE3EF000B4147 /* bedroom.svg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B69214CE3EF000B4147 /* bedroom.svg */; };
+		79DE9B7F214CE3EF000B4147 /* building_area.svg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B6A214CE3EF000B4147 /* building_area.svg */; };
+		79DE9B80214CE3EF000B4147 /* bathroom.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B6B214CE3EF000B4147 /* bathroom.png */; };
 		81E1046CF409FBF53AFA300D /* Pods_RumahHokieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC83A07F643A0AB8C408CC25 /* Pods_RumahHokieTests.framework */; };
 		CF07D608156844A86ED6C7A6 /* Pods_RumahHokieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19085F48BE8E9901235998E2 /* Pods_RumahHokieUITests.framework */; };
 /* End PBXBuildFile section */
@@ -76,6 +97,27 @@
 		79DE9B50214A7BE7000B4147 /* rumahhokie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rumahhokie.png; sourceTree = "<group>"; };
 		79DE9B51214A7BE7000B4147 /* Watermark RH-01-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Watermark RH-01-01.png"; sourceTree = "<group>"; };
 		79DE9B52214A7BE7000B4147 /* rumahhokie-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rumahhokie-icon.png"; sourceTree = "<group>"; };
+		79DE9B57214CE3E9000B4147 /* land_area.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = land_area.svg; sourceTree = "<group>"; };
+		79DE9B58214CE3EA000B4147 /* garage.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = garage.svg; sourceTree = "<group>"; };
+		79DE9B59214CE3EA000B4147 /* Icon Apps_rumah.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon Apps_rumah.png"; sourceTree = "<group>"; };
+		79DE9B5A214CE3EB000B4147 /* bedroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bedroom.png; sourceTree = "<group>"; };
+		79DE9B5B214CE3EB000B4147 /* newspaper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newspaper.png; sourceTree = "<group>"; };
+		79DE9B5C214CE3EC000B4147 /* man_with_tie.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = man_with_tie.xml; sourceTree = "<group>"; };
+		79DE9B5D214CE3EC000B4147 /* Icon Apps_tanah_revisi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon Apps_tanah_revisi.png"; sourceTree = "<group>"; };
+		79DE9B5E214CE3EC000B4147 /* Icon Apps_Komersial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon Apps_Komersial.png"; sourceTree = "<group>"; };
+		79DE9B5F214CE3ED000B4147 /* Icon Apps_apartemen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon Apps_apartemen.png"; sourceTree = "<group>"; };
+		79DE9B60214CE3ED000B4147 /* man-with-tie.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "man-with-tie.svg"; sourceTree = "<group>"; };
+		79DE9B61214CE3ED000B4147 /* garage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = garage.png; sourceTree = "<group>"; };
+		79DE9B62214CE3ED000B4147 /* land_area.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = land_area.png; sourceTree = "<group>"; };
+		79DE9B63214CE3EE000B4147 /* youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube.png; sourceTree = "<group>"; };
+		79DE9B64214CE3EE000B4147 /* building_area.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = building_area.png; sourceTree = "<group>"; };
+		79DE9B65214CE3EE000B4147 /* agent_rumahhokie-02-1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "agent_rumahhokie-02-1024x1024.png"; sourceTree = "<group>"; };
+		79DE9B66214CE3EE000B4147 /* bathroom.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = bathroom.svg; sourceTree = "<group>"; };
+		79DE9B67214CE3EE000B4147 /* Icon Apps_Properti Baru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon Apps_Properti Baru.png"; sourceTree = "<group>"; };
+		79DE9B68214CE3EF000B4147 /* Icon Apps_tanah_revisi.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Icon Apps_tanah_revisi.svg"; sourceTree = "<group>"; };
+		79DE9B69214CE3EF000B4147 /* bedroom.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = bedroom.svg; sourceTree = "<group>"; };
+		79DE9B6A214CE3EF000B4147 /* building_area.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = building_area.svg; sourceTree = "<group>"; };
+		79DE9B6B214CE3EF000B4147 /* bathroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bathroom.png; sourceTree = "<group>"; };
 		97452C77B5A0E1F7F600A9C6 /* Pods-RumahHokieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieTests/Pods-RumahHokieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC83A07F643A0AB8C408CC25 /* Pods_RumahHokieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RumahHokieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26419AD2F277AEE7420E4E9 /* Pods-RumahHokieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieUITests/Pods-RumahHokieUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -198,6 +240,7 @@
 			children = (
 				79DE9B47214A6A52000B4147 /* fontawesome-webfont.ttf */,
 				79DE9B4C214A78EB000B4147 /* lost Connection.svg */,
+				79DE9B56214CE3D3000B4147 /* Icon */,
 				79DE9B4E214A7B96000B4147 /* Loading Screen.jpg */,
 				79DE9B52214A7BE7000B4147 /* rumahhokie-icon.png */,
 				79DE9B50214A7BE7000B4147 /* rumahhokie.png */,
@@ -205,6 +248,34 @@
 			);
 			name = Resource;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		79DE9B56214CE3D3000B4147 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				79DE9B65214CE3EE000B4147 /* agent_rumahhokie-02-1024x1024.png */,
+				79DE9B6B214CE3EF000B4147 /* bathroom.png */,
+				79DE9B66214CE3EE000B4147 /* bathroom.svg */,
+				79DE9B5A214CE3EB000B4147 /* bedroom.png */,
+				79DE9B69214CE3EF000B4147 /* bedroom.svg */,
+				79DE9B64214CE3EE000B4147 /* building_area.png */,
+				79DE9B6A214CE3EF000B4147 /* building_area.svg */,
+				79DE9B61214CE3ED000B4147 /* garage.png */,
+				79DE9B58214CE3EA000B4147 /* garage.svg */,
+				79DE9B5F214CE3ED000B4147 /* Icon Apps_apartemen.png */,
+				79DE9B5E214CE3EC000B4147 /* Icon Apps_Komersial.png */,
+				79DE9B67214CE3EE000B4147 /* Icon Apps_Properti Baru.png */,
+				79DE9B59214CE3EA000B4147 /* Icon Apps_rumah.png */,
+				79DE9B5D214CE3EC000B4147 /* Icon Apps_tanah_revisi.png */,
+				79DE9B68214CE3EF000B4147 /* Icon Apps_tanah_revisi.svg */,
+				79DE9B62214CE3ED000B4147 /* land_area.png */,
+				79DE9B57214CE3E9000B4147 /* land_area.svg */,
+				79DE9B5C214CE3EC000B4147 /* man_with_tie.xml */,
+				79DE9B60214CE3ED000B4147 /* man-with-tie.svg */,
+				79DE9B5B214CE3EB000B4147 /* newspaper.png */,
+				79DE9B63214CE3EE000B4147 /* youtube.png */,
+			);
+			path = Icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,16 +386,37 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79DE9B7C214CE3EF000B4147 /* Icon Apps_Properti Baru.png in Resources */,
+				79DE9B80214CE3EF000B4147 /* bathroom.png in Resources */,
+				79DE9B70214CE3EF000B4147 /* newspaper.png in Resources */,
 				79470D122147640E007E5090 /* LaunchScreen.storyboard in Resources */,
+				79DE9B6E214CE3EF000B4147 /* Icon Apps_rumah.png in Resources */,
 				79DE9B4B214A7518000B4147 /* fontawesome-webfont.ttf in Resources */,
 				79470D362149279A007E5090 /* BottomMenu.xib in Resources */,
+				79DE9B7E214CE3EF000B4147 /* bedroom.svg in Resources */,
+				79DE9B77214CE3EF000B4147 /* land_area.png in Resources */,
+				79DE9B73214CE3EF000B4147 /* Icon Apps_Komersial.png in Resources */,
+				79DE9B76214CE3EF000B4147 /* garage.png in Resources */,
+				79DE9B6F214CE3EF000B4147 /* bedroom.png in Resources */,
 				79470D0F2147640E007E5090 /* Assets.xcassets in Resources */,
+				79DE9B71214CE3EF000B4147 /* man_with_tie.xml in Resources */,
 				79470D0D21476409007E5090 /* Main.storyboard in Resources */,
+				79DE9B7D214CE3EF000B4147 /* Icon Apps_tanah_revisi.svg in Resources */,
+				79DE9B74214CE3EF000B4147 /* Icon Apps_apartemen.png in Resources */,
 				79DE9B55214A7BE7000B4147 /* rumahhokie-icon.png in Resources */,
+				79DE9B78214CE3EF000B4147 /* youtube.png in Resources */,
 				79DE9B4F214A7B97000B4147 /* Loading Screen.jpg in Resources */,
+				79DE9B7A214CE3EF000B4147 /* agent_rumahhokie-02-1024x1024.png in Resources */,
 				79DE9B54214A7BE7000B4147 /* Watermark RH-01-01.png in Resources */,
 				79DE9B53214A7BE7000B4147 /* rumahhokie.png in Resources */,
+				79DE9B79214CE3EF000B4147 /* building_area.png in Resources */,
 				79DE9B4D214A78EB000B4147 /* lost Connection.svg in Resources */,
+				79DE9B6C214CE3EF000B4147 /* land_area.svg in Resources */,
+				79DE9B72214CE3EF000B4147 /* Icon Apps_tanah_revisi.png in Resources */,
+				79DE9B75214CE3EF000B4147 /* man-with-tie.svg in Resources */,
+				79DE9B7F214CE3EF000B4147 /* building_area.svg in Resources */,
+				79DE9B7B214CE3EF000B4147 /* bathroom.svg in Resources */,
+				79DE9B6D214CE3EF000B4147 /* garage.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
