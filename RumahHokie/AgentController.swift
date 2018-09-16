@@ -14,10 +14,9 @@ class AgentController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-    }
-    
-    class func instanceFromNib() -> AgentController {
-        return UINib(nibName: "BottomMenu", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! AgentController
+        self.navigationController?.navigationBar.isHidden = true;
+        let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
+        bottomMenu.addSubview(bottomMenuView)
     }
     
     override func didReceiveMemoryWarning() {

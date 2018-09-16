@@ -59,9 +59,36 @@
                     <view key="view" contentMode="scaleToFill" id="g9D-uP-Pdj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agent Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fVq-lG-7ex">
+                                <rect key="frame" x="144" y="105" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s4f-7S-Hgm" customClass="BottomMenu" customModule="RumahHokie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="601" width="375" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="66" id="1KD-2v-lVq"/>
+                                    <constraint firstAttribute="height" constant="66" id="N0C-Ad-HBC"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="s4f-7S-Hgm" firstAttribute="bottom" secondItem="e6t-7s-aq1" secondAttribute="bottom" id="1Zb-FH-inr"/>
+                            <constraint firstItem="s4f-7S-Hgm" firstAttribute="trailing" secondItem="e6t-7s-aq1" secondAttribute="trailing" id="4Yl-7Z-Qyf"/>
+                            <constraint firstItem="fVq-lG-7ex" firstAttribute="top" secondItem="e6t-7s-aq1" secondAttribute="top" constant="85" id="DGl-M8-WQS"/>
+                            <constraint firstItem="s4f-7S-Hgm" firstAttribute="leading" secondItem="e6t-7s-aq1" secondAttribute="leading" id="Orv-8H-cuL"/>
+                            <constraint firstItem="fVq-lG-7ex" firstAttribute="leading" secondItem="e6t-7s-aq1" secondAttribute="leading" constant="144" id="jI1-vf-UIz"/>
+                            <constraint firstItem="e6t-7s-aq1" firstAttribute="trailing" secondItem="fVq-lG-7ex" secondAttribute="trailing" constant="143" id="ryT-E6-8bi"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="e6t-7s-aq1"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomMenu" destination="s4f-7S-Hgm" id="UGK-wb-C4M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKF-Mj-GH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -74,9 +101,36 @@
                     <view key="view" contentMode="scaleToFill" id="ENl-ru-3Ll">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4on-4M-uPo">
+                                <rect key="frame" x="160" y="72" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjd-RK-6PC" customClass="BottomMenu" customModule="RumahHokie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="601" width="375" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="66" id="RLq-8a-xbY"/>
+                                    <constraint firstAttribute="height" constant="66" id="v63-WW-MUq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fjd-RK-6PC" firstAttribute="bottom" secondItem="HY6-4P-Y7V" secondAttribute="bottom" id="0n0-SA-iJc"/>
+                            <constraint firstItem="fjd-RK-6PC" firstAttribute="leading" secondItem="HY6-4P-Y7V" secondAttribute="leading" id="A7c-1b-5XN"/>
+                            <constraint firstItem="HY6-4P-Y7V" firstAttribute="trailing" secondItem="4on-4M-uPo" secondAttribute="trailing" constant="129" id="BTB-0O-LLO"/>
+                            <constraint firstItem="4on-4M-uPo" firstAttribute="leading" secondItem="HY6-4P-Y7V" secondAttribute="leading" constant="160" id="cz1-1P-aOd"/>
+                            <constraint firstItem="fjd-RK-6PC" firstAttribute="trailing" secondItem="HY6-4P-Y7V" secondAttribute="trailing" id="e3K-Le-pbn"/>
+                            <constraint firstItem="4on-4M-uPo" firstAttribute="top" secondItem="HY6-4P-Y7V" secondAttribute="top" constant="52" id="frQ-Bj-laL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HY6-4P-Y7V"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomMenu" destination="fjd-RK-6PC" id="wYo-9V-ujX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTR-4l-pnT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -89,9 +143,36 @@
                     <view key="view" contentMode="scaleToFill" id="aku-0p-lcG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ij-OW-kTp">
+                                <rect key="frame" x="166" y="70" width="86" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JzG-IT-sHy" customClass="BottomMenu" customModule="RumahHokie" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="601" width="375" height="66"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="H5h-by-BuX"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="66" id="SgW-Dh-Aim"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JzG-IT-sHy" firstAttribute="leading" secondItem="36X-C4-p5x" secondAttribute="leading" id="Ecs-Gw-Hug"/>
+                            <constraint firstItem="JzG-IT-sHy" firstAttribute="bottom" secondItem="36X-C4-p5x" secondAttribute="bottom" id="OfK-lx-CF7"/>
+                            <constraint firstItem="6ij-OW-kTp" firstAttribute="leading" secondItem="36X-C4-p5x" secondAttribute="leading" constant="166" id="Vgn-03-KBN"/>
+                            <constraint firstItem="JzG-IT-sHy" firstAttribute="trailing" secondItem="36X-C4-p5x" secondAttribute="trailing" id="VwK-UF-KTC"/>
+                            <constraint firstItem="36X-C4-p5x" firstAttribute="trailing" secondItem="6ij-OW-kTp" secondAttribute="trailing" constant="123" id="ZMS-j0-ve8"/>
+                            <constraint firstItem="6ij-OW-kTp" firstAttribute="top" secondItem="36X-C4-p5x" secondAttribute="top" constant="50" id="gWG-EV-pRm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="36X-C4-p5x"/>
                     </view>
+                    <connections>
+                        <outlet property="bottomMenu" destination="JzG-IT-sHy" id="wid-Rh-4rI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VI7-Ii-kra" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

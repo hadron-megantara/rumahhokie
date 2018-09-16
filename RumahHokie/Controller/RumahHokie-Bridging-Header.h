@@ -9,5 +9,4 @@
 #ifndef RumahHokie_Bridging_Header_h
 #define RumahHokie_Bridging_Header_h
 
-
 #endif /* RumahHokie_Bridging_Header_h */

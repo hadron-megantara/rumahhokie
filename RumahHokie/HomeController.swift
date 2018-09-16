@@ -14,9 +14,6 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myCustomView = NSBundle.mainBundle().loadNibNamed("customView", owner: self, options: nil)[0] as! CustomView
-        myCustomView.delegate = self
-        
         self.navigationController?.navigationBar.isHidden = true;
         let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
         bottomMenu.addSubview(bottomMenuView)
@@ -25,10 +22,6 @@ class HomeController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func segueSelector(){
-        performSegueWithIdentifier("toSecond", sender: self)
     }
     
     
