@@ -119,6 +119,8 @@
 		79DE9B6A214CE3EF000B4147 /* building_area.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = building_area.svg; sourceTree = "<group>"; };
 		79DE9B6B214CE3EF000B4147 /* bathroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bathroom.png; sourceTree = "<group>"; };
 		79DE9B81214CE822000B4147 /* RumahHokie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RumahHokie-Bridging-Header.h"; sourceTree = "<group>"; };
+		79DE9B83214E6C5A000B4147 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
+		79DE9B85214E6C5B000B4147 /* fa-brands-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-brands-400.ttf"; sourceTree = "<group>"; };
 		97452C77B5A0E1F7F600A9C6 /* Pods-RumahHokieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieTests/Pods-RumahHokieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC83A07F643A0AB8C408CC25 /* Pods_RumahHokieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RumahHokieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26419AD2F277AEE7420E4E9 /* Pods-RumahHokieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieUITests/Pods-RumahHokieUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -240,7 +242,9 @@
 		79DE9B46214A6A46000B4147 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				79DE9B85214E6C5B000B4147 /* fa-brands-400.ttf */,
 				79DE9B47214A6A52000B4147 /* fontawesome-webfont.ttf */,
+				79DE9B83214E6C5A000B4147 /* icomoon.ttf */,
 				79DE9B4C214A78EB000B4147 /* lost Connection.svg */,
 				79DE9B56214CE3D3000B4147 /* Icon */,
 				79DE9B4E214A7B96000B4147 /* Loading Screen.jpg */,
@@ -397,11 +401,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				79DE9B7C214CE3EF000B4147 /* Icon Apps_Properti Baru.png in Resources */,
+				79DE9B4B214A7518000B4147 /* fontawesome-webfont.ttf in Resources */,
 				79DE9B80214CE3EF000B4147 /* bathroom.png in Resources */,
 				79DE9B70214CE3EF000B4147 /* newspaper.png in Resources */,
 				79470D122147640E007E5090 /* LaunchScreen.storyboard in Resources */,
 				79DE9B6E214CE3EF000B4147 /* Icon Apps_rumah.png in Resources */,
-				79DE9B4B214A7518000B4147 /* fontawesome-webfont.ttf in Resources */,
 				79470D362149279A007E5090 /* BottomMenu.xib in Resources */,
 				79DE9B7E214CE3EF000B4147 /* bedroom.svg in Resources */,
 				79DE9B77214CE3EF000B4147 /* land_area.png in Resources */,
