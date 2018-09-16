@@ -15,6 +15,8 @@
 		79470D1D2147640E007E5090 /* RumahHokieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D1C2147640E007E5090 /* RumahHokieTests.swift */; };
 		79470D282147640E007E5090 /* RumahHokieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D272147640E007E5090 /* RumahHokieUITests.swift */; };
 		79470D362149279A007E5090 /* BottomMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79470D352149279A007E5090 /* BottomMenu.xib */; };
+		79815AC5214EC1ED00238433 /* CoreAPi.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC4214EC1ED00238433 /* CoreAPi.m */; };
+		79815AC7214EC40C00238433 /* CoreEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC6214EC40C00238433 /* CoreEndpoints.m */; };
 		79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3A214A5E51000B4147 /* BottomMenu.swift */; };
 		79DE9B3D214A630F000B4147 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3C214A630F000B4147 /* HomeController.swift */; };
 		79DE9B3F214A6359000B4147 /* AgentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3E214A6359000B4147 /* AgentController.swift */; };
@@ -86,6 +88,9 @@
 		79470D272147640E007E5090 /* RumahHokieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumahHokieUITests.swift; sourceTree = "<group>"; };
 		79470D292147640E007E5090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79470D352149279A007E5090 /* BottomMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenu.xib; sourceTree = "<group>"; };
+		79815AC4214EC1ED00238433 /* CoreAPi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAPi.m; sourceTree = "<group>"; };
+		79815AC6214EC40C00238433 /* CoreEndpoints.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreEndpoints.m; sourceTree = "<group>"; };
+		79815AC8214EC41B00238433 /* CoreEndPoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreEndPoints.h; sourceTree = "<group>"; };
 		79DE9B3A214A5E51000B4147 /* BottomMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenu.swift; sourceTree = "<group>"; };
 		79DE9B3C214A630F000B4147 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		79DE9B3E214A6359000B4147 /* AgentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentController.swift; sourceTree = "<group>"; };
@@ -204,6 +209,7 @@
 		79470D0621476409007E5090 /* RumahHokie */ = {
 			isa = PBXGroup;
 			children = (
+				79815AC3214EC1AD00238433 /* CoreApi */,
 				79DE9B82214CE952000B4147 /* Controller */,
 				79DE9B46214A6A46000B4147 /* Resource */,
 				79470D0721476409007E5090 /* AppDelegate.swift */,
@@ -237,6 +243,16 @@
 				79470D292147640E007E5090 /* Info.plist */,
 			);
 			path = RumahHokieUITests;
+			sourceTree = "<group>";
+		};
+		79815AC3214EC1AD00238433 /* CoreApi */ = {
+			isa = PBXGroup;
+			children = (
+				79815AC4214EC1ED00238433 /* CoreAPi.m */,
+				79815AC6214EC40C00238433 /* CoreEndpoints.m */,
+				79815AC8214EC41B00238433 /* CoreEndPoints.h */,
+			);
+			path = CoreApi;
 			sourceTree = "<group>";
 		};
 		79DE9B46214A6A46000B4147 /* Resource */ = {
@@ -536,6 +552,8 @@
 				79470D0821476409007E5090 /* AppDelegate.swift in Sources */,
 				79DE9B41214A639E000B4147 /* NewsController.swift in Sources */,
 				79DE9B3F214A6359000B4147 /* AgentController.swift in Sources */,
+				79815AC5214EC1ED00238433 /* CoreAPi.m in Sources */,
+				79815AC7214EC40C00238433 /* CoreEndpoints.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

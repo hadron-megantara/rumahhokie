@@ -9,4 +9,6 @@
 #ifndef RumahHokie_Bridging_Header_h
 #define RumahHokie_Bridging_Header_h
 
+#import <AFNetworking/AFNetworking.h>
+
 #endif /* RumahHokie_Bridging_Header_h */
