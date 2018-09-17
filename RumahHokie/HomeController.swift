@@ -30,7 +30,7 @@ class HomeController: UIViewController {
             "schedule": "now"
         ]
         
-        var url: String = ""
+//        var url: String = ""
         
         manager.get(
             "/prm_banner_top",
@@ -43,7 +43,13 @@ class HomeController: UIViewController {
                     if let detail = res["prm_banner_top"]{
                         if let d = detail as? Array<Any>{
                             for array in d{
-                                print(array["prm_top_image"])
+                                if let json = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments) as? [String : AnyObject] {
+                                
+                                }
+                                
+                                print(a)
+                                
+//                                let b = array["prm_top_url"] + array["prm_top_image"]
 //                                url += array["prm_top_url"] + array["prm_top_image"] + ","
                             }
                         }
