@@ -6,6 +6,7 @@ target 'RumahHokie' do
   use_frameworks!
   
   pod 'AFNetworking', '~> 3.0'
+  pod 'AACarousel'
 
   # Pods for RumahHokie
 
