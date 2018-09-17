@@ -36,9 +36,6 @@
                                             <constraint firstAttribute="height" constant="33" id="U2D-C2-qN1"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vg9-sX-iiZ">
-                                        <rect key="frame" x="8" y="49" width="359" height="218"/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaC-K1-2A0">
                                         <rect key="frame" x="8" y="283" width="359" height="67"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,17 +43,21 @@
                                             <constraint firstAttribute="height" constant="67" id="Grd-IN-f9m"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9f7-OL-6au" customClass="AACarousel" customModule="AACarousel">
+                                        <rect key="frame" x="8" y="49" width="359" height="218"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="vg9-sX-iiZ" secondAttribute="trailing" constant="8" id="7tD-jB-N5I"/>
-                                    <constraint firstItem="vg9-sX-iiZ" firstAttribute="leading" secondItem="64n-0i-jZh" secondAttribute="leading" constant="8" id="8sg-Mn-d3m"/>
+                                    <constraint firstItem="9f7-OL-6au" firstAttribute="leading" secondItem="64n-0i-jZh" secondAttribute="leading" constant="8" id="PcG-hv-r1b"/>
                                     <constraint firstItem="I1Q-zP-u5d" firstAttribute="centerX" secondItem="64n-0i-jZh" secondAttribute="centerX" id="Q9a-3f-bKh"/>
                                     <constraint firstAttribute="trailing" secondItem="EaC-K1-2A0" secondAttribute="trailing" constant="8" id="QQC-TB-j5v"/>
+                                    <constraint firstItem="EaC-K1-2A0" firstAttribute="top" secondItem="9f7-OL-6au" secondAttribute="bottom" constant="16" id="Qac-XV-Eik"/>
+                                    <constraint firstAttribute="trailing" secondItem="9f7-OL-6au" secondAttribute="trailing" constant="8" id="Sfv-C5-96y"/>
                                     <constraint firstAttribute="bottom" secondItem="EaC-K1-2A0" secondAttribute="bottom" constant="16" id="hwI-y0-GDp"/>
-                                    <constraint firstItem="vg9-sX-iiZ" firstAttribute="top" secondItem="I1Q-zP-u5d" secondAttribute="bottom" constant="16" id="p2E-Qq-odo"/>
+                                    <constraint firstItem="9f7-OL-6au" firstAttribute="top" secondItem="I1Q-zP-u5d" secondAttribute="bottom" constant="16" id="mET-ki-0Sw"/>
                                     <constraint firstItem="EaC-K1-2A0" firstAttribute="leading" secondItem="64n-0i-jZh" secondAttribute="leading" constant="8" id="rs3-Cv-TTg"/>
-                                    <constraint firstItem="EaC-K1-2A0" firstAttribute="top" secondItem="vg9-sX-iiZ" secondAttribute="bottom" constant="16" id="wSn-oG-TuN"/>
                                     <constraint firstItem="I1Q-zP-u5d" firstAttribute="top" secondItem="64n-0i-jZh" secondAttribute="top" id="zMo-Lr-qnv"/>
                                 </constraints>
                             </view>
@@ -109,6 +110,7 @@
                     <navigationItem key="navigationItem" id="SBX-C7-e4y"/>
                     <connections>
                         <outlet property="bottomMenu" destination="PKY-7f-EmG" id="pR9-ek-GXs"/>
+                        <outlet property="carouselView" destination="9f7-OL-6au" id="w5t-jN-0Qs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
