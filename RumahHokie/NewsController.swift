@@ -33,7 +33,7 @@ class NewsController: UIViewController {
         print(res)
     }
     
-    func getJSON() {
+    func getJSON() -> res: any {
         let manager = AFHTTPSessionManager(baseURL: URL(string: "http://rumahhokie.com"))
         
         let params = [
@@ -58,6 +58,7 @@ class NewsController: UIViewController {
             }
         )
         
+        return manager
     }
     
     override func didReceiveMemoryWarning() {
