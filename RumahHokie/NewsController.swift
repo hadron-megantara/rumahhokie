@@ -29,11 +29,10 @@ class NewsController: UIViewController {
         let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
         bottomMenu.addSubview(bottomMenuView)
         
-        let res = getJSON()
-        print(res)
+        getJSON()
     }
     
-    func getJSON() -> res: any {
+    func getJSON() {
         let manager = AFHTTPSessionManager(baseURL: URL(string: "http://rumahhokie.com"))
         
         let params = [
@@ -57,8 +56,6 @@ class NewsController: UIViewController {
                 print("Error: " + error.localizedDescription)
             }
         )
-        
-        return manager
     }
     
     override func didReceiveMemoryWarning() {

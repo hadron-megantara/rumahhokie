@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F560F67427C879EFC22D2D0 /* Pods_RumahHokie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C5DAB2BA333429064ECEC8 /* Pods_RumahHokie.framework */; };
+		792AC2F6214FB2F30010966A /* TopBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 792AC2F5214FB2F30010966A /* TopBanner.m */; };
 		79470D0821476409007E5090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D0721476409007E5090 /* AppDelegate.swift */; };
 		79470D0D21476409007E5090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79470D0B21476409007E5090 /* Main.storyboard */; };
 		79470D0F2147640E007E5090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79470D0E2147640E007E5090 /* Assets.xcassets */; };
@@ -76,6 +77,7 @@
 		2E38FDB049E755D9794006AD /* Pods-RumahHokieUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieUITests/Pods-RumahHokieUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4421AB533A964683EAFCF826 /* Pods-RumahHokieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieTests/Pods-RumahHokieTests.release.xcconfig"; sourceTree = "<group>"; };
 		5A0B90EFF9450A68184E6A98 /* Pods-RumahHokie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokie.release.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokie/Pods-RumahHokie.release.xcconfig"; sourceTree = "<group>"; };
+		792AC2F5214FB2F30010966A /* TopBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopBanner.m; sourceTree = "<group>"; };
 		79470D0421476409007E5090 /* RumahHokie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RumahHokie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79470D0721476409007E5090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79470D0C21476409007E5090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 			children = (
 				79815ACA214ED15800238433 /* News.m */,
 				79815ACC214ED16B00238433 /* News.h */,
+				792AC2F5214FB2F30010966A /* TopBanner.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -564,6 +567,7 @@
 				79DE9B43214A63E6000B4147 /* UserController.swift in Sources */,
 				79DE9B3D214A630F000B4147 /* HomeController.swift in Sources */,
 				79815ACB214ED15800238433 /* News.m in Sources */,
+				792AC2F6214FB2F30010966A /* TopBanner.m in Sources */,
 				79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */,
 				79470D0821476409007E5090 /* AppDelegate.swift in Sources */,
 				79DE9B41214A639E000B4147 /* NewsController.swift in Sources */,

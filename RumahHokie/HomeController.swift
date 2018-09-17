@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AACarousel
 
 class HomeController: UIViewController {
     @IBOutlet weak var bottomMenu: UIView!
@@ -15,8 +16,7 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let res = loadTopBanner()
-        print(res)
+        loadTopBanner()
         
         self.navigationController?.navigationBar.isHidden = true;
         let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
@@ -24,22 +24,31 @@ class HomeController: UIViewController {
     }
     
     func loadTopBanner(){
-        let manager = AFHTTPSessionManager(baseURL: URL(string: "http://rumahhokie.com"))
+        let manager = AFHTTPSessionManager(baseURL: URL(string: "http://api.rumahhokie.com"))
         
         let params = [
-            "categories": "258",
-            "offset": "1",
-            "per_page": "20",
-            "_embed": "1"
+            "schedule": "now"
         ]
         
+        var url: String = ""
+        
         manager.get(
-            "/beritaproperti/wp-json/wp/v2/posts",
+            "/prm_banner_top",
             parameters: params,
             success:
             {
-                (task: URLSessionDataTask!, res: Any) in
-                print(res)
+                (task: URLSessionDataTask!, result: Any) in
+                
+                if let res = result as? [String:Any] {
+                    if let detail = res["prm_banner_top"]{
+                        if let d = detail as? Array<Any>{
+                            for array in d{
+                                print(array["prm_top_image"])
+//                                url += array["prm_top_url"] + array["prm_top_image"] + ","
+                            }
+                        }
+                    }
+                }
             },
             failure:
             {
@@ -48,7 +57,14 @@ class HomeController: UIViewController {
             }
         )
         
-        return manager
+//        let pathArray = []
+//        titleArray = ["picture 1","picture 2","picture 3","picture 4","picture 5"]
+//        carouselView.delegate = self
+//        carouselView.setCarouselData(paths: pathArray,  describedTitle: titleArray, isAutoScroll: true, timer: 5.0, defaultImage: "defaultImage")
+//        //optional methods
+//        carouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
+//        carouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 5, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
+        
     }
     
     override func didReceiveMemoryWarning() {
