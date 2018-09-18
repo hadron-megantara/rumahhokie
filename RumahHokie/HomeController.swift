@@ -39,15 +39,12 @@ class HomeController: UIViewController {
             {
                 (task: URLSessionDataTask!, result: Any) in
                 
-                if let res = result as? [String:Any] {
+                if let res = result as? [String:AnyObject] {
                     if let detail = res["prm_banner_top"]{
-                        if let d = detail as? Array<Any>{
+                        if let d = detail as? Array<AnyObject>{
                             for array in d{
-                                if let json = try JSONSerialization.jsonObject(with: responseData, options: JSONSerialization.ReadingOptions.allowFragments) as? [String : AnyObject] {
-                                
-                                }
-                                
-                                print(a)
+                                let name = array.value(forKey: "prm_top_image") as! String
+                                print(name)
                                 
 //                                let b = array["prm_top_url"] + array["prm_top_image"]
 //                                url += array["prm_top_url"] + array["prm_top_image"] + ","
