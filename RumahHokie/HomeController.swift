@@ -9,11 +9,13 @@
 import UIKit
 import AACarousel
 import Alamofire
+import Kingfisher
 
 class HomeController: UIViewController, AACarouselDelegate {
     @IBOutlet weak var bottomMenu: UIView!
     @IBOutlet weak var carouselView: AACarousel!
     
+    var url = [String]()
     var titleArray = [String]()
     
     override func viewDidLoad() {
@@ -27,51 +29,44 @@ class HomeController: UIViewController, AACarouselDelegate {
     }
     
     func loadTopBanner(){
-        var url: String = "";
-        var firstImage = true;
+        let group = DispatchGroup()
+        group.enter()
         
-        Alamofire.request("http://api.rumahhokie.com/prm_banner_top?schedule=now").responseJSON { response in
-            switch response.result{
-                case .success:
-                    print("Validation Successful")
-                case .failure(let error):
-                    print(error)
-            }
-            
-            if let json = response.result.value {
-                print(json)
+        DispatchQueue.main.async {
+            Alamofire.request("http://api.rumahhokie.com/prm_banner_top?schedule=now", method: .get).responseJSON { response in
                 
-                if let result = json as? [String:AnyObject] {
-                    if let detail = result["prm_banner_top"]{
-                        if let d = detail as? Array<AnyObject>{
-                            for array in d{
-                                let resImage = array.value(forKey: "prm_top_image") as! String
-                                let resUrl = array.value(forKey: "prm_top_url") as! String
-                                print(firstImage)
-                                if firstImage{
-                                    url = resUrl + resImage
-                                    firstImage = false
-                                } else{
-                                    url += "," + resUrl + resImage
+                if let json = response.result.value {
+                    if let result = json as? [String:AnyObject] {
+                        if let detail = result["prm_banner_top"]{
+                            if let d = detail as? Array<AnyObject>{
+                                for array in d{
+                                    let resImage = array.value(forKey: "prm_top_image") as! String
+                                    let resUrl = array.value(forKey: "prm_top_url") as! String
+                                    let resTitle = array.value(forKey: "prm_top_cust") as! String
+                                    
+                                    self.url.append(resUrl+resImage)
+                                    self.titleArray.append(resTitle)
                                 }
                             }
                         }
                     }
                 }
+                
+                let pathArray = self.url
+                self.carouselView.delegate = self
+                self.carouselView.setCarouselData(paths: pathArray,  describedTitle: self.titleArray, isAutoScroll: true, timer: 5.0, defaultImage: "defaultImage")
+                //optional methods
+                self.carouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
+                self.carouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 5, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
+
             }
+            
+            group.leave()
         }
-        print(url)
         
-//        print(manager)
-//        print(url)
-//        let pathArray = [url]
-//        titleArray = ["picture 1","picture 2","picture 3","picture 4","picture 5"]
-//        carouselView.delegate = self
-//        carouselView.setCarouselData(paths: pathArray,  describedTitle: titleArray, isAutoScroll: true, timer: 5.0, defaultImage: "defaultImage")
-//        //optional methods
-//        carouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
-//        carouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 5, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
-        
+        group.notify(queue: DispatchQueue.main) {
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -80,16 +75,20 @@ class HomeController: UIViewController, AACarouselDelegate {
     }
     
     func didSelectCarouselView(_ view: AACarousel, _ index: Int) {
+        print("a")
         let alert = UIAlertView.init(title:"Alert" , message: titleArray[index], delegate: self, cancelButtonTitle: "OK")
         alert.show()
     }
     
     func callBackFirstDisplayView(_ imageView: UIImageView, _ url: [String], _ index: Int) {
-        
+        imageView.kf.setImage(with: URL(string: url[index]), placeholder: UIImage.init(named: "defaultImage"), options: [.transition(.fade(1))], progressBlock: nil, completionHandler: nil)
     }
     
     func downloadImages(_ url: String, _ index: Int) {
-        
+        let imageView = UIImageView()
+        imageView.kf.setImage(with: URL(string: url)!, placeholder: UIImage.init(named: "defaultImage"), options: [.transition(.fade(0))], progressBlock: nil, completionHandler: { (downloadImage, error, cacheType, url) in
+            self.carouselView.images[index] = downloadImage!
+        })
     }
     
     

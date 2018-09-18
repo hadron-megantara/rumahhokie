@@ -16,23 +16,27 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Alamofire (4.7.3)
+  - Kingfisher (4.9.0)
 
 DEPENDENCIES:
   - AACarousel
   - AFNetworking (~> 3.0)
   - Alamofire (~> 4.7)
+  - Kingfisher
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AACarousel
     - AFNetworking
     - Alamofire
+    - Kingfisher
 
 SPEC CHECKSUMS:
   AACarousel: 6131fa3650201a3ce10b6581621f3cade221b079
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
 
-PODFILE CHECKSUM: 26313463b6c7ab3dde180421efd9a79b868d4690
+PODFILE CHECKSUM: d5d8a02ad1cfc497aa61e6a4a33a1cb318d37dfd
 
 COCOAPODS: 1.5.3

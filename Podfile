@@ -8,6 +8,7 @@ target 'RumahHokie' do
   pod 'AFNetworking', '~> 3.0'
   pod 'AACarousel'
   pod 'Alamofire', '~> 4.7'
+  pod 'Kingfisher'
 
   # Pods for RumahHokie
 
