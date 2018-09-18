@@ -18,6 +18,23 @@ class HomeController: UIViewController, AACarouselDelegate {
     @IBOutlet var bannerMidRectangle: [UIImageView]!
     @IBOutlet var bannerMidSquare: [UIImageView]!
     
+    @IBAction func openPropertyList(_ sender: UIButton) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "propertyListView") as? PropertyListController
+        
+        if sender.tag == 1{
+            vc?.type = 1
+        } else if sender.tag == 2 {
+            vc?.type = 2
+        } else if sender.tag == 3 {
+            vc?.type = 3
+        } else if sender.tag == 4 {
+            vc?.type = 4
+        } else if sender.tag == 5 {
+            vc?.type = 5
+        }
+        
+        navigationController?.pushViewController(vc!, animated: true)
+    }
     
     var url = [String]()
     var titleArray = [String]()
@@ -25,9 +42,12 @@ class HomeController: UIViewController, AACarouselDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
+        
         loadTopBanner()
         
-        self.navigationController?.navigationBar.isHidden = true;
+        navigationController?.navigationBar.isHidden = true;
+        
         let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
         bottomMenu.addSubview(bottomMenuView)
     }

@@ -11,11 +11,24 @@ import UIKit
 
 class PropertyListController: UIViewController {
     @IBOutlet weak var bottomMenu: UIView!
+    var type: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if type == 1{
+            title = "Rumah"
+        } else if type == 2{
+            title = "Apartemen"
+        } else if type == 3{
+            title = "Properti Baru"
+        } else if type == 4{
+            title = "Komersial"
+        } else if type == 5{
+            title = "Tanah"
+        }
         
+        print(type)
     }
     
     override func didReceiveMemoryWarning() {
