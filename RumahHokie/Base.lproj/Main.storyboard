@@ -16,11 +16,11 @@
             <objects>
                 <viewController storyboardIdentifier="homeView" id="BYZ-38-t0r" customClass="HomeController" customModule="RumahHokie" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1700"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2b3-oI-gRq">
-                                <rect key="frame" x="0.0" y="64" width="375" height="1170"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="1570"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64n-0i-jZh">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="361"/>
@@ -184,21 +184,21 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiW-R9-249">
                                         <rect key="frame" x="0.0" y="427" width="375" height="493"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MidBanner-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="hLL-WZ-Q2g">
+                                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MidBanner-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="hLL-WZ-Q2g">
                                                 <rect key="frame" x="37" y="8" width="300" height="140"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="8qI-Tl-NwK"/>
                                                     <constraint firstAttribute="height" constant="140" id="N4y-sE-Xka"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MidBanner-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="8jG-y7-BVr">
+                                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MidBanner-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="8jG-y7-BVr">
                                                 <rect key="frame" x="37" y="164" width="300" height="140"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="140" id="ANJ-SC-YR8"/>
                                                     <constraint firstAttribute="width" constant="300" id="KcP-sW-zjc"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MidBanner-3.png" translatesAutoresizingMaskIntoConstraints="NO" id="nGf-3L-B7F">
+                                            <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MidBanner-3.png" translatesAutoresizingMaskIntoConstraints="NO" id="nGf-3L-B7F">
                                                 <rect key="frame" x="37" y="320" width="300" height="140"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="300" id="s6V-7s-sRO"/>
@@ -218,10 +218,105 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ED-Y1-8jt">
-                                        <rect key="frame" x="0.0" y="928" width="375" height="140"/>
+                                        <rect key="frame" x="0.0" y="928" width="375" height="452"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EcM-BJ-RA5">
+                                                <rect key="frame" x="43.5" y="8" width="288" height="140"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SquareBanner-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="1RQ-Eu-t7z">
+                                                        <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="140" id="Zv9-9T-W3L"/>
+                                                            <constraint firstAttribute="height" constant="140" id="miP-vL-cOh"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SquareBanner-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="hTj-GI-AXb">
+                                                        <rect key="frame" x="148" y="0.0" width="140" height="140"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="140" id="Zfc-7q-nna"/>
+                                                            <constraint firstAttribute="height" constant="140" id="jyp-2e-VUJ"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="hTj-GI-AXb" secondAttribute="trailing" id="9lq-yb-gjX"/>
+                                                    <constraint firstItem="hTj-GI-AXb" firstAttribute="top" secondItem="EcM-BJ-RA5" secondAttribute="top" id="SxG-D0-4du"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1RQ-Eu-t7z" secondAttribute="bottom" id="fbD-1K-TO1"/>
+                                                    <constraint firstItem="1RQ-Eu-t7z" firstAttribute="leading" secondItem="EcM-BJ-RA5" secondAttribute="leading" id="g7J-Gc-TjL"/>
+                                                    <constraint firstItem="1RQ-Eu-t7z" firstAttribute="top" secondItem="EcM-BJ-RA5" secondAttribute="top" id="jWt-sw-bM3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="hTj-GI-AXb" secondAttribute="bottom" id="l8h-UC-jmv"/>
+                                                    <constraint firstItem="hTj-GI-AXb" firstAttribute="leading" secondItem="1RQ-Eu-t7z" secondAttribute="trailing" constant="8" id="vCy-S6-1mH"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Teo-PS-8ep">
+                                                <rect key="frame" x="43" y="156" width="288" height="140"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SquareBanner-3.png" translatesAutoresizingMaskIntoConstraints="NO" id="cHs-9z-SSw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="140" id="1Ot-LX-kaa"/>
+                                                            <constraint firstAttribute="width" constant="140" id="tDF-q7-Kh5"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SquareBanner-4.png" translatesAutoresizingMaskIntoConstraints="NO" id="FXB-Vy-rQB">
+                                                        <rect key="frame" x="148" y="0.0" width="140" height="140"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="140" id="Nts-b5-Rm7"/>
+                                                            <constraint firstAttribute="height" constant="140" id="qZu-yV-W11"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="cHs-9z-SSw" firstAttribute="leading" secondItem="Teo-PS-8ep" secondAttribute="leading" id="7ew-Vj-aSJ"/>
+                                                    <constraint firstAttribute="bottom" secondItem="cHs-9z-SSw" secondAttribute="bottom" id="GWz-Go-1zo"/>
+                                                    <constraint firstAttribute="bottom" secondItem="FXB-Vy-rQB" secondAttribute="bottom" id="LOr-5Y-cHN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="FXB-Vy-rQB" secondAttribute="trailing" id="QlR-tX-fJ2"/>
+                                                    <constraint firstItem="FXB-Vy-rQB" firstAttribute="leading" secondItem="cHs-9z-SSw" secondAttribute="trailing" constant="8" id="q2H-VX-w9d"/>
+                                                    <constraint firstItem="FXB-Vy-rQB" firstAttribute="top" secondItem="Teo-PS-8ep" secondAttribute="top" id="xKK-fd-SfG"/>
+                                                    <constraint firstItem="cHs-9z-SSw" firstAttribute="top" secondItem="Teo-PS-8ep" secondAttribute="top" id="zqF-za-BFe"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ooy-le-fZ2">
+                                                <rect key="frame" x="43" y="304" width="288" height="140"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SquareBanner-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="SRz-K4-nEG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="140" id="hhD-wi-Hk2"/>
+                                                            <constraint firstAttribute="height" constant="140" id="w1b-WE-q6G"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <imageView userInteractionEnabled="NO" tag="6" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SquareBanner-5.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kqn-fP-okK">
+                                                        <rect key="frame" x="148" y="0.0" width="140" height="140"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="140" id="KbM-rm-Dw5"/>
+                                                            <constraint firstAttribute="height" constant="140" id="bF8-WC-vqq"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="SRz-K4-nEG" firstAttribute="top" secondItem="Ooy-le-fZ2" secondAttribute="top" id="FtN-xg-OBh"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Kqn-fP-okK" secondAttribute="bottom" id="HMq-Au-JXE"/>
+                                                    <constraint firstItem="SRz-K4-nEG" firstAttribute="leading" secondItem="Ooy-le-fZ2" secondAttribute="leading" id="Xe6-tS-kfF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="SRz-K4-nEG" secondAttribute="bottom" id="c0c-go-beS"/>
+                                                    <constraint firstItem="Kqn-fP-okK" firstAttribute="leading" secondItem="SRz-K4-nEG" secondAttribute="trailing" constant="8" id="gH1-s0-xLa"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Kqn-fP-okK" secondAttribute="trailing" id="lER-xo-H9C"/>
+                                                    <constraint firstItem="Kqn-fP-okK" firstAttribute="top" secondItem="Ooy-le-fZ2" secondAttribute="top" id="qdz-kq-fbH"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="140" id="RAG-Sf-OGA"/>
+                                            <constraint firstItem="Ooy-le-fZ2" firstAttribute="centerX" secondItem="8ED-Y1-8jt" secondAttribute="centerX" id="2SL-Cp-YgJ"/>
+                                            <constraint firstItem="EcM-BJ-RA5" firstAttribute="centerX" secondItem="8ED-Y1-8jt" secondAttribute="centerX" id="IZ8-0q-FXV"/>
+                                            <constraint firstItem="Teo-PS-8ep" firstAttribute="top" secondItem="EcM-BJ-RA5" secondAttribute="bottom" constant="8" id="Rad-fI-hYY"/>
+                                            <constraint firstItem="Ooy-le-fZ2" firstAttribute="top" secondItem="Teo-PS-8ep" secondAttribute="bottom" constant="8" id="Wf1-Nr-H27"/>
+                                            <constraint firstItem="Teo-PS-8ep" firstAttribute="centerX" secondItem="8ED-Y1-8jt" secondAttribute="centerX" id="ZU1-ZK-deC"/>
+                                            <constraint firstItem="EcM-BJ-RA5" firstAttribute="top" secondItem="8ED-Y1-8jt" secondAttribute="top" constant="8" id="k4Z-tc-Ct7"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ooy-le-fZ2" secondAttribute="bottom" constant="8" id="uD5-Cw-kid"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -243,7 +338,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PKY-7f-EmG" customClass="BottomMenu" customModule="RumahHokie" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="1234" width="375" height="66"/>
+                                <rect key="frame" x="0.0" y="1634" width="375" height="66"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jiM-WF-wdj">
                                         <rect key="frame" x="0.0" y="58" width="375" height="8"/>
@@ -276,10 +371,24 @@
                     </view>
                     <navigationItem key="navigationItem" id="SBX-C7-e4y"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1300"/>
+                    <size key="freeformSize" width="375" height="1700"/>
                     <connections>
                         <outlet property="bottomMenu" destination="PKY-7f-EmG" id="pR9-ek-GXs"/>
                         <outlet property="carouselView" destination="9f7-OL-6au" id="w5t-jN-0Qs"/>
+                        <outletCollection property="TopMenuButton" destination="8th-3F-qAu" collectionClass="NSMutableArray" id="DTH-Ch-cmx"/>
+                        <outletCollection property="TopMenuButton" destination="gA3-Ew-yQu" collectionClass="NSMutableArray" id="mnt-OC-5xc"/>
+                        <outletCollection property="TopMenuButton" destination="2hK-qO-E4H" collectionClass="NSMutableArray" id="vfs-z4-zqc"/>
+                        <outletCollection property="TopMenuButton" destination="Ugd-Bt-TnQ" collectionClass="NSMutableArray" id="LzJ-Rk-VWM"/>
+                        <outletCollection property="TopMenuButton" destination="y1t-eJ-zIK" collectionClass="NSMutableArray" id="lAF-3R-DT1"/>
+                        <outletCollection property="bannerMidSquare" destination="1RQ-Eu-t7z" collectionClass="NSMutableArray" id="vv9-YB-TTD"/>
+                        <outletCollection property="bannerMidSquare" destination="hTj-GI-AXb" collectionClass="NSMutableArray" id="qbA-aC-Kqk"/>
+                        <outletCollection property="bannerMidSquare" destination="cHs-9z-SSw" collectionClass="NSMutableArray" id="MSv-ci-eXA"/>
+                        <outletCollection property="bannerMidSquare" destination="FXB-Vy-rQB" collectionClass="NSMutableArray" id="ICh-hr-4Oa"/>
+                        <outletCollection property="bannerMidSquare" destination="SRz-K4-nEG" collectionClass="NSMutableArray" id="qKS-0f-ibK"/>
+                        <outletCollection property="bannerMidSquare" destination="Kqn-fP-okK" collectionClass="NSMutableArray" id="Ki5-Ic-aJ8"/>
+                        <outletCollection property="bannerMidRectangle" destination="hLL-WZ-Q2g" collectionClass="NSMutableArray" id="1oG-Mp-hKd"/>
+                        <outletCollection property="bannerMidRectangle" destination="8jG-y7-BVr" collectionClass="NSMutableArray" id="yVI-Ve-qRk"/>
+                        <outletCollection property="bannerMidRectangle" destination="nGf-3L-B7F" collectionClass="NSMutableArray" id="P50-dU-eV1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -565,6 +674,11 @@
         <image name="MidBanner-1.png" width="574" height="277"/>
         <image name="MidBanner-2.png" width="574" height="277"/>
         <image name="MidBanner-3.png" width="573" height="277"/>
+        <image name="SquareBanner-1.png" width="277" height="277"/>
+        <image name="SquareBanner-2.png" width="277" height="277"/>
+        <image name="SquareBanner-3.png" width="277" height="277"/>
+        <image name="SquareBanner-4.png" width="277" height="277"/>
+        <image name="SquareBanner-5.png" width="277" height="277"/>
         <image name="rumahhokie.png" width="770" height="204"/>
     </resources>
 </document>
