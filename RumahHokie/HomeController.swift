@@ -74,8 +74,7 @@ class HomeController: UIViewController, AACarouselDelegate {
     }
     
     func didSelectCarouselView(_ view: AACarousel, _ index: Int) {
-        let alert = UIAlertView.init(title:"Alert" , message: titleArray[index], delegate: self, cancelButtonTitle: "OK")
-        alert.show()
+        UIApplication.shared.open(URL(string: "http://rumahhokie.com")!, options: [:])
     }
     
     func callBackFirstDisplayView(_ imageView: UIImageView, _ url: [String], _ index: Int) {
