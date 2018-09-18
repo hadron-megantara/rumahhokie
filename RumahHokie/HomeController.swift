@@ -14,7 +14,6 @@ import Kingfisher
 class HomeController: UIViewController, AACarouselDelegate {
     @IBOutlet weak var bottomMenu: UIView!
     @IBOutlet weak var carouselView: AACarousel!
-    @IBOutlet var bannerMid: [UIView]!
     
     var url = [String]()
     var titleArray = [String]()

@@ -180,39 +180,36 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wiW-R9-249">
                                 <rect key="frame" x="8" y="491" width="359" height="509"/>
                                 <subviews>
-                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uQc-bD-UST">
-                                        <rect key="frame" x="29.5" y="8" width="300" height="140"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MidBanner-1.png" translatesAutoresizingMaskIntoConstraints="NO" id="hLL-WZ-Q2g">
+                                        <rect key="frame" x="29" y="8" width="300" height="140"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="140" id="bdc-Q7-WuN"/>
-                                            <constraint firstAttribute="width" constant="300" id="jS6-TP-iaj"/>
+                                            <constraint firstAttribute="width" constant="300" id="8qI-Tl-NwK"/>
+                                            <constraint firstAttribute="height" constant="140" id="N4y-sE-Xka"/>
                                         </constraints>
-                                    </view>
-                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A3b-ix-jw9">
-                                        <rect key="frame" x="29" y="156" width="300" height="140"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MidBanner-2.png" translatesAutoresizingMaskIntoConstraints="NO" id="8jG-y7-BVr">
+                                        <rect key="frame" x="29" y="164" width="300" height="140"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="140" id="TPI-FB-KG3"/>
-                                            <constraint firstAttribute="width" constant="300" id="rVo-46-7D5"/>
+                                            <constraint firstAttribute="height" constant="140" id="ANJ-SC-YR8"/>
+                                            <constraint firstAttribute="width" constant="300" id="KcP-sW-zjc"/>
                                         </constraints>
-                                    </view>
-                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tVR-Qf-iFO">
-                                        <rect key="frame" x="29" y="304" width="300" height="140"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MidBanner-3.png" translatesAutoresizingMaskIntoConstraints="NO" id="nGf-3L-B7F">
+                                        <rect key="frame" x="29" y="320" width="300" height="140"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="300" id="LFA-5y-w08"/>
-                                            <constraint firstAttribute="height" constant="140" id="MwI-bk-Cmp"/>
+                                            <constraint firstAttribute="width" constant="300" id="s6V-7s-sRO"/>
+                                            <constraint firstAttribute="height" constant="140" id="yce-MG-VWe"/>
                                         </constraints>
-                                    </view>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="uQc-bD-UST" firstAttribute="top" secondItem="wiW-R9-249" secondAttribute="top" constant="8" id="0xl-8T-z4S"/>
-                                    <constraint firstItem="uQc-bD-UST" firstAttribute="centerX" secondItem="wiW-R9-249" secondAttribute="centerX" id="99j-bl-Ag7"/>
-                                    <constraint firstItem="tVR-Qf-iFO" firstAttribute="top" secondItem="A3b-ix-jw9" secondAttribute="bottom" constant="8" id="TwT-GU-9bp"/>
-                                    <constraint firstItem="A3b-ix-jw9" firstAttribute="top" secondItem="uQc-bD-UST" secondAttribute="bottom" constant="8" id="cXw-Hk-lxy"/>
-                                    <constraint firstItem="tVR-Qf-iFO" firstAttribute="centerX" secondItem="wiW-R9-249" secondAttribute="centerX" id="iBw-tw-KUE"/>
-                                    <constraint firstItem="A3b-ix-jw9" firstAttribute="centerX" secondItem="wiW-R9-249" secondAttribute="centerX" id="z1O-JA-fgo"/>
+                                    <constraint firstItem="nGf-3L-B7F" firstAttribute="top" secondItem="8jG-y7-BVr" secondAttribute="bottom" constant="16" id="ESz-6H-dpu"/>
+                                    <constraint firstItem="8jG-y7-BVr" firstAttribute="centerX" secondItem="wiW-R9-249" secondAttribute="centerX" id="F2d-Ti-SmL"/>
+                                    <constraint firstItem="nGf-3L-B7F" firstAttribute="centerX" secondItem="wiW-R9-249" secondAttribute="centerX" id="VEC-TX-E10"/>
+                                    <constraint firstItem="8jG-y7-BVr" firstAttribute="top" secondItem="hLL-WZ-Q2g" secondAttribute="bottom" constant="16" id="azU-gd-QCk"/>
+                                    <constraint firstItem="hLL-WZ-Q2g" firstAttribute="centerX" secondItem="wiW-R9-249" secondAttribute="centerX" id="nWO-fO-afG"/>
+                                    <constraint firstItem="hLL-WZ-Q2g" firstAttribute="top" secondItem="wiW-R9-249" secondAttribute="top" constant="8" id="zlk-d0-UBU"/>
                                 </constraints>
                             </view>
                             <searchBar contentMode="redraw" placeholder="Masukkan Kata Kunci" translatesAutoresizingMaskIntoConstraints="NO" id="W1Y-IO-Gxh">
@@ -268,9 +265,6 @@
                     <connections>
                         <outlet property="bottomMenu" destination="PKY-7f-EmG" id="pR9-ek-GXs"/>
                         <outlet property="carouselView" destination="9f7-OL-6au" id="w5t-jN-0Qs"/>
-                        <outletCollection property="bannerMid" destination="uQc-bD-UST" collectionClass="NSMutableArray" id="WWY-5M-DGa"/>
-                        <outletCollection property="bannerMid" destination="A3b-ix-jw9" collectionClass="NSMutableArray" id="89u-O6-UKE"/>
-                        <outletCollection property="bannerMid" destination="tVR-Qf-iFO" collectionClass="NSMutableArray" id="nxN-dL-P2g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -424,27 +418,27 @@
                                 <rect key="frame" x="0.0" y="77.5" width="375" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsF-1a-ca0">
-                                        <rect key="frame" x="5" y="0.0" width="69.5" height="34"/>
+                                        <rect key="frame" x="5" y="0.0" width="70" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Properti"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0u7-AI-2ck">
-                                        <rect key="frame" x="154.5" y="0.0" width="69.5" height="34"/>
+                                        <rect key="frame" x="155.5" y="0.0" width="69.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Terpopuler"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6G1-KT-9DJ">
-                                        <rect key="frame" x="229" y="0.0" width="70.5" height="34"/>
+                                        <rect key="frame" x="230" y="0.0" width="70" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Galeri"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGR-Ol-xXo">
-                                        <rect key="frame" x="299.5" y="0.0" width="70.5" height="34"/>
+                                        <rect key="frame" x="300" y="0.0" width="70" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Video"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Y9-AS-yoS">
-                                        <rect key="frame" x="79.5" y="0.0" width="70" height="34"/>
+                                        <rect key="frame" x="80" y="0.0" width="70.5" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Terbaru"/>
                                     </button>
@@ -553,6 +547,9 @@
         <image name="Icon Apps_apartemen.png" width="535" height="534"/>
         <image name="Icon Apps_rumah.png" width="128" height="128"/>
         <image name="Icon Apps_tanah_revisi.png" width="512" height="512"/>
+        <image name="MidBanner-1.png" width="574" height="277"/>
+        <image name="MidBanner-2.png" width="574" height="277"/>
+        <image name="MidBanner-3.png" width="573" height="277"/>
         <image name="rumahhokie.png" width="770" height="204"/>
     </resources>
 </document>

@@ -16,6 +16,9 @@
 		79470D1D2147640E007E5090 /* RumahHokieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D1C2147640E007E5090 /* RumahHokieTests.swift */; };
 		79470D282147640E007E5090 /* RumahHokieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D272147640E007E5090 /* RumahHokieUITests.swift */; };
 		79470D362149279A007E5090 /* BottomMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79470D352149279A007E5090 /* BottomMenu.xib */; };
+		796B5E07215158ED008BB1C3 /* MidBanner-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 796B5E04215158ED008BB1C3 /* MidBanner-2.png */; };
+		796B5E08215158ED008BB1C3 /* MidBanner-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 796B5E05215158ED008BB1C3 /* MidBanner-1.png */; };
+		796B5E09215158ED008BB1C3 /* MidBanner-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 796B5E06215158ED008BB1C3 /* MidBanner-3.png */; };
 		79815AC5214EC1ED00238433 /* CoreAPi.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC4214EC1ED00238433 /* CoreAPi.m */; };
 		79815AC7214EC40C00238433 /* CoreEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC6214EC40C00238433 /* CoreEndpoints.m */; };
 		79815ACB214ED15800238433 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815ACA214ED15800238433 /* News.m */; };
@@ -91,6 +94,9 @@
 		79470D272147640E007E5090 /* RumahHokieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumahHokieUITests.swift; sourceTree = "<group>"; };
 		79470D292147640E007E5090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79470D352149279A007E5090 /* BottomMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenu.xib; sourceTree = "<group>"; };
+		796B5E04215158ED008BB1C3 /* MidBanner-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MidBanner-2.png"; sourceTree = "<group>"; };
+		796B5E05215158ED008BB1C3 /* MidBanner-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MidBanner-1.png"; sourceTree = "<group>"; };
+		796B5E06215158ED008BB1C3 /* MidBanner-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MidBanner-3.png"; sourceTree = "<group>"; };
 		79815AC4214EC1ED00238433 /* CoreAPi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAPi.m; sourceTree = "<group>"; };
 		79815AC6214EC40C00238433 /* CoreEndpoints.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreEndpoints.m; sourceTree = "<group>"; };
 		79815AC8214EC41B00238433 /* CoreEndPoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreEndPoints.h; sourceTree = "<group>"; };
@@ -251,6 +257,16 @@
 			path = RumahHokieUITests;
 			sourceTree = "<group>";
 		};
+		796B5E03215158C9008BB1C3 /* Img */ = {
+			isa = PBXGroup;
+			children = (
+				796B5E05215158ED008BB1C3 /* MidBanner-1.png */,
+				796B5E04215158ED008BB1C3 /* MidBanner-2.png */,
+				796B5E06215158ED008BB1C3 /* MidBanner-3.png */,
+			);
+			path = Img;
+			sourceTree = "<group>";
+		};
 		79815AC3214EC1AD00238433 /* CoreApi */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +290,7 @@
 		79DE9B46214A6A46000B4147 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				796B5E03215158C9008BB1C3 /* Img */,
 				79DE9B85214E6C5B000B4147 /* fa-brands-400.ttf */,
 				79DE9B47214A6A52000B4147 /* fontawesome-webfont.ttf */,
 				79DE9B83214E6C5A000B4147 /* icomoon.ttf */,
@@ -434,6 +451,7 @@
 			files = (
 				79DE9B7C214CE3EF000B4147 /* Icon Apps_Properti Baru.png in Resources */,
 				79DE9B4B214A7518000B4147 /* fontawesome-webfont.ttf in Resources */,
+				796B5E09215158ED008BB1C3 /* MidBanner-3.png in Resources */,
 				79DE9B80214CE3EF000B4147 /* bathroom.png in Resources */,
 				79DE9B70214CE3EF000B4147 /* newspaper.png in Resources */,
 				79470D122147640E007E5090 /* LaunchScreen.storyboard in Resources */,
@@ -448,7 +466,9 @@
 				79DE9B71214CE3EF000B4147 /* man_with_tie.xml in Resources */,
 				79470D0D21476409007E5090 /* Main.storyboard in Resources */,
 				79DE9B7D214CE3EF000B4147 /* Icon Apps_tanah_revisi.svg in Resources */,
+				796B5E08215158ED008BB1C3 /* MidBanner-1.png in Resources */,
 				79DE9B74214CE3EF000B4147 /* Icon Apps_apartemen.png in Resources */,
+				796B5E07215158ED008BB1C3 /* MidBanner-2.png in Resources */,
 				79DE9B55214A7BE7000B4147 /* rumahhokie-icon.png in Resources */,
 				79DE9B78214CE3EF000B4147 /* youtube.png in Resources */,
 				79DE9B4F214A7B97000B4147 /* Loading Screen.jpg in Resources */,
