@@ -55,7 +55,6 @@ class HomeController: UIViewController, AACarouselDelegate {
                 let pathArray = self.url
                 self.carouselView.delegate = self
                 self.carouselView.setCarouselData(paths: pathArray,  describedTitle: self.titleArray, isAutoScroll: true, timer: 5.0, defaultImage: "defaultImage")
-                //optional methods
                 self.carouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
                 self.carouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 5, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
 
@@ -75,7 +74,6 @@ class HomeController: UIViewController, AACarouselDelegate {
     }
     
     func didSelectCarouselView(_ view: AACarousel, _ index: Int) {
-        print("a")
         let alert = UIAlertView.init(title:"Alert" , message: titleArray[index], delegate: self, cancelButtonTitle: "OK")
         alert.show()
     }
@@ -86,7 +84,9 @@ class HomeController: UIViewController, AACarouselDelegate {
     
     func downloadImages(_ url: String, _ index: Int) {
         let imageView = UIImageView()
-        imageView.kf.setImage(with: URL(string: url)!, placeholder: UIImage.init(named: "defaultImage"), options: [.transition(.fade(0))], progressBlock: nil, completionHandler: { (downloadImage, error, cacheType, url) in
+        let urlAppended = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
+        imageView.kf.setImage(with: URL(string: urlAppended!)!, placeholder: UIImage.init(named: "defaultImage"), options: [.transition(.fade(0))], progressBlock: nil, completionHandler: { (downloadImage, error, cacheType, url) in
             self.carouselView.images[index] = downloadImage!
         })
     }

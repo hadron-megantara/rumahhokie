@@ -54,13 +54,13 @@ extension Kingfisher where Base: ImageView {
      `completionHandler` will be called with both `error` and `image` being `nil`.
      */
     @discardableResult
-    public func setImage(with resource: Resource?,
+    public func setImage(with resource: Resource? = nil,
                          placeholder: Placeholder? = nil,
                          options: KingfisherOptionsInfo? = nil,
                          progressBlock: DownloadProgressBlock? = nil,
                          completionHandler: CompletionHandler? = nil) -> RetrieveImageTask
     {
-        print(resource)
+        
         guard let resource = resource else {
             self.placeholder = placeholder
             setWebURL(nil)
