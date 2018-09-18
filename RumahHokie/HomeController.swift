@@ -55,9 +55,9 @@ class HomeController: UIViewController, AACarouselDelegate {
                 let pathArray = self.url
                 self.carouselView.delegate = self
                 self.carouselView.setCarouselData(paths: pathArray,  describedTitle: self.titleArray, isAutoScroll: true, timer: 5.0, defaultImage: "defaultImage")
-                self.carouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
-                self.carouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 5, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
-
+                self.carouselView.setCarouselOpaque(layer: true, describedTitle: true, pageIndicator: false)
+                self.carouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 4, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
+                
             }
             
             group.leave()
