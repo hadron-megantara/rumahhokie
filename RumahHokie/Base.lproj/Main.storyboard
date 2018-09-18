@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,7 +27,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="64n-0i-jZh">
-                                <rect key="frame" x="0.0" y="64" width="375" height="344"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="348"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rumahhokie.png" translatesAutoresizingMaskIntoConstraints="NO" id="I1Q-zP-u5d">
                                         <rect key="frame" x="108" y="0.0" width="160" height="40"/>
@@ -38,68 +37,122 @@
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaC-K1-2A0">
-                                        <rect key="frame" x="8" y="252" width="359" height="76"/>
+                                        <rect key="frame" x="8" y="252" width="359" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8th-3F-qAu">
-                                                <rect key="frame" x="8" y="8" width="60" height="60"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ds-fG-1AB">
+                                                <rect key="frame" x="0.0" y="8" width="72" height="64"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8th-3F-qAu">
+                                                        <rect key="frame" x="6" y="2" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="4XD-85-hMR"/>
+                                                            <constraint firstAttribute="width" constant="60" id="mXX-2l-d9v"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="Icon Apps_rumah.png"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="4XD-85-hMR"/>
-                                                    <constraint firstAttribute="width" constant="60" id="mXX-2l-d9v"/>
+                                                    <constraint firstItem="8th-3F-qAu" firstAttribute="centerX" secondItem="1ds-fG-1AB" secondAttribute="centerX" id="Phl-65-PrU"/>
+                                                    <constraint firstItem="8th-3F-qAu" firstAttribute="centerY" secondItem="1ds-fG-1AB" secondAttribute="centerY" id="hPR-o2-l3M"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="Icon Apps_rumah.png"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gA3-Ew-yQu">
-                                                <rect key="frame" x="76" y="8" width="60" height="60"/>
-                                                <state key="normal" backgroundImage="Icon Apps_apartemen.png"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hK-qO-E4H">
-                                                <rect key="frame" x="149" y="8" width="60" height="60"/>
-                                                <state key="normal" backgroundImage="Icon Apps_Properti Baru.png"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1t-eJ-zIK">
-                                                <rect key="frame" x="291" y="8" width="60" height="60"/>
-                                                <state key="normal" backgroundImage="Icon Apps_tanah_revisi.png"/>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugd-Bt-TnQ">
-                                                <rect key="frame" x="217" y="8" width="60" height="60"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kud-Bx-BQw">
+                                                <rect key="frame" x="72" y="8" width="71.5" height="64"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gA3-Ew-yQu">
+                                                        <rect key="frame" x="5" y="2" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="GQh-3M-7Sf"/>
+                                                            <constraint firstAttribute="width" constant="60" id="weC-Mg-MSF"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="Icon Apps_apartemen.png"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="pJc-Sv-5hk"/>
+                                                    <constraint firstItem="gA3-Ew-yQu" firstAttribute="centerX" secondItem="Kud-Bx-BQw" secondAttribute="centerX" id="93h-dI-pYB"/>
+                                                    <constraint firstItem="gA3-Ew-yQu" firstAttribute="centerY" secondItem="Kud-Bx-BQw" secondAttribute="centerY" id="aBm-Wh-c88"/>
                                                 </constraints>
-                                                <state key="normal" backgroundImage="Icon Apps_Komersial.png"/>
-                                            </button>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UGu-0T-2lX">
+                                                <rect key="frame" x="143.5" y="8" width="72" height="64"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hK-qO-E4H">
+                                                        <rect key="frame" x="6.5" y="2" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="Qbd-NN-12g"/>
+                                                            <constraint firstAttribute="height" constant="60" id="VCQ-N8-b1l"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="Icon Apps_Properti Baru.png"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="2hK-qO-E4H" firstAttribute="centerX" secondItem="UGu-0T-2lX" secondAttribute="centerX" id="J6M-nZ-BBv"/>
+                                                    <constraint firstItem="2hK-qO-E4H" firstAttribute="centerY" secondItem="UGu-0T-2lX" secondAttribute="centerY" id="tYf-R8-Lep"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmL-Vf-ZGU">
+                                                <rect key="frame" x="215.5" y="8" width="71.5" height="64"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ugd-Bt-TnQ">
+                                                        <rect key="frame" x="6" y="2" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="pJc-Sv-5hk"/>
+                                                            <constraint firstAttribute="height" constant="60" id="ruR-1e-F8c"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="Icon Apps_Komersial.png"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="centerX" secondItem="qmL-Vf-ZGU" secondAttribute="centerX" id="kUH-HT-cLJ"/>
+                                                    <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="centerY" secondItem="qmL-Vf-ZGU" secondAttribute="centerY" id="tpT-RL-Q5j"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GK9-mP-aUN">
+                                                <rect key="frame" x="287" y="8" width="72" height="64"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1t-eJ-zIK">
+                                                        <rect key="frame" x="6.5" y="2" width="60" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="60" id="9iM-iy-Lrr"/>
+                                                            <constraint firstAttribute="height" constant="60" id="odo-B8-5gC"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="Icon Apps_tanah_revisi.png"/>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstItem="y1t-eJ-zIK" firstAttribute="centerX" secondItem="GK9-mP-aUN" secondAttribute="centerX" id="Hd7-YX-m98"/>
+                                                    <constraint firstItem="y1t-eJ-zIK" firstAttribute="centerY" secondItem="GK9-mP-aUN" secondAttribute="centerY" id="QNm-0r-Y8g"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="2hK-qO-E4H" firstAttribute="top" secondItem="EaC-K1-2A0" secondAttribute="top" constant="8" id="49t-kr-aia"/>
-                                            <constraint firstAttribute="bottom" secondItem="y1t-eJ-zIK" secondAttribute="bottom" constant="8" id="5uW-Qp-RBU"/>
-                                            <constraint firstItem="2hK-qO-E4H" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gA3-Ew-yQu" secondAttribute="trailing" constant="8" id="6JK-xV-YJO"/>
-                                            <constraint firstAttribute="trailing" secondItem="y1t-eJ-zIK" secondAttribute="trailing" constant="8" id="6PS-Nf-hxH"/>
-                                            <constraint firstItem="gA3-Ew-yQu" firstAttribute="height" secondItem="8th-3F-qAu" secondAttribute="height" id="DMO-Al-Fho"/>
-                                            <constraint firstItem="y1t-eJ-zIK" firstAttribute="leading" secondItem="Ugd-Bt-TnQ" secondAttribute="trailing" constant="14" id="HZc-Lf-UqW"/>
-                                            <constraint firstItem="gA3-Ew-yQu" firstAttribute="top" secondItem="EaC-K1-2A0" secondAttribute="top" constant="8" id="IRk-NT-aT4"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ugd-Bt-TnQ" secondAttribute="trailing" constant="82" id="Ipb-Mq-URM"/>
-                                            <constraint firstAttribute="height" constant="76" id="KEH-s5-4dK"/>
-                                            <constraint firstAttribute="bottom" secondItem="2hK-qO-E4H" secondAttribute="bottom" constant="8" id="NaG-kg-1lQ"/>
-                                            <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="bottom" secondItem="2hK-qO-E4H" secondAttribute="bottom" id="Tgt-gJ-iOK"/>
-                                            <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="baseline" secondItem="y1t-eJ-zIK" secondAttribute="baseline" id="blX-yq-WuP"/>
-                                            <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="firstBaseline" secondItem="y1t-eJ-zIK" secondAttribute="firstBaseline" id="c3b-4l-rnO"/>
-                                            <constraint firstItem="gA3-Ew-yQu" firstAttribute="leading" secondItem="8th-3F-qAu" secondAttribute="trailing" constant="8" id="ebX-PE-BJf"/>
-                                            <constraint firstItem="y1t-eJ-zIK" firstAttribute="top" secondItem="EaC-K1-2A0" secondAttribute="top" constant="8" id="fqE-aZ-9BC"/>
-                                            <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="baseline" secondItem="2hK-qO-E4H" secondAttribute="baseline" id="ghD-hc-tpq"/>
-                                            <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="firstBaseline" secondItem="gA3-Ew-yQu" secondAttribute="firstBaseline" id="iqO-1r-TKu"/>
-                                            <constraint firstItem="2hK-qO-E4H" firstAttribute="height" secondItem="gA3-Ew-yQu" secondAttribute="height" id="kIm-gh-m94"/>
-                                            <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="baseline" secondItem="8th-3F-qAu" secondAttribute="baseline" id="mTG-gq-JqK"/>
-                                            <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="firstBaseline" secondItem="8th-3F-qAu" secondAttribute="firstBaseline" id="otG-Jf-Rlb"/>
-                                            <constraint firstAttribute="bottom" secondItem="gA3-Ew-yQu" secondAttribute="bottom" constant="8" id="phd-T4-Dhi"/>
-                                            <constraint firstItem="8th-3F-qAu" firstAttribute="leading" secondItem="EaC-K1-2A0" secondAttribute="leading" constant="8" id="r9k-Jc-H8m"/>
-                                            <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="leading" secondItem="2hK-qO-E4H" secondAttribute="trailing" constant="8" symbolic="YES" id="rRr-jI-Rh0"/>
-                                            <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="top" secondItem="2hK-qO-E4H" secondAttribute="top" id="rn8-rU-J3T"/>
-                                            <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="firstBaseline" secondItem="2hK-qO-E4H" secondAttribute="firstBaseline" id="tsK-Py-ZRh"/>
-                                            <constraint firstItem="2hK-qO-E4H" firstAttribute="width" secondItem="gA3-Ew-yQu" secondAttribute="width" id="uNm-xf-QEh"/>
-                                            <constraint firstAttribute="bottom" secondItem="8th-3F-qAu" secondAttribute="bottom" constant="8" id="uRh-El-HsQ"/>
-                                            <constraint firstItem="Ugd-Bt-TnQ" firstAttribute="baseline" secondItem="gA3-Ew-yQu" secondAttribute="baseline" id="x0J-2X-10l"/>
-                                            <constraint firstItem="8th-3F-qAu" firstAttribute="top" secondItem="EaC-K1-2A0" secondAttribute="top" constant="8" id="yTA-o4-0Hy"/>
-                                            <constraint firstItem="gA3-Ew-yQu" firstAttribute="width" secondItem="8th-3F-qAu" secondAttribute="width" id="zeH-zu-lJp"/>
+                                            <constraint firstAttribute="bottom" secondItem="1ds-fG-1AB" secondAttribute="bottom" constant="8" id="15Q-cS-7Ya"/>
+                                            <constraint firstItem="Kud-Bx-BQw" firstAttribute="width" secondItem="UGu-0T-2lX" secondAttribute="width" id="2Dd-VH-vy4"/>
+                                            <constraint firstItem="Kud-Bx-BQw" firstAttribute="leading" secondItem="1ds-fG-1AB" secondAttribute="trailing" id="8B2-nr-uNt"/>
+                                            <constraint firstAttribute="bottom" secondItem="Kud-Bx-BQw" secondAttribute="bottom" constant="8" id="8BD-6q-8Ev"/>
+                                            <constraint firstItem="1ds-fG-1AB" firstAttribute="leading" secondItem="EaC-K1-2A0" secondAttribute="leading" id="DO1-Vk-eLH"/>
+                                            <constraint firstItem="Kud-Bx-BQw" firstAttribute="top" secondItem="EaC-K1-2A0" secondAttribute="top" constant="8" id="ELp-Te-ZsC"/>
+                                            <constraint firstItem="qmL-Vf-ZGU" firstAttribute="leading" secondItem="UGu-0T-2lX" secondAttribute="trailing" id="GCv-EO-k0R"/>
+                                            <constraint firstAttribute="bottom" secondItem="GK9-mP-aUN" secondAttribute="bottom" constant="8" id="K89-Cy-VpV"/>
+                                            <constraint firstAttribute="height" constant="80" id="KEH-s5-4dK"/>
+                                            <constraint firstAttribute="bottom" secondItem="UGu-0T-2lX" secondAttribute="bottom" constant="8" id="O6b-ag-j3A"/>
+                                            <constraint firstItem="GK9-mP-aUN" firstAttribute="leading" secondItem="qmL-Vf-ZGU" secondAttribute="trailing" id="OvY-Co-O6d"/>
+                                            <constraint firstItem="1ds-fG-1AB" firstAttribute="top" secondItem="EaC-K1-2A0" secondAttribute="top" constant="8" id="Rca-PP-tRC"/>
+                                            <constraint firstItem="UGu-0T-2lX" firstAttribute="width" secondItem="qmL-Vf-ZGU" secondAttribute="width" id="Sn0-Tw-H4X"/>
+                                            <constraint firstItem="1ds-fG-1AB" firstAttribute="width" secondItem="Kud-Bx-BQw" secondAttribute="width" id="dee-yc-DmI"/>
+                                            <constraint firstItem="qmL-Vf-ZGU" firstAttribute="top" secondItem="EaC-K1-2A0" secondAttribute="top" constant="8" id="ePp-nu-h3h"/>
+                                            <constraint firstItem="UGu-0T-2lX" firstAttribute="leading" secondItem="Kud-Bx-BQw" secondAttribute="trailing" id="hPh-9z-EsB"/>
+                                            <constraint firstAttribute="trailing" secondItem="GK9-mP-aUN" secondAttribute="trailing" id="oJh-bM-4NA"/>
+                                            <constraint firstAttribute="bottom" secondItem="qmL-Vf-ZGU" secondAttribute="bottom" constant="8" id="opS-jQ-RCp"/>
+                                            <constraint firstItem="GK9-mP-aUN" firstAttribute="width" secondItem="qmL-Vf-ZGU" secondAttribute="width" id="tsI-15-zxW"/>
+                                            <constraint firstItem="GK9-mP-aUN" firstAttribute="top" secondItem="EaC-K1-2A0" secondAttribute="top" constant="8" id="vds-ar-dxV"/>
+                                            <constraint firstItem="UGu-0T-2lX" firstAttribute="top" secondItem="EaC-K1-2A0" secondAttribute="top" constant="8" id="vjm-gU-ayD"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9f7-OL-6au" customClass="AACarousel" customModule="AACarousel">
@@ -124,10 +177,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8H0-Ae-0WK">
-                                <rect key="frame" x="8" y="424" width="359" height="68"/>
+                                <rect key="frame" x="8" y="428" width="359" height="64"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Masukkan kata kunci" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="22c-zB-oFw">
-                                        <rect key="frame" x="8" y="8" width="343" height="52"/>
+                                        <rect key="frame" x="8" y="8" width="343" height="48"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
