@@ -32,7 +32,8 @@ class HomeController: UIViewController, AACarouselDelegate {
             "schedule": "now"
         ]
         
-        var url: String = ""
+        var url: String = "";
+        var firstImage = true;
         
         manager.get(
             "/prm_banner_top",
@@ -47,9 +48,15 @@ class HomeController: UIViewController, AACarouselDelegate {
                             for array in d{
                                 let resImage = array.value(forKey: "prm_top_image") as! String
                                 let resUrl = array.value(forKey: "prm_top_url") as! String
-                                
-                                url += resUrl + resImage + ","
+                                print(firstImage)
+                                if firstImage{
+                                    url = resUrl + resImage
+                                    firstImage = false
+                                } else{
+                                    url += "," + resUrl + resImage
+                                }
                             }
+                            print(url)
                         }
                     }
                 }
@@ -60,7 +67,8 @@ class HomeController: UIViewController, AACarouselDelegate {
                 print("Error: " + error.localizedDescription)
             }
         )
-        
+        print(manager)
+        print(url)
         let pathArray = [url]
         titleArray = ["picture 1","picture 2","picture 3","picture 4","picture 5"]
         carouselView.delegate = self
