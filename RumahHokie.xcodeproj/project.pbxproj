@@ -24,6 +24,7 @@
 		796B5E11215168B4008BB1C3 /* SquareBanner-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 796B5E0C215168B2008BB1C3 /* SquareBanner-3.png */; };
 		796B5E12215168B4008BB1C3 /* SquareBanner-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 796B5E0D215168B3008BB1C3 /* SquareBanner-4.png */; };
 		796B5E13215168B4008BB1C3 /* SquareBanner-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 796B5E0E215168B4008BB1C3 /* SquareBanner-5.png */; };
+		796B5E1521517DF8008BB1C3 /* PropertyListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B5E1421517DF8008BB1C3 /* PropertyListController.swift */; };
 		79815AC5214EC1ED00238433 /* CoreAPi.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC4214EC1ED00238433 /* CoreAPi.m */; };
 		79815AC7214EC40C00238433 /* CoreEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC6214EC40C00238433 /* CoreEndpoints.m */; };
 		79815ACB214ED15800238433 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815ACA214ED15800238433 /* News.m */; };
@@ -107,6 +108,7 @@
 		796B5E0C215168B2008BB1C3 /* SquareBanner-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SquareBanner-3.png"; sourceTree = "<group>"; };
 		796B5E0D215168B3008BB1C3 /* SquareBanner-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SquareBanner-4.png"; sourceTree = "<group>"; };
 		796B5E0E215168B4008BB1C3 /* SquareBanner-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SquareBanner-5.png"; sourceTree = "<group>"; };
+		796B5E1421517DF8008BB1C3 /* PropertyListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListController.swift; sourceTree = "<group>"; };
 		79815AC4214EC1ED00238433 /* CoreAPi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAPi.m; sourceTree = "<group>"; };
 		79815AC6214EC40C00238433 /* CoreEndpoints.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreEndpoints.m; sourceTree = "<group>"; };
 		79815AC8214EC41B00238433 /* CoreEndPoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreEndPoints.h; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 				79DE9B40214A639E000B4147 /* NewsController.swift */,
 				79DE9B42214A63E6000B4147 /* UserController.swift */,
 				79470D0B21476409007E5090 /* Main.storyboard */,
+				796B5E1421517DF8008BB1C3 /* PropertyListController.swift */,
 				79DE9B3C214A630F000B4147 /* HomeController.swift */,
 				79470D352149279A007E5090 /* BottomMenu.xib */,
 				79DE9B3A214A5E51000B4147 /* BottomMenu.swift */,
@@ -618,6 +621,7 @@
 				79815AC5214EC1ED00238433 /* CoreAPi.m in Sources */,
 				79815AC7214EC40C00238433 /* CoreEndpoints.m in Sources */,
 				792AC2F921500D1C0010966A /* TopBanner.swift in Sources */,
+				796B5E1521517DF8008BB1C3 /* PropertyListController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
