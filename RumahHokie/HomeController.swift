@@ -8,6 +8,7 @@
 
 import UIKit
 import AACarousel
+import Alamofire
 
 class HomeController: UIViewController, AACarouselDelegate {
     @IBOutlet weak var bottomMenu: UIView!
@@ -26,24 +27,22 @@ class HomeController: UIViewController, AACarouselDelegate {
     }
     
     func loadTopBanner(){
-        let manager = AFHTTPSessionManager(baseURL: URL(string: "http://api.rumahhokie.com"))
-        
-        let params = [
-            "schedule": "now"
-        ]
-        
         var url: String = "";
         var firstImage = true;
         
-        manager.get(
-            "/prm_banner_top",
-            parameters: params,
-            success:
-            {
-                (task: URLSessionDataTask!, result: Any) in
+        Alamofire.request("http://api.rumahhokie.com/prm_banner_top?schedule=now").responseJSON { response in
+            switch response.result{
+                case .success:
+                    print("Validation Successful")
+                case .failure(let error):
+                    print(error)
+            }
+            
+            if let json = response.result.value {
+                print(json)
                 
-                if let res = result as? [String:AnyObject] {
-                    if let detail = res["prm_banner_top"]{
+                if let result = json as? [String:AnyObject] {
+                    if let detail = result["prm_banner_top"]{
                         if let d = detail as? Array<AnyObject>{
                             for array in d{
                                 let resImage = array.value(forKey: "prm_top_image") as! String
@@ -56,26 +55,22 @@ class HomeController: UIViewController, AACarouselDelegate {
                                     url += "," + resUrl + resImage
                                 }
                             }
-                            print(url)
                         }
                     }
                 }
-            },
-            failure:
-            {
-                (operation, error) in
-                print("Error: " + error.localizedDescription)
             }
-        )
-        print(manager)
+        }
         print(url)
-        let pathArray = [url]
-        titleArray = ["picture 1","picture 2","picture 3","picture 4","picture 5"]
-        carouselView.delegate = self
-        carouselView.setCarouselData(paths: pathArray,  describedTitle: titleArray, isAutoScroll: true, timer: 5.0, defaultImage: "defaultImage")
-        //optional methods
-        carouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
-        carouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 5, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
+        
+//        print(manager)
+//        print(url)
+//        let pathArray = [url]
+//        titleArray = ["picture 1","picture 2","picture 3","picture 4","picture 5"]
+//        carouselView.delegate = self
+//        carouselView.setCarouselData(paths: pathArray,  describedTitle: titleArray, isAutoScroll: true, timer: 5.0, defaultImage: "defaultImage")
+//        //optional methods
+//        carouselView.setCarouselOpaque(layer: false, describedTitle: false, pageIndicator: false)
+//        carouselView.setCarouselLayout(displayStyle: 0, pageIndicatorPositon: 5, pageIndicatorColor: nil, describedTitleColor: nil, layerColor: nil)
         
     }
     
