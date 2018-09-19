@@ -24,20 +24,19 @@ class NewsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        loadNews()
+        
         btnProperty.titleLabel?.adjustsFontSizeToFitWidth = true
         btnNew.titleLabel?.adjustsFontSizeToFitWidth = true
         btnPopular.titleLabel?.adjustsFontSizeToFitWidth = true
         btnGalery.titleLabel?.adjustsFontSizeToFitWidth = true
         btnVideo.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         self.navigationController?.navigationBar.isHidden = true
         let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
         bottomMenu.addSubview(bottomMenuView)
-        
-        loadNews()
     }
     
     func loadNews(){

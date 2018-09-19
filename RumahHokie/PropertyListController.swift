@@ -24,6 +24,10 @@ class PropertyListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.delegate = self
+        tableView.dataSource = self
+        loadList()
+        
         if type == 1{
             navItem.title = "Rumah"
         } else if type == 2{
@@ -36,9 +40,6 @@ class PropertyListController: UIViewController {
             navItem.title = "Tanah"
         }
         
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         let btnFilter = UIButton(type: .custom)
         btnFilter.setImage(UIImage(named: "filterIconWhite"), for: [])
 //        btn_filter.addTarget(self, action: #selector(PPTrainSearchResultViewController.showFilter), for: UIControlEvents.touchUpInside)
@@ -47,6 +48,59 @@ class PropertyListController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 1000
         self.tableView.register(UINib(nibName: "EmptyListViewCell", bundle: nil), forCellReuseIdentifier: "EmptyListViewCell")
+    }
+    
+    func loadList(){
+        let group = DispatchGroup()
+        group.enter()
+        
+        DispatchQueue.main.async {
+            Alamofire.request("http://rumahhokie.com/beritaproperti/wp-json/wp/v2/posts?&offset=1&per_page=20&_embed=1", method: .get).responseJSON { response in
+                
+                if let json = response.result.value {
+                    if let resArray = json as? Array<AnyObject>{
+                        for r in resArray{
+                            self.dataTotal = self.dataTotal + 1
+                            
+                            var dataTitle: String = ""
+                            var dataImage: String = ""
+                            var dataDate: String = ""
+                            
+                            if let objTitle = r["title"] as? [String:AnyObject] {
+                                dataTitle = objTitle["rendered"]! as! String
+                            }
+                            
+                            if let objDate = r["date"] as? String {
+                                dataDate = objDate
+                            }
+                            
+                            if let objImage = r["_embedded"] as? [String:AnyObject] {
+                                if let imgJson = objImage["wp:featuredmedia"] as? Array<AnyObject>{
+                                    for imgArray in imgJson{
+                                        if let objMediaDetail = imgArray["media_details"] as? [String:AnyObject] {
+                                            if let objFull = objMediaDetail["sizes"]!.value(forKey: "full"){
+                                                dataImage = (objFull as AnyObject).value(forKey: "source_url")! as! String
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            
+                            let returnArray = [dataTitle, dataImage, dataDate]
+                            self.newsArray.append(returnArray)
+                        }
+                    }
+                }
+                
+                self.tableView.reloadData()
+            }
+            
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
