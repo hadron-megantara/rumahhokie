@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1F560F67427C879EFC22D2D0 /* Pods_RumahHokie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5C5DAB2BA333429064ECEC8 /* Pods_RumahHokie.framework */; };
 		792AC2F921500D1C0010966A /* TopBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AC2F821500D1C0010966A /* TopBanner.swift */; };
+		79466B4F21522B75004160B7 /* EmptyListProperty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79466B4E21522B75004160B7 /* EmptyListProperty.xib */; };
+		79466B5121522B85004160B7 /* EmptyListProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79466B5021522B85004160B7 /* EmptyListProperty.swift */; };
+		79466B57215230D6004160B7 /* mapMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 79466B56215230D5004160B7 /* mapMarker.png */; };
 		79470D0821476409007E5090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D0721476409007E5090 /* AppDelegate.swift */; };
 		79470D0D21476409007E5090 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79470D0B21476409007E5090 /* Main.storyboard */; };
 		79470D0F2147640E007E5090 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79470D0E2147640E007E5090 /* Assets.xcassets */; };
@@ -35,7 +38,6 @@
 		79DE9B41214A639E000B4147 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B40214A639E000B4147 /* NewsController.swift */; };
 		79DE9B43214A63E6000B4147 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B42214A63E6000B4147 /* UserController.swift */; };
 		79DE9B4B214A7518000B4147 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B47214A6A52000B4147 /* fontawesome-webfont.ttf */; };
-		79DE9B4D214A78EB000B4147 /* lost Connection.svg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B4C214A78EB000B4147 /* lost Connection.svg */; };
 		79DE9B4F214A7B97000B4147 /* Loading Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B4E214A7B96000B4147 /* Loading Screen.jpg */; };
 		79DE9B53214A7BE7000B4147 /* rumahhokie.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B50214A7BE7000B4147 /* rumahhokie.png */; };
 		79DE9B54214A7BE7000B4147 /* Watermark RH-01-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B51214A7BE7000B4147 /* Watermark RH-01-01.png */; };
@@ -88,6 +90,9 @@
 		4421AB533A964683EAFCF826 /* Pods-RumahHokieTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieTests/Pods-RumahHokieTests.release.xcconfig"; sourceTree = "<group>"; };
 		5A0B90EFF9450A68184E6A98 /* Pods-RumahHokie.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokie.release.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokie/Pods-RumahHokie.release.xcconfig"; sourceTree = "<group>"; };
 		792AC2F821500D1C0010966A /* TopBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBanner.swift; sourceTree = "<group>"; };
+		79466B4E21522B75004160B7 /* EmptyListProperty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyListProperty.xib; sourceTree = "<group>"; };
+		79466B5021522B85004160B7 /* EmptyListProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListProperty.swift; sourceTree = "<group>"; };
+		79466B56215230D5004160B7 /* mapMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapMarker.png; sourceTree = "<group>"; };
 		79470D0421476409007E5090 /* RumahHokie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RumahHokie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79470D0721476409007E5090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79470D0C21476409007E5090 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,7 +127,6 @@
 		79DE9B40214A639E000B4147 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
 		79DE9B42214A63E6000B4147 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		79DE9B47214A6A52000B4147 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
-		79DE9B4C214A78EB000B4147 /* lost Connection.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "lost Connection.svg"; sourceTree = "<group>"; };
 		79DE9B4E214A7B96000B4147 /* Loading Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Loading Screen.jpg"; sourceTree = "<group>"; };
 		79DE9B50214A7BE7000B4147 /* rumahhokie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rumahhokie.png; sourceTree = "<group>"; };
 		79DE9B51214A7BE7000B4147 /* Watermark RH-01-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Watermark RH-01-01.png"; sourceTree = "<group>"; };
@@ -209,6 +213,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		79466B4D21522B53004160B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79466B4E21522B75004160B7 /* EmptyListProperty.xib */,
+				79466B5021522B85004160B7 /* EmptyListProperty.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		79470CFB21476409007E5090 = {
 			isa = PBXGroup;
 			children = (
@@ -234,6 +247,7 @@
 		79470D0621476409007E5090 /* RumahHokie */ = {
 			isa = PBXGroup;
 			children = (
+				79466B4D21522B53004160B7 /* View */,
 				79815AC9214ED11E00238433 /* Model */,
 				79815AC3214EC1AD00238433 /* CoreApi */,
 				79DE9B82214CE952000B4147 /* Controller */,
@@ -314,7 +328,6 @@
 				79DE9B85214E6C5B000B4147 /* fa-brands-400.ttf */,
 				79DE9B47214A6A52000B4147 /* fontawesome-webfont.ttf */,
 				79DE9B83214E6C5A000B4147 /* icomoon.ttf */,
-				79DE9B4C214A78EB000B4147 /* lost Connection.svg */,
 				79DE9B56214CE3D3000B4147 /* Icon */,
 				79DE9B4E214A7B96000B4147 /* Loading Screen.jpg */,
 				79DE9B52214A7BE7000B4147 /* rumahhokie-icon.png */,
@@ -328,6 +341,7 @@
 		79DE9B56214CE3D3000B4147 /* Icon */ = {
 			isa = PBXGroup;
 			children = (
+				79466B56215230D5004160B7 /* mapMarker.png */,
 				796B5E182152005E008BB1C3 /* filterIcon.png */,
 				79DE9B65214CE3EE000B4147 /* agent_rumahhokie-02-1024x1024.png */,
 				79DE9B6B214CE3EF000B4147 /* bathroom.png */,
@@ -472,6 +486,7 @@
 			files = (
 				79DE9B7C214CE3EF000B4147 /* Icon Apps_Properti Baru.png in Resources */,
 				79DE9B4B214A7518000B4147 /* fontawesome-webfont.ttf in Resources */,
+				79466B57215230D6004160B7 /* mapMarker.png in Resources */,
 				796B5E09215158ED008BB1C3 /* MidBanner-3.png in Resources */,
 				79DE9B80214CE3EF000B4147 /* bathroom.png in Resources */,
 				79DE9B70214CE3EF000B4147 /* newspaper.png in Resources */,
@@ -499,10 +514,10 @@
 				79DE9B78214CE3EF000B4147 /* youtube.png in Resources */,
 				79DE9B4F214A7B97000B4147 /* Loading Screen.jpg in Resources */,
 				79DE9B7A214CE3EF000B4147 /* agent_rumahhokie-02-1024x1024.png in Resources */,
+				79466B4F21522B75004160B7 /* EmptyListProperty.xib in Resources */,
 				79DE9B54214A7BE7000B4147 /* Watermark RH-01-01.png in Resources */,
 				79DE9B53214A7BE7000B4147 /* rumahhokie.png in Resources */,
 				79DE9B79214CE3EF000B4147 /* building_area.png in Resources */,
-				79DE9B4D214A78EB000B4147 /* lost Connection.svg in Resources */,
 				79DE9B6C214CE3EF000B4147 /* land_area.svg in Resources */,
 				79DE9B72214CE3EF000B4147 /* Icon Apps_tanah_revisi.png in Resources */,
 				79DE9B75214CE3EF000B4147 /* man-with-tie.svg in Resources */,
@@ -617,6 +632,7 @@
 			files = (
 				79DE9B43214A63E6000B4147 /* UserController.swift in Sources */,
 				79DE9B3D214A630F000B4147 /* HomeController.swift in Sources */,
+				79466B5121522B85004160B7 /* EmptyListProperty.swift in Sources */,
 				79815ACB214ED15800238433 /* News.m in Sources */,
 				79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */,
 				79470D0821476409007E5090 /* AppDelegate.swift in Sources */,
@@ -800,8 +816,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2BNXQ7F2AJ;
 				INFOPLIST_FILE = RumahHokie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -822,8 +839,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 2BNXQ7F2AJ;
 				INFOPLIST_FILE = RumahHokie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

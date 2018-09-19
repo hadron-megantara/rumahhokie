@@ -13,6 +13,7 @@ class PropertyListController: UIViewController {
     @IBOutlet weak var bottomMenu: UIView!
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var navBar: UINavigationBar!
+    @IBOutlet weak var tableView: UITableView!
     
     var type: Int = 1
     
@@ -39,6 +40,10 @@ class PropertyListController: UIViewController {
         btnFilter.setImage(UIImage(named: "filterIconWhite"), for: [])
 //        btn_filter.addTarget(self, action: #selector(PPTrainSearchResultViewController.showFilter), for: UIControlEvents.touchUpInside)
         navItem.rightBarButtonItem = UIBarButtonItem(customView: btnFilter)
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 1000
+        self.tableView.register(UINib(nibName: "EmptyListViewCell", bundle: nil), forCellReuseIdentifier: "EmptyListViewCell")
     }
     
     override func didReceiveMemoryWarning() {
