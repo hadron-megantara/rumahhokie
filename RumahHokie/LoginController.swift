@@ -12,8 +12,6 @@ import UIKit
 class LoginController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var whiteBar: UIView!
     
-    
-    
     @IBAction func backAction(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
