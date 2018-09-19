@@ -39,6 +39,7 @@ class NewsController: UIViewController {
         
         DispatchQueue.main.async {
             Alamofire.request("http://rumahhokie.com/beritaproperti/wp-json/wp/v2/posts?categories=258&offset=1&per_page=2&_embed=1", method: .get).responseJSON { response in
+                
                 if let json = response.result.value {
                     print(json)
                     if let result = json as? [String:AnyObject] {
