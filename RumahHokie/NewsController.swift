@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class NewsController: UIViewController {
     @IBOutlet weak var bottomMenu: UIView!
@@ -29,11 +30,30 @@ class NewsController: UIViewController {
         let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
         bottomMenu.addSubview(bottomMenuView)
         
-        getJSON()
+        loadNews()
     }
     
-    func getJSON() {
+    func loadNews(){
+        let group = DispatchGroup()
+        group.enter()
         
+        DispatchQueue.main.async {
+            Alamofire.request("http://rumahhokie.com/beritaproperti/wp-json/wp/v2/posts?categories=258&offset=1&per_page=2&_embed=1", method: .get).responseJSON { response in
+                if let json = response.result.value {
+                    print(json)
+                    if let result = json as? [String:AnyObject] {
+                        print(result)
+                    }
+                }
+                
+            }
+            
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            
+        }
     }
     
     override func didReceiveMemoryWarning() {
