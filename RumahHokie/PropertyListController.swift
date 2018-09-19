@@ -16,6 +16,8 @@ class PropertyListController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var type: Int = 1
+    var dataTotal: Int = 0
+    var propertyListArray: Array = [Any]()
     
     @IBAction func backToHome(_ sender: UIBarButtonItem) {
         navigationController?.popToRootViewController(animated: true)
@@ -54,40 +56,79 @@ class PropertyListController: UIViewController {
         let group = DispatchGroup()
         group.enter()
         
+        var typeId:Int = 1
+        
+        if(type == 1){
+            typeId = 2
+        } else if(type == 2){
+            typeId = 1
+        } else if(type == 3){
+            typeId = 11
+        } else if(type == 4){
+            typeId = 10
+        } else if(type == 5){
+            typeId = 6
+        }
+        
         DispatchQueue.main.async {
-            Alamofire.request("http://rumahhokie.com/beritaproperti/wp-json/wp/v2/posts?&offset=1&per_page=20&_embed=1", method: .get).responseJSON { response in
+            Alamofire.request("http://api.rumahhokie.com/cnt_listing?view=short&offset=0&limit=100&order_by=cnt_listing_publish_on&order_type=desc&mstr_status_id=1&mstr_tipe_id=\(typeId)", method: .get).responseJSON { response in
                 
                 if let json = response.result.value {
-                    if let resArray = json as? Array<AnyObject>{
-                        for r in resArray{
-                            self.dataTotal = self.dataTotal + 1
-                            
-                            var dataTitle: String = ""
-                            var dataImage: String = ""
-                            var dataDate: String = ""
-                            
-                            if let objTitle = r["title"] as? [String:AnyObject] {
-                                dataTitle = objTitle["rendered"]! as! String
-                            }
-                            
-                            if let objDate = r["date"] as? String {
-                                dataDate = objDate
-                            }
-                            
-                            if let objImage = r["_embedded"] as? [String:AnyObject] {
-                                if let imgJson = objImage["wp:featuredmedia"] as? Array<AnyObject>{
-                                    for imgArray in imgJson{
-                                        if let objMediaDetail = imgArray["media_details"] as? [String:AnyObject] {
-                                            if let objFull = objMediaDetail["sizes"]!.value(forKey: "full"){
-                                                dataImage = (objFull as AnyObject).value(forKey: "source_url")! as! String
-                                            }
-                                        }
-                                    }
+                    if let res = (json as AnyObject).value(forKey: "cnt_listing"){
+                        if let resArray = res as? Array<AnyObject>{
+                            for r in resArray{
+                                self.dataTotal = self.dataTotal + 1
+                                
+                                var dataTitle: String = ""
+                                var dataImage: String = ""
+                                var dataProvince: String = ""
+                                var dataCity: String = ""
+                                var dataArea: String = ""
+                                var dataPrice: Int = 0
+                                var dataLb: Int = 0
+                                var dataLt: Int = 0
+                                var dataPublishOn: String = ""
+                                var dataViewed: Int = 0
+                                
+                                if let objTitle = r["cnt_listing_name"] as? String {
+                                    dataTitle = objTitle
                                 }
+                                
+                                if let objPublishOn = r["cnt_listing_publish_on"] as? String {
+                                    dataPublishOn = objPublishOn
+                                }
+                                
+                                if let objViewed = r["view_count"] as? Int {
+                                    dataViewed = objViewed
+                                }
+                                
+                                if let objPrice = r["cnt_listing_harga"] as? Int {
+                                    dataPrice = objPrice
+                                }
+                                
+                                if let objLb = r["cnt_listing_lb"] as? Int {
+                                    dataLb = objLb
+                                }
+                                
+                                if let objLt = r["cnt_listing_lt"] as? Int {
+                                    dataLt = objLt
+                                }
+                                
+                                if let objProvince = r["mstr_provinsi"] as? [String:AnyObject] {
+                                    dataProvince = objProvince["mstr_provinsi_desc"]! as! String
+                                }
+                                
+                                if let objCity = r["mstr_kota"] as? [String:AnyObject] {
+                                    dataCity = objCity["mstr_kota_desc"]! as! String
+                                }
+                                
+                                if let objArea = r["mstr_wilayah"] as? [String:AnyObject] {
+                                    dataArea = objArea["mstr_wilayah_desc"]! as! String
+                                }
+                                
+                                let returnArray = [dataTitle, dataProvince, dataCity, dataArea, dataPrice, dataLb, dataLt, dataPublishOn, dataViewed, dataImage] as [Any]
+                                self.propertyListArray.append(returnArray)
                             }
-                            
-                            let returnArray = [dataTitle, dataImage, dataDate]
-                            self.newsArray.append(returnArray)
                         }
                     }
                 }
@@ -111,40 +152,40 @@ class PropertyListController: UIViewController {
 
 extension PropertyListController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
-        return 10
+        return self.dataTotal
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellListProperty", for: indexPath) as UITableViewCell
         
-        if let label1 = cell.viewWithTag(1) as? UILabel{
-            label1.text = "Rumah asri Murah exclusive di clust"
-        }
-        
-        if let label2 = cell.viewWithTag(2) as? UILabel{
-            label2.text = "Gekbrong, Cianjur, Jawa Barat"
-        }
-        
-        if let label3 = cell.viewWithTag(3) as? UILabel{
-            label3.text = "500"
-        }
-        
-        if let label4 = cell.viewWithTag(4) as? UILabel{
-            label4.text = "100"
-        }
-        
-        if let label5 = cell.viewWithTag(5) as? UILabel{
-            label5.text = "150"
-        }
-        
-        if let label6 = cell.viewWithTag(6) as? UILabel{
-            label6.text = "02:28"
-        }
-        
-        if let label7 = cell.viewWithTag(7) as? UILabel{
-            label7.text = "0"
+        if let objData = self.propertyListArray[indexPath.row] as? Array<AnyObject>{
+            if let label1 = cell.viewWithTag(1) as? UILabel{
+                label1.text = objData[0] as? String
+            }
+            
+            if let label2 = cell.viewWithTag(2) as? UILabel{
+                label2.text = (objData[3] as? String)! + ", " + (objData[2] as? String)! + ", " + (objData[1] as? String)!
+            }
+            
+            if let label3 = cell.viewWithTag(3) as? UILabel{
+                label3.text = objData[4] as? String
+            }
+            
+            if let label4 = cell.viewWithTag(4) as? UILabel{
+                label4.text = objData[5] as? String
+            }
+            
+            if let label5 = cell.viewWithTag(5) as? UILabel{
+                label5.text = objData[6] as? String
+            }
+            
+            if let label6 = cell.viewWithTag(6) as? UILabel{
+                label6.text = objData[7] as? String
+            }
+            
+            if let label7 = cell.viewWithTag(7) as? UILabel{
+                label7.text = objData[8] as? String
+            }
         }
         
         return cell
