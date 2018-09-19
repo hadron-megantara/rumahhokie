@@ -10,7 +10,18 @@ import Foundation
 import UIKit
 
 class LoginController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var whiteBar: UIView!
+    
+    
+    
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        whiteBar.layer.borderWidth = 1
+        whiteBar.layer.borderColor = UIColor.gray.cgColor
     }
 }
