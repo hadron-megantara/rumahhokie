@@ -16,6 +16,10 @@ class PropertyListController: UIViewController {
     
     var type: Int = 1
     
+    @IBAction func backToHome(_ sender: UIBarButtonItem) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +35,10 @@ class PropertyListController: UIViewController {
             navItem.title = "Tanah"
         }
         
+        let btnFilter = UIButton(type: .custom)
+        btnFilter.setImage(UIImage(named: "filterIconWhite"), for: [])
+//        btn_filter.addTarget(self, action: #selector(PPTrainSearchResultViewController.showFilter), for: UIControlEvents.touchUpInside)
+        navItem.rightBarButtonItem = UIBarButtonItem(customView: btnFilter)
     }
     
     override func didReceiveMemoryWarning() {
