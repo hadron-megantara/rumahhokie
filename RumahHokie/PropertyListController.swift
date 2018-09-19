@@ -19,8 +19,6 @@ class PropertyListController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navBar.barTintColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
-        
         if type == 1{
             navItem.title = "Rumah"
         } else if type == 2{
