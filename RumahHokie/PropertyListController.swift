@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class PropertyListController: UIViewController {
     @IBOutlet weak var bottomMenu: UIView!
