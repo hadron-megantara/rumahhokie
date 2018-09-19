@@ -487,6 +487,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <color key="backgroundColor" red="0.1333333333" green="0.21176470589999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.1333333333" green="0.21176470589999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.1333333333" green="0.21176470589999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </textAttributes>
@@ -607,6 +608,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KDZ-6Y-BmF"/>
                     </view>
+                    <connections>
+                        <outlet property="navBar" destination="xpB-3r-g8d" id="EDF-4B-M4f"/>
+                        <outlet property="navItem" destination="XQv-Ki-TIT" id="yOv-OQ-eJ0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kC-rM-Ft5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

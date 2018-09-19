@@ -11,24 +11,28 @@ import UIKit
 
 class PropertyListController: UIViewController {
     @IBOutlet weak var bottomMenu: UIView!
+    @IBOutlet weak var navItem: UINavigationItem!
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     var type: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navBar.barTintColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+        
         if type == 1{
-            title = "Rumah"
+            navItem.title = "Rumah"
         } else if type == 2{
-            title = "Apartemen"
+            navItem.title = "Apartemen"
         } else if type == 3{
-            title = "Properti Baru"
+            navItem.title = "Properti Baru"
         } else if type == 4{
-            title = "Komersial"
+            navItem.title = "Komersial"
         } else if type == 5{
-            title = "Tanah"
+            navItem.title = "Tanah"
         }
         
-        print(type)
     }
     
     override func didReceiveMemoryWarning() {
