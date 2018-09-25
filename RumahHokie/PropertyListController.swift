@@ -188,7 +188,7 @@ extension PropertyListController : UITableViewDataSource {
             }
             
             if let label6 = cell.viewWithTag(6) as? UILabel{
-                label6.text = objData[7].stringValue
+                label6.text = objData[7] as? String
             }
             
             if let label7 = cell.viewWithTag(7) as? UILabel{
