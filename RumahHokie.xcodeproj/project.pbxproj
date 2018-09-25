@@ -830,13 +830,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2BNXQ7F2AJ;
+				DEVELOPMENT_TEAM = 99JTWX5P26;
 				INFOPLIST_FILE = RumahHokie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokie;
+				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokie123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RumahHokie/Controller/RumahHokie-Bridging-Header.h";
@@ -853,13 +853,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2BNXQ7F2AJ;
+				DEVELOPMENT_TEAM = 99JTWX5P26;
 				INFOPLIST_FILE = RumahHokie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokie;
+				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokie123;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RumahHokie/Controller/RumahHokie-Bridging-Header.h";

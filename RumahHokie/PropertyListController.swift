@@ -126,7 +126,11 @@ class PropertyListController: UIViewController {
                                     dataArea = objArea["mstr_wilayah_desc"]! as! String
                                 }
                                 
-                                let returnArray = [dataTitle, dataProvince, dataCity, dataArea, dataPrice, dataLb, dataLt, dataPublishOn, dataViewed, dataImage] as [Any]
+                                if let objImg = r["cnt_foto"] as? [String:AnyObject] {
+                                    dataImage = objImg["nama_foto"]! as! String
+                                }
+                                
+                                let returnArray = [dataTitle, dataProvince, dataCity, dataArea, dataPrice, dataLb, dataLt, dataPublishOn, dataViewed, dataImage, dataImage] as [Any]
                                 self.propertyListArray.append(returnArray)
                             }
                         }
@@ -185,6 +189,20 @@ extension PropertyListController : UITableViewDataSource {
             
             if let label7 = cell.viewWithTag(7) as? UILabel{
                 label7.text = objData[8] as? String
+            }
+            
+            if let label8 = cell.viewWithTag(8) as? UIImageView{
+                let pictUrl = URL(string: objData[9] as! String)!
+                
+                DispatchQueue.global().async {
+                    if let data = try? Data(contentsOf: pictUrl){
+                        if let dataImage = UIImage(data: data){
+                            DispatchQueue.main.async {
+                                label8.image = dataImage
+                            }
+                        }
+                    }
+                }
             }
         }
         
