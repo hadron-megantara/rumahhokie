@@ -126,11 +126,15 @@ class PropertyListController: UIViewController {
                                     dataArea = objArea["mstr_wilayah_desc"]! as! String
                                 }
                                 
-                                if let objImg = r["cnt_foto"] as? [String:AnyObject] {
-                                    dataImage = objImg["nama_foto"]! as! String
+                                if let objImg = r["cnt_foto"] as? Array<AnyObject> {
+                                    if objImg.count > 0{
+                                        for objImgLoop in objImg{
+                                            dataImage = objImgLoop["nama_foto"] as! String
+                                        }
+                                    }
                                 }
                                 
-                                let returnArray = [dataTitle, dataProvince, dataCity, dataArea, dataPrice, dataLb, dataLt, dataPublishOn, dataViewed, dataImage, dataImage] as [Any]
+                                let returnArray = [dataTitle, dataProvince, dataCity, dataArea, dataPrice, dataLb, dataLt, dataPublishOn, dataViewed, dataImage] as [Any]
                                 self.propertyListArray.append(returnArray)
                             }
                         }
@@ -170,35 +174,37 @@ extension PropertyListController : UITableViewDataSource {
             if let label2 = cell.viewWithTag(2) as? UILabel{
                 label2.text = (objData[3] as? String)! + ", " + (objData[2] as? String)! + ", " + (objData[1] as? String)!
             }
-            
+            print(objData[4])
             if let label3 = cell.viewWithTag(3) as? UILabel{
-                label3.text = objData[4] as? String
+                label3.text = objData[4].stringValue
             }
             
             if let label4 = cell.viewWithTag(4) as? UILabel{
-                label4.text = objData[5] as? String
+                label4.text = objData[5].stringValue
             }
             
             if let label5 = cell.viewWithTag(5) as? UILabel{
-                label5.text = objData[6] as? String
+                label5.text = objData[6].stringValue
             }
             
             if let label6 = cell.viewWithTag(6) as? UILabel{
-                label6.text = objData[7] as? String
+                label6.text = objData[7].stringValue
             }
             
             if let label7 = cell.viewWithTag(7) as? UILabel{
-                label7.text = objData[8] as? String
+                label7.text = objData[8].stringValue
             }
             
             if let label8 = cell.viewWithTag(8) as? UIImageView{
-                let pictUrl = URL(string: objData[9] as! String)!
-                
-                DispatchQueue.global().async {
-                    if let data = try? Data(contentsOf: pictUrl){
-                        if let dataImage = UIImage(data: data){
-                            DispatchQueue.main.async {
-                                label8.image = dataImage
+                if let objImg = objData[9] as? String {
+                    let pictUrl = URL(string: "http://rumahhokie.com/upload-foto/"+objImg )!
+
+                    DispatchQueue.global().async {
+                        if let data = try? Data(contentsOf: pictUrl){
+                            if let dataImage = UIImage(data: data){
+                                DispatchQueue.main.async {
+                                    label8.image = dataImage
+                                }
                             }
                         }
                     }
