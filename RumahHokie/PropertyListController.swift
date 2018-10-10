@@ -182,9 +182,24 @@ extension PropertyListController : UITableViewDataSource {
             if let label2 = cell.viewWithTag(2) as? UILabel{
                 label2.text = (objData[3] as? String)! + ", " + (objData[2] as? String)! + ", " + (objData[1] as? String)!
             }
-            print(objData[4])
+            
             if let label3 = cell.viewWithTag(3) as? UILabel{
-                label3.text = objData[4].stringValue
+                var textPrice: String = ""
+                var priceFinal: Float = 0
+                
+                if ((objData[4].floatValue) / 1000000000) >= 1{
+                    textPrice = "M"
+                    priceFinal = objData[4].floatValue / 1000000000
+                } else{
+                    textPrice = "juta"
+                    priceFinal = objData[4].floatValue / 1000000
+                }
+                
+                if let label10 = cell.viewWithTag(10) as? UILabel{
+                    label10.text = textPrice
+                }
+                
+                label3.text = String(format: "%.2f", priceFinal)
             }
             
             if let label4 = cell.viewWithTag(4) as? UILabel{

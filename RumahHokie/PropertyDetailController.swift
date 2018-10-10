@@ -19,6 +19,13 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
     @IBOutlet weak var lblProductTitle: UILabel!
     @IBOutlet weak var lblProductPlace: UILabel!
     @IBOutlet weak var lblProductPrice: UILabel!
+    @IBOutlet weak var lblTimePost: UILabel!
+    @IBOutlet weak var lblTotalSeen: UILabel!
+    @IBOutlet weak var lblAreaBuilding: UILabel!
+    @IBOutlet weak var lblAreaGround: UILabel!
+    @IBOutlet weak var lblAreaBedRoom: UILabel!
+    @IBOutlet weak var lblAreaBathRoom: UILabel!
+    @IBOutlet weak var lblAreaGarage: UILabel!
     
     var url = [String]()
     var titleArray = [String]()
@@ -94,6 +101,30 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
                         numberFormatter.usesGroupingSeparator = true
                         
                         self.lblProductPrice.text = numberFormatter.string(from: resProductPrice as AnyObject as! NSNumber)!
+                    }
+                    
+                    if let resProductPublishOn = (json as AnyObject).value(forKey: "cnt_listing_publish_on"){
+                        self.lblTimePost.text = resProductPublishOn as? String
+                    }
+                    
+                    if let resProductViewCount = (json as AnyObject).value(forKey: "view_count"){
+                        self.lblTotalSeen.text = (resProductViewCount as AnyObject).stringValue
+                    }
+                    
+                    if let resProductAreaBuilding = (json as AnyObject).value(forKey: "cnt_listing_lb"){
+                        self.lblAreaBuilding.text = (resProductAreaBuilding as AnyObject).stringValue
+                    }
+                    
+                    if let resProductAreaGround = (json as AnyObject).value(forKey: "cnt_listing_lt"){
+                        self.lblAreaGround.text = (resProductAreaGround as AnyObject).stringValue
+                    }
+                    
+                    if let resProductAreaBedRoom = (json as AnyObject).value(forKey: "cnt_listing_kmr_tdr"){
+                        self.lblAreaBedRoom.text = (resProductAreaBedRoom as AnyObject).stringValue
+                    }
+                    
+                    if let resProductAreaBathRoom = (json as AnyObject).value(forKey: "cnt_listing_kmr_mandi"){
+                        self.lblAreaBathRoom.text = (resProductAreaBathRoom as AnyObject).stringValue
                     }
                     
                     self.lblProductPlace.text = resProductPlace

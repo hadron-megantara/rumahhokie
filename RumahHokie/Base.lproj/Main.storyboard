@@ -699,7 +699,7 @@
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="juta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQi-uB-cTs">
+                                                                                <label opaque="NO" userInteractionEnabled="NO" tag="10" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="juta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQi-uB-cTs">
                                                                                     <rect key="frame" x="54" y="78.5" width="21" height="15"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                                     <nil key="textColor"/>
@@ -1727,9 +1727,16 @@
                     <size key="freeformSize" width="375" height="1350"/>
                     <connections>
                         <outlet property="carouselView" destination="thr-30-Pup" id="3Y1-Zn-4Ox"/>
+                        <outlet property="lblAreaBathRoom" destination="4JK-az-Ncl" id="gUj-XQ-Jit"/>
+                        <outlet property="lblAreaBedRoom" destination="beN-78-ZLs" id="g4C-EK-0VL"/>
+                        <outlet property="lblAreaBuilding" destination="Fs7-W9-m9Z" id="ahN-Nn-m3M"/>
+                        <outlet property="lblAreaGarage" destination="VJ8-pn-ApR" id="Kzh-Hp-lOc"/>
+                        <outlet property="lblAreaGround" destination="iUd-Ux-Wqv" id="oU2-Fg-4sN"/>
                         <outlet property="lblProductPlace" destination="nlg-0M-cJy" id="BIU-rk-Qeg"/>
                         <outlet property="lblProductPrice" destination="aui-cJ-S3q" id="oz0-st-bhN"/>
                         <outlet property="lblProductTitle" destination="Ce6-Xi-ceJ" id="CMM-YP-IRT"/>
+                        <outlet property="lblTimePost" destination="yxA-ew-zRZ" id="5W0-k7-kwc"/>
+                        <outlet property="lblTotalSeen" destination="MqF-iS-CHZ" id="F2l-KS-eOz"/>
                         <outlet property="navBar" destination="bIS-wb-yag" id="VmJ-9T-abQ"/>
                         <outlet property="navItem" destination="lRf-PF-s94" id="Z3O-Pt-pwo"/>
                         <outlet property="scrollView" destination="1Xg-38-anq" id="ahg-5X-E1g"/>
