@@ -16,6 +16,9 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var carouselView: AACarousel!
+    @IBOutlet weak var lblProductTitle: UILabel!
+    @IBOutlet weak var lblProductPlace: UILabel!
+    @IBOutlet weak var lblProductPrice: UILabel!
     
     var url = [String]()
     var titleArray = [String]()
@@ -44,7 +47,7 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
         
         DispatchQueue.main.async {
             Alamofire.request("http://api.rumahhokie.com/cnt_listing/\(self.idDetail)", method: .get).responseJSON { response in
-                print(self.idDetail)
+                
                 if let json = response.result.value {
                     if let resImage = (json as AnyObject).value(forKey: "cnt_foto"){
                         if let resArray = resImage as? Array<AnyObject>{
@@ -60,6 +63,40 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
 
                         self.loadTopImage()
                     }
+                    
+                    if let resProductTitle = (json as AnyObject).value(forKey: "cnt_listing_name"){
+                        self.lblProductTitle.text = resProductTitle as? String
+                    }
+                    
+                    var resProductPlace: String = ""
+                    if let resProductArea = (json as AnyObject).value(forKey: "mstr_wilayah"){
+                        if let areaDetail = (resProductArea as AnyObject).value(forKey: "mstr_wilayah_desc"){
+                            resProductPlace = areaDetail as! String
+                        }
+                    }
+                    
+                    if let resProductCity = (json as AnyObject).value(forKey: "mstr_kota"){
+                        if let areaDetail: String = (resProductCity as AnyObject).value(forKey: "mstr_kota_desc") as? String{
+                            resProductPlace = resProductPlace+", "+areaDetail
+                        }
+                    }
+                    
+                    if let resProductProvince = (json as AnyObject).value(forKey: "mstr_provinsi"){
+                        if let areaDetail: String = (resProductProvince as AnyObject).value(forKey: "mstr_provinsi_desc") as? String{
+                            resProductPlace = resProductPlace+", "+areaDetail
+                        }
+                    }
+                    
+                    if let resProductPrice = (json as AnyObject).value(forKey: "cnt_listing_harga"){
+                        let numberFormatter = NumberFormatter()
+                        numberFormatter.groupingSeparator = "."
+                        numberFormatter.groupingSize = 3
+                        numberFormatter.usesGroupingSeparator = true
+                        
+                        self.lblProductPrice.text = numberFormatter.string(from: resProductPrice as AnyObject as! NSNumber)!
+                    }
+                    
+                    self.lblProductPlace.text = resProductPlace
                 }
             }
             

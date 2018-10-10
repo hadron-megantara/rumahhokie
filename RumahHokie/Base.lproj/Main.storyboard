@@ -1727,6 +1727,9 @@
                     <size key="freeformSize" width="375" height="1350"/>
                     <connections>
                         <outlet property="carouselView" destination="thr-30-Pup" id="3Y1-Zn-4Ox"/>
+                        <outlet property="lblProductPlace" destination="nlg-0M-cJy" id="BIU-rk-Qeg"/>
+                        <outlet property="lblProductPrice" destination="aui-cJ-S3q" id="oz0-st-bhN"/>
+                        <outlet property="lblProductTitle" destination="Ce6-Xi-ceJ" id="CMM-YP-IRT"/>
                         <outlet property="navBar" destination="bIS-wb-yag" id="VmJ-9T-abQ"/>
                         <outlet property="navItem" destination="lRf-PF-s94" id="Z3O-Pt-pwo"/>
                         <outlet property="scrollView" destination="1Xg-38-anq" id="ahg-5X-E1g"/>
