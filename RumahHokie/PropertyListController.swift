@@ -79,6 +79,7 @@ class PropertyListController: UIViewController {
                             for r in resArray{
                                 self.dataTotal = self.dataTotal + 1
                                 
+                                var dataId: Int = 0
                                 var dataTitle: String = ""
                                 var dataImage: String = ""
                                 var dataProvince: String = ""
@@ -89,6 +90,10 @@ class PropertyListController: UIViewController {
                                 var dataLt: Int = 0
                                 var dataPublishOn: String = ""
                                 var dataViewed: Int = 0
+                                
+                                if let objId = r["cnt_listing_id"] as? Int {
+                                    dataId = objId
+                                }
                                 
                                 if let objTitle = r["cnt_listing_name"] as? String {
                                     dataTitle = objTitle
@@ -134,7 +139,7 @@ class PropertyListController: UIViewController {
                                     }
                                 }
                                 
-                                let returnArray = [dataTitle, dataProvince, dataCity, dataArea, dataPrice, dataLb, dataLt, dataPublishOn, dataViewed, dataImage] as [Any]
+                                let returnArray = [dataTitle, dataProvince, dataCity, dataArea, dataPrice, dataLb, dataLt, dataPublishOn, dataViewed, dataImage, dataId] as [Any]
                                 self.propertyListArray.append(returnArray)
                             }
                         }
@@ -166,7 +171,10 @@ extension PropertyListController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellListProperty", for: indexPath) as UITableViewCell
         
+        
         if let objData = self.propertyListArray[indexPath.row] as? Array<AnyObject>{
+            cell.tag = objData[10] as! Int
+            
             if let label1 = cell.viewWithTag(1) as? UILabel{
                 label1.text = objData[0] as? String
             }
@@ -219,6 +227,10 @@ extension PropertyListController : UITableViewDataSource {
 extension PropertyListController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "propertyDetailView") as? PropertyDetailController
+        
+        let currentCell = tableView.cellForRow(at: indexPath)
+        
+        vc?.idDetail = currentCell!.tag
         
         navigationController?.pushViewController(vc!, animated: true)
     }

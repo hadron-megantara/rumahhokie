@@ -833,7 +833,7 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Xg-38-anq">
                                 <rect key="frame" x="0.0" y="20" width="375" height="1330"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thr-30-Pup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thr-30-Pup" customClass="AACarousel" customModule="AACarousel">
                                         <rect key="frame" x="0.0" y="44" width="375" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1726,7 +1726,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="1350"/>
                     <connections>
-                        <outlet property="carouselView" destination="thr-30-Pup" id="gnp-B2-JZP"/>
+                        <outlet property="carouselView" destination="thr-30-Pup" id="3Y1-Zn-4Ox"/>
                         <outlet property="navBar" destination="bIS-wb-yag" id="VmJ-9T-abQ"/>
                         <outlet property="navItem" destination="lRf-PF-s94" id="Z3O-Pt-pwo"/>
                         <outlet property="scrollView" destination="1Xg-38-anq" id="ahg-5X-E1g"/>
