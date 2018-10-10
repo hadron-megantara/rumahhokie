@@ -218,6 +218,8 @@ extension PropertyListController : UITableViewDataSource {
 
 extension PropertyListController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "propertyDetailView") as? PropertyDetailController
         
+        navigationController?.pushViewController(vc!, animated: true)
     }
 }

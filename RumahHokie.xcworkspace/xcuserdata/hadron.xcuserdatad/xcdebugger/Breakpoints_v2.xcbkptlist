@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/HomeController.swift"
-            timestampString = "559558303.596355"
+            timestampString = "560837122.2918479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "67"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/HomeController.swift"
-            timestampString = "559558303.59649"
+            timestampString = "560837122.292412"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/HomeController.swift"
-            timestampString = "559558303.596575"
+            timestampString = "560837122.292854"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/HomeController.swift"
-            timestampString = "559558303.5966541"
+            timestampString = "560837122.29327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/HomeController.swift"
-            timestampString = "559558303.596734"
+            timestampString = "560837122.2936701"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/HomeController.swift"
-            timestampString = "559558303.596849"
+            timestampString = "560837122.294116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
@@ -154,13 +154,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.0050189"
+            timestampString = "560839741.901567"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -442,13 +442,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.009443"
+            timestampString = "560839741.901772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
             endingLineNumber = "143"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadList()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -458,13 +458,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.010232"
+            timestampString = "560839741.901852"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
             endingLineNumber = "143"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadList()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -474,13 +474,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.010877"
+            timestampString = "560839741.9020309"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "142"
             endingLineNumber = "142"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadList()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -490,13 +490,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.0114551"
+            timestampString = "560839741.902096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "129"
             endingLineNumber = "129"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadList()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -506,13 +506,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.012181"
+            timestampString = "560839741.902145"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
             endingLineNumber = "93"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadList()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -522,13 +522,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.012794"
+            timestampString = "560839741.9022059"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "136"
             endingLineNumber = "136"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadList()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -538,13 +538,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.013335"
+            timestampString = "560839741.9023679"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "135"
             endingLineNumber = "135"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadList()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -554,13 +554,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.013991"
+            timestampString = "560839741.902445"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "138"
             endingLineNumber = "138"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadList()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -570,13 +570,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.0145479"
+            timestampString = "560839741.902526"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "137"
             endingLineNumber = "137"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadList()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -586,13 +586,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.015264"
+            timestampString = "560839741.902603"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "119"
             endingLineNumber = "119"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadList()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -602,13 +602,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.01587"
+            timestampString = "560839741.902715"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadList()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -618,13 +618,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RumahHokie/PropertyListController.swift"
-            timestampString = "559580896.016409"
+            timestampString = "560839741.902898"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "178"
             endingLineNumber = "178"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

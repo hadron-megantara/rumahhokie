@@ -11,6 +11,7 @@
 		790312982152B35600026314 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790312972152B35600026314 /* RegisterController.swift */; };
 		7903129A2152B36600026314 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790312992152B36600026314 /* LoginController.swift */; };
 		792AC2F921500D1C0010966A /* TopBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AC2F821500D1C0010966A /* TopBanner.swift */; };
+		792B1E4E216DB8CC00F63CA6 /* share-white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792B1E4D216DB8CA00F63CA6 /* share-white.jpg */; };
 		79466B4F21522B75004160B7 /* EmptyListProperty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79466B4E21522B75004160B7 /* EmptyListProperty.xib */; };
 		79466B5121522B85004160B7 /* EmptyListProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79466B5021522B85004160B7 /* EmptyListProperty.swift */; };
 		79466B57215230D6004160B7 /* mapMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 79466B56215230D5004160B7 /* mapMarker.png */; };
@@ -95,6 +96,7 @@
 		790312972152B35600026314 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		790312992152B36600026314 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		792AC2F821500D1C0010966A /* TopBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBanner.swift; sourceTree = "<group>"; };
+		792B1E4D216DB8CA00F63CA6 /* share-white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "share-white.jpg"; sourceTree = "<group>"; };
 		79466B4E21522B75004160B7 /* EmptyListProperty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyListProperty.xib; sourceTree = "<group>"; };
 		79466B5021522B85004160B7 /* EmptyListProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListProperty.swift; sourceTree = "<group>"; };
 		79466B56215230D5004160B7 /* mapMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapMarker.png; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 		79DE9B56214CE3D3000B4147 /* Icon */ = {
 			isa = PBXGroup;
 			children = (
+				792B1E4D216DB8CA00F63CA6 /* share-white.jpg */,
 				79466B56215230D5004160B7 /* mapMarker.png */,
 				796B5E182152005E008BB1C3 /* filterIcon.png */,
 				79DE9B65214CE3EE000B4147 /* agent_rumahhokie-02-1024x1024.png */,
@@ -494,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				79DE9B7C214CE3EF000B4147 /* Icon Apps_Properti Baru.png in Resources */,
+				792B1E4E216DB8CC00F63CA6 /* share-white.jpg in Resources */,
 				79DE9B4B214A7518000B4147 /* fontawesome-webfont.ttf in Resources */,
 				79466B57215230D6004160B7 /* mapMarker.png in Resources */,
 				796B5E09215158ED008BB1C3 /* MidBanner-3.png in Resources */,
