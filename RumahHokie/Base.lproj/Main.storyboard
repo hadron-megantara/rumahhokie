@@ -1727,6 +1727,11 @@
                     <size key="freeformSize" width="375" height="1350"/>
                     <connections>
                         <outlet property="carouselView" destination="thr-30-Pup" id="3Y1-Zn-4Ox"/>
+                        <outlet property="imgAgentView" destination="Q9g-C6-LTB" id="ZpL-eb-g7K"/>
+                        <outlet property="lblAgentJoinedFrom" destination="i61-g5-Cyc" id="2Fc-0J-9jv"/>
+                        <outlet property="lblAgentName" destination="mxc-aa-d3A" id="xmv-3z-9mk"/>
+                        <outlet property="lblAgentPropertySold" destination="f97-HW-dKI" id="ZNC-B8-Fc2"/>
+                        <outlet property="lblAgentPropertyTotal" destination="TMb-8i-HC4" id="7A9-Am-Yya"/>
                         <outlet property="lblAreaBathRoom" destination="4JK-az-Ncl" id="gUj-XQ-Jit"/>
                         <outlet property="lblAreaBedRoom" destination="beN-78-ZLs" id="g4C-EK-0VL"/>
                         <outlet property="lblAreaBuilding" destination="Fs7-W9-m9Z" id="ahN-Nn-m3M"/>

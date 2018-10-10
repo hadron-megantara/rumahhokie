@@ -26,6 +26,11 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
     @IBOutlet weak var lblAreaBedRoom: UILabel!
     @IBOutlet weak var lblAreaBathRoom: UILabel!
     @IBOutlet weak var lblAreaGarage: UILabel!
+    @IBOutlet weak var lblAgentName: UILabel!
+    @IBOutlet weak var lblAgentPropertyTotal: UILabel!
+    @IBOutlet weak var lblAgentPropertySold: UILabel!
+    @IBOutlet weak var lblAgentJoinedFrom: UILabel!
+    @IBOutlet weak var imgAgentView: UIImageView!
     
     var url = [String]()
     var titleArray = [String]()
@@ -125,6 +130,39 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
                     
                     if let resProductAreaBathRoom = (json as AnyObject).value(forKey: "cnt_listing_kmr_mandi"){
                         self.lblAreaBathRoom.text = (resProductAreaBathRoom as AnyObject).stringValue
+                    }
+                    
+                    if let resProductAgent = (json as AnyObject).value(forKey: "agt_user"){
+                        if let resProductAgentName: String = (resProductAgent as AnyObject).value(forKey: "agt_name") as? String{
+                            self.lblAgentName.text = resProductAgentName
+                        }
+                        
+                        if let resProductAgentPropertyTotal: Int = (resProductAgent as AnyObject).value(forKey: "published_cnt_listing_count") as? Int{
+                            self.lblAgentPropertyTotal.text = String(resProductAgentPropertyTotal)
+                        }
+                        
+                        if let resProductAgentPropertySold: Int = (resProductAgent as AnyObject).value(forKey: "sold_cnt_listing_count") as? Int{
+                            self.lblAgentPropertySold.text = String(resProductAgentPropertySold)
+                        }
+                        
+                        if let resProductAgentJoinedFrom: String = (resProductAgent as AnyObject).value(forKey: "agt_created_on") as? String{
+                            self.lblAgentJoinedFrom.text = resProductAgentJoinedFrom
+                        }
+                        
+                        if let resProductAgentImg: String = (resProductAgent as AnyObject).value(forKey: "agt_created_on") as? String{
+                            let pictUrl = URL(string: "http://rumahhokie.com/"+resProductAgentImg )!
+                            
+                            DispatchQueue.global().async {
+                                if let data = try? Data(contentsOf: pictUrl){
+                                    if let dataImage = UIImage(data: data){
+                                        DispatchQueue.main.async {
+                                            self.imgAgentView.image = dataImage
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        
                     }
                     
                     self.lblProductPlace.text = resProductPlace
