@@ -2382,11 +2382,17 @@
                                         <rect key="frame" x="16" y="233" width="343" height="216"/>
                                     </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2p4-3Z-GZh">
-                                        <rect key="frame" x="16" y="481" width="343" height="30"/>
+                                        <rect key="frame" x="16" y="481" width="343" height="40"/>
                                         <color key="backgroundColor" red="0.13333333333333333" green="0.21176470588235294" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="fht-HU-Xgs"/>
+                                        </constraints>
                                         <state key="normal" title="Daftar">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="registerAction:" destination="PFB-bq-F9h" eventType="touchUpInside" id="4iy-D1-Zzn"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7j-NG-EQe">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="4"/>
@@ -2463,6 +2469,10 @@
                         <viewLayoutGuide key="safeArea" id="kq7-u3-2HB"/>
                     </view>
                     <connections>
+                        <outlet property="pickerView" destination="kTr-EP-Jpn" id="i7T-gB-nJI"/>
+                        <outlet property="txtEmail" destination="hJx-c7-VpL" id="TMP-oa-8WY"/>
+                        <outlet property="txtName" destination="lxV-LS-F5w" id="Kgi-HA-H8F"/>
+                        <outlet property="txtPhone" destination="c4P-w1-icZ" id="zGW-tE-x5J"/>
                         <outlet property="whiteBar" destination="RWW-Br-jUD" id="QvD-VL-tFR"/>
                     </connections>
                 </viewController>
@@ -2820,8 +2830,11 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2e-01-R5p">
-                                        <rect key="frame" x="16" y="178" width="343" height="30"/>
+                                        <rect key="frame" x="16" y="178" width="343" height="40"/>
                                         <color key="backgroundColor" red="0.1333333333" green="0.21176470589999999" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="wka-Nw-8d6"/>
+                                        </constraints>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
