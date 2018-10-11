@@ -31,6 +31,8 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
     @IBOutlet weak var lblAgentPropertySold: UILabel!
     @IBOutlet weak var lblAgentJoinedFrom: UILabel!
     @IBOutlet weak var imgAgentView: UIImageView!
+    @IBOutlet weak var btnAgentMsg: UIButton!
+    @IBOutlet weak var btnAgentCall: UIButton!
     
     var url = [String]()
     var titleArray = [String]()
@@ -153,8 +155,7 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
                             var pictUrlUnEncoded = "http://rumahhokie.com/"+resProductAgentImg
                             pictUrlUnEncoded = pictUrlUnEncoded.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
                             let pictUrl = URL(string: pictUrlUnEncoded )!
-                            print(resProductAgentImg)
-                            print(pictUrl)
+                            
                             DispatchQueue.global().async {
                                 if let data = try? Data(contentsOf: pictUrl){
                                     if let dataImage = UIImage(data: data){
@@ -164,6 +165,11 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
                                     }
                                 }
                             }
+                        }
+                        
+                        if let resProductAgentPhone: String = (resProductAgent as AnyObject).value(forKey: "agt_telp") as? String{
+                            self.btnAgentCall.accessibilityIdentifier = resProductAgentPhone
+                            self.btnAgentMsg.accessibilityIdentifier = resProductAgentPhone
                         }
                         
                     }
@@ -203,5 +209,18 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
         imageView.kf.setImage(with: URL(string: urlAppended!)!, placeholder: UIImage.init(named: "defaultIcon"), options: [.transition(.fade(0))], progressBlock: nil, completionHandler: { (downloadImage, error, cacheType, url) in
             self.carouselView.images[index] = downloadImage!
         })
+    }
+    
+    @IBAction func btnAgentMsgAction(_ sender: UIButton) {
+        let sms: String = "sms:+"+String(self.btnAgentCall.accessibilityIdentifier!)
+        print(sms)
+        let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
+    }
+    
+    @IBAction func btnAgentCallAction(_ sender: UIButton) {
+        guard let url = URL(string: "tel://" + String(self.btnAgentCall.accessibilityIdentifier!)) else { return }
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
 }
