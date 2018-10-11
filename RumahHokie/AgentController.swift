@@ -15,6 +15,9 @@ class AgentController: UIViewController {
     
     var agentArray: Array = [Any]()
     var dataTotal: Int = 0
+    var selectedIndex : Int = -1
+    var wasSelectedIndex : Int = -1
+    var wasHidden : Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,7 +135,44 @@ extension AgentController : UITableViewDelegate {
         let cell = tableView.cellForRow(at: indexPath) as! AgentList
         cell.contactAgent.isHidden = false
         cell.constraintContactHeight.constant = 30
-        
         cell.frame.size.height = cell.frame.height + 30
+        
+        if(selectedIndex != -1){
+            wasSelectedIndex = selectedIndex
+        }
+        
+        selectedIndex = indexPath.row
+        
+        if(wasSelectedIndex != -1 && (wasHidden == 1 || selectedIndex != wasSelectedIndex)){
+            let cell2 = tableView.cellForRow(at: [0, wasSelectedIndex]) as! AgentList
+            cell2.contactAgent.isHidden = true
+            cell2.constraintContactHeight.constant = 0
+        }
+        
+        if selectedIndex == wasSelectedIndex{
+            if wasHidden == 0{
+                wasHidden = 1
+            } else{
+                wasHidden = 0
+            }
+        }
+        
+        tableView.beginUpdates()
+        tableView.endUpdates()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == selectedIndex
+        {
+            if selectedIndex != wasSelectedIndex{
+                return 134
+            } else if selectedIndex == wasSelectedIndex && wasHidden == 1{
+                return 134
+            } else{
+                return 104
+            }
+        }else{
+            return 104
+        }
     }
 }
