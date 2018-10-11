@@ -149,9 +149,12 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
                             self.lblAgentJoinedFrom.text = resProductAgentJoinedFrom
                         }
                         
-                        if let resProductAgentImg: String = (resProductAgent as AnyObject).value(forKey: "agt_created_on") as? String{
-                            let pictUrl = URL(string: "http://rumahhokie.com/"+resProductAgentImg )!
-                            
+                        if let resProductAgentImg: String = (resProductAgent as AnyObject).value(forKey: "agt_image") as? String{
+                            var pictUrlUnEncoded = "http://rumahhokie.com/"+resProductAgentImg
+                            pictUrlUnEncoded = pictUrlUnEncoded.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+                            let pictUrl = URL(string: pictUrlUnEncoded )!
+                            print(resProductAgentImg)
+                            print(pictUrl)
                             DispatchQueue.global().async {
                                 if let data = try? Data(contentsOf: pictUrl){
                                     if let dataImage = UIImage(data: data){
