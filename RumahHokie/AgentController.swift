@@ -21,6 +21,7 @@ class AgentController: UIViewController {
         
         loadAgent()
         
+        tableView.register(UINib(nibName: "AgentList", bundle: nil), forCellReuseIdentifier: "cellListAgent")
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -73,8 +74,6 @@ class AgentController: UIViewController {
                                     dataImg = "http://rumahhokie.com/"+objImg
                                 }
                                 
-                                
-                                
                                 let returnArray = [dataName, dataPropertyList, dataPropertySold, dataJoinedFrom, dataImg] as [Any]
                                 self.agentArray.append(returnArray)
                             }
@@ -101,41 +100,28 @@ extension AgentController : UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellListAgent", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellListAgent", for: indexPath) as! AgentList
         
         if let objData = self.agentArray[indexPath.row] as? Array<AnyObject>{
-            if let label1 = cell.viewWithTag(1) as? UILabel{
-                label1.text = objData[0] as? String
-            }
+            cell.agentName.text = objData[0] as? String
+            cell.propertyList.text = objData[1].stringValue
+            cell.propertySold.text = objData[2].stringValue
+            cell.joinedFrom.text = objData[3] as? String
             
-            if let label2 = cell.viewWithTag(2) as? UILabel{
-                label2.text = objData[1].stringValue
-            }
-            
-            if let label3 = cell.viewWithTag(3) as? UILabel{
-                label3.text = objData[2].stringValue
-            }
-            
-            if let label4 = cell.viewWithTag(4) as? UILabel{
-                label4.text = objData[3] as? String
-            }
-            
-            if let label5 = cell.viewWithTag(5) as? UIImageView{
-                let pictUrl = URL(string: objData[4] as! String)!
-                
-                DispatchQueue.global().async {
-                    if let data = try? Data(contentsOf: pictUrl){
-                        if let dataImage = UIImage(data: data){
-                            DispatchQueue.main.async {
-                                label5.image = dataImage
-                            }
+            let pictUrl = URL(string: objData[4] as! String)!
+            DispatchQueue.global().async {
+                if let data = try? Data(contentsOf: pictUrl){
+                    if let dataImage = UIImage(data: data){
+                        DispatchQueue.main.async {
+                            cell.agentImage.image = dataImage
                         }
                     }
                 }
             }
+            
+            cell.contactAgent.isHidden = true
+            cell.constraintContactHeight.constant = 0
         }
-        
-        cell.viewWithTag(6)?.isHidden = true
         
         return cell
     }
@@ -143,6 +129,10 @@ extension AgentController : UITableViewDataSource {
 
 extension AgentController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath) as! AgentList
+        cell.contactAgent.isHidden = false
+        cell.constraintContactHeight.constant = 30
         
+        cell.frame.size.height = cell.frame.height + 30
     }
 }

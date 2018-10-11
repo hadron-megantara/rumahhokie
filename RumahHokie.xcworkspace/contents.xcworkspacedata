@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/hadron/Code/iOS/RumahHokie/RumahHokie/AgentList.xib">
+   </FileRef>
+   <FileRef
       location = "group:RumahHokie.xcodeproj">
    </FileRef>
    <FileRef

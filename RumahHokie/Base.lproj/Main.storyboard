@@ -1412,7 +1412,7 @@
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNo-ei-qea">
                                                         <rect key="frame" x="37.5" y="0.0" width="113" height="29"/>
                                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
-                                                        <state key="normal" title=" Kirim Pesan"/>
+                                                        <state key="normal" title=" Kirim Pesan"/>
                                                         <connections>
                                                             <action selector="btnAgentMsgAction:" destination="hvo-Z6-QCH" eventType="touchUpInside" id="sqi-ia-ubb"/>
                                                         </connections>
@@ -1804,11 +1804,11 @@
                                 <rect key="frame" x="0.0" y="120" width="375" height="481"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellListAgent" rowHeight="140" id="Nty-3a-hht">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="140"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellListAgent" rowHeight="131" id="Nty-3a-hht" customClass="AgentList" customModule="RumahHokie" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="131"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Nty-3a-hht" id="6ER-2a-xvU">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="130.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FoK-s5-J4Z">
@@ -1885,10 +1885,11 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elu-Ze-YoC">
-                                                                    <rect key="frame" x="43" y="0.0" width="102" height="30"/>
+                                                                    <rect key="frame" x="37.5" y="0.0" width="113" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="gaP-gs-N2Z"/>
                                                                     </constraints>
+                                                                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                                                     <state key="normal" title=" Kirim Pesan"/>
                                                                 </button>
                                                             </subviews>
@@ -1903,10 +1904,11 @@
                                                             <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VP-rh-sTR">
-                                                                    <rect key="frame" x="54" y="0.0" width="80" height="30"/>
+                                                                    <rect key="frame" x="53.5" y="0.0" width="81" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="kgs-gf-UW0"/>
                                                                     </constraints>
+                                                                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                                                     <state key="normal" title=" Hubungi"/>
                                                                 </button>
                                                             </subviews>
@@ -1926,6 +1928,7 @@
                                                         <constraint firstItem="U10-Ra-lGS" firstAttribute="top" secondItem="ZUN-Ju-VW9" secondAttribute="top" id="ByH-Fh-UNb"/>
                                                         <constraint firstAttribute="bottom" secondItem="U10-Ra-lGS" secondAttribute="bottom" id="Cue-1d-A7q"/>
                                                         <constraint firstItem="5nl-kd-3Kj" firstAttribute="top" secondItem="ZUN-Ju-VW9" secondAttribute="top" id="Ytw-ml-w7m"/>
+                                                        <constraint firstAttribute="height" constant="30" identifier="contactHeight" id="ZZY-vX-ZIq"/>
                                                         <constraint firstItem="5nl-kd-3Kj" firstAttribute="leading" secondItem="ZUN-Ju-VW9" secondAttribute="leading" id="aH8-ee-pF4"/>
                                                         <constraint firstAttribute="bottom" secondItem="5nl-kd-3Kj" secondAttribute="bottom" id="rug-UW-Bpk"/>
                                                     </constraints>
@@ -2025,7 +2028,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKF-Mj-GH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="38" y="720"/>
+            <point key="canvasLocation" x="37.600000000000001" y="719.19040479760122"/>
         </scene>
         <!--User Controller-->
         <scene sceneID="cQq-df-13u">
