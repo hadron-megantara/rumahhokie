@@ -2970,6 +2970,9 @@
                                         <state key="normal" title="Login">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="loginAction:" destination="eKh-BK-PwC" eventType="touchUpInside" id="5TF-6G-gak"/>
+                                        </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FnL-rk-4WJ">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="4"/>
@@ -3037,6 +3040,8 @@
                         <viewLayoutGuide key="safeArea" id="7fW-cV-ZbE"/>
                     </view>
                     <connections>
+                        <outlet property="txtEmail" destination="a8m-8M-6W6" id="4gc-7u-QHV"/>
+                        <outlet property="txtPassword" destination="h3g-Hi-Hb9" id="B52-aT-iiJ"/>
                         <outlet property="whiteBar" destination="Jc7-6K-Qjp" id="jPp-rk-sn6"/>
                     </connections>
                 </viewController>
@@ -3072,6 +3077,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="4hS-fN-TQY"/>
-        <segue reference="ZQP-aD-kxo"/>
+        <segue reference="u90-h9-Lti"/>
     </inferredMetricsTieBreakers>
 </document>
