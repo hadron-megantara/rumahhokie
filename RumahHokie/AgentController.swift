@@ -56,6 +56,7 @@ class AgentController: UIViewController {
                                 var dataPropertyList: Int = 0
                                 var dataPropertySold: Int = 0
                                 var dataImg: String = ""
+                                var dataPhone: String = ""
                                 
                                 if let objName = r["agt_name"] as? String {
                                     dataName = objName
@@ -77,7 +78,11 @@ class AgentController: UIViewController {
                                     dataImg = "http://rumahhokie.com/"+objImg
                                 }
                                 
-                                let returnArray = [dataName, dataPropertyList, dataPropertySold, dataJoinedFrom, dataImg] as [Any]
+                                if let objPhone = r["agt_telp"] as? String {
+                                    dataPhone = objPhone
+                                }
+                                
+                                let returnArray = [dataName, dataPropertyList, dataPropertySold, dataJoinedFrom, dataImg, dataPhone] as [Any]
                                 self.agentArray.append(returnArray)
                             }
                         }
@@ -110,6 +115,8 @@ extension AgentController : UITableViewDataSource {
             cell.propertyList.text = objData[1].stringValue
             cell.propertySold.text = objData[2].stringValue
             cell.joinedFrom.text = objData[3] as? String
+            cell.btnContactMsg.accessibilityIdentifier = objData[5] as? String
+            cell.btnContactPhone.accessibilityIdentifier = objData[5] as? String
             
             let pictUrl = URL(string: objData[4] as! String)!
             DispatchQueue.global().async {

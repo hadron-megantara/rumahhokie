@@ -213,7 +213,6 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
     
     @IBAction func btnAgentMsgAction(_ sender: UIButton) {
         let sms: String = "sms:+"+String(self.btnAgentCall.accessibilityIdentifier!)
-        print(sms)
         let strURL: String = sms.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         UIApplication.shared.open(URL.init(string: strURL)!, options: [:], completionHandler: nil)
     }

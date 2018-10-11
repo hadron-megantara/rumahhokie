@@ -100,6 +100,9 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                     <state key="normal" title="  Kirim Pesan"/>
+                                    <connections>
+                                        <action selector="contactMsgAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="en2-03-BK1"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -119,6 +122,9 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                     <state key="normal" title="  Hubungi"/>
+                                    <connections>
+                                        <action selector="contactPhoneAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="XFE-p8-iw2"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -161,6 +167,8 @@
             <connections>
                 <outlet property="agentImage" destination="w8r-uR-pnL" id="zGQ-Fy-Z3f"/>
                 <outlet property="agentName" destination="LG8-3M-e82" id="woe-SR-D2m"/>
+                <outlet property="btnContactMsg" destination="Cjs-dN-ymt" id="Hom-iN-O9w"/>
+                <outlet property="btnContactPhone" destination="5PI-a4-ql0" id="xx6-5B-mme"/>
                 <outlet property="constraintContactHeight" destination="cCO-0U-Qko" id="rer-mL-BS3"/>
                 <outlet property="contactAgent" destination="zk3-3i-ewk" id="yVb-KY-mXh"/>
                 <outlet property="joinedFrom" destination="41M-vo-tki" id="vuZ-z0-V9L"/>
