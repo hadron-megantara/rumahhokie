@@ -35,6 +35,8 @@
 		796B5E13215168B4008BB1C3 /* SquareBanner-5.png in Resources */ = {isa = PBXBuildFile; fileRef = 796B5E0E215168B4008BB1C3 /* SquareBanner-5.png */; };
 		796B5E1521517DF8008BB1C3 /* PropertyListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796B5E1421517DF8008BB1C3 /* PropertyListController.swift */; };
 		796B5E192152005F008BB1C3 /* filterIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 796B5E182152005E008BB1C3 /* filterIcon.png */; };
+		797B3B38216F729100191E1F /* EmptyListAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797B3B37216F729100191E1F /* EmptyListAgent.swift */; };
+		797B3B39216F72F300191E1F /* EmptyListAgent.xib in Resources */ = {isa = PBXBuildFile; fileRef = 797B3B35216F728300191E1F /* EmptyListAgent.xib */; };
 		79815AC5214EC1ED00238433 /* CoreAPi.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC4214EC1ED00238433 /* CoreAPi.m */; };
 		79815AC7214EC40C00238433 /* CoreEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC6214EC40C00238433 /* CoreEndpoints.m */; };
 		79815ACB214ED15800238433 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815ACA214ED15800238433 /* News.m */; };
@@ -128,6 +130,8 @@
 		796B5E0E215168B4008BB1C3 /* SquareBanner-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SquareBanner-5.png"; sourceTree = "<group>"; };
 		796B5E1421517DF8008BB1C3 /* PropertyListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListController.swift; sourceTree = "<group>"; };
 		796B5E182152005E008BB1C3 /* filterIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filterIcon.png; sourceTree = "<group>"; };
+		797B3B35216F728300191E1F /* EmptyListAgent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyListAgent.xib; sourceTree = "<group>"; };
+		797B3B37216F729100191E1F /* EmptyListAgent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListAgent.swift; sourceTree = "<group>"; };
 		79815AC4214EC1ED00238433 /* CoreAPi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreAPi.m; sourceTree = "<group>"; };
 		79815AC6214EC40C00238433 /* CoreEndpoints.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreEndpoints.m; sourceTree = "<group>"; };
 		79815AC8214EC41B00238433 /* CoreEndPoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreEndPoints.h; sourceTree = "<group>"; };
@@ -229,6 +233,8 @@
 			isa = PBXGroup;
 			children = (
 				79466B4E21522B75004160B7 /* EmptyListProperty.xib */,
+				797B3B35216F728300191E1F /* EmptyListAgent.xib */,
+				797B3B37216F729100191E1F /* EmptyListAgent.swift */,
 				79466B5021522B85004160B7 /* EmptyListProperty.swift */,
 				792B1E53216F1D7E00F63CA6 /* AgentList.xib */,
 				792B1E51216F1D4B00F63CA6 /* AgentList.swift */,
@@ -535,6 +541,7 @@
 				79DE9B7A214CE3EF000B4147 /* agent_rumahhokie-02-1024x1024.png in Resources */,
 				79466B4F21522B75004160B7 /* EmptyListProperty.xib in Resources */,
 				79DE9B54214A7BE7000B4147 /* Watermark RH-01-01.png in Resources */,
+				797B3B39216F72F300191E1F /* EmptyListAgent.xib in Resources */,
 				79DE9B53214A7BE7000B4147 /* rumahhokie.png in Resources */,
 				79DE9B79214CE3EF000B4147 /* building_area.png in Resources */,
 				79DE9B6C214CE3EF000B4147 /* land_area.svg in Resources */,
@@ -666,6 +673,7 @@
 				79466B5921523B20004160B7 /* PropertyDetailController.swift in Sources */,
 				792AC2F921500D1C0010966A /* TopBanner.swift in Sources */,
 				796B5E1521517DF8008BB1C3 /* PropertyListController.swift in Sources */,
+				797B3B38216F729100191E1F /* EmptyListAgent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
