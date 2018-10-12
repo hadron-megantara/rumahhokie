@@ -13,6 +13,8 @@
 		792AC2F921500D1C0010966A /* TopBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AC2F821500D1C0010966A /* TopBanner.swift */; };
 		792B1E4E216DB8CC00F63CA6 /* share-white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792B1E4D216DB8CA00F63CA6 /* share-white.jpg */; };
 		792B1E52216F1D4B00F63CA6 /* AgentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B1E51216F1D4B00F63CA6 /* AgentList.swift */; };
+		792B6D7921703D420054505A /* BottomMenuUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B6D7821703D420054505A /* BottomMenuUser.swift */; };
+		792B6D7A21703D810054505A /* BottomMenuUser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792B6D7021703CE70054505A /* BottomMenuUser.xib */; };
 		793BA3AD216F1F66003ADBB4 /* AgentList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792B1E53216F1D7E00F63CA6 /* AgentList.xib */; };
 		79466B4F21522B75004160B7 /* EmptyListProperty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79466B4E21522B75004160B7 /* EmptyListProperty.xib */; };
 		79466B5121522B85004160B7 /* EmptyListProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79466B5021522B85004160B7 /* EmptyListProperty.swift */; };
@@ -104,6 +106,8 @@
 		792B1E4D216DB8CA00F63CA6 /* share-white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "share-white.jpg"; sourceTree = "<group>"; };
 		792B1E51216F1D4B00F63CA6 /* AgentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentList.swift; sourceTree = "<group>"; };
 		792B1E53216F1D7E00F63CA6 /* AgentList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AgentList.xib; path = /Users/hadron/Code/iOS/RumahHokie/RumahHokie/AgentList.xib; sourceTree = "<absolute>"; };
+		792B6D7021703CE70054505A /* BottomMenuUser.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenuUser.xib; sourceTree = "<group>"; };
+		792B6D7821703D420054505A /* BottomMenuUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BottomMenuUser.swift; path = /Users/hadron/Code/iOS/RumahHokie/RumahHokie/View/BottomMenuUser.swift; sourceTree = "<absolute>"; };
 		79466B4E21522B75004160B7 /* EmptyListProperty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyListProperty.xib; sourceTree = "<group>"; };
 		79466B5021522B85004160B7 /* EmptyListProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListProperty.swift; sourceTree = "<group>"; };
 		79466B56215230D5004160B7 /* mapMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapMarker.png; sourceTree = "<group>"; };
@@ -234,12 +238,14 @@
 		79466B4D21522B53004160B7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				792B6D7821703D420054505A /* BottomMenuUser.swift */,
 				79466B4E21522B75004160B7 /* EmptyListProperty.xib */,
 				797B3B35216F728300191E1F /* EmptyListAgent.xib */,
 				797B3B37216F729100191E1F /* EmptyListAgent.swift */,
 				79466B5021522B85004160B7 /* EmptyListProperty.swift */,
 				792B1E53216F1D7E00F63CA6 /* AgentList.xib */,
 				792B1E51216F1D4B00F63CA6 /* AgentList.swift */,
+				792B6D7021703CE70054505A /* BottomMenuUser.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -523,6 +529,7 @@
 				79DE9B6E214CE3EF000B4147 /* Icon Apps_rumah.png in Resources */,
 				796B5E192152005F008BB1C3 /* filterIcon.png in Resources */,
 				79470D362149279A007E5090 /* BottomMenu.xib in Resources */,
+				792B6D7A21703D810054505A /* BottomMenuUser.xib in Resources */,
 				79DE9B7E214CE3EF000B4147 /* bedroom.svg in Resources */,
 				79DE9B77214CE3EF000B4147 /* land_area.png in Resources */,
 				796B5E0F215168B4008BB1C3 /* SquareBanner-1.png in Resources */,
@@ -677,6 +684,7 @@
 				79466B5921523B20004160B7 /* PropertyDetailController.swift in Sources */,
 				792AC2F921500D1C0010966A /* TopBanner.swift in Sources */,
 				796B5E1521517DF8008BB1C3 /* PropertyListController.swift in Sources */,
+				792B6D7921703D420054505A /* BottomMenuUser.swift in Sources */,
 				797B3B38216F729100191E1F /* EmptyListAgent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

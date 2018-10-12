@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="fontawesome-webfont.ttf">
+            <string>FontAwesome</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="BottomMenuUser" customModule="RumahHokie" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="516" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzV-E8-xBj">
+                    <rect key="frame" x="0.0" y="0.0" width="103" height="80"/>
+                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
+                    <state key="normal" title=""/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N04-zC-kTJ">
+                    <rect key="frame" x="103" y="0.0" width="103.5" height="80"/>
+                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
+                    <state key="normal" title=""/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJw-Iv-381">
+                    <rect key="frame" x="206.5" y="0.0" width="103" height="80"/>
+                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
+                    <state key="normal" title=""/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzI-er-gWW">
+                    <rect key="frame" x="309.5" y="0.0" width="103.5" height="80"/>
+                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
+                    <state key="normal" title=""/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bal-oO-71T">
+                    <rect key="frame" x="413" y="0.0" width="103" height="80"/>
+                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
+                    <state key="normal" title=""/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XzV-E8-xBj" firstAttribute="width" secondItem="N04-zC-kTJ" secondAttribute="width" id="1vm-ak-Ei0"/>
+                <constraint firstItem="bal-oO-71T" firstAttribute="leading" secondItem="zzI-er-gWW" secondAttribute="trailing" id="Dqk-xL-OZa"/>
+                <constraint firstItem="zzI-er-gWW" firstAttribute="width" secondItem="bal-oO-71T" secondAttribute="width" id="Foe-RK-xLT"/>
+                <constraint firstItem="mJw-Iv-381" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="MSC-uB-R7X"/>
+                <constraint firstItem="N04-zC-kTJ" firstAttribute="width" secondItem="mJw-Iv-381" secondAttribute="width" id="Pxt-ru-W6t"/>
+                <constraint firstItem="XzV-E8-xBj" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="QQ2-0A-ZGF"/>
+                <constraint firstItem="bal-oO-71T" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RTy-9c-JQw"/>
+                <constraint firstItem="mJw-Iv-381" firstAttribute="leading" secondItem="N04-zC-kTJ" secondAttribute="trailing" id="Zxm-hJ-8F5"/>
+                <constraint firstItem="zzI-er-gWW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cS0-Kl-joE"/>
+                <constraint firstItem="zzI-er-gWW" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="f9Y-56-X7J"/>
+                <constraint firstItem="N04-zC-kTJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="gGF-fC-WfC"/>
+                <constraint firstItem="zzI-er-gWW" firstAttribute="leading" secondItem="mJw-Iv-381" secondAttribute="trailing" id="iYZ-8V-UX7"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="XzV-E8-xBj" secondAttribute="bottom" id="ko6-51-bwK"/>
+                <constraint firstItem="mJw-Iv-381" firstAttribute="width" secondItem="zzI-er-gWW" secondAttribute="width" id="nzh-I1-EmK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bal-oO-71T" secondAttribute="bottom" id="pSx-sN-CNZ"/>
+                <constraint firstItem="XzV-E8-xBj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pxv-u3-tO0"/>
+                <constraint firstItem="mJw-Iv-381" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="rZU-hg-195"/>
+                <constraint firstItem="N04-zC-kTJ" firstAttribute="leading" secondItem="XzV-E8-xBj" secondAttribute="trailing" id="rsA-Jo-dhj"/>
+                <constraint firstItem="N04-zC-kTJ" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="w8n-09-ZTQ"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bal-oO-71T" secondAttribute="trailing" id="xIe-QX-NJH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="243.19999999999999" y="417.39130434782612"/>
+        </view>
+    </objects>
+</document>
