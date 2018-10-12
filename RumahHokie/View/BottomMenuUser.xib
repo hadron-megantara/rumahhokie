@@ -23,7 +23,7 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzV-E8-xBj">
                     <rect key="frame" x="0.0" y="0.0" width="103" height="80"/>
-                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
                     <state key="normal" title=""/>
                     <connections>
                         <action selector="advertisementAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="UMM-lw-eKI"/>
@@ -31,7 +31,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N04-zC-kTJ">
                     <rect key="frame" x="103" y="0.0" width="103.5" height="80"/>
-                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
                     <state key="normal" title=""/>
                     <connections>
                         <action selector="newsAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="GNZ-vc-a6n"/>
@@ -39,7 +39,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJw-Iv-381">
                     <rect key="frame" x="206.5" y="0.0" width="103" height="80"/>
-                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
                     <state key="normal" title=""/>
                     <connections>
                         <action selector="filterAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="gxE-wo-OcD"/>
@@ -47,7 +47,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzI-er-gWW">
                     <rect key="frame" x="309.5" y="0.0" width="103.5" height="80"/>
-                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
                     <state key="normal" title=""/>
                     <connections>
                         <action selector="topListingAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="gHO-jx-xh5"/>
@@ -55,7 +55,7 @@
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bal-oO-71T">
                     <rect key="frame" x="413" y="0.0" width="103" height="80"/>
-                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
                     <state key="normal" title=""/>
                     <connections>
                         <action selector="accountAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="wBA-6R-J3h"/>
@@ -65,6 +65,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="XzV-E8-xBj" firstAttribute="width" secondItem="N04-zC-kTJ" secondAttribute="width" id="1vm-ak-Ei0"/>
+                <constraint firstItem="XzV-E8-xBj" firstAttribute="height" secondItem="N04-zC-kTJ" secondAttribute="height" id="DB2-iC-Ddi"/>
                 <constraint firstItem="bal-oO-71T" firstAttribute="leading" secondItem="zzI-er-gWW" secondAttribute="trailing" id="Dqk-xL-OZa"/>
                 <constraint firstItem="zzI-er-gWW" firstAttribute="width" secondItem="bal-oO-71T" secondAttribute="width" id="Foe-RK-xLT"/>
                 <constraint firstItem="mJw-Iv-381" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="MSC-uB-R7X"/>
@@ -73,9 +74,12 @@
                 <constraint firstItem="bal-oO-71T" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="RTy-9c-JQw"/>
                 <constraint firstItem="mJw-Iv-381" firstAttribute="leading" secondItem="N04-zC-kTJ" secondAttribute="trailing" id="Zxm-hJ-8F5"/>
                 <constraint firstItem="zzI-er-gWW" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="cS0-Kl-joE"/>
+                <constraint firstItem="zzI-er-gWW" firstAttribute="height" secondItem="bal-oO-71T" secondAttribute="height" id="ciD-MR-1rf"/>
+                <constraint firstItem="mJw-Iv-381" firstAttribute="height" secondItem="zzI-er-gWW" secondAttribute="height" id="dKP-aY-aMo"/>
                 <constraint firstItem="zzI-er-gWW" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="f9Y-56-X7J"/>
                 <constraint firstItem="N04-zC-kTJ" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="gGF-fC-WfC"/>
                 <constraint firstItem="zzI-er-gWW" firstAttribute="leading" secondItem="mJw-Iv-381" secondAttribute="trailing" id="iYZ-8V-UX7"/>
+                <constraint firstItem="N04-zC-kTJ" firstAttribute="height" secondItem="mJw-Iv-381" secondAttribute="height" id="jrb-Lq-bJv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="XzV-E8-xBj" secondAttribute="bottom" id="ko6-51-bwK"/>
                 <constraint firstItem="mJw-Iv-381" firstAttribute="width" secondItem="zzI-er-gWW" secondAttribute="width" id="nzh-I1-EmK"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bal-oO-71T" secondAttribute="bottom" id="pSx-sN-CNZ"/>

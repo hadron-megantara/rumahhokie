@@ -246,6 +246,8 @@
 				792B1E53216F1D7E00F63CA6 /* AgentList.xib */,
 				792B1E51216F1D4B00F63CA6 /* AgentList.swift */,
 				792B6D7021703CE70054505A /* BottomMenuUser.xib */,
+				79470D352149279A007E5090 /* BottomMenu.xib */,
+				79DE9B3A214A5E51000B4147 /* BottomMenu.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -291,8 +293,6 @@
 				79466B5821523B20004160B7 /* PropertyDetailController.swift */,
 				796B5E1421517DF8008BB1C3 /* PropertyListController.swift */,
 				79DE9B3C214A630F000B4147 /* HomeController.swift */,
-				79470D352149279A007E5090 /* BottomMenu.xib */,
-				79DE9B3A214A5E51000B4147 /* BottomMenu.swift */,
 				79470D0E2147640E007E5090 /* Assets.xcassets */,
 				79470D102147640E007E5090 /* LaunchScreen.storyboard */,
 				79470D132147640E007E5090 /* Info.plist */,

@@ -48,8 +48,13 @@ class HomeController: UIViewController, AACarouselDelegate {
         
         navigationController?.navigationBar.isHidden = true;
         
-        let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
-        bottomMenu.addSubview(bottomMenuView)
+        if UserDefaults.standard.object(forKey: "User") != nil{
+            let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
+            bottomMenu.addSubview(bottomMenuView)
+        } else{
+            let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
+            bottomMenu.addSubview(bottomMenuView)
+        }
     }
     
     func loadTopBanner(){

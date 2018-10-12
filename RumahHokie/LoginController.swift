@@ -52,11 +52,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
                                     .responseJSON { response2 in
                                     
                                     if let json2 = response2.result.value {
+                                        print(json2)
                                         let encodedData = NSKeyedArchiver.archivedData(withRootObject: json2)
                                         
                                         self.defaults.set(encodedData, forKey: "User")
                                     }
-                                    
                                 }
                                 
                                 group2.leave()
@@ -69,9 +69,10 @@ class LoginController: UIViewController, UITextFieldDelegate {
                     }
             }
             
-            let decoded  = UserDefaults.standard.object(forKey: "User") as! Data
-            let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded)
-            
+            if UserDefaults.standard.object(forKey: "User") != nil{
+                let decoded  = UserDefaults.standard.object(forKey: "User") as! Data
+                let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded)
+            }
             
             group.leave()
         }
