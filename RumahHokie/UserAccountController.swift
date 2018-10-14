@@ -23,6 +23,24 @@ class UserAccountController: UIViewController, UITextFieldDelegate {
         let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
         bottomMenuView.frame.size.width = bottomMenu.frame.width
         bottomMenu.addSubview(bottomMenuView)
+        
+        let decoded  = UserDefaults.standard.object(forKey: "User") as! Data
+        let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded)
+        
+        userName.text = (decodedTeams as AnyObject).value(forKey: "agt_name") as? String
+        userPropertyTotal.text = (decodedTeams as AnyObject).value(forKey: "published_cnt_listing_count") as? String
+        userPropertySold.text = (decodedTeams as AnyObject).value(forKey: "sold_cnt_listing_count") as? String
+        
+        let pictUrl = URL(string: "http://rumahhokie.com/"+((decodedTeams as AnyObject).value(forKey: "agt_image") as? String)!)!
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: pictUrl){
+                if let dataImage = UIImage(data: data){
+                    DispatchQueue.main.async {
+                        self.userImg.image = dataImage
+                    }
+                }
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
