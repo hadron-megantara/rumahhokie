@@ -10,11 +10,14 @@ import Foundation
 import UIKit
 
 class PaidTopListingController: UIViewController {
+    @IBOutlet weak var bottomMenu: BottomMenu!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
+        bottomMenuView.frame.size.width = bottomMenu.frame.width
+        bottomMenu.addSubview(bottomMenuView)
     }
     
     override func didReceiveMemoryWarning() {

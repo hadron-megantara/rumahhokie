@@ -512,12 +512,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="INT-6q-OTl">
                                         <rect key="frame" x="0.0" y="0.0" width="94" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdO-eD-uKq">
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdO-eD-uKq">
                                                 <rect key="frame" x="18" y="10" width="58" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Terbaru">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="filterListing:" destination="Ue3-b3-zfe" eventType="touchUpInside" id="DU2-ks-osg"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.13333333333333333" green="0.21176470588235294" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
@@ -529,12 +532,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NF5-6p-ypp">
                                         <rect key="frame" x="94" y="0.0" width="93.5" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaB-I8-lnY">
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CaB-I8-lnY">
                                                 <rect key="frame" x="18" y="10" width="57" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Populer">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="filterListing:" destination="Ue3-b3-zfe" eventType="touchUpInside" id="EwA-k4-UzU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.13333333333333333" green="0.21176470588235294" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
@@ -546,12 +552,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xDG-uH-FyU">
                                         <rect key="frame" x="187.5" y="0.0" width="94" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYh-mV-8jo">
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYh-mV-8jo">
                                                 <rect key="frame" x="24.5" y="10" width="45" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Harga">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="filterListing:" destination="Ue3-b3-zfe" eventType="touchUpInside" id="G94-Pp-ElC"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.1333333333" green="0.21176470589999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -563,12 +572,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCz-jx-eqq">
                                         <rect key="frame" x="281.5" y="0.0" width="93.5" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYN-uB-dET">
+                                            <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BYN-uB-dET">
                                                 <rect key="frame" x="29" y="10" width="35" height="30"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="Luas">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="filterListing:" destination="Ue3-b3-zfe" eventType="touchUpInside" id="uCD-qL-pUX"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.1333333333" green="0.21176470589999999" blue="0.50196078430000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -3668,6 +3680,9 @@
                         <viewLayoutGuide key="safeArea" id="wI2-CI-Ame"/>
                     </view>
                     <size key="freeformSize" width="375" height="840"/>
+                    <connections>
+                        <outlet property="bottomMenu" destination="SO2-YP-9R0" id="3ek-r8-HM3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQR-hU-R9w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

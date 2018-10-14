@@ -18,6 +18,7 @@ class PropertyListController: UIViewController {
     var type: Int = 1
     var dataTotal: Int = 0
     var propertyListArray: Array = [Any]()
+    var filterBy: String = "cnt_listing_publish_on"
     
     @IBAction func backToHome(_ sender: UIBarButtonItem) {
         navigationController?.popToRootViewController(animated: true)
@@ -69,9 +70,9 @@ class PropertyListController: UIViewController {
         } else if(type == 5){
             typeId = 6
         }
-        
+        print(self.filterBy)
         DispatchQueue.main.async {
-            Alamofire.request("http://api.rumahhokie.com/cnt_listing?view=short&offset=0&limit=100&order_by=cnt_listing_publish_on&order_type=desc&mstr_status_id=1&mstr_tipe_id=\(typeId)", method: .get).responseJSON { response in
+            Alamofire.request("http://api.rumahhokie.com/cnt_listing?view=short&offset=0&limit=100&order_by="+self.filterBy+"&order_type=desc&mstr_status_id=1&mstr_tipe_id=\(typeId)", method: .get).responseJSON { response in
                 
                 if let json = response.result.value {
                     if let res = (json as AnyObject).value(forKey: "cnt_listing"){
@@ -155,6 +156,22 @@ class PropertyListController: UIViewController {
         group.notify(queue: DispatchQueue.main) {
             
         }
+    }
+    
+    
+    @IBAction func filterListing(_ sender: UIButton) {
+        if(sender.tag == 10){
+            self.filterBy = "cnt_listing_publish_on"
+        } else if(sender.tag == 11){
+            self.filterBy = "view_count"
+        } else if(sender.tag == 12){
+            self.filterBy = "cnt_listing_harga"
+        } else if(sender.tag == 13){
+            self.filterBy = "area"
+        }
+        
+        self.propertyListArray.removeAll()
+        loadList()
     }
     
     override func didReceiveMemoryWarning() {
