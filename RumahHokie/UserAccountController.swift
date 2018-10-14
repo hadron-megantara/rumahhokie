@@ -28,8 +28,12 @@ class UserAccountController: UIViewController, UITextFieldDelegate {
         let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded)
         
         userName.text = (decodedTeams as AnyObject).value(forKey: "agt_name") as? String
-        userPropertyTotal.text = (decodedTeams as AnyObject).value(forKey: "published_cnt_listing_count") as? String
-        userPropertySold.text = (decodedTeams as AnyObject).value(forKey: "sold_cnt_listing_count") as? String
+        
+        let propertyTotal: Int = (decodedTeams as AnyObject).value(forKey: "published_cnt_listing_count") as! Int
+        let propertySold: Int = (decodedTeams as AnyObject).value(forKey: "sold_cnt_listing_count") as! Int
+        print(propertyTotal)
+        userPropertyTotal.text = String(propertyTotal)
+        userPropertySold.text = String(propertySold)
         
         let pictUrl = URL(string: "http://rumahhokie.com/"+((decodedTeams as AnyObject).value(forKey: "agt_image") as? String)!)!
         DispatchQueue.global().async {
