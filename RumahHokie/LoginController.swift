@@ -56,6 +56,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
                                         let encodedData = NSKeyedArchiver.archivedData(withRootObject: json2)
                                         
                                         self.defaults.set(encodedData, forKey: "User")
+                                        
+                                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "homeView") as? HomeController
+                                        self.navigationController!.pushViewController(vc!, animated: true)
                                     }
                                 }
                                 

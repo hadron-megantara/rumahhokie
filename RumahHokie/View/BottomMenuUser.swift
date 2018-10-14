@@ -41,10 +41,17 @@ class BottomMenuUser: UITableViewCell {
     }
     
     @IBAction func accountAction(_ sender: UIButton) {
-        let vc = storyboard.instantiateViewController(withIdentifier: "userView") as? UserController
-        navigationController.pushViewController(vc!, animated: true)
-        self.window?.rootViewController = navigationController
-        self.window?.makeKeyAndVisible()
+        if UserDefaults.standard.object(forKey: "User") != nil{
+            let vc = storyboard.instantiateViewController(withIdentifier: "userAccountView") as? UserAccountController
+            navigationController.pushViewController(vc!, animated: true)
+            self.window?.rootViewController = navigationController
+            self.window?.makeKeyAndVisible()
+        } else{
+            let vc = storyboard.instantiateViewController(withIdentifier: "userView") as? UserController
+            navigationController.pushViewController(vc!, animated: true)
+            self.window?.rootViewController = navigationController
+            self.window?.makeKeyAndVisible()
+        }
     }
     
     override func awakeFromNib() {

@@ -40,8 +40,15 @@ class AgentController: UIViewController {
         tableView.dataSource = self
         
         self.navigationController?.navigationBar.isHidden = true;
-        let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
-        bottomMenu.addSubview(bottomMenuView)
+        
+        if UserDefaults.standard.object(forKey: "User") != nil{
+            let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
+            bottomMenuView.frame.size.width = bottomMenu.frame.width
+            bottomMenu.addSubview(bottomMenuView)
+        } else{
+            let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
+            bottomMenu.addSubview(bottomMenuView)
+        }
     }
     
     override func didReceiveMemoryWarning() {

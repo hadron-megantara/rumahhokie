@@ -27,6 +27,7 @@
 		79470D1D2147640E007E5090 /* RumahHokieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D1C2147640E007E5090 /* RumahHokieTests.swift */; };
 		79470D282147640E007E5090 /* RumahHokieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D272147640E007E5090 /* RumahHokieUITests.swift */; };
 		79470D362149279A007E5090 /* BottomMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79470D352149279A007E5090 /* BottomMenu.xib */; };
+		795F3B482173ACE100EDF3CE /* UserAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F3B472173ACE100EDF3CE /* UserAccountController.swift */; };
 		796B5E07215158ED008BB1C3 /* MidBanner-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 796B5E04215158ED008BB1C3 /* MidBanner-2.png */; };
 		796B5E08215158ED008BB1C3 /* MidBanner-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 796B5E05215158ED008BB1C3 /* MidBanner-1.png */; };
 		796B5E09215158ED008BB1C3 /* MidBanner-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 796B5E06215158ED008BB1C3 /* MidBanner-3.png */; };
@@ -43,6 +44,7 @@
 		79815AC5214EC1ED00238433 /* CoreAPi.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC4214EC1ED00238433 /* CoreAPi.m */; };
 		79815AC7214EC40C00238433 /* CoreEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC6214EC40C00238433 /* CoreEndpoints.m */; };
 		79815ACB214ED15800238433 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815ACA214ED15800238433 /* News.m */; };
+		79929A0A2173B1B600BF2FE0 /* UserEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79929A092173B1B500BF2FE0 /* UserEditController.swift */; };
 		79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3A214A5E51000B4147 /* BottomMenu.swift */; };
 		79DE9B3D214A630F000B4147 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3C214A630F000B4147 /* HomeController.swift */; };
 		79DE9B3F214A6359000B4147 /* AgentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3E214A6359000B4147 /* AgentController.swift */; };
@@ -125,6 +127,7 @@
 		79470D272147640E007E5090 /* RumahHokieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumahHokieUITests.swift; sourceTree = "<group>"; };
 		79470D292147640E007E5090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79470D352149279A007E5090 /* BottomMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenu.xib; sourceTree = "<group>"; };
+		795F3B472173ACE100EDF3CE /* UserAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountController.swift; sourceTree = "<group>"; };
 		796B5E04215158ED008BB1C3 /* MidBanner-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MidBanner-2.png"; sourceTree = "<group>"; };
 		796B5E05215158ED008BB1C3 /* MidBanner-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MidBanner-1.png"; sourceTree = "<group>"; };
 		796B5E06215158ED008BB1C3 /* MidBanner-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MidBanner-3.png"; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 		79815AC8214EC41B00238433 /* CoreEndPoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreEndPoints.h; sourceTree = "<group>"; };
 		79815ACA214ED15800238433 /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		79815ACC214ED16B00238433 /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		79929A092173B1B500BF2FE0 /* UserEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditController.swift; sourceTree = "<group>"; };
 		79DE9B3A214A5E51000B4147 /* BottomMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenu.swift; sourceTree = "<group>"; };
 		79DE9B3C214A630F000B4147 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		79DE9B3E214A6359000B4147 /* AgentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentController.swift; sourceTree = "<group>"; };
@@ -287,8 +291,10 @@
 				79DE9B40214A639E000B4147 /* NewsController.swift */,
 				79DE9B42214A63E6000B4147 /* UserController.swift */,
 				79470D0B21476409007E5090 /* Main.storyboard */,
+				795F3B472173ACE100EDF3CE /* UserAccountController.swift */,
 				797B3B3A216FD35800191E1F /* ResetPasswordController.swift */,
 				790312972152B35600026314 /* RegisterController.swift */,
+				79929A092173B1B500BF2FE0 /* UserEditController.swift */,
 				790312992152B36600026314 /* LoginController.swift */,
 				79466B5821523B20004160B7 /* PropertyDetailController.swift */,
 				796B5E1421517DF8008BB1C3 /* PropertyListController.swift */,
@@ -677,12 +683,14 @@
 				79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */,
 				79470D0821476409007E5090 /* AppDelegate.swift in Sources */,
 				79DE9B41214A639E000B4147 /* NewsController.swift in Sources */,
+				795F3B482173ACE100EDF3CE /* UserAccountController.swift in Sources */,
 				79DE9B3F214A6359000B4147 /* AgentController.swift in Sources */,
 				79815AC5214EC1ED00238433 /* CoreAPi.m in Sources */,
 				79815AC7214EC40C00238433 /* CoreEndpoints.m in Sources */,
 				790312982152B35600026314 /* RegisterController.swift in Sources */,
 				79466B5921523B20004160B7 /* PropertyDetailController.swift in Sources */,
 				792AC2F921500D1C0010966A /* TopBanner.swift in Sources */,
+				79929A0A2173B1B600BF2FE0 /* UserEditController.swift in Sources */,
 				796B5E1521517DF8008BB1C3 /* PropertyListController.swift in Sources */,
 				792B6D7921703D420054505A /* BottomMenuUser.swift in Sources */,
 				797B3B38216F729100191E1F /* EmptyListAgent.swift in Sources */,
