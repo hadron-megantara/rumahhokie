@@ -27,14 +27,14 @@ class BottomMenuUser: UITableViewCell {
     }
     
     @IBAction func filterAction(_ sender: UIButton) {
-        let vc = storyboard.instantiateViewController(withIdentifier: "agentView") as? AgentController
+        let vc = storyboard.instantiateViewController(withIdentifier: "homeView") as? HomeController
         navigationController.pushViewController(vc!, animated: true)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
     
     @IBAction func topListingAction(_ sender: UIButton) {
-        let vc = storyboard.instantiateViewController(withIdentifier: "userView") as? UserController
+        let vc = storyboard.instantiateViewController(withIdentifier: "paidTopListingView") as? PaidTopListingController
         navigationController.pushViewController(vc!, animated: true)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()

@@ -45,6 +45,7 @@
 		79815AC7214EC40C00238433 /* CoreEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC6214EC40C00238433 /* CoreEndpoints.m */; };
 		79815ACB214ED15800238433 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815ACA214ED15800238433 /* News.m */; };
 		79929A0A2173B1B600BF2FE0 /* UserEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79929A092173B1B500BF2FE0 /* UserEditController.swift */; };
+		79D1BDBA2173D02D0054A8A0 /* PaidTopListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D1BDB92173D02D0054A8A0 /* PaidTopListingController.swift */; };
 		79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3A214A5E51000B4147 /* BottomMenu.swift */; };
 		79DE9B3D214A630F000B4147 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3C214A630F000B4147 /* HomeController.swift */; };
 		79DE9B3F214A6359000B4147 /* AgentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3E214A6359000B4147 /* AgentController.swift */; };
@@ -147,6 +148,7 @@
 		79815ACA214ED15800238433 /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		79815ACC214ED16B00238433 /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		79929A092173B1B500BF2FE0 /* UserEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditController.swift; sourceTree = "<group>"; };
+		79D1BDB92173D02D0054A8A0 /* PaidTopListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidTopListingController.swift; sourceTree = "<group>"; };
 		79DE9B3A214A5E51000B4147 /* BottomMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenu.swift; sourceTree = "<group>"; };
 		79DE9B3C214A630F000B4147 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		79DE9B3E214A6359000B4147 /* AgentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentController.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				79DE9B40214A639E000B4147 /* NewsController.swift */,
 				79DE9B42214A63E6000B4147 /* UserController.swift */,
 				79470D0B21476409007E5090 /* Main.storyboard */,
+				79D1BDB92173D02D0054A8A0 /* PaidTopListingController.swift */,
 				795F3B472173ACE100EDF3CE /* UserAccountController.swift */,
 				797B3B3A216FD35800191E1F /* ResetPasswordController.swift */,
 				790312972152B35600026314 /* RegisterController.swift */,
@@ -679,6 +682,7 @@
 				79466B5121522B85004160B7 /* EmptyListProperty.swift in Sources */,
 				79815ACB214ED15800238433 /* News.m in Sources */,
 				7903129A2152B36600026314 /* LoginController.swift in Sources */,
+				79D1BDBA2173D02D0054A8A0 /* PaidTopListingController.swift in Sources */,
 				792B1E52216F1D4B00F63CA6 /* AgentList.swift in Sources */,
 				79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */,
 				79470D0821476409007E5090 /* AppDelegate.swift in Sources */,
