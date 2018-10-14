@@ -38,44 +38,64 @@ class LoginController: UIViewController, UITextFieldDelegate {
             Alamofire.request("http://api.rumahhokie.com/token", method: .post, parameters: data as Parameters, encoding: URLEncoding.default, headers: nil)
                 .responseJSON { response in
                     if let json = response.result.value {
-                        if let accessToken = (json as AnyObject).value(forKey: "access_token"){
-                            let bearerToken: String = "Bearer " + String(describing: accessToken)
-                            let group2 = DispatchGroup()
-                            group2.enter()
-                            
-                            let header = [
-                                "Authorization" : bearerToken
-                            ]
-                            
-                            DispatchQueue.main.async {
-                                Alamofire.request("http://api.rumahhokie.com/agent/account", method: .get, parameters: nil, encoding: URLEncoding.default, headers: header)
-                                    .responseJSON { response2 in
-                                    
-                                    if let json2 = response2.result.value {
-                                        print(json2)
-                                        let encodedData = NSKeyedArchiver.archivedData(withRootObject: json2)
-                                        
-                                        self.defaults.set(encodedData, forKey: "User")
-                                        
-                                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "homeView") as? HomeController
-                                        self.navigationController!.pushViewController(vc!, animated: true)
+                        
+                        let resCode = response.response?.statusCode
+                        
+                        if(resCode == 200){
+                            if let accessToken = (json as AnyObject).value(forKey: "access_token"){
+                                let bearerToken: String = "Bearer " + String(describing: accessToken)
+                                let group2 = DispatchGroup()
+                                group2.enter()
+                                
+                                let header = [
+                                    "Authorization" : bearerToken
+                                ]
+                                
+                                DispatchQueue.main.async {
+                                    Alamofire.request("http://api.rumahhokie.com/agent/account", method: .get, parameters: nil, encoding: URLEncoding.default, headers: header)
+                                        .responseJSON { response2 in
+                                        if let json2 = response2.result.value {
+                                            print(json2)
+                                            let encodedData = NSKeyedArchiver.archivedData(withRootObject: json2)
+                                            
+                                            self.defaults.set(encodedData, forKey: "User")
+                                            
+                                            if self.txtPassword.text != "12345"{
+                                                let vc = self.storyboard!.instantiateViewController(withIdentifier: "homeView") as? HomeController
+                                                self.navigationController!.pushViewController(vc!, animated: true)
+                                            } else{
+                                                let vc = self.storyboard!.instantiateViewController(withIdentifier: "resetPasswordView") as? ResetPasswordController
+                                                self.navigationController!.pushViewController(vc!, animated: true)
+                                            }
+                                        }
                                     }
+                                    
+                                    group2.leave()
                                 }
                                 
-                                group2.leave()
+                                group2.notify(queue: DispatchQueue.main) {
+                                    
+                                }
                             }
+                        } else{
+                            let msgStatus: String = "Email atau Password salah. Silahkan Masukkan Data yang Valid"
+                            let delay = DispatchTime.now() + 3
                             
-                            group2.notify(queue: DispatchQueue.main) {
-                                
+                            let alert = UIAlertController(title: msgStatus, message: "", preferredStyle: .alert)
+                            
+                            self.present(alert, animated: true)
+                            
+                            DispatchQueue.main.asyncAfter(deadline: delay){
+                                alert.dismiss(animated: true, completion: nil)
                             }
                         }
                     }
             }
             
-            if UserDefaults.standard.object(forKey: "User") != nil{
-                let decoded  = UserDefaults.standard.object(forKey: "User") as! Data
-                let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded)
-            }
+//            if UserDefaults.standard.object(forKey: "User") != nil{
+//                let decoded  = UserDefaults.standard.object(forKey: "User") as! Data
+//                let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded)
+//            }
             
             group.leave()
         }
