@@ -17,12 +17,25 @@ PODS:
     - AFNetworking/NSURLSession
   - Alamofire (4.7.3)
   - Kingfisher (4.9.0)
+  - MMDrawerController (0.5.7):
+    - MMDrawerController/Core (= 0.5.7)
+    - MMDrawerController/MMDrawerBarButtonItem (= 0.5.7)
+    - MMDrawerController/MMDrawerVisualStates (= 0.5.7)
+    - MMDrawerController/Subclass (= 0.5.7)
+  - MMDrawerController/Core (0.5.7)
+  - MMDrawerController/MMDrawerBarButtonItem (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/MMDrawerVisualStates (0.5.7):
+    - MMDrawerController/Core
+  - MMDrawerController/Subclass (0.5.7):
+    - MMDrawerController/Core
 
 DEPENDENCIES:
   - AACarousel
   - AFNetworking (~> 3.0)
   - Alamofire (~> 4.7)
   - Kingfisher
+  - MMDrawerController (~> 0.5.7)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -30,13 +43,15 @@ SPEC REPOS:
     - AFNetworking
     - Alamofire
     - Kingfisher
+    - MMDrawerController
 
 SPEC CHECKSUMS:
   AACarousel: 6131fa3650201a3ce10b6581621f3cade221b079
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
+  MMDrawerController: 7a4cf8e25596bf2434e03ce50d22a8608ddee6a1
 
-PODFILE CHECKSUM: d5d8a02ad1cfc497aa61e6a4a33a1cb318d37dfd
+PODFILE CHECKSUM: ebf0a425753d8210c11b7c9b21e5d0d2ce6f0360
 
 COCOAPODS: 1.5.3
