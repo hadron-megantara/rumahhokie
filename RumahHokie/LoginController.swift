@@ -55,10 +55,13 @@ class LoginController: UIViewController, UITextFieldDelegate {
                                     Alamofire.request("http://api.rumahhokie.com/agent/account", method: .get, parameters: nil, encoding: URLEncoding.default, headers: header)
                                         .responseJSON { response2 in
                                         if let json2 = response2.result.value {
-                                            print(json2)
                                             let encodedData = NSKeyedArchiver.archivedData(withRootObject: json2)
                                             
                                             self.defaults.set(encodedData, forKey: "User")
+                                            
+                                            let encodedData2 = NSKeyedArchiver.archivedData(withRootObject: bearerToken)
+                                            
+                                            self.defaults.set(encodedData2, forKey: "UserToken")
                                             
                                             if self.txtPassword.text != "12345"{
                                                 let vc = self.storyboard!.instantiateViewController(withIdentifier: "homeView") as? HomeController
@@ -91,11 +94,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
                         }
                     }
             }
-            
-//            if UserDefaults.standard.object(forKey: "User") != nil{
-//                let decoded  = UserDefaults.standard.object(forKey: "User") as! Data
-//                let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded)
-//            }
             
             group.leave()
         }

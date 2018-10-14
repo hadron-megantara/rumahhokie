@@ -2774,6 +2774,7 @@
                                         </state>
                                         <connections>
                                             <action selector="registerAction:" destination="PFB-bq-F9h" eventType="touchUpInside" id="yCH-p2-pFO"/>
+                                            <action selector="resetPasswordAction:" destination="KvG-pf-wBT" eventType="touchUpInside" id="BLr-eh-hnJ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2815,6 +2816,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="z2v-MX-Uw2"/>
                     </view>
+                    <connections>
+                        <outlet property="newPassword" destination="FXM-Aj-x5W" id="utJ-cu-OUb"/>
+                        <outlet property="newPasswordConfirmation" destination="hj8-UD-9Ig" id="YRr-sr-UEg"/>
+                        <outlet property="oldPassword" destination="YaS-YK-21X" id="33n-ez-aRZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HyZ-1D-mRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
