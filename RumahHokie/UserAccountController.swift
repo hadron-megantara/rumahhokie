@@ -38,4 +38,9 @@ class UserAccountController: UIViewController, UITextFieldDelegate {
         navigationController!.pushViewController(vc!, animated: true)
     }
     
+    @IBAction func resetPasswordAction(_ sender: Any) {
+        let vc = storyboard!.instantiateViewController(withIdentifier: "resetPasswordView") as? ResetPasswordController
+        navigationController!.pushViewController(vc!, animated: true)
+    }
+    
 }

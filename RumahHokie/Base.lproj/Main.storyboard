@@ -2711,6 +2711,7 @@
                                         </state>
                                         <connections>
                                             <action selector="backAction:" destination="PFB-bq-F9h" eventType="touchUpInside" id="JAj-eD-Hgi"/>
+                                            <action selector="backAction:" destination="KvG-pf-wBT" eventType="touchUpInside" id="WiI-Gw-2DF"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2933,6 +2934,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uq-cS-alK">
                                 <rect key="frame" x="8" y="210" width="359" height="30"/>
                                 <state key="normal" title="Edit Password"/>
+                                <connections>
+                                    <action selector="resetPasswordAction:" destination="tfm-D7-sGm" eventType="touchUpInside" id="c8c-8U-uBQ"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Watermark RH-01-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="L7g-Cw-NwT">
                                 <rect key="frame" x="0.0" y="248" width="375" height="291"/>

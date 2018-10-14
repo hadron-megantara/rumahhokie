@@ -15,4 +15,8 @@ class ResetPasswordController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
     }
+    
+    @IBAction func backAction(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
 }
