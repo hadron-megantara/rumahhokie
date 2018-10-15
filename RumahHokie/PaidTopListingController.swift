@@ -18,6 +18,8 @@ class PaidTopListingController: UIViewController {
         let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
         bottomMenuView.frame.size.width = bottomMenu.frame.width
         bottomMenu.addSubview(bottomMenuView)
+        
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {

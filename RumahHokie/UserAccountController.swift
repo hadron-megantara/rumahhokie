@@ -45,6 +45,8 @@ class UserAccountController: UIViewController, UITextFieldDelegate {
                 }
             }
         }
+        
+        navigationController?.navigationBar.isHidden = true;
     }
     
     override func didReceiveMemoryWarning() {

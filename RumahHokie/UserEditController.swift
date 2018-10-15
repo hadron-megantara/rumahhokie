@@ -13,7 +13,7 @@ class UserEditController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        navigationController?.navigationBar.isHidden = true;
     }
     
     override func didReceiveMemoryWarning() {

@@ -46,7 +46,7 @@ class HomeController: UIViewController, AACarouselDelegate {
         
         loadTopBanner()
         
-        navigationController?.navigationBar.isHidden = true;
+        navigationController?.navigationBar.isHidden = true
         
         if UserDefaults.standard.object(forKey: "User") != nil{
             let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
