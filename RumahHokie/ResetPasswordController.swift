@@ -18,6 +18,10 @@ class ResetPasswordController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        oldPassword.isSecureTextEntry = true
+        newPassword.isSecureTextEntry = true
+        newPasswordConfirmation.isSecureTextEntry = true
+        
     }
     
     @IBAction func backAction(_ sender: Any) {
