@@ -54,12 +54,17 @@ class PropertyListController: UIViewController {
         
         let btnFilter = UIButton(type: .custom)
         btnFilter.setImage(UIImage(named: "filterIconWhite"), for: [])
-//        btn_filter.addTarget(self, action: #selector(PPTrainSearchResultViewController.showFilter), for: UIControlEvents.touchUpInside)
+        btnFilter.addTarget(self, action: #selector(openFilter), for: UIControlEvents.touchUpInside)
         navItem.rightBarButtonItem = UIBarButtonItem(customView: btnFilter)
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 1000
         self.tableView.register(UINib(nibName: "EmptyListViewCell", bundle: nil), forCellReuseIdentifier: "EmptyListViewCell")
+    }
+    
+    @objc func openFilter(){
+//        let vc = storyboard!.instantiateViewController(withIdentifier: "propertyFilterView") as? PropertyFilterController
+//        navigationController!.pushViewController(vc!, animated: true)
     }
     
     func loadList(){

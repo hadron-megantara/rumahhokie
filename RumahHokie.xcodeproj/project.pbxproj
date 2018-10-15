@@ -45,6 +45,9 @@
 		79815AC7214EC40C00238433 /* CoreEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC6214EC40C00238433 /* CoreEndpoints.m */; };
 		79815ACB214ED15800238433 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815ACA214ED15800238433 /* News.m */; };
 		79929A0A2173B1B600BF2FE0 /* UserEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79929A092173B1B500BF2FE0 /* UserEditController.swift */; };
+		79C9031821750AE3007DB37D /* PropertyFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C9031721750AE3007DB37D /* PropertyFilterController.swift */; };
+		79C9031B217511DB007DB37D /* radio-btn-unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 79C90319217511D6007DB37D /* radio-btn-unchecked.png */; };
+		79C9031C217511DB007DB37D /* radio-btn-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 79C9031A217511DA007DB37D /* radio-btn-checked.png */; };
 		79D1BDBA2173D02D0054A8A0 /* PaidTopListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D1BDB92173D02D0054A8A0 /* PaidTopListingController.swift */; };
 		79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3A214A5E51000B4147 /* BottomMenu.swift */; };
 		79DE9B3D214A630F000B4147 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3C214A630F000B4147 /* HomeController.swift */; };
@@ -148,6 +151,9 @@
 		79815ACA214ED15800238433 /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		79815ACC214ED16B00238433 /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
 		79929A092173B1B500BF2FE0 /* UserEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditController.swift; sourceTree = "<group>"; };
+		79C9031721750AE3007DB37D /* PropertyFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyFilterController.swift; sourceTree = "<group>"; };
+		79C90319217511D6007DB37D /* radio-btn-unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-btn-unchecked.png"; sourceTree = "<group>"; };
+		79C9031A217511DA007DB37D /* radio-btn-checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-btn-checked.png"; sourceTree = "<group>"; };
 		79D1BDB92173D02D0054A8A0 /* PaidTopListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidTopListingController.swift; sourceTree = "<group>"; };
 		79DE9B3A214A5E51000B4147 /* BottomMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenu.swift; sourceTree = "<group>"; };
 		79DE9B3C214A630F000B4147 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
@@ -290,6 +296,7 @@
 				79DE9B46214A6A46000B4147 /* Resource */,
 				79470D0721476409007E5090 /* AppDelegate.swift */,
 				79DE9B3E214A6359000B4147 /* AgentController.swift */,
+				79C9031721750AE3007DB37D /* PropertyFilterController.swift */,
 				79DE9B40214A639E000B4147 /* NewsController.swift */,
 				79DE9B42214A63E6000B4147 /* UserController.swift */,
 				79470D0B21476409007E5090 /* Main.storyboard */,
@@ -382,6 +389,8 @@
 		79DE9B56214CE3D3000B4147 /* Icon */ = {
 			isa = PBXGroup;
 			children = (
+				79C9031A217511DA007DB37D /* radio-btn-checked.png */,
+				79C90319217511D6007DB37D /* radio-btn-unchecked.png */,
 				792B1E4D216DB8CA00F63CA6 /* share-white.jpg */,
 				79466B56215230D5004160B7 /* mapMarker.png */,
 				796B5E182152005E008BB1C3 /* filterIcon.png */,
@@ -554,6 +563,7 @@
 				796B5E08215158ED008BB1C3 /* MidBanner-1.png in Resources */,
 				79DE9B74214CE3EF000B4147 /* Icon Apps_apartemen.png in Resources */,
 				796B5E07215158ED008BB1C3 /* MidBanner-2.png in Resources */,
+				79C9031C217511DB007DB37D /* radio-btn-checked.png in Resources */,
 				79DE9B55214A7BE7000B4147 /* rumahhokie-icon.png in Resources */,
 				79DE9B78214CE3EF000B4147 /* youtube.png in Resources */,
 				79DE9B4F214A7B97000B4147 /* Loading Screen.jpg in Resources */,
@@ -569,6 +579,7 @@
 				79DE9B75214CE3EF000B4147 /* man-with-tie.svg in Resources */,
 				79DE9B7F214CE3EF000B4147 /* building_area.svg in Resources */,
 				79DE9B7B214CE3EF000B4147 /* bathroom.svg in Resources */,
+				79C9031B217511DB007DB37D /* radio-btn-unchecked.png in Resources */,
 				79DE9B6D214CE3EF000B4147 /* garage.svg in Resources */,
 				796B5E12215168B4008BB1C3 /* SquareBanner-4.png in Resources */,
 			);
@@ -687,6 +698,7 @@
 				79D1BDBA2173D02D0054A8A0 /* PaidTopListingController.swift in Sources */,
 				792B1E52216F1D4B00F63CA6 /* AgentList.swift in Sources */,
 				79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */,
+				79C9031821750AE3007DB37D /* PropertyFilterController.swift in Sources */,
 				79470D0821476409007E5090 /* AppDelegate.swift in Sources */,
 				79DE9B41214A639E000B4147 /* NewsController.swift in Sources */,
 				795F3B482173ACE100EDF3CE /* UserAccountController.swift in Sources */,
