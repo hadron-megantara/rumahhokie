@@ -878,6 +878,10 @@
                         <outlet property="navBar" destination="xpB-3r-g8d" id="EDF-4B-M4f"/>
                         <outlet property="navItem" destination="XQv-Ki-TIT" id="yOv-OQ-eJ0"/>
                         <outlet property="tableView" destination="Q4x-Hj-3ck" id="KA0-WC-4xG"/>
+                        <outlet property="whiteLineArea" destination="PTf-IK-CqA" id="6Cm-HJ-dYR"/>
+                        <outlet property="whiteLineNew" destination="Q4b-Ap-jFV" id="8Ks-Eg-iEw"/>
+                        <outlet property="whiteLinePopular" destination="Y0R-RZ-oQQ" id="k2j-Ov-CL7"/>
+                        <outlet property="whiteLinePrice" destination="fgA-av-nRG" id="ihs-u0-xsy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kC-rM-Ft5" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -159,7 +159,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
             endingLineNumber = "29"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "backToHome(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

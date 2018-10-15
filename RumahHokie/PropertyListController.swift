@@ -14,6 +14,10 @@ class PropertyListController: UIViewController {
     @IBOutlet weak var navItem: UINavigationItem!
     @IBOutlet weak var navBar: UINavigationBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var whiteLineNew: UIView!
+    @IBOutlet weak var whiteLinePopular: UIView!
+    @IBOutlet weak var whiteLinePrice: UIView!
+    @IBOutlet weak var whiteLineArea: UIView!
     
     var type: Int = 1
     var dataTotal: Int = 0
@@ -30,6 +34,11 @@ class PropertyListController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         loadList()
+        
+        whiteLineNew.backgroundColor = UIColor.white
+        whiteLinePopular.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+        whiteLineArea.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+        whiteLinePrice.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
         
         if type == 1{
             navItem.title = "Rumah"
@@ -70,7 +79,7 @@ class PropertyListController: UIViewController {
         } else if(type == 5){
             typeId = 6
         }
-        print(self.filterBy)
+        
         DispatchQueue.main.async {
             Alamofire.request("http://api.rumahhokie.com/cnt_listing?view=short&offset=0&limit=100&order_by="+self.filterBy+"&order_type=desc&mstr_status_id=1&mstr_tipe_id=\(typeId)", method: .get).responseJSON { response in
                 
@@ -162,12 +171,32 @@ class PropertyListController: UIViewController {
     @IBAction func filterListing(_ sender: UIButton) {
         if(sender.tag == 10){
             self.filterBy = "cnt_listing_publish_on"
+            
+            whiteLineNew.backgroundColor = UIColor.white
+            whiteLinePopular.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+            whiteLineArea.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+            whiteLinePrice.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
         } else if(sender.tag == 11){
             self.filterBy = "view_count"
+            
+            whiteLinePopular.backgroundColor = UIColor.white
+            whiteLineNew.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+            whiteLineArea.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+            whiteLinePrice.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
         } else if(sender.tag == 12){
             self.filterBy = "cnt_listing_harga"
+            
+            whiteLinePrice.backgroundColor = UIColor.white
+            whiteLineNew.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+            whiteLineArea.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+            whiteLinePopular.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
         } else if(sender.tag == 13){
             self.filterBy = "area"
+            
+            whiteLineArea.backgroundColor = UIColor.white
+            whiteLineNew.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+            whiteLinePrice.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+            whiteLinePopular.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
         }
         
         self.propertyListArray.removeAll()
