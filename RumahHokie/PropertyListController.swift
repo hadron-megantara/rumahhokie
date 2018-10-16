@@ -63,8 +63,8 @@ class PropertyListController: UIViewController {
     }
     
     @objc func openFilter(){
-//        let vc = storyboard!.instantiateViewController(withIdentifier: "propertyFilterView") as? PropertyFilterController
-//        navigationController!.pushViewController(vc!, animated: true)
+        let vc = storyboard!.instantiateViewController(withIdentifier: "propertyFilterView") as? PropertyFilterController
+        navigationController!.pushViewController(vc!, animated: true)
     }
     
     func loadList(){
