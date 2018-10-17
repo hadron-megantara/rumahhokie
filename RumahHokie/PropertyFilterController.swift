@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var txtKeyWord: UITextField!
@@ -46,11 +47,14 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBOutlet weak var propertyViewRent: UIView!
     
     var propertyTypeData = ["Apartemen", "Rumah", "Tanah", "Komersial", "Properti Baru"]
+    var propertyProvinceData = ["Semua"]
     var pickerPropertyType = UIPickerView()
     let alert = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadProvince()
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(viewPropertySoldAction))
         propertyViewSold.addGestureRecognizer(gesture)
@@ -69,6 +73,32 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
         
         alert.isModalInPopover = true
         alert.view.addSubview(pickerPropertyType)
+    }
+    
+    func loadProvince(){
+        let group = DispatchGroup()
+        group.enter()
+        
+        DispatchQueue.main.async {
+            Alamofire.request("mstr_provinsi?order_by=mstr_provinsi_desc&order_type=asc", method: .get).responseJSON { response in
+                
+                if let json = response.result.value {
+                    if let res = (json as AnyObject).value(forKey: "mstr_provinsi"){
+                        if let resArray = res as? Array<AnyObject>{
+                            for r in resArray{
+                                print(r)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            
+        }
     }
     
     @objc func viewPropertySoldAction(){
@@ -102,7 +132,6 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
             self.alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
         })
         
-        self.present(alert, animated: true)
     }
     
     @objc func alertControllerBackgroundTapped(){
@@ -148,5 +177,6 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         propertyTypeString = propertyTypeData[row]
+        btnPropertyType.setTitle(propertyTypeString, for: UIControlState.normal)
     }
 }
