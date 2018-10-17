@@ -47,6 +47,7 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     
     var propertyTypeData = ["Apartemen", "Rumah", "Tanah", "Komersial", "Properti Baru"]
     var pickerPropertyType = UIPickerView()
+    let alert = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,15 +58,17 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
         let gesture2 = UITapGestureRecognizer(target: self, action: #selector(viewPropertyRentAction))
         propertyViewRent.addGestureRecognizer(gesture2)
         
-        var pickerPropertyTypeRect = baseView.frame
-        pickerPropertyTypeRect.origin.x = 0
-        pickerPropertyTypeRect.origin.y = 0
-        pickerPropertyType.frame = pickerPropertyTypeRect
+        var pickerRect = pickerPropertyType.frame
+        pickerRect.origin.x = -30
+            pickerRect.origin.y = 0
+            pickerPropertyType.frame = pickerRect
         pickerPropertyType.delegate = self
         pickerPropertyType.dataSource = self
         pickerPropertyType.isHidden = true
 //        datePickerView.addTarget(self, action: #selector(PassengerAddController.datePickerValueChanged), for: UIControlEvents.valueChanged)
-        view.addSubview(pickerPropertyType)
+        
+        alert.isModalInPopover = true
+        alert.view.addSubview(pickerPropertyType)
     }
     
     @objc func viewPropertySoldAction(){
@@ -93,6 +96,8 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     
     @IBAction func btnPropertyTypeAction(_ sender: Any) {
         pickerPropertyType.isHidden = false
+        
+        self.present(alert, animated: true)
     }
     
     @IBAction func btnPropertyProvinceAction(_ sender: Any) {
