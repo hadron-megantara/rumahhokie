@@ -25,15 +25,15 @@ class PropertyListController: UIViewController {
     var filterBy: String = "cnt_listing_publish_on"
     
     var propertyStatus: Int = 1
-    var propertyType: Int = 2
+    var propertyType: Int = 0
     var propertyPrice: Int = 0
-    var propertyProvince: Int = 1
+    var propertyProvince: Int = 0
     var propertyPriceMin: Int = 0
-    var propertyPriceMax: Int = 0
+    var propertyPriceMax: Int = 100000000000000
     var propertyBuildingMin: Int = 0
-    var propertyBuildingMax: Int = 0
+    var propertyBuildingMax: Int = 100000000000000
     var propertyAreaMin: Int = 0
-    var propertyAreaMax: Int = 0
+    var propertyAreaMax: Int = 100000000000000
     var propertyBedRoom: Int = 0
     var propertyBathroom: Int = 0
     var propertyGarage: Int = 0
@@ -99,9 +99,34 @@ class PropertyListController: UIViewController {
             typeId = 6
         }
         
+        if propertyType == 0{
+            propertyType = typeId
+        }
+        
+        var urlVar = "http://api.rumahhokie.com/cnt_listing?view=short&offset=0&limit=150&order_by="+self.filterBy+"&order_type=desc&mstr_tipe_id=\(typeId)&mstr_status_id=\(self.propertyStatus)&mstr_tipe_id=\(self.propertyType)&cnt_listing_harga_min=\(self.propertyPriceMin)&cnt_listing_harga_max=\(self.propertyPriceMax)&cnt_listing_lb_min=\(self.propertyBuildingMin)&cnt_listing_lb_max=\(self.propertyBuildingMax)&cnt_listing_lt_min=\(self.propertyAreaMin)&cnt_listing_lt_max=\(self.propertyAreaMax)"
+        
+        if self.propertyKeyword != ""{
+            urlVar = urlVar+"&keyword=\(self.propertyKeyword)"
+        }
+        
+        if self.propertyProvince != 0{
+            urlVar = urlVar+"&mstr_provinsi_id=\(self.propertyProvince)"
+        }
+        
+        if self.propertyBedRoom != 0{
+            urlVar = urlVar+"&cnt_listing_kmr_tdr=\(self.propertyBedRoom)"
+        }
+        
+        if self.propertyBathroom != 0{
+            urlVar = urlVar+"&cnt_listing_kmr_mandi=\(self.propertyBathroom)"
+        }
+        
+        if self.propertyGarage != 0{
+            urlVar = urlVar+"&cnt_listing_garasi=\(self.propertyGarage)"
+        }
+        print(urlVar)
         DispatchQueue.main.async {
-            Alamofire.request("http://api.rumahhokie.com/cnt_listing?view=short&offset=0&limit=100&order_by="+self.filterBy+"&order_type=desc&mstr_status_id=1&mstr_tipe_id=\(typeId)&keyword=\(self.propertyKeyword)&mstr_status_id=\(self.propertyStatus)&mstr_tipe_id=\(self.propertyType)", method: .get).responseJSON { response in
-                print(response)
+            Alamofire.request(urlVar, method: .get).responseJSON { response in
                 if let json = response.result.value {
                     if let res = (json as AnyObject).value(forKey: "cnt_listing"){
                         if let resArray = res as? Array<AnyObject>{
@@ -240,7 +265,6 @@ extension PropertyListController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellListProperty", for: indexPath) as UITableViewCell
-        
         
         if let objData = self.propertyListArray[indexPath.row] as? Array<AnyObject>{
             cell.tag = objData[10] as! Int
