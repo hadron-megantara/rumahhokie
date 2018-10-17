@@ -49,7 +49,9 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     var propertyTypeData = ["Apartemen", "Rumah", "Tanah", "Komersial", "Properti Baru"]
     var propertyProvinceData = ["Semua"]
     var pickerPropertyType = UIPickerView()
+    var pickerPropertyProvince = UIPickerView()
     let alert = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+    let alert2 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,15 +66,25 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
         
         var pickerRect = pickerPropertyType.frame
         pickerRect.origin.x = -30
-            pickerRect.origin.y = 0
-            pickerPropertyType.frame = pickerRect
+        pickerRect.origin.y = 0
+        pickerPropertyType.frame = pickerRect
         pickerPropertyType.delegate = self
         pickerPropertyType.dataSource = self
         pickerPropertyType.isHidden = true
-//        datePickerView.addTarget(self, action: #selector(PassengerAddController.datePickerValueChanged), for: UIControlEvents.valueChanged)
         
         alert.isModalInPopover = true
         alert.view.addSubview(pickerPropertyType)
+        
+        var pickerRect2 = pickerPropertyProvince.frame
+        pickerRect2.origin.x = -30
+        pickerRect.origin.y = 0
+        pickerPropertyProvince.frame = pickerRect2
+        pickerPropertyProvince.delegate = self
+        pickerPropertyProvince.dataSource = self
+        pickerPropertyProvince.isHidden = true
+        
+        alert2.isModalInPopover = true
+        alert2.view.addSubview(pickerPropertyProvince)
     }
     
     func loadProvince(){
@@ -140,7 +152,17 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     @IBAction func btnPropertyProvinceAction(_ sender: Any) {
+        pickerPropertyProvince.isHidden = false
         
+        self.present(alert, animated: true, completion:{
+            self.alert2.view.superview?.isUserInteractionEnabled = true
+            self.alert2.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertController2BackgroundTapped)))
+        })
+    }
+    
+    @objc func alertController2BackgroundTapped(){
+        pickerPropertyProvince.isHidden = true
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnSearchAction(_ sender: Any) {
@@ -178,5 +200,8 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         propertyTypeString = propertyTypeData[row]
         btnPropertyType.setTitle(propertyTypeString, for: UIControlState.normal)
+        
+        pickerPropertyType.isHidden = true
+        alert.dismiss(animated: true, completion: nil)
     }
 }
