@@ -15,16 +15,61 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBOutlet weak var radioPropertyStatusSold: UIImageView!
     @IBOutlet weak var radioPropertyStatusRent: UIImageView!
     @IBOutlet weak var btnPropertyType: UIButton!
-    @IBOutlet weak var txtPriceMin: UITextField!
-    @IBOutlet weak var txtPriceMax: UITextField!
+    @IBOutlet weak var txtPriceMin: UITextField!{
+        didSet {
+            txtPriceMin?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTappedForMyNumericTextField)))
+        }
+    }
+    
+    @IBOutlet weak var txtPriceMax: UITextField!{
+        didSet {
+            txtPriceMax?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTappedForMyNumericTextField)))
+        }
+    }
+    
     @IBOutlet weak var btnPropertyProvince: UIButton!
-    @IBOutlet weak var txtPropertyBuildingMin: UITextField!
-    @IBOutlet weak var txtPropertyBuildingMax: UITextField!
-    @IBOutlet weak var txtPropertyAreaMin: UITextField!
-    @IBOutlet weak var txtPropertyAreaMax: UITextField!
-    @IBOutlet weak var txtPropertyBedRoom: UITextField!
-    @IBOutlet weak var txtPropertyBathRoom: UITextField!
-    @IBOutlet weak var txtPropertyGarage: UITextField!
+    @IBOutlet weak var txtPropertyBuildingMin: UITextField!{
+        didSet {
+            txtPropertyBuildingMin?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTappedForMyNumericTextField)))
+        }
+    }
+    
+    @IBOutlet weak var txtPropertyBuildingMax: UITextField!{
+        didSet {
+            txtPropertyBuildingMax?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTappedForMyNumericTextField)))
+        }
+    }
+    
+    @IBOutlet weak var txtPropertyAreaMin: UITextField!{
+        didSet {
+            txtPropertyAreaMin?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTappedForMyNumericTextField)))
+        }
+    }
+    
+    @IBOutlet weak var txtPropertyAreaMax: UITextField!{
+        didSet {
+            txtPropertyAreaMax?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTappedForMyNumericTextField)))
+        }
+    }
+    
+    @IBOutlet weak var txtPropertyBedRoom: UITextField!{
+        didSet {
+            txtPropertyBedRoom?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTappedForMyNumericTextField)))
+        }
+    }
+    
+    @IBOutlet weak var txtPropertyBathRoom: UITextField!{
+        didSet {
+            txtPropertyBathRoom?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTappedForMyNumericTextField)))
+        }
+    }
+    
+    @IBOutlet weak var txtPropertyGarage: UITextField!{
+        didSet {
+            txtPropertyGarage?.addDoneCancelToolbar(onDone: (target: self, action: #selector(doneButtonTappedForMyNumericTextField)))
+        }
+    }
+    
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var viewBtnPropertyType: UIView!
     
@@ -91,6 +136,33 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
         
         alert2.isModalInPopover = true
         alert2.view.addSubview(pickerPropertyProvince)
+        
+        txtPriceMin.delegate = self
+        txtPriceMin.keyboardType = .decimalPad
+        
+        txtPriceMax.delegate = self
+        txtPriceMax.keyboardType = .decimalPad
+        
+        txtPropertyBuildingMin.delegate = self
+        txtPropertyBuildingMin.keyboardType = .decimalPad
+        
+        txtPropertyBuildingMax.delegate = self
+        txtPropertyBuildingMax.keyboardType = .decimalPad
+        
+        txtPropertyAreaMin.delegate = self
+        txtPropertyAreaMin.keyboardType = .decimalPad
+        
+        txtPropertyAreaMax.delegate = self
+        txtPropertyAreaMax.keyboardType = .decimalPad
+        
+        txtPropertyBedRoom.delegate = self
+        txtPropertyBedRoom.keyboardType = .decimalPad
+        
+        txtPropertyBathRoom.delegate = self
+        txtPropertyBathRoom.keyboardType = .decimalPad
+        
+        txtPropertyGarage.delegate = self
+        txtPropertyGarage.keyboardType = .decimalPad
         
     }
     
@@ -237,4 +309,46 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
             alert2.dismiss(animated: true, completion: nil)
         }
     }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+        let compSepByCharInSet = string.components(separatedBy: aSet)
+        let numberFiltered = compSepByCharInSet.joined(separator: "")
+        return string == numberFiltered
+    }
+    
+    @objc func doneButtonTappedForMyNumericTextField() {
+        txtPriceMin.resignFirstResponder()
+        txtPriceMax.resignFirstResponder()
+        txtPropertyBuildingMin.resignFirstResponder()
+        txtPropertyBuildingMax.resignFirstResponder()
+        txtPropertyAreaMin.resignFirstResponder()
+        txtPropertyAreaMax.resignFirstResponder()
+        txtPropertyBedRoom.resignFirstResponder()
+        txtPropertyBathRoom.resignFirstResponder()
+        txtPropertyGarage.resignFirstResponder()
+    }
 }
+
+extension UITextField {
+    func addDoneCancelToolbar(onDone: (target: Any, action: Selector)? = nil, onCancel: (target: Any, action: Selector)? = nil) {
+        let onCancel = onCancel ?? (target: self, action: #selector(cancelButtonTapped))
+        let onDone = onDone ?? (target: self, action: #selector(doneButtonTapped))
+        
+        let toolbar: UIToolbar = UIToolbar()
+        toolbar.barStyle = .default
+        toolbar.items = [
+            UIBarButtonItem(title: "Cancel", style: .plain, target: onCancel.target, action: onCancel.action),
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: .done, target: onDone.target, action: onDone.action)
+        ]
+        toolbar.sizeToFit()
+        
+        self.inputAccessoryView = toolbar
+    }
+    
+    // Default actions:
+    @objc func doneButtonTapped() { self.resignFirstResponder() }
+    @objc func cancelButtonTapped() { self.resignFirstResponder() }
+}
+
