@@ -1517,6 +1517,7 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="baseView" destination="GRO-DQ-ux3" id="6KU-Ms-EC6"/>
                         <outlet property="btnPropertyProvince" destination="qMm-Lh-jep" id="d85-2Z-QoT"/>
                         <outlet property="btnPropertyType" destination="Mzo-Ml-pLa" id="e7y-EU-Vp0"/>
                         <outlet property="propertyViewRent" destination="Kmy-cB-wcv" id="dUQ-lr-BgG"/>
@@ -1533,6 +1534,7 @@
                         <outlet property="txtPropertyBuildingMax" destination="gIo-QY-CRb" id="Hom-fg-GMm"/>
                         <outlet property="txtPropertyBuildingMin" destination="Trq-OS-jk6" id="Clt-tQ-amR"/>
                         <outlet property="txtPropertyGarage" destination="cTd-d2-8hm" id="gnk-aL-VJN"/>
+                        <outlet property="viewBtnPropertyType" destination="K17-8P-vM7" id="sDi-tt-NM5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lhe-9w-pwP" userLabel="First Responder" sceneMemberID="firstResponder"/>

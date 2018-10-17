@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class PropertyFilterController: UIViewController, UITextFieldDelegate {
+class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var txtKeyWord: UITextField!
     @IBOutlet weak var radioPropertyStatusSold: UIImageView!
     @IBOutlet weak var radioPropertyStatusRent: UIImageView!
@@ -24,9 +24,12 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtPropertyBedRoom: UITextField!
     @IBOutlet weak var txtPropertyBathRoom: UITextField!
     @IBOutlet weak var txtPropertyGarage: UITextField!
+    @IBOutlet weak var baseView: UIView!
+    @IBOutlet weak var viewBtnPropertyType: UIView!
     
-    var propertyStatus: Int = 1
-    var propertyType: Int = 1
+    var propertyStatus: Int = 0
+    var propertyType: Int = 0
+    var propertyTypeString: String = ""
     var propertyPrice: Int = 0
     var propertyProvince: Int = 1
     var propertyPriceMin: Int = 0
@@ -42,6 +45,9 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var propertyViewSold: UIView!
     @IBOutlet weak var propertyViewRent: UIView!
     
+    var propertyTypeData = ["Apartemen", "Rumah", "Tanah", "Komersial", "Properti Baru"]
+    var pickerPropertyType = UIPickerView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +56,16 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate {
         
         let gesture2 = UITapGestureRecognizer(target: self, action: #selector(viewPropertyRentAction))
         propertyViewRent.addGestureRecognizer(gesture2)
+        
+        var pickerPropertyTypeRect = baseView.frame
+        pickerPropertyTypeRect.origin.x = 0
+        pickerPropertyTypeRect.origin.y = 0
+        pickerPropertyType.frame = pickerPropertyTypeRect
+        pickerPropertyType.delegate = self
+        pickerPropertyType.dataSource = self
+        pickerPropertyType.isHidden = true
+//        datePickerView.addTarget(self, action: #selector(PassengerAddController.datePickerValueChanged), for: UIControlEvents.valueChanged)
+        view.addSubview(pickerPropertyType)
     }
     
     @objc func viewPropertySoldAction(){
@@ -76,7 +92,7 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func btnPropertyTypeAction(_ sender: Any) {
-        
+        pickerPropertyType.isHidden = false
     }
     
     @IBAction func btnPropertyProvinceAction(_ sender: Any) {
@@ -103,4 +119,19 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate {
         self.navigationController?.popToViewController(switchViewController, animated: true)
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return propertyTypeData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return propertyTypeData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        propertyTypeString = propertyTypeData[row]
+    }
 }
