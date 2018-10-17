@@ -45,14 +45,23 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let gesture = UITapGestureRecognizer(target: self, action: "viewPropertySoldAction:")
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(viewPropertySoldAction))
         propertyViewSold.addGestureRecognizer(gesture)
+        
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(viewPropertyRentAction))
+        propertyViewRent.addGestureRecognizer(gesture2)
     }
     
-    func viewPropertySoldAction(sender:UITapGestureRecognizer){
-        if let image = UIImage(named:"radio-btn-checked.png") {
-            self.radioPropertyStatusSold.image( UIImage(named:"radio-btn-unchecked.png"), forControlState: .Normal)
-        }
+    @objc func viewPropertySoldAction(){
+        propertyStatus = 1
+        radioPropertyStatusSold.image = UIImage(named:"radio-btn-checked.png")
+        radioPropertyStatusRent.image = UIImage(named:"radio-btn-unchecked.png")
+    }
+    
+    @objc func viewPropertyRentAction(){
+        propertyStatus = 2
+        radioPropertyStatusRent.image = UIImage(named:"radio-btn-checked.png")
+        radioPropertyStatusSold.image = UIImage(named:"radio-btn-unchecked.png")
     }
     
     override func didReceiveMemoryWarning() {
