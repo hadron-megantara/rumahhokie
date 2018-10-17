@@ -28,11 +28,13 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var viewBtnPropertyType: UIView!
     
+    let defaults = UserDefaults.standard
     var propertyStatus: Int = 0
     var propertyType: Int = 0
     var propertyTypeString: String = ""
     var propertyPrice: Int = 0
     var propertyProvince: Int = 1
+    var propertyProvinceString: String = ""
     var propertyPriceMin: Int = 0
     var propertyPriceMax: Int = 0
     var propertyBuildingMin: Int = 0
@@ -47,7 +49,7 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBOutlet weak var propertyViewRent: UIView!
     
     var propertyTypeData = ["Apartemen", "Rumah", "Tanah", "Komersial", "Properti Baru"]
-    var propertyProvinceData = ["Semua"]
+    var propertyProvinceData: Array = [Any]()
     var pickerPropertyType = UIPickerView()
     var pickerPropertyProvince = UIPickerView()
     let alert = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
@@ -55,6 +57,8 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        propertyProvinceData.append(["mstr_provinsi_id": 0, "mstr_provinsi_desc": "Semua"])
         
         loadProvince()
         
@@ -67,6 +71,7 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
         var pickerRect = pickerPropertyType.frame
         pickerRect.origin.x = -30
         pickerRect.origin.y = 0
+        pickerPropertyType.tag = 1
         pickerPropertyType.frame = pickerRect
         pickerPropertyType.delegate = self
         pickerPropertyType.dataSource = self
@@ -78,6 +83,7 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
         var pickerRect2 = pickerPropertyProvince.frame
         pickerRect2.origin.x = -30
         pickerRect.origin.y = 0
+        pickerPropertyProvince.tag = 2
         pickerPropertyProvince.frame = pickerRect2
         pickerPropertyProvince.delegate = self
         pickerPropertyProvince.dataSource = self
@@ -85,6 +91,7 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
         
         alert2.isModalInPopover = true
         alert2.view.addSubview(pickerPropertyProvince)
+        
     }
     
     func loadProvince(){
@@ -92,17 +99,19 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
         group.enter()
         
         DispatchQueue.main.async {
-            Alamofire.request("mstr_provinsi?order_by=mstr_provinsi_desc&order_type=asc", method: .get).responseJSON { response in
+            Alamofire.request("http://api.rumahhokie.com/mstr_provinsi?order_by=mstr_provinsi_desc&order_type=asc", method: .get).responseJSON { response in
                 
                 if let json = response.result.value {
                     if let res = (json as AnyObject).value(forKey: "mstr_provinsi"){
                         if let resArray = res as? Array<AnyObject>{
                             for r in resArray{
-                                print(r)
+                                self.propertyProvinceData.append(r)
                             }
                         }
                     }
                 }
+                
+                self.pickerPropertyProvince.delegate = self;
             }
             
             group.leave()
@@ -154,7 +163,7 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBAction func btnPropertyProvinceAction(_ sender: Any) {
         pickerPropertyProvince.isHidden = false
         
-        self.present(alert, animated: true, completion:{
+        self.present(alert2, animated: true, completion:{
             self.alert2.view.superview?.isUserInteractionEnabled = true
             self.alert2.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertController2BackgroundTapped)))
         })
@@ -190,18 +199,42 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return propertyTypeData.count
+        if pickerView.tag == 1{
+            return propertyTypeData.count
+        } else{
+            return propertyProvinceData.count
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return propertyTypeData[row]
+        if pickerView.tag == 1{
+            return propertyTypeData[row]
+        } else{
+            let dataProvinceObj = propertyProvinceData[row] as AnyObject
+            let dataProvince = dataProvinceObj.value(forKey: "mstr_provinsi_desc")
+            
+            return dataProvince as? String
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        propertyTypeString = propertyTypeData[row]
-        btnPropertyType.setTitle(propertyTypeString, for: UIControlState.normal)
-        
-        pickerPropertyType.isHidden = true
-        alert.dismiss(animated: true, completion: nil)
+        if pickerView.tag == 1{
+            propertyTypeString = propertyTypeData[row]
+            btnPropertyType.setTitle(propertyTypeString, for: UIControlState.normal)
+            
+            pickerPropertyType.isHidden = true
+            alert.dismiss(animated: true, completion: nil)
+        } else{
+            let dataProvinceObj = propertyProvinceData[row] as AnyObject
+            let dataProvinceString = dataProvinceObj.value(forKey: "mstr_provinsi_desc")
+            let dataProvinceId = dataProvinceObj.value(forKey: "mstr_provinsi_id")
+            
+            propertyProvinceString = dataProvinceString as! String
+            propertyProvince = dataProvinceId as! Int
+            btnPropertyProvince.setTitle(propertyProvinceString, for: UIControlState.normal)
+            
+            pickerPropertyProvince.isHidden = true
+            alert2.dismiss(animated: true, completion: nil)
+        }
     }
 }
