@@ -24,6 +24,21 @@ class PropertyListController: UIViewController {
     var propertyListArray: Array = [Any]()
     var filterBy: String = "cnt_listing_publish_on"
     
+    var propertyStatus: Int = 1
+    var propertyType: Int = 1
+    var propertyPrice: Int = 0
+    var propertyProvince: Int = 1
+    var propertyPriceMin: Int = 0
+    var propertyPriceMax: Int = 0
+    var propertyBuildingMin: Int = 0
+    var propertyBuildingMax: Int = 0
+    var propertyAreaMin: Int = 0
+    var propertyAreaMax: Int = 0
+    var propertyBedRoom: Int = 0
+    var propertyBathroom: Int = 0
+    var propertyGarage: Int = 0
+    var propertyKeyword: String = ""
+    
     @IBAction func backToHome(_ sender: UIBarButtonItem) {
         navigationController?.popToRootViewController(animated: true)
     }
