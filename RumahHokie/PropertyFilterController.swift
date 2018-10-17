@@ -97,7 +97,17 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBAction func btnPropertyTypeAction(_ sender: Any) {
         pickerPropertyType.isHidden = false
         
+        self.present(alert, animated: true, completion:{
+            self.alert.view.superview?.isUserInteractionEnabled = true
+            self.alert.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
+        })
+        
         self.present(alert, animated: true)
+    }
+    
+    @objc func alertControllerBackgroundTapped(){
+        pickerPropertyType.isHidden = true
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnPropertyProvinceAction(_ sender: Any) {
