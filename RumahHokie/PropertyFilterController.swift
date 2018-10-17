@@ -325,6 +325,18 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
             
             pickerPropertyType.isHidden = true
             alert.dismiss(animated: true, completion: nil)
+            
+            if propertyTypeString == "Apartemen"{
+                propertyType = 1
+            } else if propertyTypeString == "Rumah"{
+                propertyType = 2
+            } else if propertyTypeString == "Tanah"{
+                propertyType = 6
+            } else if propertyTypeString == "Komersial"{
+                propertyType = 10
+            } else if propertyTypeString == "Properti Baru"{
+                propertyType = 11
+            }
         } else{
             let dataProvinceObj = propertyProvinceData[row] as AnyObject
             let dataProvinceString = dataProvinceObj.value(forKey: "mstr_provinsi_desc")

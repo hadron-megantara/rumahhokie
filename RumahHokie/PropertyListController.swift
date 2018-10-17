@@ -25,7 +25,7 @@ class PropertyListController: UIViewController {
     var filterBy: String = "cnt_listing_publish_on"
     
     var propertyStatus: Int = 1
-    var propertyType: Int = 1
+    var propertyType: Int = 2
     var propertyPrice: Int = 0
     var propertyProvince: Int = 1
     var propertyPriceMin: Int = 0
@@ -100,8 +100,8 @@ class PropertyListController: UIViewController {
         }
         
         DispatchQueue.main.async {
-            Alamofire.request("http://api.rumahhokie.com/cnt_listing?view=short&offset=0&limit=100&order_by="+self.filterBy+"&order_type=desc&mstr_status_id=1&mstr_tipe_id=\(typeId)&keyword=\(self.propertyKeyword)&mstr_status_id=\(self.propertyStatus)", method: .get).responseJSON { response in
-                
+            Alamofire.request("http://api.rumahhokie.com/cnt_listing?view=short&offset=0&limit=100&order_by="+self.filterBy+"&order_type=desc&mstr_status_id=1&mstr_tipe_id=\(typeId)&keyword=\(self.propertyKeyword)&mstr_status_id=\(self.propertyStatus)&mstr_tipe_id=\(self.propertyType)", method: .get).responseJSON { response in
+                print(response)
                 if let json = response.result.value {
                     if let res = (json as AnyObject).value(forKey: "cnt_listing"){
                         if let resArray = res as? Array<AnyObject>{
