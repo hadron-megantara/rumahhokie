@@ -48,7 +48,6 @@ class PropertyListController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        loadList()
         
         whiteLineNew.backgroundColor = UIColor.white
         whiteLinePopular.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
@@ -101,7 +100,7 @@ class PropertyListController: UIViewController {
         }
         
         DispatchQueue.main.async {
-            Alamofire.request("http://api.rumahhokie.com/cnt_listing?view=short&offset=0&limit=100&order_by="+self.filterBy+"&order_type=desc&mstr_status_id=1&mstr_tipe_id=\(typeId)", method: .get).responseJSON { response in
+            Alamofire.request("http://api.rumahhokie.com/cnt_listing?view=short&offset=0&limit=100&order_by="+self.filterBy+"&order_type=desc&mstr_status_id=1&mstr_tipe_id=\(typeId)&keyword=\(self.propertyKeyword)&mstr_status_id=\(self.propertyStatus)", method: .get).responseJSON { response in
                 
                 if let json = response.result.value {
                     if let res = (json as AnyObject).value(forKey: "cnt_listing"){
@@ -185,6 +184,11 @@ class PropertyListController: UIViewController {
         group.notify(queue: DispatchQueue.main) {
             
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.propertyListArray.removeAll()
+        loadList()
     }
     
     

@@ -77,7 +77,6 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     var propertyStatus: Int = 0
     var propertyType: Int = 0
     var propertyTypeString: String = ""
-    var propertyPrice: Int = 0
     var propertyProvince: Int = 1
     var propertyProvinceString: String = ""
     var propertyPriceMin: Int = 0
@@ -248,20 +247,50 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     
     @IBAction func btnSearchAction(_ sender: Any) {
         let switchViewController = self.navigationController?.viewControllers[1] as! PropertyListController
+        
         switchViewController.propertyStatus = self.propertyStatus
         switchViewController.propertyType = self.propertyType
-        switchViewController.propertyPrice = self.propertyPrice
         switchViewController.propertyProvince = self.propertyProvince
-        switchViewController.propertyPriceMin = self.propertyPriceMin
-        switchViewController.propertyPriceMax = self.propertyPriceMax
-        switchViewController.propertyBuildingMin = self.propertyBuildingMin
-        switchViewController.propertyBuildingMax = self.propertyBuildingMax
-        switchViewController.propertyAreaMin = self.propertyAreaMin
-        switchViewController.propertyAreaMax = self.propertyAreaMax
-        switchViewController.propertyBedRoom = self.propertyBedRoom
-        switchViewController.propertyBathroom = self.propertyBathroom
-        switchViewController.propertyGarage = self.propertyGarage
-        switchViewController.propertyKeyword = self.propertyKeyword
+        
+        if txtPriceMin.text != ""{
+            switchViewController.propertyPriceMin = Int(txtPriceMin.text!)!
+        }
+        
+        if txtPriceMax.text != ""{
+            switchViewController.propertyPriceMax = Int(txtPriceMax.text!)!
+        }
+        
+        if txtPropertyBuildingMin.text != ""{
+            switchViewController.propertyBuildingMin = Int(txtPropertyBuildingMin.text!)!
+        }
+        
+        if txtPropertyBuildingMax.text != ""{
+            switchViewController.propertyBuildingMax = Int(txtPropertyBuildingMax.text!)!
+        }
+        
+        if txtPropertyAreaMin.text != ""{
+            switchViewController.propertyAreaMin = Int(txtPropertyAreaMin.text!)!
+        }
+        
+        if txtPropertyAreaMax.text != ""{
+            switchViewController.propertyAreaMax = Int(txtPropertyAreaMax.text!)!
+        }
+        
+        if txtPropertyBedRoom.text != ""{
+            switchViewController.propertyBedRoom = Int(txtPropertyBedRoom.text!)!
+        }
+        
+        if txtPropertyBathRoom.text != ""{
+            switchViewController.propertyBathroom = Int(txtPropertyBathRoom.text!)!
+        }
+        
+        if txtPropertyGarage.text != ""{
+            switchViewController.propertyGarage = Int(txtPropertyGarage.text!)!
+        }
+        
+        if txtKeyWord.text != ""{
+            switchViewController.propertyKeyword = txtKeyWord.text!
+        }
         
         self.navigationController?.popToViewController(switchViewController, animated: true)
     }
