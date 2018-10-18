@@ -77,7 +77,7 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     var propertyStatus: Int = 0
     var propertyType: Int = 0
     var propertyTypeString: String = ""
-    var propertyProvince: Int = 1
+    var propertyProvince: Int = 0
     var propertyProvinceString: String = ""
     var propertyPriceMin: Int = 0
     var propertyPriceMax: Int = 0

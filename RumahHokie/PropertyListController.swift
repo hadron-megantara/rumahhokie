@@ -105,7 +105,7 @@ class PropertyListController: UIViewController {
             propertyType = typeId
         }
         
-        var urlVar = "http://api.rumahhokie.com/cnt_listing?view=short&offset=0&limit=150&order_by="+self.filterBy+"&order_type=desc&mstr_tipe_id=\(typeId)&mstr_status_id=\(self.propertyStatus)&mstr_tipe_id=\(self.propertyType)&cnt_listing_harga_min=\(self.propertyPriceMin)&cnt_listing_harga_max=\(self.propertyPriceMax)&cnt_listing_lb_min=\(self.propertyBuildingMin)&cnt_listing_lb_max=\(self.propertyBuildingMax)&cnt_listing_lt_min=\(self.propertyAreaMin)&cnt_listing_lt_max=\(self.propertyAreaMax)"
+        var urlVar = "http://api.rumahhokie.com/cnt_listing?view=short&offset=0&limit=150&order_by="+self.filterBy+"&order_type=desc&mstr_status_id=\(self.propertyStatus)&mstr_tipe_id=\(self.propertyType)&cnt_listing_harga_min=\(self.propertyPriceMin)&cnt_listing_harga_max=\(self.propertyPriceMax)&cnt_listing_lb_min=\(self.propertyBuildingMin)&cnt_listing_lb_max=\(self.propertyBuildingMax)&cnt_listing_lt_min=\(self.propertyAreaMin)&cnt_listing_lt_max=\(self.propertyAreaMax)"
         
         if self.propertyKeyword != ""{
             urlVar = urlVar+"&keyword=\(self.propertyKeyword)"
