@@ -46,13 +46,19 @@ class HomeController: UIViewController, AACarouselDelegate {
         
         loadTopBanner()
         
-        navigationController?.navigationBar.isHidden = true
-        
         if UserDefaults.standard.object(forKey: "User") != nil{
+            navigationController?.navigationBar.isHidden = false
+            self.navigationItem.title = "Filter"
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+//            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "CaviarDreams", size: 22)!]
+            
             let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
             bottomMenuView.frame.size.width = bottomMenu.frame.width
             bottomMenu.addSubview(bottomMenuView)
         } else{
+            navigationController?.navigationBar.isHidden = true
+            
             let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
             bottomMenu.addSubview(bottomMenuView)
         }

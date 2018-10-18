@@ -4473,6 +4473,7 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="btnPropertyTypeAction:" destination="c3U-qx-7iH" eventType="touchUpInside" id="MIF-NF-dYt"/>
+                                                            <action selector="propertyTypeAction:" destination="ML3-35-SmK" eventType="touchUpInside" id="Q8w-a3-Zes"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provinsi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCk-IA-6H4">
@@ -4490,6 +4491,7 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="btnPropertyTypeAction:" destination="c3U-qx-7iH" eventType="touchUpInside" id="S1V-An-PqG"/>
+                                                            <action selector="propertyProvinceAction:" destination="ML3-35-SmK" eventType="touchUpInside" id="UpL-lW-Q1X"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kota" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TDL-Zz-KAY">
@@ -4507,6 +4509,7 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="btnPropertyTypeAction:" destination="c3U-qx-7iH" eventType="touchUpInside" id="1cD-e1-CXO"/>
+                                                            <action selector="propertyCityAction:" destination="ML3-35-SmK" eventType="touchUpInside" id="kxO-A1-Ac8"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wilayah" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5S-68-hhg">
@@ -4524,6 +4527,7 @@
                                                         </state>
                                                         <connections>
                                                             <action selector="btnPropertyTypeAction:" destination="c3U-qx-7iH" eventType="touchUpInside" id="pog-5S-KOM"/>
+                                                            <action selector="propertyAreaAction:" destination="ML3-35-SmK" eventType="touchUpInside" id="VqE-pA-UT0"/>
                                                         </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qrz-7f-bh0">
@@ -4881,6 +4885,10 @@
                     </view>
                     <size key="freeformSize" width="375" height="1100"/>
                     <connections>
+                        <outlet property="btnPropertyArea" destination="Xz1-q9-lAM" id="YfR-6N-2sn"/>
+                        <outlet property="btnPropertyCity" destination="Cxt-Zm-mT2" id="wlO-l5-8lL"/>
+                        <outlet property="btnPropertyProvince" destination="TaU-QJ-6Vj" id="l63-NQ-tlw"/>
+                        <outlet property="btnPropertyType" destination="G5Z-E9-SX0" id="2os-3c-DeE"/>
                         <outlet property="propertyViewRent" destination="i6a-Ka-fcT" id="Bty-CD-255"/>
                         <outlet property="propertyViewSold" destination="Ylv-V7-uTx" id="6Zr-9j-vJg"/>
                         <outlet property="radioPropertyStatusRent" destination="iRP-fN-PMm" id="uVG-M5-ex0"/>
