@@ -51,7 +51,12 @@ class HomeController: UIViewController, AACarouselDelegate {
             self.navigationItem.title = "Filter"
             self.navigationController?.navigationBar.barTintColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-//            UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "CaviarDreams", size: 22)!]
+            
+            let btnFilter = UIButton(type: .custom)
+            btnFilter.setTitle("\u{f082}", for: .normal)
+            
+            btnFilter.addTarget(self, action: #selector(openFilter), for: UIControlEvents.touchUpInside)
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btnFilter)
             
             let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
             bottomMenuView.frame.size.width = bottomMenu.frame.width
@@ -62,6 +67,14 @@ class HomeController: UIViewController, AACarouselDelegate {
             let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
             bottomMenu.addSubview(bottomMenuView)
         }
+    }
+    
+    @objc func openFilter(){
+        let sideMenu = Bundle.main.loadNibNamed("SideBar", owner: nil, options: nil)![0] as! UIView
+        sideMenu.frame.size.width = self.view.frame.width * 4/5
+        sideMenu.frame.size.height = self.view.frame.height
+        
+        UIView.transition(with: self.view, duration: 0.5, options:[],animations: {self.view.addSubview(sideMenu)}, completion: nil)
     }
     
     func loadTopBanner(){
