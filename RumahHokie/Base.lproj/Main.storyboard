@@ -4880,6 +4880,12 @@
                         <viewLayoutGuide key="safeArea" id="viF-kC-byR"/>
                     </view>
                     <size key="freeformSize" width="375" height="1100"/>
+                    <connections>
+                        <outlet property="propertyViewRent" destination="i6a-Ka-fcT" id="Bty-CD-255"/>
+                        <outlet property="propertyViewSold" destination="Ylv-V7-uTx" id="6Zr-9j-vJg"/>
+                        <outlet property="radioPropertyStatusRent" destination="iRP-fN-PMm" id="uVG-M5-ex0"/>
+                        <outlet property="radioPropertyStatusSold" destination="GEi-bw-AO2" id="ACd-qx-Tz3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kT-ie-2La" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

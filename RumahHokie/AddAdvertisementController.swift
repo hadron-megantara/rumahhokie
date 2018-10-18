@@ -10,10 +10,35 @@ import Foundation
 import UIKit
 
 class AddAdvertisementController: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var propertyViewSold: UIView!
+    @IBOutlet weak var propertyViewRent: UIView!
+    @IBOutlet weak var radioPropertyStatusSold: UIImageView!
+    @IBOutlet weak var radioPropertyStatusRent: UIImageView!
+    
+    var propertyStatus: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBar.isHidden = true
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(viewPropertySoldAction))
+        propertyViewSold.addGestureRecognizer(gesture)
+        
+        let gesture2 = UITapGestureRecognizer(target: self, action: #selector(viewPropertyRentAction))
+        propertyViewRent.addGestureRecognizer(gesture2)
+    }
+    
+    @objc func viewPropertySoldAction(){
+        propertyStatus = 1
+        radioPropertyStatusSold.image = UIImage(named:"radio-btn-checked.png")
+        radioPropertyStatusRent.image = UIImage(named:"radio-btn-unchecked.png")
+    }
+    
+    @objc func viewPropertyRentAction(){
+        propertyStatus = 2
+        radioPropertyStatusRent.image = UIImage(named:"radio-btn-checked.png")
+        radioPropertyStatusSold.image = UIImage(named:"radio-btn-unchecked.png")
     }
     
     override func didReceiveMemoryWarning() {
