@@ -12,6 +12,8 @@ import UIKit
 class AdvertisementListController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var bottomMenu: BottomMenu!
+    @IBOutlet weak var whiteLineNew: UIView!
+    @IBOutlet weak var whiteLineMost: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,11 @@ class AdvertisementListController: UIViewController, UITextFieldDelegate {
         let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
         bottomMenuView.frame.size.width = bottomMenu.frame.width
         bottomMenu.addSubview(bottomMenuView)
+        
+        whiteLineNew.backgroundColor = UIColor.white
+        whiteLineMost.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+        
+        navigationController?.navigationBar.isHidden = true
     }
     
     @IBAction func showSideBar(_ sender: Any) {

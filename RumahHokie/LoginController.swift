@@ -64,7 +64,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
                                             self.defaults.set(encodedData2, forKey: "UserToken")
                                             
                                             if self.txtPassword.text != "12345"{
-                                                let vc = self.storyboard!.instantiateViewController(withIdentifier: "homeView") as? HomeController
+                                                let vc = self.storyboard!.instantiateViewController(withIdentifier: "advertisementListView") as? AdvertisementListController
                                                 self.navigationController!.pushViewController(vc!, animated: true)
                                             } else{
                                                 let vc = self.storyboard!.instantiateViewController(withIdentifier: "resetPasswordView") as? ResetPasswordController

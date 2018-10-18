@@ -13,7 +13,7 @@ class BottomMenuUser: UITableViewCell {
     var navigationController:UINavigationController = UINavigationController()
     
     @IBAction func advertisementAction(_ sender: UIButton) {
-        let vc = storyboard.instantiateViewController(withIdentifier: "homeView") as? HomeController
+        let vc = storyboard.instantiateViewController(withIdentifier: "advertisementListView") as? AdvertisementListController
         navigationController.pushViewController(vc!, animated: true)
         self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
