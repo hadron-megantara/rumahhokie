@@ -116,13 +116,16 @@ extension NewsController : UITableViewDataSource {
         
         if let objData = self.newsArray[indexPath.row] as? Array<AnyObject>{
             if let label1 = cell.viewWithTag(1) as? UIImageView{
-                let pictUrl = URL(string: objData[1] as! String)!
-                
-                DispatchQueue.global().async {
-                    if let data = try? Data(contentsOf: pictUrl){
-                        if let dataImage = UIImage(data: data){
-                            DispatchQueue.main.async {
-                                label1.image = dataImage
+                print(objData[1])
+                if ((objData[1] as? String) != ""){
+                    let pictUrl = URL(string: objData[1] as! String)!
+                    
+                    DispatchQueue.global().async {
+                        if let data = try? Data(contentsOf: pictUrl){
+                            if let dataImage = UIImage(data: data){
+                                DispatchQueue.main.async {
+                                    label1.image = dataImage
+                                }
                             }
                         }
                     }

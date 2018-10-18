@@ -49,6 +49,9 @@ class HomeController: UIViewController, AACarouselDelegate {
         navigationController?.navigationBar.isHidden = true
         
         if UserDefaults.standard.object(forKey: "User") != nil{
+            let vc = storyboard!.instantiateViewController(withIdentifier: "advertisementListView") as? AdvertisementListController
+            navigationController!.pushViewController(vc!, animated: true)
+            
             let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
             bottomMenuView.frame.size.width = bottomMenu.frame.width
             bottomMenu.addSubview(bottomMenuView)
