@@ -74,6 +74,8 @@ class PropertyListController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 1000
         self.tableView.register(UINib(nibName: "EmptyListViewCell", bundle: nil), forCellReuseIdentifier: "EmptyListViewCell")
+        
+        navigationController?.navigationBar.isHidden = true
     }
     
     @objc func openFilter(){

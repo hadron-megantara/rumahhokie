@@ -53,6 +53,8 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
         btnShare.setImage(UIImage(named: "shareIconBlack"), for: [])
         //        btn_filter.addTarget(self, action: #selector(PPTrainSearchResultViewController.showFilter), for: UIControlEvents.touchUpInside)
         navItem.rightBarButtonItem = UIBarButtonItem(customView: btnShare)
+        
+        navigationController?.navigationBar.isHidden = true
     }
     
     func loadDetail(){
