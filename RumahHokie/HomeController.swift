@@ -53,7 +53,8 @@ class HomeController: UIViewController, AACarouselDelegate {
             self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
             
             let btnFilter = UIButton(type: .custom)
-            btnFilter.setTitle("\u{f082}", for: .normal)
+            btnFilter.titleLabel?.font = UIFont(name: "FontAwesome", size: 20)
+            btnFilter.setTitle("", for: .normal)
             
             btnFilter.addTarget(self, action: #selector(openFilter), for: UIControlEvents.touchUpInside)
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btnFilter)
