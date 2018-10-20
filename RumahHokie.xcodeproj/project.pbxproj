@@ -14,7 +14,6 @@
 		792B1E4E216DB8CC00F63CA6 /* share-white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792B1E4D216DB8CA00F63CA6 /* share-white.jpg */; };
 		792B1E52216F1D4B00F63CA6 /* AgentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B1E51216F1D4B00F63CA6 /* AgentList.swift */; };
 		792B6D7921703D420054505A /* BottomMenuUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B6D7821703D420054505A /* BottomMenuUser.swift */; };
-		792B6D7A21703D810054505A /* BottomMenuUser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792B6D7021703CE70054505A /* BottomMenuUser.xib */; };
 		793BA3AD216F1F66003ADBB4 /* AgentList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792B1E53216F1D7E00F63CA6 /* AgentList.xib */; };
 		79466B4F21522B75004160B7 /* EmptyListProperty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79466B4E21522B75004160B7 /* EmptyListProperty.xib */; };
 		79466B5121522B85004160B7 /* EmptyListProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79466B5021522B85004160B7 /* EmptyListProperty.swift */; };
@@ -46,12 +45,14 @@
 		79815AC5214EC1ED00238433 /* CoreAPi.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC4214EC1ED00238433 /* CoreAPi.m */; };
 		79815AC7214EC40C00238433 /* CoreEndpoints.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815AC6214EC40C00238433 /* CoreEndpoints.m */; };
 		79815ACB214ED15800238433 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 79815ACA214ED15800238433 /* News.m */; };
+		798650B8217BAB6B00292456 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798650B7217BAB6B00292456 /* DrawerViewController.swift */; };
 		79929A0A2173B1B600BF2FE0 /* UserEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79929A092173B1B500BF2FE0 /* UserEditController.swift */; };
-		799CC02F2177F14600A6AF68 /* SideBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 799CC02E2177F14600A6AF68 /* SideBar.xib */; };
 		799CC0312177F15D00A6AF68 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CC0302177F15D00A6AF68 /* SideBar.swift */; };
 		79C9031821750AE3007DB37D /* PropertyFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C9031721750AE3007DB37D /* PropertyFilterController.swift */; };
 		79C9031B217511DB007DB37D /* radio-btn-unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 79C90319217511D6007DB37D /* radio-btn-unchecked.png */; };
 		79C9031C217511DB007DB37D /* radio-btn-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 79C9031A217511DA007DB37D /* radio-btn-checked.png */; };
+		79CED993217BA17C00A4E32C /* SideBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 799CC02E2177F14600A6AF68 /* SideBar.xib */; };
+		79CED995217BA27E00A4E32C /* BottomMenuUser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792B6D7021703CE70054505A /* BottomMenuUser.xib */; };
 		79D1BDBA2173D02D0054A8A0 /* PaidTopListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D1BDB92173D02D0054A8A0 /* PaidTopListingController.swift */; };
 		79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3A214A5E51000B4147 /* BottomMenu.swift */; };
 		79DE9B3D214A630F000B4147 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3C214A630F000B4147 /* HomeController.swift */; };
@@ -156,6 +157,7 @@
 		79815AC8214EC41B00238433 /* CoreEndPoints.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreEndPoints.h; sourceTree = "<group>"; };
 		79815ACA214ED15800238433 /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		79815ACC214ED16B00238433 /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		798650B7217BAB6B00292456 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		79929A092173B1B500BF2FE0 /* UserEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditController.swift; sourceTree = "<group>"; };
 		799CC02E2177F14600A6AF68 /* SideBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideBar.xib; sourceTree = "<group>"; };
 		799CC0302177F15D00A6AF68 /* SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 				79DE9B40214A639E000B4147 /* NewsController.swift */,
 				79DE9B42214A63E6000B4147 /* UserController.swift */,
 				79470D0B21476409007E5090 /* Main.storyboard */,
+				798650B7217BAB6B00292456 /* DrawerViewController.swift */,
 				796739632177FBD500A92C2F /* AddAdvertisementController.swift */,
 				7980AD702177F57700D85315 /* AdvertisementListController.swift */,
 				79D1BDB92173D02D0054A8A0 /* PaidTopListingController.swift */,
@@ -559,7 +562,7 @@
 				79DE9B6E214CE3EF000B4147 /* Icon Apps_rumah.png in Resources */,
 				796B5E192152005F008BB1C3 /* filterIcon.png in Resources */,
 				79470D362149279A007E5090 /* BottomMenu.xib in Resources */,
-				792B6D7A21703D810054505A /* BottomMenuUser.xib in Resources */,
+				79CED995217BA27E00A4E32C /* BottomMenuUser.xib in Resources */,
 				79DE9B7E214CE3EF000B4147 /* bedroom.svg in Resources */,
 				79DE9B77214CE3EF000B4147 /* land_area.png in Resources */,
 				796B5E0F215168B4008BB1C3 /* SquareBanner-1.png in Resources */,
@@ -569,7 +572,7 @@
 				796B5E13215168B4008BB1C3 /* SquareBanner-5.png in Resources */,
 				79470D0F2147640E007E5090 /* Assets.xcassets in Resources */,
 				796B5E10215168B4008BB1C3 /* SquareBanner-2.png in Resources */,
-				799CC02F2177F14600A6AF68 /* SideBar.xib in Resources */,
+				79CED993217BA17C00A4E32C /* SideBar.xib in Resources */,
 				79DE9B71214CE3EF000B4147 /* man_with_tie.xml in Resources */,
 				79DE9B7D214CE3EF000B4147 /* Icon Apps_tanah_revisi.svg in Resources */,
 				796B5E08215158ED008BB1C3 /* MidBanner-1.png in Resources */,
@@ -679,16 +682,16 @@
 				"${BUILT_PRODUCTS_DIR}/AACarousel/AACarousel.framework",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/KYDrawerController/KYDrawerController.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/MMDrawerController/MMDrawerController.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AACarousel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KYDrawerController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDrawerController.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -705,6 +708,7 @@
 				796739642177FBD500A92C2F /* AddAdvertisementController.swift in Sources */,
 				79DE9B43214A63E6000B4147 /* UserController.swift in Sources */,
 				79DE9B3D214A630F000B4147 /* HomeController.swift in Sources */,
+				798650B8217BAB6B00292456 /* DrawerViewController.swift in Sources */,
 				797B3B3B216FD35800191E1F /* ResetPasswordController.swift in Sources */,
 				79466B5121522B85004160B7 /* EmptyListProperty.swift in Sources */,
 				79815ACB214ED15800238433 /* News.m in Sources */,

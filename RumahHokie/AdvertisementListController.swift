@@ -18,22 +18,48 @@ class AdvertisementListController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
-        bottomMenuView.frame.size.width = bottomMenu.frame.width
-        bottomMenu.addSubview(bottomMenuView)
-        
         whiteLineNew.backgroundColor = UIColor.white
         whiteLineMost.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
         
-        navigationController?.navigationBar.isHidden = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
+        
+        if UserDefaults.standard.object(forKey: "User") != nil{
+            navigationController?.navigationBar.isHidden = false
+            self.navigationItem.title = "Iklan Tayang"
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+            
+            let btnFilter = UIButton(type: .custom)
+            btnFilter.titleLabel?.font = UIFont(name: "FontAwesome", size: 20)
+            btnFilter.setTitle("", for: .normal)
+            
+            btnFilter.addTarget(self, action: #selector(openFilter), for: UIControlEvents.touchUpInside)
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btnFilter)
+            
+            let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
+            bottomMenuView.frame.size.width = bottomMenu.frame.width
+            bottomMenu.addSubview(bottomMenuView)
+        } else{
+            navigationController?.navigationBar.isHidden = true
+            
+            let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
+            bottomMenu.addSubview(bottomMenuView)
+        }
     }
     
-    @IBAction func showSideBar(_ sender: Any) {
-        let sideMenu = Bundle.main.loadNibNamed("SideBar", owner: nil, options: nil)![0] as! UIView
-        sideMenu.frame.size.width = mainView.frame.width * 4/5
-        sideMenu.frame.size.height = mainView.frame.height
+    @objc func openFilter(){
+        let transition = CATransition()
+        transition.duration = 0.5
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromRight
+        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
         
-        UIView.transition(with: mainView, duration: 0.5, options:[],animations: {self.mainView.addSubview(sideMenu)}, completion: nil)
+        let sideMenu = Bundle.main.loadNibNamed("SideBar", owner: nil, options: nil)![0] as! UIView
+        sideMenu.frame.size.width = self.view.frame.width * 4/5
+        sideMenu.frame.size.height = self.view.frame.height
+        sideMenu.window!.layer.add(transition, forKey: kCATransition)
+        
+        UIView.transition(with: self.view, duration: 0.5, options:[],animations: {self.view.addSubview(sideMenu)}, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

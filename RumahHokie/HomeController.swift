@@ -59,9 +59,10 @@ class HomeController: UIViewController, AACarouselDelegate {
             btnFilter.addTarget(self, action: #selector(openFilter), for: UIControlEvents.touchUpInside)
             self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btnFilter)
             
-            let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
-            bottomMenuView.frame.size.width = bottomMenu.frame.width
-            bottomMenu.addSubview(bottomMenuView)
+            if let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)?[0] as? UIView{
+                bottomMenuView.frame.size.width = bottomMenu.frame.width
+                bottomMenu.addSubview(bottomMenuView)
+            }
         } else{
             navigationController?.navigationBar.isHidden = true
             
@@ -74,7 +75,7 @@ class HomeController: UIViewController, AACarouselDelegate {
         let sideMenu = Bundle.main.loadNibNamed("SideBar", owner: nil, options: nil)![0] as! UIView
         sideMenu.frame.size.width = self.view.frame.width * 4/5
         sideMenu.frame.size.height = self.view.frame.height
-        
+
         UIView.transition(with: self.view, duration: 0.5, options:[],animations: {self.view.addSubview(sideMenu)}, completion: nil)
     }
     

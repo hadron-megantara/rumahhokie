@@ -9,7 +9,7 @@ target 'RumahHokie' do
   pod 'AACarousel'
   pod 'Alamofire', '~> 4.7'
   pod 'Kingfisher'
-  pod 'MMDrawerController', '~> 0.5.7'
+  pod 'KYDrawerController'
 
   # Pods for RumahHokie
 
