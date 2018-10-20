@@ -34,16 +34,37 @@ class NewsController: UIViewController {
         btnGalery.titleLabel?.adjustsFontSizeToFitWidth = true
         btnVideo.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        self.navigationController?.navigationBar.isHidden = true
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
         
         if UserDefaults.standard.object(forKey: "User") != nil{
+            self.navigationItem.title = "Berita"
+            self.navigationController?.navigationBar.barTintColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+            
+            let btnFilter = UIButton(type: .custom)
+            btnFilter.titleLabel?.font = UIFont(name: "FontAwesome", size: 20)
+            btnFilter.setTitle("", for: .normal)
+            
+            btnFilter.addTarget(self, action: #selector(openFilter), for: UIControlEvents.touchUpInside)
+            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btnFilter)
+            
             let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
             bottomMenuView.frame.size.width = bottomMenu.frame.width
             bottomMenu.addSubview(bottomMenuView)
         } else{
+            self.navigationController?.navigationBar.isHidden = true
+            
             let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
             bottomMenu.addSubview(bottomMenuView)
         }
+    }
+    
+    @objc func openFilter(){
+        let sideMenu = Bundle.main.loadNibNamed("SideBar", owner: nil, options: nil)![0] as! UIView
+        sideMenu.frame.size.width = self.view.frame.width * 4/5
+        sideMenu.frame.size.height = self.view.frame.height
+        
+        UIView.transition(with: self.view, duration: 0.5, options:[],animations: {self.view.addSubview(sideMenu)}, completion: nil)
     }
     
     func loadNews(){
