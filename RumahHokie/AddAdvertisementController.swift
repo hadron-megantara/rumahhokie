@@ -22,8 +22,12 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     
     var propertyType: Int = 0
     var propertyTypeString: String = ""
+    
     var propertyProvince: Int = 1
     var propertyProvinceString: String = ""
+    
+    var propertyCity: Int = 1
+    var propertyCityString: String = ""
     
     var propertyStatus: Int = 0
     var propertyTypeData = ["Apartemen", "Rumah", "Tanah", "Komersial", "Properti Baru"]
@@ -77,6 +81,34 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         
         DispatchQueue.main.async {
             Alamofire.request("http://api.rumahhokie.com/mstr_provinsi?order_by=mstr_provinsi_desc&order_type=asc", method: .get).responseJSON { response in
+                
+                if let json = response.result.value {
+                    if let res = (json as AnyObject).value(forKey: "mstr_provinsi"){
+                        if let resArray = res as? Array<AnyObject>{
+                            for r in resArray{
+                                self.propertyProvinceData.append(r)
+                            }
+                        }
+                    }
+                }
+                
+                self.pickerPropertyProvince.delegate = self;
+            }
+            
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            
+        }
+    }
+
+    func loadCity(){
+        let group = DispatchGroup()
+        group.enter()
+        
+        DispatchQueue.main.async {
+            Alamofire.request("http://api.rumahhokie.com/mstr_provinsi/?order_by=mstr_provinsi_desc&order_type=asc", method: .get).responseJSON { response in
                 
                 if let json = response.result.value {
                     if let res = (json as AnyObject).value(forKey: "mstr_provinsi"){
@@ -199,10 +231,12 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
             } else if propertyTypeString == "Properti Baru"{
                 propertyType = 11
             }
-        } else{
+        } else if pickerView.tag == 2{
             let dataProvinceObj = propertyProvinceData[row] as AnyObject
             let dataProvinceString = dataProvinceObj.value(forKey: "mstr_provinsi_desc")
             let dataProvinceId = dataProvinceObj.value(forKey: "mstr_provinsi_id")
+            
+            loadCity()
             
             propertyProvinceString = dataProvinceString as! String
             propertyProvince = dataProvinceId as! Int

@@ -1194,7 +1194,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGj-I6-dED">
-                                                <rect key="frame" x="8" y="10.5" width="30" height="29"/>
+                                                <rect key="frame" x="8" y="9" width="30" height="32"/>
                                                 <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                                 <state key="normal" title="">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -3947,7 +3947,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T2w-DH-joo">
-                                        <rect key="frame" x="8" y="9" width="30" height="32"/>
+                                        <rect key="frame" x="8" y="10.5" width="30" height="29"/>
                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                         <state key="normal" title="">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
