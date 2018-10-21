@@ -18,6 +18,7 @@ class NewsController: UIViewController {
     @IBOutlet weak var btnVideo: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
+    var sideIsOpened: Bool = false
     var dataTotal: Int = 0
     var newsArray: Array = [Any]()
     
@@ -60,11 +61,28 @@ class NewsController: UIViewController {
     }
     
     @objc func openFilter(){
-        let sideMenu = Bundle.main.loadNibNamed("SideBar", owner: nil, options: nil)![0] as! UIView
-        sideMenu.frame.size.width = self.view.frame.width * 4/5
-        sideMenu.frame.size.height = self.view.frame.height
-        
-        UIView.transition(with: self.view, duration: 0.5, options:[],animations: {self.view.addSubview(sideMenu)}, completion: nil)
+        if(!sideIsOpened){
+            sideIsOpened = true
+            let sideMenu = Bundle.main.loadNibNamed("SideBar", owner: nil, options: nil)![0] as! UIView
+            sideMenu.frame.size.width = self.view.frame.width * 4/5
+            sideMenu.frame.size.height = self.view.frame.height
+            sideMenu.tag = 100
+            
+            self.view.superview?.isUserInteractionEnabled = true
+            self.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
+            
+            UIView.transition(with: self.view, duration: 0.5, options:[],animations: {self.view.addSubview(sideMenu)}, completion: nil)
+        } else{
+            sideIsOpened = false
+            let sideView = view.viewWithTag(100)
+            sideView?.removeFromSuperview()
+        }
+    }
+    
+    @objc func alertControllerBackgroundTapped(){
+        sideIsOpened = false
+        let sideView = view.viewWithTag(100)
+        sideView?.removeFromSuperview()
     }
     
     func loadNews(){

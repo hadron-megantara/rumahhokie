@@ -15,6 +15,8 @@ class AdvertisementListController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var whiteLineNew: UIView!
     @IBOutlet weak var whiteLineMost: UIView!
     
+    var sideIsOpened: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,17 +50,35 @@ class AdvertisementListController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func openFilter(){
-//        let transition = CATransition()
-//        transition.duration = 0.5
-//        transition.type = kCATransitionPush
-//        transition.subtype = kCATransitionFromRight
-//        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
-//
-        let sideMenu = Bundle.main.loadNibNamed("SideBar", owner: nil, options: nil)![0] as! UIView
-        sideMenu.frame.size.width = self.view.frame.width * 4/5
-        sideMenu.frame.size.height = self.view.frame.height
+        //        let transition = CATransition()
+        //        transition.duration = 0.5
+        //        transition.type = kCATransitionPush
+        //        transition.subtype = kCATransitionFromRight
+        //        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+        //
         
-        UIView.transition(with: self.view, duration: 0.5, options:[],animations: {self.view.addSubview(sideMenu)}, completion: nil)
+        if(!sideIsOpened){
+            sideIsOpened = true
+            let sideMenu = Bundle.main.loadNibNamed("SideBar", owner: nil, options: nil)![0] as! UIView
+            sideMenu.frame.size.width = self.view.frame.width * 4/5
+            sideMenu.frame.size.height = self.view.frame.height
+            sideMenu.tag = 100
+            
+            self.view.superview?.isUserInteractionEnabled = true
+            self.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
+            
+            UIView.transition(with: self.view, duration: 0.5, options:[],animations: {self.view.addSubview(sideMenu)}, completion: nil)
+        } else{
+            sideIsOpened = false
+            let sideView = view.viewWithTag(100)
+            sideView?.removeFromSuperview()
+        }
+    }
+    
+    @objc func alertControllerBackgroundTapped(){
+        sideIsOpened = false
+        let sideView = view.viewWithTag(100)
+        sideView?.removeFromSuperview()
     }
     
     override func didReceiveMemoryWarning() {
