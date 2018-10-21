@@ -132,7 +132,7 @@ class PropertyListController: UIViewController {
         if self.propertyGarage != 0{
             urlVar = urlVar+"&cnt_listing_garasi=\(self.propertyGarage)"
         }
-        print(urlVar)
+        
         DispatchQueue.main.async {
             Alamofire.request(urlVar, method: .get).responseJSON { response in
                 if let json = response.result.value {

@@ -1321,6 +1321,7 @@
                     <connections>
                         <outlet property="bottomMenu" destination="NpR-zs-scy" id="Iep-jt-RfZ"/>
                         <outlet property="mainView" destination="7UC-vq-pO1" id="FqC-me-IXV"/>
+                        <outlet property="tableView" destination="uMP-mx-RaD" id="8pd-iq-B83"/>
                         <outlet property="whiteLineMost" destination="74t-M8-Xer" id="eUo-7f-ZtZ"/>
                         <outlet property="whiteLineNew" destination="7LF-eh-KHk" id="FQk-aU-Wkj"/>
                     </connections>

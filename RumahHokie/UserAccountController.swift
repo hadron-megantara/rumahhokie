@@ -29,7 +29,7 @@ class UserAccountController: UIViewController, UITextFieldDelegate {
         
         let propertyTotal: Int = (decodedTeams as AnyObject).value(forKey: "published_cnt_listing_count") as! Int
         let propertySold: Int = (decodedTeams as AnyObject).value(forKey: "sold_cnt_listing_count") as! Int
-        print(propertyTotal)
+        
         userPropertyTotal.text = String(propertyTotal)
         userPropertySold.text = String(propertySold)
         
