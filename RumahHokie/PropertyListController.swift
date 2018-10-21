@@ -195,9 +195,7 @@ class PropertyListController: UIViewController {
                                 
                                 if let objImg = r["cnt_foto"] as? Array<AnyObject> {
                                     if objImg.count > 0{
-                                        for objImgLoop in objImg{
-                                            dataImage = objImgLoop["nama_foto"] as! String
-                                        }
+                                        dataImage = objImg[0]["nama_foto"] as! String
                                     }
                                 }
                                 
