@@ -48,16 +48,15 @@ class AdvertisementListController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func openFilter(){
-        let transition = CATransition()
-        transition.duration = 0.5
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
-        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
-        
+//        let transition = CATransition()
+//        transition.duration = 0.5
+//        transition.type = kCATransitionPush
+//        transition.subtype = kCATransitionFromRight
+//        transition.timingFunction = CAMediaTimingFunction(name:kCAMediaTimingFunctionEaseInEaseOut)
+//
         let sideMenu = Bundle.main.loadNibNamed("SideBar", owner: nil, options: nil)![0] as! UIView
         sideMenu.frame.size.width = self.view.frame.width * 4/5
         sideMenu.frame.size.height = self.view.frame.height
-        sideMenu.window!.layer.add(transition, forKey: kCATransition)
         
         UIView.transition(with: self.view, duration: 0.5, options:[],animations: {self.view.addSubview(sideMenu)}, completion: nil)
     }

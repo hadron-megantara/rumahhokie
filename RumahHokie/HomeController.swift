@@ -18,6 +18,8 @@ class HomeController: UIViewController, AACarouselDelegate {
     @IBOutlet var bannerMidRectangle: [UIImageView]!
     @IBOutlet var bannerMidSquare: [UIImageView]!
     
+    var sideIsOpened: Bool = false
+    
     @IBAction func openPropertyList(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "propertyListView") as? PropertyListController
         
@@ -72,11 +74,28 @@ class HomeController: UIViewController, AACarouselDelegate {
     }
     
     @objc func openFilter(){
-        let sideMenu = Bundle.main.loadNibNamed("SideBar", owner: nil, options: nil)![0] as! UIView
-        sideMenu.frame.size.width = self.view.frame.width * 4/5
-        sideMenu.frame.size.height = self.view.frame.height
+        if(!sideIsOpened){
+            sideIsOpened = true
+            let sideMenu = Bundle.main.loadNibNamed("SideBar", owner: nil, options: nil)![0] as! UIView
+            sideMenu.frame.size.width = self.view.frame.width * 4/5
+            sideMenu.frame.size.height = self.view.frame.height
+            sideMenu.tag = 100
+            
+            self.view.superview?.isUserInteractionEnabled = true
+            self.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
 
-        UIView.transition(with: self.view, duration: 0.5, options:[],animations: {self.view.addSubview(sideMenu)}, completion: nil)
+            UIView.transition(with: self.view, duration: 0.5, options:[],animations: {self.view.addSubview(sideMenu)}, completion: nil)
+        } else{
+            sideIsOpened = false
+            let sideView = view.viewWithTag(100)
+            sideView?.removeFromSuperview()
+        }
+    }
+    
+    @objc func alertControllerBackgroundTapped(){
+        sideIsOpened = false
+        let sideView = view.viewWithTag(100)
+        sideView?.removeFromSuperview()
     }
     
     func loadTopBanner(){
