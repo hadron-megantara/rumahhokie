@@ -14,6 +14,7 @@
 		792B1E4E216DB8CC00F63CA6 /* share-white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792B1E4D216DB8CA00F63CA6 /* share-white.jpg */; };
 		792B1E52216F1D4B00F63CA6 /* AgentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B1E51216F1D4B00F63CA6 /* AgentList.swift */; };
 		792B6D7921703D420054505A /* BottomMenuUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B6D7821703D420054505A /* BottomMenuUser.swift */; };
+		79331E2D217DE0FD007B281F /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79331E2C217DE0FD007B281F /* ForgotPasswordController.swift */; };
 		793BA3AD216F1F66003ADBB4 /* AgentList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792B1E53216F1D7E00F63CA6 /* AgentList.xib */; };
 		79466B4F21522B75004160B7 /* EmptyListProperty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79466B4E21522B75004160B7 /* EmptyListProperty.xib */; };
 		79466B5121522B85004160B7 /* EmptyListProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79466B5021522B85004160B7 /* EmptyListProperty.swift */; };
@@ -121,6 +122,7 @@
 		792B1E53216F1D7E00F63CA6 /* AgentList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AgentList.xib; path = /Users/hadron/Code/iOS/RumahHokie/RumahHokie/AgentList.xib; sourceTree = "<absolute>"; };
 		792B6D7021703CE70054505A /* BottomMenuUser.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenuUser.xib; sourceTree = "<group>"; };
 		792B6D7821703D420054505A /* BottomMenuUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BottomMenuUser.swift; path = /Users/hadron/Code/iOS/RumahHokie/RumahHokie/View/BottomMenuUser.swift; sourceTree = "<absolute>"; };
+		79331E2C217DE0FD007B281F /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		79466B4E21522B75004160B7 /* EmptyListProperty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyListProperty.xib; sourceTree = "<group>"; };
 		79466B5021522B85004160B7 /* EmptyListProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListProperty.swift; sourceTree = "<group>"; };
 		79466B56215230D5004160B7 /* mapMarker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapMarker.png; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 				79DE9B40214A639E000B4147 /* NewsController.swift */,
 				79DE9B42214A63E6000B4147 /* UserController.swift */,
 				79470D0B21476409007E5090 /* Main.storyboard */,
+				79331E2C217DE0FD007B281F /* ForgotPasswordController.swift */,
 				798650B7217BAB6B00292456 /* DrawerViewController.swift */,
 				796739632177FBD500A92C2F /* AddAdvertisementController.swift */,
 				7980AD702177F57700D85315 /* AdvertisementListController.swift */,
@@ -713,6 +716,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				796739642177FBD500A92C2F /* AddAdvertisementController.swift in Sources */,
+				79331E2D217DE0FD007B281F /* ForgotPasswordController.swift in Sources */,
 				79DE9B43214A63E6000B4147 /* UserController.swift in Sources */,
 				79DE9B3D214A630F000B4147 /* HomeController.swift in Sources */,
 				798650B8217BAB6B00292456 /* DrawerViewController.swift in Sources */,
