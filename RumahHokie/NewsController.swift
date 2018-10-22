@@ -12,21 +12,20 @@ import Alamofire
 class NewsController: UIViewController {
     @IBOutlet weak var bottomMenu: UIView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var viewMenu: UIView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    
     
     var sideIsOpened: Bool = false
     var dataTotal: Int = 0
     var newsArray: Array = [Any]()
+    var filterId: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
         loadNews()
         
-        scrollView.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
         
 //        btnProperty.titleLabel?.adjustsFontSizeToFitWidth = true
 //        btnNew.titleLabel?.adjustsFontSizeToFitWidth = true
@@ -34,9 +33,8 @@ class NewsController: UIViewController {
 //        btnGalery.titleLabel?.adjustsFontSizeToFitWidth = true
 //        btnVideo.titleLabel?.adjustsFontSizeToFitWidth = true
         
-        let menuView = Bundle.main.loadNibNamed("NewsMenu", owner: nil, options: nil)![0] as! UIView
-        scrollView.addSubview(menuView)
-        viewMenu.addSubview(menuView)
+//        let menuView = Bundle.main.loadNibNamed("NewsMenu", owner: nil, options: nil)![0] as! UIView
+//        viewMenu.addSubview(menuView)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
         
@@ -92,8 +90,14 @@ class NewsController: UIViewController {
         let group = DispatchGroup()
         group.enter()
         
+        var urlVar = "http://rumahhokie.com/beritaproperti/wp-json/wp/v2/posts?&offset=0&per_page=40&_embed=1"
+        
+        if self.filterId != 0{
+            urlVar = urlVar+"&categories=\(self.filterId)"
+        }
+        
         DispatchQueue.main.async {
-            Alamofire.request("http://rumahhokie.com/beritaproperti/wp-json/wp/v2/posts?&offset=0&per_page=40&_embed=1", method: .get).responseJSON { response in
+            Alamofire.request(urlVar, method: .get).responseJSON { response in
                 
                 if let json = response.result.value {
                     if let resArray = json as? Array<AnyObject>{
@@ -146,6 +150,47 @@ class NewsController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func menuFilterAction(_ sender: UIButton) {
+        if sender.tag == 21{
+            filterId = 0
+        } else if sender.tag == 22{
+            filterId = 13
+        } else if sender.tag == 23{
+            filterId = 2
+        } else if sender.tag == 24{
+            filterId = 11
+        } else if sender.tag == 25{
+            filterId = 8
+        } else if sender.tag == 26{
+            filterId = 10
+        } else if sender.tag == 37{
+            filterId = 268
+        } else if sender.tag == 27{
+            filterId = 9
+        } else if sender.tag == 28{
+            filterId = 12
+        } else if sender.tag == 29{
+            filterId = 2635
+        } else if sender.tag == 30{
+            filterId = 14
+        } else if sender.tag == 31{
+            filterId = 258
+        } else if sender.tag == 32{
+            filterId = 723
+        } else if sender.tag == 33{
+            filterId = 237
+        } else if sender.tag == 34{
+            filterId = 4325
+        } else if sender.tag == 35{
+            filterId = 398
+        } else if sender.tag == 36{
+            filterId = 1
+        }
+        
+        self.newsArray.removeAll()
+        loadNews()
+    }
+    
 }
 
 extension NewsController : UITableViewDataSource {
@@ -158,7 +203,6 @@ extension NewsController : UITableViewDataSource {
         
         if let objData = self.newsArray[indexPath.row] as? Array<AnyObject>{
             if let label1 = cell.viewWithTag(1) as? UIImageView{
-                print(objData[1])
                 if ((objData[1] as? String) != ""){
                     let pictUrl = URL(string: objData[1] as! String)!
                     
