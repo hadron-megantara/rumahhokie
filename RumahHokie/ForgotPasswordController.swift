@@ -22,4 +22,10 @@ class ForgotPasswordController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backAction(_ sender: Any) {
+        let switchViewController = self.navigationController?.viewControllers[1] as! LoginController
+        
+        self.navigationController?.popToViewController(switchViewController, animated: true)
+    }
+    
 }
