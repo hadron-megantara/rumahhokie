@@ -11,11 +11,6 @@ import Alamofire
 
 class NewsController: UIViewController {
     @IBOutlet weak var bottomMenu: UIView!
-    @IBOutlet weak var btnProperty: UIButton!
-    @IBOutlet weak var btnNew: UIButton!
-    @IBOutlet weak var btnPopular: UIButton!
-    @IBOutlet weak var btnGalery: UIButton!
-    @IBOutlet weak var btnVideo: UIButton!
     @IBOutlet weak var tableView: UITableView!
     
     var sideIsOpened: Bool = false
@@ -29,11 +24,11 @@ class NewsController: UIViewController {
         tableView.dataSource = self
         loadNews()
         
-        btnProperty.titleLabel?.adjustsFontSizeToFitWidth = true
-        btnNew.titleLabel?.adjustsFontSizeToFitWidth = true
-        btnPopular.titleLabel?.adjustsFontSizeToFitWidth = true
-        btnGalery.titleLabel?.adjustsFontSizeToFitWidth = true
-        btnVideo.titleLabel?.adjustsFontSizeToFitWidth = true
+//        btnProperty.titleLabel?.adjustsFontSizeToFitWidth = true
+//        btnNew.titleLabel?.adjustsFontSizeToFitWidth = true
+//        btnPopular.titleLabel?.adjustsFontSizeToFitWidth = true
+//        btnGalery.titleLabel?.adjustsFontSizeToFitWidth = true
+//        btnVideo.titleLabel?.adjustsFontSizeToFitWidth = true
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
         
@@ -90,7 +85,7 @@ class NewsController: UIViewController {
         group.enter()
         
         DispatchQueue.main.async {
-            Alamofire.request("http://rumahhokie.com/beritaproperti/wp-json/wp/v2/posts?&offset=1&per_page=100&_embed=1", method: .get).responseJSON { response in
+            Alamofire.request("http://rumahhokie.com/beritaproperti/wp-json/wp/v2/posts?&offset=0&per_page=40&_embed=1", method: .get).responseJSON { response in
                 
                 if let json = response.result.value {
                     if let resArray = json as? Array<AnyObject>{
