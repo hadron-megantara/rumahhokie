@@ -25,6 +25,8 @@
 		79470D1D2147640E007E5090 /* RumahHokieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D1C2147640E007E5090 /* RumahHokieTests.swift */; };
 		79470D282147640E007E5090 /* RumahHokieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79470D272147640E007E5090 /* RumahHokieUITests.swift */; };
 		79470D362149279A007E5090 /* BottomMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79470D352149279A007E5090 /* BottomMenu.xib */; };
+		79488FE3217DA41B0056A6B8 /* NewsMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79488FE2217DA41B0056A6B8 /* NewsMenu.xib */; };
+		79488FE5217DAAEB0056A6B8 /* NewsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79488FE4217DAAEB0056A6B8 /* NewsMenu.swift */; };
 		795F3B482173ACE100EDF3CE /* UserAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F3B472173ACE100EDF3CE /* UserAccountController.swift */; };
 		796739622177F6CB00A92C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79470D0B21476409007E5090 /* Main.storyboard */; };
 		796739642177FBD500A92C2F /* AddAdvertisementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796739632177FBD500A92C2F /* AddAdvertisementController.swift */; };
@@ -136,6 +138,8 @@
 		79470D272147640E007E5090 /* RumahHokieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RumahHokieUITests.swift; sourceTree = "<group>"; };
 		79470D292147640E007E5090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79470D352149279A007E5090 /* BottomMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenu.xib; sourceTree = "<group>"; };
+		79488FE2217DA41B0056A6B8 /* NewsMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsMenu.xib; sourceTree = "<group>"; };
+		79488FE4217DAAEB0056A6B8 /* NewsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsMenu.swift; sourceTree = "<group>"; };
 		795F3B472173ACE100EDF3CE /* UserAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountController.swift; sourceTree = "<group>"; };
 		796739632177FBD500A92C2F /* AddAdvertisementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdvertisementController.swift; sourceTree = "<group>"; };
 		796B5E04215158ED008BB1C3 /* MidBanner-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MidBanner-2.png"; sourceTree = "<group>"; };
@@ -272,6 +276,8 @@
 				79DE9B3A214A5E51000B4147 /* BottomMenu.swift */,
 				799CC02E2177F14600A6AF68 /* SideBar.xib */,
 				799CC0302177F15D00A6AF68 /* SideBar.swift */,
+				79488FE2217DA41B0056A6B8 /* NewsMenu.xib */,
+				79488FE4217DAAEB0056A6B8 /* NewsMenu.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -587,6 +593,7 @@
 				79466B4F21522B75004160B7 /* EmptyListProperty.xib in Resources */,
 				79DE9B54214A7BE7000B4147 /* Watermark RH-01-01.png in Resources */,
 				797B3B39216F72F300191E1F /* EmptyListAgent.xib in Resources */,
+				79488FE3217DA41B0056A6B8 /* NewsMenu.xib in Resources */,
 				79DE9B53214A7BE7000B4147 /* rumahhokie.png in Resources */,
 				79DE9B79214CE3EF000B4147 /* building_area.png in Resources */,
 				79DE9B6C214CE3EF000B4147 /* land_area.svg in Resources */,
@@ -716,6 +723,7 @@
 				79D1BDBA2173D02D0054A8A0 /* PaidTopListingController.swift in Sources */,
 				7980AD712177F57700D85315 /* AdvertisementListController.swift in Sources */,
 				792B1E52216F1D4B00F63CA6 /* AgentList.swift in Sources */,
+				79488FE5217DAAEB0056A6B8 /* NewsMenu.swift in Sources */,
 				79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */,
 				79C9031821750AE3007DB37D /* PropertyFilterController.swift in Sources */,
 				799CC0312177F15D00A6AF68 /* SideBar.swift in Sources */,

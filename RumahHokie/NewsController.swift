@@ -12,6 +12,8 @@ import Alamofire
 class NewsController: UIViewController {
     @IBOutlet weak var bottomMenu: UIView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewMenu: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var sideIsOpened: Bool = false
     var dataTotal: Int = 0
@@ -24,11 +26,17 @@ class NewsController: UIViewController {
         tableView.dataSource = self
         loadNews()
         
+        scrollView.delegate = self
+        
 //        btnProperty.titleLabel?.adjustsFontSizeToFitWidth = true
 //        btnNew.titleLabel?.adjustsFontSizeToFitWidth = true
 //        btnPopular.titleLabel?.adjustsFontSizeToFitWidth = true
 //        btnGalery.titleLabel?.adjustsFontSizeToFitWidth = true
 //        btnVideo.titleLabel?.adjustsFontSizeToFitWidth = true
+        
+        let menuView = Bundle.main.loadNibNamed("NewsMenu", owner: nil, options: nil)![0] as! UIView
+        scrollView.addSubview(menuView)
+        viewMenu.addSubview(menuView)
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
         
