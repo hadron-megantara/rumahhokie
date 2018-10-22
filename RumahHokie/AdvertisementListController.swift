@@ -21,6 +21,7 @@ class AdvertisementListController: UIViewController, UITextFieldDelegate {
     var propertyListArray: Array = [Any]()
     var dataTotal: Int = 0
     var agentId: Int = 0
+    var isFilterNew: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +72,12 @@ class AdvertisementListController: UIViewController, UITextFieldDelegate {
         let group = DispatchGroup()
         group.enter()
         
-        let urlVar = "http://api.rumahhokie.com/agt_user/\(self.agentId)/cnt_listing?view=short&offset=0&limit=150&order_by=cnt_listing_publish_on&order_type=desc"
+        var limitFilter: Int = 150
+        if !isFilterNew{
+            limitFilter = 5
+        }
+        
+        let urlVar = "http://api.rumahhokie.com/agt_user/\(self.agentId)/cnt_listing?view=short&offset=0&limit=\(limitFilter)&order_by=cnt_listing_publish_on&order_type=desc"
         
         DispatchQueue.main.async {
             Alamofire.request(urlVar, method: .get).responseJSON { response in
@@ -194,7 +200,27 @@ class AdvertisementListController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func filterNewAction(_ sender: Any) {
+        isFilterNew = true
+        
+        whiteLineNew.backgroundColor = UIColor.white
+        whiteLineMost.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+        
+        self.propertyListArray.removeAll()
+        self.dataTotal = 0
+        loadList()
+    }
     
+    @IBAction func filterMostAction(_ sender: Any) {
+        isFilterNew = false
+        
+        whiteLineMost.backgroundColor = UIColor.white
+        whiteLineNew.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
+        
+        self.propertyListArray.removeAll()
+        self.dataTotal = 0
+        loadList()
+    }
 }
 
 extension AdvertisementListController : UITableViewDataSource {

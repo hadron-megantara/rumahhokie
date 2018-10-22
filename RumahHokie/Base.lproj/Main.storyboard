@@ -998,7 +998,7 @@
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="filterListing:" destination="Ue3-b3-zfe" eventType="touchUpInside" id="wmo-D0-efC"/>
+                                                            <action selector="filterNewAction:" destination="uGv-yQ-9iz" eventType="touchUpInside" id="uc1-As-Lgo"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1018,7 +1018,7 @@
                                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
                                                         <connections>
-                                                            <action selector="filterListing:" destination="Ue3-b3-zfe" eventType="touchUpInside" id="9wo-yK-Deh"/>
+                                                            <action selector="filterMostAction:" destination="uGv-yQ-9iz" eventType="touchUpInside" id="TeE-vR-Dbf"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -1253,7 +1253,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74t-M8-Xer">
                                                 <rect key="frame" x="187.5" y="0.0" width="187.5" height="4"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="backgroundColor" red="0.13333333333333333" green="0.21176470588235294" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
