@@ -4921,25 +4921,25 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Masukkan email akun Anda. Kami akan mengirimkan link untuk melakukan reset password ke email Anda." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1D-Hy-H4J">
-                                        <rect key="frame" x="16" y="50" width="343" height="33.5"/>
+                                        <rect key="frame" x="16" y="42" width="343" height="33.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TPa-sY-7mJ">
-                                        <rect key="frame" x="16" y="115.5" width="34.5" height="17"/>
+                                        <rect key="frame" x="16" y="107.5" width="34.5" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" white="0.47999999999999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l4h-cM-oXu">
-                                        <rect key="frame" x="16" y="140.5" width="343" height="30"/>
+                                        <rect key="frame" x="16" y="132.5" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4d-1e-ADH">
-                                        <rect key="frame" x="16" y="194.5" width="343" height="40"/>
+                                        <rect key="frame" x="16" y="186.5" width="343" height="40"/>
                                         <color key="backgroundColor" red="0.1333333333" green="0.21176470589999999" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="OTl-1L-67h"/>
@@ -4949,6 +4949,7 @@
                                         </state>
                                         <connections>
                                             <action selector="loginAction:" destination="eKh-BK-PwC" eventType="touchUpInside" id="1WZ-rU-EH0"/>
+                                            <action selector="resetPasswordAction:" destination="6bJ-Sg-DVH" eventType="touchUpInside" id="diL-Bt-yKs"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -4962,7 +4963,7 @@
                                     <constraint firstItem="nIF-Qp-UW9" firstAttribute="leading" secondItem="W0M-6f-Yoy" secondAttribute="leading" constant="16" id="XCu-UG-Ivv"/>
                                     <constraint firstAttribute="trailing" secondItem="l4h-cM-oXu" secondAttribute="trailing" constant="16" id="dET-wV-2Cs"/>
                                     <constraint firstItem="l4h-cM-oXu" firstAttribute="top" secondItem="TPa-sY-7mJ" secondAttribute="bottom" constant="8" id="hzg-9O-tqT"/>
-                                    <constraint firstItem="y1D-Hy-H4J" firstAttribute="top" secondItem="nIF-Qp-UW9" secondAttribute="bottom" constant="16" id="lPi-Aw-AR1"/>
+                                    <constraint firstItem="y1D-Hy-H4J" firstAttribute="top" secondItem="nIF-Qp-UW9" secondAttribute="bottom" constant="8" id="lPi-Aw-AR1"/>
                                     <constraint firstItem="TPa-sY-7mJ" firstAttribute="leading" secondItem="W0M-6f-Yoy" secondAttribute="leading" constant="16" id="rfS-VX-pe1"/>
                                     <constraint firstItem="l4h-cM-oXu" firstAttribute="leading" secondItem="W0M-6f-Yoy" secondAttribute="leading" constant="16" id="tbu-VV-htH"/>
                                     <constraint firstItem="O4d-1e-ADH" firstAttribute="top" secondItem="l4h-cM-oXu" secondAttribute="bottom" constant="24" id="tgQ-az-5IZ"/>
@@ -4982,6 +4983,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EdN-oQ-la9"/>
                     </view>
+                    <connections>
+                        <outlet property="txtMail" destination="l4h-cM-oXu" id="tL6-dZ-fUf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUp-4W-qX1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
