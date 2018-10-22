@@ -5080,16 +5080,29 @@
                                             <constraint firstAttribute="bottom" secondItem="qHO-NX-Tfi" secondAttribute="bottom" id="svX-bO-9nB"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XCJ-gu-ZMm">
+                                        <rect key="frame" x="16" y="234" width="343" height="40"/>
+                                        <color key="backgroundColor" red="1" green="0.62612065123632199" blue="0.36737122922071064" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="1XJ-Un-joW"/>
+                                        </constraints>
+                                        <state key="normal" title="Lupa Password ?">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="a8m-8M-6W6" secondAttribute="trailing" constant="16" id="1nR-GH-o2h"/>
                                     <constraint firstItem="h3g-Hi-Hb9" firstAttribute="leading" secondItem="WjX-9w-D9d" secondAttribute="leading" constant="16" id="22S-u7-uMb"/>
                                     <constraint firstAttribute="trailing" secondItem="M2e-01-R5p" secondAttribute="trailing" constant="16" id="6rC-LO-Hlt"/>
+                                    <constraint firstItem="XCJ-gu-ZMm" firstAttribute="top" secondItem="M2e-01-R5p" secondAttribute="bottom" constant="16" id="EgE-6B-aYl"/>
+                                    <constraint firstItem="XCJ-gu-ZMm" firstAttribute="leading" secondItem="WjX-9w-D9d" secondAttribute="leading" constant="16" id="F7o-Sc-eqh"/>
                                     <constraint firstItem="x1l-RI-yPA" firstAttribute="top" secondItem="a8m-8M-6W6" secondAttribute="bottom" constant="16" id="GPQ-nY-Ld6"/>
                                     <constraint firstItem="a8m-8M-6W6" firstAttribute="leading" secondItem="WjX-9w-D9d" secondAttribute="leading" constant="16" id="Lf8-l9-kxi"/>
                                     <constraint firstItem="FnL-rk-4WJ" firstAttribute="top" secondItem="WjX-9w-D9d" secondAttribute="top" id="NIb-pW-w1b"/>
                                     <constraint firstItem="x1l-RI-yPA" firstAttribute="leading" secondItem="WjX-9w-D9d" secondAttribute="leading" constant="16" id="RBm-p7-BdS"/>
+                                    <constraint firstAttribute="trailing" secondItem="XCJ-gu-ZMm" secondAttribute="trailing" constant="16" id="Vqs-bl-QOv"/>
                                     <constraint firstItem="M2e-01-R5p" firstAttribute="leading" secondItem="WjX-9w-D9d" secondAttribute="leading" constant="16" id="WZS-dd-IUm"/>
                                     <constraint firstAttribute="trailing" secondItem="FPX-xq-q74" secondAttribute="trailing" constant="16" id="ccJ-TC-N1X"/>
                                     <constraint firstItem="h3g-Hi-Hb9" firstAttribute="top" secondItem="x1l-RI-yPA" secondAttribute="bottom" constant="8" id="cgp-xQ-APb"/>
@@ -16008,7 +16021,7 @@ igAJspgACbKcAAmyowAJsqgACbK1AAmyuAAJssUACbLKAAmy0gAJstUACbLaAAmy4gAJsuUACbL3AAmy
 </mutableData>
         </image>
         <image name="land_area.png" width="256" height="250"/>
-        <image name="lostConnection" width="1066" height="1066"/>
+        <image name="lostConnection" width="2133" height="2133"/>
         <image name="mapMarker.png" width="26" height="26"/>
         <image name="radio-btn-unchecked.png" width="24" height="24"/>
         <image name="rumahhokie.png" width="770" height="204"/>
