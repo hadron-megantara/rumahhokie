@@ -90,7 +90,7 @@ class NewsController: UIViewController {
         group.enter()
         
         DispatchQueue.main.async {
-            Alamofire.request("http://rumahhokie.com/beritaproperti/wp-json/wp/v2/posts?&offset=1&per_page=20&_embed=1", method: .get).responseJSON { response in
+            Alamofire.request("http://rumahhokie.com/beritaproperti/wp-json/wp/v2/posts?&offset=1&per_page=100&_embed=1", method: .get).responseJSON { response in
                 
                 if let json = response.result.value {
                     if let resArray = json as? Array<AnyObject>{
