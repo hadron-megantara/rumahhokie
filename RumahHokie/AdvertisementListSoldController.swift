@@ -1,8 +1,8 @@
 //
-//  AdvertisementListController.swift
+//  AdvertisementListSoldController.swift
 //  RumahHokie
 //
-//  Created by Hadron Megantara on 18/10/18.
+//  Created by Hadron Megantara on 23/10/18.
 //  Copyright © 2018 Hadron Megantara. All rights reserved.
 //
 
@@ -10,9 +10,8 @@ import Foundation
 import UIKit
 import Alamofire
 
-class AdvertisementListController: UIViewController, UITextFieldDelegate {
+class AdvertisementListSoldController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var mainView: UIView!
-    @IBOutlet weak var bottomMenu: BottomMenu!
     @IBOutlet weak var whiteLineNew: UIView!
     @IBOutlet weak var whiteLineMost: UIView!
     @IBOutlet weak var tableView: UITableView!
@@ -33,34 +32,13 @@ class AdvertisementListController: UIViewController, UITextFieldDelegate {
         whiteLineNew.backgroundColor = UIColor.white
         whiteLineMost.backgroundColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: self, action: nil)
+        navigationController?.navigationBar.isHidden = true
         
         if UserDefaults.standard.object(forKey: "User") != nil{
             let decoded  = UserDefaults.standard.object(forKey: "User") as! Data
             let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded)
             
             agentId = ((decodedTeams as AnyObject).value(forKey: "agt_user_id") as? Int)!
-            
-            navigationController?.navigationBar.isHidden = false
-            self.navigationItem.title = "Iklan Tayang"
-            self.navigationController?.navigationBar.barTintColor = UIColor(red: 34/255, green: 54/255, blue: 128/255, alpha: 1.0)
-            self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-            
-            let btnFilter = UIButton(type: .custom)
-            btnFilter.titleLabel?.font = UIFont(name: "FontAwesome", size: 20)
-            btnFilter.setTitle("", for: .normal)
-            
-            btnFilter.addTarget(self, action: #selector(openFilter), for: UIControlEvents.touchUpInside)
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: btnFilter)
-            
-            let bottomMenuView = Bundle.main.loadNibNamed("BottomMenuUser", owner: nil, options: nil)![0] as! UIView
-            bottomMenuView.frame.size.width = bottomMenu.frame.width
-            bottomMenu.addSubview(bottomMenuView)
-        } else{
-            navigationController?.navigationBar.isHidden = true
-            
-            let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
-            bottomMenu.addSubview(bottomMenuView)
         }
     }
     
@@ -80,7 +58,7 @@ class AdvertisementListController: UIViewController, UITextFieldDelegate {
             orderBy = "view_count"
         }
         
-        let urlVar = "http://api.rumahhokie.com/agt_user/\(self.agentId)/cnt_listing?cnt_status_id=2&view=short&offset=0&limit=\(limitFilter)&order_by=\(orderBy)&order_type=desc"
+        let urlVar = "http://api.rumahhokie.com/agt_user/\(self.agentId)/cnt_listing?cnt_status_id=3&view=short&offset=0&limit=\(limitFilter)&order_by=\(orderBy)&order_type=desc"
         
         DispatchQueue.main.async {
             Alamofire.request(urlVar, method: .get).responseJSON { response in
@@ -232,16 +210,22 @@ class AdvertisementListController: UIViewController, UITextFieldDelegate {
         self.dataTotal = 0
         loadList()
     }
+    
+    
+    @IBAction func backAction(_ sender: Any) {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "advertisementListView") as? AdvertisementListController
+        navigationController!.pushViewController(vc!, animated: true)
+    }
 }
 
-extension AdvertisementListController : UITableViewDataSource {
+extension AdvertisementListSoldController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataTotal
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if !isResultEmpty{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "cellListPropertyAgentPublish", for: indexPath) as UITableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellListPropertyAgentPublishSold", for: indexPath) as UITableViewCell
             
             if let objData = self.propertyListArray[indexPath.row] as? Array<AnyObject>{
                 cell.tag = objData[10] as! Int
@@ -308,13 +292,13 @@ extension AdvertisementListController : UITableViewDataSource {
             
             return cell
         } else{
-            let cell2 = tableView.dequeueReusableCell(withIdentifier: "cellListPropertyAgentPublishEmpty", for: indexPath) as! EmptyListProperty
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: "cellListPropertyAgentPublishSoldEmpty", for: indexPath) as! EmptyListProperty
             return cell2
         }
     }
 }
 
-extension AdvertisementListController : UITableViewDelegate {
+extension AdvertisementListSoldController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !isResultEmpty{
             let vc = storyboard?.instantiateViewController(withIdentifier: "propertyDetailView") as? PropertyDetailController

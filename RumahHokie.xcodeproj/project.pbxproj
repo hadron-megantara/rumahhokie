@@ -51,12 +51,14 @@
 		798650B8217BAB6B00292456 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 798650B7217BAB6B00292456 /* DrawerViewController.swift */; };
 		79929A0A2173B1B600BF2FE0 /* UserEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79929A092173B1B500BF2FE0 /* UserEditController.swift */; };
 		799CC0312177F15D00A6AF68 /* SideBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 799CC0302177F15D00A6AF68 /* SideBar.swift */; };
+		79B49137217E673100E21C48 /* AdvertisementListBlockedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79B49136217E673100E21C48 /* AdvertisementListBlockedController.swift */; };
 		79C9031821750AE3007DB37D /* PropertyFilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79C9031721750AE3007DB37D /* PropertyFilterController.swift */; };
 		79C9031B217511DB007DB37D /* radio-btn-unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 79C90319217511D6007DB37D /* radio-btn-unchecked.png */; };
 		79C9031C217511DB007DB37D /* radio-btn-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 79C9031A217511DA007DB37D /* radio-btn-checked.png */; };
 		79CED993217BA17C00A4E32C /* SideBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 799CC02E2177F14600A6AF68 /* SideBar.xib */; };
 		79CED995217BA27E00A4E32C /* BottomMenuUser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792B6D7021703CE70054505A /* BottomMenuUser.xib */; };
 		79D1BDBA2173D02D0054A8A0 /* PaidTopListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D1BDB92173D02D0054A8A0 /* PaidTopListingController.swift */; };
+		79DBDAA4217E645500345976 /* AdvertisementListSoldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DBDAA3217E645500345976 /* AdvertisementListSoldController.swift */; };
 		79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3A214A5E51000B4147 /* BottomMenu.swift */; };
 		79DE9B3D214A630F000B4147 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3C214A630F000B4147 /* HomeController.swift */; };
 		79DE9B3F214A6359000B4147 /* AgentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3E214A6359000B4147 /* AgentController.swift */; };
@@ -167,10 +169,12 @@
 		79929A092173B1B500BF2FE0 /* UserEditController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEditController.swift; sourceTree = "<group>"; };
 		799CC02E2177F14600A6AF68 /* SideBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideBar.xib; sourceTree = "<group>"; };
 		799CC0302177F15D00A6AF68 /* SideBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBar.swift; sourceTree = "<group>"; };
+		79B49136217E673100E21C48 /* AdvertisementListBlockedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementListBlockedController.swift; sourceTree = "<group>"; };
 		79C9031721750AE3007DB37D /* PropertyFilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyFilterController.swift; sourceTree = "<group>"; };
 		79C90319217511D6007DB37D /* radio-btn-unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-btn-unchecked.png"; sourceTree = "<group>"; };
 		79C9031A217511DA007DB37D /* radio-btn-checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-btn-checked.png"; sourceTree = "<group>"; };
 		79D1BDB92173D02D0054A8A0 /* PaidTopListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidTopListingController.swift; sourceTree = "<group>"; };
+		79DBDAA3217E645500345976 /* AdvertisementListSoldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementListSoldController.swift; sourceTree = "<group>"; };
 		79DE9B3A214A5E51000B4147 /* BottomMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenu.swift; sourceTree = "<group>"; };
 		79DE9B3C214A630F000B4147 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		79DE9B3E214A6359000B4147 /* AgentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentController.swift; sourceTree = "<group>"; };
@@ -320,6 +324,8 @@
 				79DE9B40214A639E000B4147 /* NewsController.swift */,
 				79DE9B42214A63E6000B4147 /* UserController.swift */,
 				79470D0B21476409007E5090 /* Main.storyboard */,
+				79B49136217E673100E21C48 /* AdvertisementListBlockedController.swift */,
+				79DBDAA3217E645500345976 /* AdvertisementListSoldController.swift */,
 				79331E2C217DE0FD007B281F /* ForgotPasswordController.swift */,
 				798650B7217BAB6B00292456 /* DrawerViewController.swift */,
 				796739632177FBD500A92C2F /* AddAdvertisementController.swift */,
@@ -724,6 +730,7 @@
 				79466B5121522B85004160B7 /* EmptyListProperty.swift in Sources */,
 				79815ACB214ED15800238433 /* News.m in Sources */,
 				7903129A2152B36600026314 /* LoginController.swift in Sources */,
+				79B49137217E673100E21C48 /* AdvertisementListBlockedController.swift in Sources */,
 				79D1BDBA2173D02D0054A8A0 /* PaidTopListingController.swift in Sources */,
 				7980AD712177F57700D85315 /* AdvertisementListController.swift in Sources */,
 				792B1E52216F1D4B00F63CA6 /* AgentList.swift in Sources */,
@@ -742,6 +749,7 @@
 				792AC2F921500D1C0010966A /* TopBanner.swift in Sources */,
 				79929A0A2173B1B600BF2FE0 /* UserEditController.swift in Sources */,
 				796B5E1521517DF8008BB1C3 /* PropertyListController.swift in Sources */,
+				79DBDAA4217E645500345976 /* AdvertisementListSoldController.swift in Sources */,
 				792B6D7921703D420054505A /* BottomMenuUser.swift in Sources */,
 				797B3B38216F729100191E1F /* EmptyListAgent.swift in Sources */,
 			);

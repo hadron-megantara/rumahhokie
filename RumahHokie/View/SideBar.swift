@@ -27,15 +27,24 @@ class SideBar: UITableViewCell {
     }
     
     @IBAction func advertisementPublicAction(_ sender: Any) {
-        
+        let vc = storyboard.instantiateViewController(withIdentifier: "advertisementListView") as? AdvertisementListController
+        navigationController.pushViewController(vc!, animated: true)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
     }
     
     @IBAction func advertisementSold(_ sender: Any) {
-        
+        let vc = storyboard.instantiateViewController(withIdentifier: "advertisementListSoldView") as? AdvertisementListSoldController
+        navigationController.pushViewController(vc!, animated: true)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
     }
     
     @IBAction func advertisementBlocked(_ sender: Any) {
-        
+        let vc = storyboard.instantiateViewController(withIdentifier: "advertisementListBlockedView") as? AdvertisementListBlockedController
+        navigationController.pushViewController(vc!, animated: true)
+        self.window?.rootViewController = navigationController
+        self.window?.makeKeyAndVisible()
     }
     
     
