@@ -1717,28 +1717,28 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17u-AV-eS8">
-                                        <rect key="frame" x="24" y="128" width="158" height="32"/>
+                                        <rect key="frame" x="24" y="128" width="148" height="29"/>
                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                         <state key="normal" title="        Tambah Iklan">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F0T-xE-e60">
-                                        <rect key="frame" x="24" y="176" width="193" height="32"/>
+                                        <rect key="frame" x="24" y="173" width="183" height="29"/>
                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                         <state key="normal" title="        Iklan Ditayangkan">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgZ-NH-2dZ">
-                                        <rect key="frame" x="24" y="224" width="189" height="32"/>
+                                        <rect key="frame" x="24" y="218" width="180" height="29"/>
                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                         <state key="normal" title="        Iklan Sudah Laku">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twP-CX-Bgc">
-                                        <rect key="frame" x="24" y="272" width="156" height="32"/>
+                                        <rect key="frame" x="24" y="263" width="146" height="29"/>
                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                         <state key="normal" title="        Iklan Diblokir">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -2252,7 +2252,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HNv-18-uS0">
-                                                <rect key="frame" x="16" y="326" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="320" width="343" height="30"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5QR-1A-XQk">
                                                         <rect key="frame" x="0.0" y="0.0" width="167.5" height="30"/>
@@ -2304,10 +2304,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K17-8P-vM7">
-                                                <rect key="frame" x="16" y="127" width="343" height="29"/>
+                                                <rect key="frame" x="16" y="127" width="343" height="26"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzo-Ml-pLa">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="26"/>
                                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="14"/>
                                                         <state key="normal" title="Pilih Properti  ">
@@ -2327,7 +2327,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0FM-zl-EqM">
-                                                <rect key="frame" x="16" y="460" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="454" width="343" height="30"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tde-AH-tnK">
                                                         <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
@@ -2400,7 +2400,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oZ7-ks-6h7">
-                                                <rect key="frame" x="16" y="193" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="190" width="343" height="30"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEI-K3-3tg">
                                                         <rect key="frame" x="0.0" y="0.0" width="167.5" height="30"/>
@@ -2452,7 +2452,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="62N-8s-hc4">
-                                                <rect key="frame" x="16" y="372" width="343" height="17"/>
+                                                <rect key="frame" x="16" y="366" width="343" height="17"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luas Tanah" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge1-TG-VYW">
                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="17"/>
@@ -2486,7 +2486,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dE9-1x-oaz">
-                                                <rect key="frame" x="16" y="305" width="343" height="17"/>
+                                                <rect key="frame" x="16" y="299" width="343" height="17"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Luas Bangunan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXT-Pq-j5S">
                                                         <rect key="frame" x="0.0" y="0.0" width="102" height="17"/>
@@ -2503,7 +2503,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgR-Gn-vDm">
-                                                <rect key="frame" x="16" y="172" width="343" height="17"/>
+                                                <rect key="frame" x="16" y="169" width="343" height="17"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Harga" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycp-BP-MNK">
                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
@@ -2520,7 +2520,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zck-FU-o65">
-                                                <rect key="frame" x="16" y="393" width="343" height="30"/>
+                                                <rect key="frame" x="16" y="387" width="343" height="30"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vT1-xM-YLf">
                                                         <rect key="frame" x="0.0" y="0.0" width="167.5" height="30"/>
@@ -2572,7 +2572,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F1R-Rh-OgM">
-                                                <rect key="frame" x="16" y="239" width="343" height="17"/>
+                                                <rect key="frame" x="16" y="236" width="343" height="17"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provinsi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxP-VZ-flW">
                                                         <rect key="frame" x="0.0" y="0.0" width="53" height="17"/>
@@ -2589,7 +2589,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Vy-a7-Fub">
-                                                <rect key="frame" x="16" y="439" width="343" height="17"/>
+                                                <rect key="frame" x="16" y="433" width="343" height="17"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Jumlah Kamar, Kamar Mandi, Garasi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8i-gW-tfe">
                                                         <rect key="frame" x="0.0" y="0.0" width="327" height="17"/>
@@ -2607,10 +2607,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3d7-NA-b8o">
-                                                <rect key="frame" x="16" y="260" width="343" height="29"/>
+                                                <rect key="frame" x="16" y="257" width="343" height="26"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMm-Lh-jep">
-                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="26"/>
                                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="14"/>
                                                         <state key="normal" title="Semua  ">
@@ -3348,7 +3348,7 @@
                                         <rect key="frame" x="0.0" y="705.5" width="375" height="120"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jqe-kO-6rz">
-                                                <rect key="frame" x="8" y="8" width="359" height="80"/>
+                                                <rect key="frame" x="8" y="8" width="359" height="83"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Watermark RH-01-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="Q9g-C6-LTB">
                                                         <rect key="frame" x="8" y="14" width="60" height="60"/>
@@ -3364,7 +3364,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bergabung sejak 2 bulan lalu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i61-g5-Cyc">
-                                                        <rect key="frame" x="76" y="57" width="163" height="15"/>
+                                                        <rect key="frame" x="76" y="60" width="163" height="15"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -3382,13 +3382,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Properti Laku" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCN-il-knH">
-                                                        <rect key="frame" x="275" y="57" width="76" height="15"/>
+                                                        <rect key="frame" x="275" y="60" width="76" height="15"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f97-HW-dKI">
-                                                        <rect key="frame" x="263" y="57" width="8" height="15"/>
+                                                        <rect key="frame" x="263" y="60" width="8" height="15"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -3415,10 +3415,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="diF-aj-pHn">
-                                                <rect key="frame" x="0.0" y="88" width="187.5" height="32"/>
+                                                <rect key="frame" x="0.0" y="91" width="187.5" height="29"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNo-ei-qea">
-                                                        <rect key="frame" x="36" y="0.0" width="116" height="32"/>
+                                                        <rect key="frame" x="37.5" y="0.0" width="113" height="29"/>
                                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                                         <state key="normal" title=" Kirim Pesan"/>
                                                         <connections>
@@ -3434,10 +3434,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6UR-iy-qrX">
-                                                <rect key="frame" x="187.5" y="88" width="187.5" height="32"/>
+                                                <rect key="frame" x="187.5" y="91" width="187.5" height="29"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEh-eV-aDv">
-                                                        <rect key="frame" x="49.5" y="0.0" width="89" height="32"/>
+                                                        <rect key="frame" x="53.5" y="0.0" width="81" height="29"/>
                                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="17"/>
                                                         <state key="normal" title=" Hubungi"/>
                                                         <connections>
@@ -3954,7 +3954,7 @@
                                                             <rect key="frame" x="0.0" y="0.0" width="187.5" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elu-Ze-YoC">
-                                                                    <rect key="frame" x="36" y="0.0" width="116" height="30"/>
+                                                                    <rect key="frame" x="37.5" y="0.0" width="113" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="gaP-gs-N2Z"/>
                                                                     </constraints>
@@ -3973,7 +3973,7 @@
                                                             <rect key="frame" x="187.5" y="0.0" width="187.5" height="30"/>
                                                             <subviews>
                                                                 <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VP-rh-sTR">
-                                                                    <rect key="frame" x="49.5" y="0.0" width="89" height="30"/>
+                                                                    <rect key="frame" x="53.5" y="0.0" width="81" height="30"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="30" id="kgs-gf-UW0"/>
                                                                     </constraints>
@@ -5473,8 +5473,7 @@
                                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 </state>
                                                                 <connections>
-                                                                    <action selector="btnPropertyTypeAction:" destination="c3U-qx-7iH" eventType="touchUpInside" id="xTD-Im-zwi"/>
-                                                                    <action selector="propertyTypeAction:" destination="ML3-35-SmK" eventType="touchUpInside" id="7eQ-mc-7di"/>
+                                                                    <action selector="propertyTypeAction:" destination="ML3-35-SmK" eventType="touchUpInside" id="kdG-V0-XTQ"/>
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Provinsi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cc9-wD-41z">
@@ -5782,6 +5781,7 @@
                                                             <constraint firstItem="Bay-U8-gXg" firstAttribute="leading" secondItem="fF3-7V-Jax" secondAttribute="leading" constant="16" id="GFa-6e-dC8"/>
                                                             <constraint firstItem="0DR-fM-moO" firstAttribute="leading" secondItem="fF3-7V-Jax" secondAttribute="leading" constant="16" id="GRZ-e2-us0"/>
                                                             <constraint firstAttribute="trailing" secondItem="U3s-hG-Aah" secondAttribute="trailing" constant="16" id="HJ3-Fu-WWB"/>
+                                                            <constraint firstAttribute="height" constant="1030" id="HcT-4f-bre"/>
                                                             <constraint firstAttribute="trailing" secondItem="OYf-Cy-mBh" secondAttribute="trailing" constant="16" id="HfA-sK-eoN"/>
                                                             <constraint firstAttribute="trailing" secondItem="LJf-H9-kZv" secondAttribute="trailing" constant="16" id="HlP-te-7yY"/>
                                                             <constraint firstItem="qFJ-Fd-86q" firstAttribute="leading" secondItem="fF3-7V-Jax" secondAttribute="leading" constant="16" id="HtI-cS-VuD"/>
@@ -5853,7 +5853,6 @@
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstItem="fF3-7V-Jax" firstAttribute="leading" secondItem="qX5-cG-AWV" secondAttribute="leading" id="12a-1i-Db3"/>
-                                                    <constraint firstItem="fF3-7V-Jax" firstAttribute="centerY" secondItem="qX5-cG-AWV" secondAttribute="centerY" id="7xh-E3-fie"/>
                                                     <constraint firstAttribute="trailing" secondItem="fF3-7V-Jax" secondAttribute="trailing" id="Gep-UU-xIV"/>
                                                     <constraint firstAttribute="bottom" secondItem="fF3-7V-Jax" secondAttribute="bottom" id="mN5-8K-hp6"/>
                                                     <constraint firstItem="fF3-7V-Jax" firstAttribute="top" secondItem="qX5-cG-AWV" secondAttribute="top" id="tgo-E8-6LW"/>
@@ -5863,7 +5862,6 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="1030" id="1Dd-WL-cQq"/>
                                             <constraint firstItem="qX5-cG-AWV" firstAttribute="top" secondItem="OPL-qF-QO6" secondAttribute="top" id="7Va-Ma-mry"/>
                                             <constraint firstAttribute="trailing" secondItem="qX5-cG-AWV" secondAttribute="trailing" id="9CK-SE-2p4"/>
                                             <constraint firstItem="qX5-cG-AWV" firstAttribute="leading" secondItem="OPL-qF-QO6" secondAttribute="leading" id="c58-v0-GyB"/>
@@ -5894,6 +5892,16 @@
                         <viewLayoutGuide key="safeArea" id="viF-kC-byR"/>
                     </view>
                     <size key="freeformSize" width="375" height="1100"/>
+                    <connections>
+                        <outlet property="btnPropertyArea" destination="Vle-Dj-HTe" id="mbh-Wx-4C9"/>
+                        <outlet property="btnPropertyCity" destination="qBT-vv-rB9" id="f0L-5X-Zv7"/>
+                        <outlet property="btnPropertyProvince" destination="Bay-U8-gXg" id="kMR-LR-zGm"/>
+                        <outlet property="btnPropertyType" destination="oqb-an-fmS" id="EYv-8D-LZW"/>
+                        <outlet property="propertyViewRent" destination="5Ju-Bn-BRg" id="AKM-Zr-QbM"/>
+                        <outlet property="propertyViewSold" destination="ug4-Pv-7zI" id="3cB-KQ-wsb"/>
+                        <outlet property="radioPropertyStatusRent" destination="eue-Jk-rjs" id="rAo-ie-dQM"/>
+                        <outlet property="radioPropertyStatusSold" destination="f7G-LC-hgo" id="yL7-W2-5xO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kT-ie-2La" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -6387,7 +6395,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wSz-X3-AfQ">
-                                                <rect key="frame" x="0.0" y="518.5" width="375" height="169"/>
+                                                <rect key="frame" x="0.0" y="518.5" width="375" height="164"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gold Rp. 200.000/bulan" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kBk-zQ-at8">
                                                         <rect key="frame" x="16" y="8" width="343" height="17"/>
@@ -6414,13 +6422,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rumahhokie:    0812 1103 1199" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uu6-kI-3bB">
-                                                        <rect key="frame" x="16" y="124" width="343" height="16.5"/>
+                                                        <rect key="frame" x="16" y="124" width="343" height="14"/>
                                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Novi Marlina:   0857 77096492" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8jG-U3-mM6">
-                                                        <rect key="frame" x="16" y="144.5" width="343" height="16.5"/>
+                                                        <rect key="frame" x="16" y="142" width="343" height="14"/>
                                                         <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
