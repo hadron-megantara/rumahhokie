@@ -360,6 +360,15 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
             
             propertyProvinceString = dataProvinceString as! String
             propertyProvince = dataProvinceId as! Int
+            
+            propertyCity = 0
+            propertyCityString = ""
+            btnPropertyCity.setTitle("Pilih Kota ", for: .normal)
+            
+            propertyArea = 0
+            propertyAreaString = ""
+            btnPropertyArea.setTitle("Pilih Kota ", for: .normal)
+            
             btnPropertyProvince.setTitle(propertyProvinceString, for: UIControlState.normal)
             
             pickerPropertyProvince.isHidden = true
@@ -374,6 +383,11 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
             
             propertyCityString = dataCityString as! String
             propertyCity = dataCityId as! Int
+            
+            propertyArea = 0
+            propertyAreaString = ""
+            btnPropertyArea.setTitle("Pilih Kota ", for: .normal)
+            
             btnPropertyCity.setTitle(propertyCityString, for: UIControlState.normal)
             
             pickerPropertyCity.isHidden = true
