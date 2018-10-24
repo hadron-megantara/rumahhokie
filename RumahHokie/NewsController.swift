@@ -107,9 +107,14 @@ class NewsController: UIViewController {
                             var dataTitle: String = ""
                             var dataImage: String = ""
                             var dataDate: String = ""
+                            var dataUrl: String = ""
                             
                             if let objTitle = r["title"] as? [String:AnyObject] {
                                 dataTitle = objTitle["rendered"]! as! String
+                            }
+                            
+                            if let objUrl = r["guid"] as? [String:AnyObject] {
+                                dataUrl = objUrl["rendered"]! as! String
                             }
                             
                             if let objDate = r["date"] as? String {
@@ -128,7 +133,7 @@ class NewsController: UIViewController {
                                 }
                             }
                             
-                            let returnArray = [dataTitle, dataImage, dataDate]
+                            let returnArray = [dataTitle, dataImage, dataDate, dataUrl]
                             self.newsArray.append(returnArray)
                         }
                     }
@@ -191,12 +196,6 @@ class NewsController: UIViewController {
         loadNews()
     }
     
-    @objc func newsOpenBrowser(){
-        propertyStatus = 1
-        radioPropertyStatusSold.image = UIImage(named:"radio-btn-checked.png")
-        radioPropertyStatusRent.image = UIImage(named:"radio-btn-unchecked.png")
-    }
-    
 }
 
 extension NewsController : UITableViewDataSource {
@@ -231,13 +230,6 @@ extension NewsController : UITableViewDataSource {
             if let label3 = cell.viewWithTag(3) as? UILabel{
                 label3.text = objData[2] as? String
             }
-            
-            if let newsView = cell.viewWithTag(10) as? UIView{
-                let gesture = UITapGestureRecognizer(target: self, action: #selector(newsOpenBrowser))
-                newsView.addGestureRecognizer(gesture)
-                
-                newsView.accessibilityIdentifier = indexPath.row
-            }
         }
         
         return cell
@@ -246,6 +238,13 @@ extension NewsController : UITableViewDataSource {
 
 extension NewsController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let objData = self.newsArray[indexPath.row] as? Array<AnyObject>{
+            if objData.indices.contains(3){
+                print(URL(string: ((objData[3] as? String)!)) as Any)
+                if (URL(string: ((objData[3] as? String)!)) != nil){
+                    UIApplication.shared.open(URL(string: (objData[3] as? String)!)!, options: [:])
+                }
+            }
+        }
     }
 }
