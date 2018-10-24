@@ -16,6 +16,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var whiteBar: UIView!
     
     let defaults = UserDefaults.standard
+    var passwordIsSecure = true
     
     @IBAction func backAction(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
@@ -112,4 +113,15 @@ class LoginController: UIViewController, UITextFieldDelegate {
         whiteBar.layer.borderWidth = 1
         whiteBar.layer.borderColor = UIColor.gray.cgColor
     }
+    
+    @IBAction func showPassword(_ sender: Any) {
+        if passwordIsSecure{
+            txtPassword.isSecureTextEntry = false
+            passwordIsSecure = false
+        } else{
+            txtPassword.isSecureTextEntry = true
+            passwordIsSecure = true
+        }
+    }
+    
 }
