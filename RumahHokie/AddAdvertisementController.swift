@@ -332,6 +332,7 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
             let dataProvinceString = dataProvinceObj.value(forKey: "mstr_provinsi_desc")
             let dataProvinceId = dataProvinceObj.value(forKey: "mstr_provinsi_id")
             
+            self.propertyCityData.removeAll()
             loadCity()
             
             propertyProvinceString = dataProvinceString as! String
@@ -345,6 +346,7 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
             let dataCityString = dataCityObj.value(forKey: "mstr_kota_desc")
             let dataCityId = dataCityObj.value(forKey: "mstr_kota_id")
             
+            self.propertyAreaData.removeAll()
             loadArea()
             
             propertyCityString = dataCityString as! String
