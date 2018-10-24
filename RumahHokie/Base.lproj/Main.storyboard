@@ -5901,6 +5901,17 @@
                         <outlet property="propertyViewSold" destination="ug4-Pv-7zI" id="3cB-KQ-wsb"/>
                         <outlet property="radioPropertyStatusRent" destination="eue-Jk-rjs" id="rAo-ie-dQM"/>
                         <outlet property="radioPropertyStatusSold" destination="f7G-LC-hgo" id="yL7-W2-5xO"/>
+                        <outlet property="txtPropertyAddress" destination="ZFl-f8-lSf" id="YZs-QR-IVt"/>
+                        <outlet property="txtPropertyArea" destination="RJj-qI-Dbj" id="588-16-BSt"/>
+                        <outlet property="txtPropertyBedRoom" destination="pfd-yD-EWk" id="2o6-VY-zt0"/>
+                        <outlet property="txtPropertyBuilding" destination="R5b-Br-Dml" id="n0Q-qQ-5DJ"/>
+                        <outlet property="txtPropertyDesc" destination="wUi-hb-OAl" id="oHD-Qh-xny"/>
+                        <outlet property="txtPropertyGarage" destination="sYa-L3-o5I" id="TMv-kW-Cqt"/>
+                        <outlet property="txtPropertyPrice" destination="smS-An-pV9" id="hNa-Gv-s02"/>
+                        <outlet property="txtPropertyTag" destination="gvG-Ue-c8e" id="YMn-Xg-8vV"/>
+                        <outlet property="txtPropertyTitle" destination="LJf-H9-kZv" id="oeE-ee-DEG"/>
+                        <outlet property="txtPropertyUrl" destination="8Zf-Fx-un0" id="hJp-3R-hzN"/>
+                        <outlet property="txtProperyBathRoom" destination="UDQ-Uy-F88" id="aXt-1X-lIx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kT-ie-2La" userLabel="First Responder" sceneMemberID="firstResponder"/>

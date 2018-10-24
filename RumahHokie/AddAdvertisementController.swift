@@ -11,6 +11,17 @@ import UIKit
 import Alamofire
 
 class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    @IBOutlet weak var txtPropertyTitle: UITextField!
+    @IBOutlet weak var txtPropertyAddress: UITextField!
+    @IBOutlet weak var txtPropertyDesc: UITextField!
+    @IBOutlet weak var txtPropertyBuilding: UITextField!
+    @IBOutlet weak var txtPropertyArea: UITextField!
+    @IBOutlet weak var txtPropertyBedRoom: UITextField!
+    @IBOutlet weak var txtProperyBathRoom: UITextField!
+    @IBOutlet weak var txtPropertyGarage: UITextField!
+    @IBOutlet weak var txtPropertyPrice: UITextField!
+    @IBOutlet weak var txtPropertyUrl: UITextField!
+    @IBOutlet weak var txtPropertyTag: UITextField!
     @IBOutlet weak var propertyViewSold: UIView!
     @IBOutlet weak var propertyViewRent: UIView!
     @IBOutlet weak var radioPropertyStatusSold: UIImageView!
@@ -51,6 +62,18 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         super.viewDidLoad()
         
         loadProvince()
+        
+        txtPropertyTitle.delegate = self
+        txtPropertyAddress.delegate = self
+        txtPropertyDesc.delegate = self
+        txtPropertyBuilding.delegate = self
+        txtPropertyArea.delegate = self
+        txtPropertyBedRoom.delegate = self
+        txtProperyBathRoom.delegate = self
+        txtPropertyGarage.delegate = self
+        txtPropertyPrice.delegate = self
+        txtPropertyUrl.delegate = self
+        txtPropertyTag.delegate = self
         
         navigationController?.navigationBar.isHidden = true
         
@@ -367,5 +390,10 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
             pickerPropertyArea.isHidden = true
             alert4.dismiss(animated: true, completion: nil)
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
