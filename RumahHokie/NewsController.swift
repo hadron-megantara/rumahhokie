@@ -113,7 +113,7 @@ class NewsController: UIViewController {
                             }
                             
                             if let objDate = r["date"] as? String {
-                                dataDate = objDate
+                                dataDate = objDate.replacingOccurrences(of: "T", with: " ")
                             }
                             
                             if let objImage = r["_embedded"] as? [String:AnyObject] {
