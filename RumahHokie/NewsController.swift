@@ -191,6 +191,12 @@ class NewsController: UIViewController {
         loadNews()
     }
     
+    @objc func newsOpenBrowser(){
+        propertyStatus = 1
+        radioPropertyStatusSold.image = UIImage(named:"radio-btn-checked.png")
+        radioPropertyStatusRent.image = UIImage(named:"radio-btn-unchecked.png")
+    }
+    
 }
 
 extension NewsController : UITableViewDataSource {
@@ -224,6 +230,13 @@ extension NewsController : UITableViewDataSource {
             
             if let label3 = cell.viewWithTag(3) as? UILabel{
                 label3.text = objData[2] as? String
+            }
+            
+            if let newsView = cell.viewWithTag(10) as? UIView{
+                let gesture = UITapGestureRecognizer(target: self, action: #selector(newsOpenBrowser))
+                newsView.addGestureRecognizer(gesture)
+                
+                newsView.accessibilityIdentifier = indexPath.row
             }
         }
         

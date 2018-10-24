@@ -40,7 +40,7 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mJw-Iv-381">
                     <rect key="frame" x="206.5" y="0.0" width="103" height="80"/>
                     <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
-                    <state key="normal" title=""/>
+                    <state key="normal" title=""/>
                     <connections>
                         <action selector="filterAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="gxE-wo-OcD"/>
                     </connections>
