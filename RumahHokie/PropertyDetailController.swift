@@ -39,9 +39,8 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
     var idDetail: Int = 1
     
     @IBAction func backButtonAction(_ sender: Any) {
-        let switchViewController = self.navigationController?.viewControllers[1] as! PropertyListController
-        
-        self.navigationController?.popToViewController(switchViewController, animated: true)
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "propertyListView") as? PropertyListController
+        self.navigationController!.pushViewController(vc!, animated: true)
     }
     
     override func viewDidLoad() {
