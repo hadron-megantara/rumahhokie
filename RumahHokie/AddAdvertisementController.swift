@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 
-class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     @IBOutlet weak var txtPropertyTitle: UITextField!
     @IBOutlet weak var txtPropertyAddress: UITextField!
     @IBOutlet weak var txtPropertyDesc: UITextField!
@@ -33,6 +33,9 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     @IBOutlet weak var btnUploadPhoto: UIButton!
     @IBOutlet weak var btnFacility: UIButton!
     @IBOutlet weak var btnFacilityArea: UIButton!
+    @IBOutlet weak var viewUploadPhoto: UIView!
+    @IBOutlet weak var constraintViewUploadPhotoHeight: NSLayoutConstraint!
+    @IBOutlet weak var constraintViewUploadPhotoWidth: NSLayoutConstraint!
     
     var propertyType: Int = 0
     var propertyTypeString: String = ""
@@ -61,6 +64,11 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     let alert3 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     let alert4 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     
+    var imagePicker = UIImagePickerController()
+    var totalImage: Int = 0
+    let maxPhoto: Int = 15
+    var tagVar: Int = 70
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,6 +85,10 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         txtPropertyPrice.delegate = self
         txtPropertyUrl.delegate = self
         txtPropertyTag.delegate = self
+        
+        imagePicker.delegate = self
+        
+        constraintViewUploadPhotoHeight.constant = 0
         
         let margin: CGFloat = 10.0
         
@@ -427,4 +439,84 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         self.view.endEditing(true)
         return false
     }
+    
+    @IBAction func btnUploadPhotoAction(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            imagePicker.sourceType = .savedPhotosAlbum;
+            imagePicker.allowsEditing = false
+            
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        self.dismiss(animated: true, completion: { () -> Void in
+            
+        })
+        
+        if(totalImage <= maxPhoto - 1){
+            totalImage = totalImage + 1
+            constraintViewUploadPhotoHeight.constant = 70
+            
+            
+            if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                tagVar = tagVar + 1
+                let xVar = (totalImage - 1) * 70 + (totalImage - 1) * 8
+                
+                let viewWidth = totalImage * 70 + totalImage * 8
+                
+                constraintViewUploadPhotoWidth.constant = CGFloat(viewWidth)
+                
+                let imageView = UIImageView(image: image)
+                imageView.frame = CGRect(x: xVar, y: 0, width: 70, height: 70)
+                
+                let gesturePhoto = UITapGestureRecognizer(target: self, action: #selector(imagePhotoRemove))
+                imageView.isUserInteractionEnabled = true
+                imageView.addGestureRecognizer(gesturePhoto)
+                imageView.tag = tagVar
+                
+                viewUploadPhoto.addSubview(imageView)
+            }
+        } else{
+            let msgStatus: String = "Hanya diperbolehkan maksimum 15 foto!"
+            let delay = DispatchTime.now() + 3
+            
+            let alert = UIAlertController(title: msgStatus, message: "", preferredStyle: .alert)
+            
+            self.present(alert, animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: delay){
+                alert.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    @objc func imagePhotoRemove(sender: UITapGestureRecognizer){
+        let tagSender = sender.view!.tag
+        
+        if self.view.viewWithTag(tagSender) != nil{
+            self.view.viewWithTag(tagSender)!.removeFromSuperview()
+            
+            totalImage = totalImage - 1
+            
+            if totalImage == 0{
+                constraintViewUploadPhotoHeight.constant = 0
+            } else if tagSender < tagVar{
+                for i in tagSender + 1 ..< tagVar + 1{
+                    if self.view.viewWithTag(i) != nil{
+                        var frm: CGRect = self.view.viewWithTag(i)!.frame
+                        self.view.viewWithTag(i)!.frame = CGRect(x: frm.origin.x - 78, y: 0, width: 70, height: 70)
+                        self.view.viewWithTag(i)?.tag = i - 1
+                    }
+                }
+                
+                tagVar = tagVar - 1
+            }
+        }
+    }
+    
 }
