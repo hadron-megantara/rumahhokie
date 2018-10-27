@@ -17,8 +17,12 @@ class HomeController: UIViewController, AACarouselDelegate {
     @IBOutlet var TopMenuButton: [UIButton]!
     @IBOutlet var bannerMidRectangle: [UIImageView]!
     @IBOutlet var bannerMidSquare: [UIImageView]!
+    @IBOutlet weak var scrollViewTopListing: UIScrollView!
+    @IBOutlet weak var topListingView: UIView!
+    @IBOutlet weak var constraintTopListingViewWidth: NSLayoutConstraint!
     
     var sideIsOpened: Bool = false
+    var topListingArray: Array = [Any]()
     
     @IBAction func openPropertyList(_ sender: UIButton) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "propertyListView") as? PropertyListController
@@ -40,6 +44,10 @@ class HomeController: UIViewController, AACarouselDelegate {
     
     var url = [String]()
     var titleArray = [String]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadTopListing()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,5 +168,123 @@ class HomeController: UIViewController, AACarouselDelegate {
         })
     }
     
+    func loadTopListing(){
+        let group = DispatchGroup()
+        group.enter()
+        
+        DispatchQueue.main.async {
+            Alamofire.request("http://api.rumahhokie.com/cnt_top_listing?view=short&offset=0&limit=10&order_by=cnt_listing_publish_on&order_type=desc", method: .get).responseJSON { response in
+                
+                if let json = response.result.value {
+                    var countResult: Int = 0
+                    if let res = (json as AnyObject).value(forKey: "cnt_listing"){
+                        if let resArray = res as? Array<AnyObject>{
+                            for r in resArray{
+                                countResult = countResult + 1
+                                self.topListingArray.append(r)
+                            }
+                            
+                            for i in 0 ..< countResult{
+                                let listingView = Bundle.main.loadNibNamed("TopListing", owner: nil, options: nil)![0] as! UIView
+                                listingView.frame.size.width = self.view.frame.width
+                                
+                                let viewWidth = self.view.frame.width
+                                let xVar = CGFloat(i) * viewWidth
+                                
+                                let totalViewWidth = CGFloat(countResult) * viewWidth
+                                
+                                self.constraintTopListingViewWidth.constant = CGFloat(totalViewWidth)
+                                
+                                listingView.frame = CGRect(x: xVar, y: 0, width: viewWidth, height: 350)
+                                
+                                if let label2 = listingView.viewWithTag(2) as? UILabel{
+                                    if let cntListName = (self.topListingArray[i] as AnyObject).value(forKey: "cnt_listing_name"){
+                                        label2.text = cntListName as? String
+                                    }
+                                }
+                                
+                                if let label3 = listingView.viewWithTag(3) as? UILabel{
+                                    if let cntWilayah = (self.topListingArray[i] as AnyObject).value(forKey: "mstr_wilayah"), let cntKota = (self.topListingArray[i] as AnyObject).value(forKey: "mstr_kota"), let cntProvinsi = (self.topListingArray[i] as AnyObject).value(forKey: "mstr_provinsi") {
+                                        
+                                        if let cntWilayahDetail = cntWilayah as? [String:AnyObject], let cntKotaDetail = cntKota as? [String:AnyObject], let cntProvinsiDetail = cntProvinsi as? [String:AnyObject]{
+                                            label3.text = cntWilayahDetail["mstr_wilayah_desc"]! as! String + ", " + (cntKotaDetail["mstr_kota_desc"]! as! String) + ", " +  (cntProvinsiDetail["mstr_provinsi_desc"]! as! String)
+                                        }
+                                    }
+                                }
+                                
+                                if let label4 = listingView.viewWithTag(4) as? UILabel{
+                                    if let cntPrice = (self.topListingArray[i] as AnyObject).value(forKey: "cnt_listing_harga"){
+                                        let cntPriceInt = cntPrice as! Int
+                                        
+                                        var textPrice: String = ""
+                                        var priceFinal: Float = 0
+                                        
+                                        if (cntPriceInt / 1000000000) >= 1{
+                                            textPrice = "M"
+                                            priceFinal = Float(cntPriceInt / 1000000000)
+                                        } else{
+                                            textPrice = "juta"
+                                            priceFinal = Float(cntPriceInt / 1000000)
+                                        }
+                                        
+                                        if let label10 = listingView.viewWithTag(10) as? UILabel{
+                                            label10.text = textPrice
+                                        }
+                                        
+                                        label4.text = String(format: "%.2f", priceFinal)
+                                    }
+                                }
+                                
+                                if let label5 = listingView.viewWithTag(5) as? UILabel{
+                                    if let cntBuildingArea = (self.topListingArray[i] as AnyObject).value(forKey: "cnt_listing_lb"){
+                                        let cntBuildingAreaInt = cntBuildingArea as! Int
+                                        label5.text = String(cntBuildingAreaInt)
+                                    }
+                                }
+                                    
+                                if let label6 = listingView.viewWithTag(6) as? UILabel{
+                                    if let cntGroundArea = (self.topListingArray[i] as AnyObject).value(forKey: "cnt_listing_lt"){
+                                        let cntGroundAreaInt = cntGroundArea as! Int
+                                        label6.text = String(cntGroundAreaInt)
+                                    }
+                                }
+                                
+                                if let lbl1 = listingView.viewWithTag(1) as? UIImageView{
+                                    if let cntFoto = (self.topListingArray[i] as AnyObject).value(forKey: "cnt_foto"){
+                                        if let resPhoto = cntFoto as? Array<AnyObject>{
+                                            if let photoName = resPhoto[0].value(forKey: "nama_foto") as? String{
+                                                let pictUrl = URL(string: "http://rumahhokie.com/upload-foto/"+photoName )!
+                                                
+                                                DispatchQueue.global().async {
+                                                    if let data = try? Data(contentsOf: pictUrl){
+                                                        if let dataImage = UIImage(data: data){
+                                                            DispatchQueue.main.async {
+                                                                
+                                                                lbl1.image = dataImage
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                
+                                self.topListingView.addSubview(listingView)
+                                
+                                self.constraintTopListingViewWidth.constant = viewWidth * CGFloat(countResult)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            
+        }
+    }
     
 }
