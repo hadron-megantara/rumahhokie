@@ -36,6 +36,8 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     @IBOutlet weak var viewUploadPhoto: UIView!
     @IBOutlet weak var constraintViewUploadPhotoHeight: NSLayoutConstraint!
     @IBOutlet weak var constraintViewUploadPhotoWidth: NSLayoutConstraint!
+    @IBOutlet weak var facilityText: UILabel!
+    @IBOutlet weak var facilityText2: UILabel!
     
     var propertyType: Int = 0
     var propertyTypeString: String = ""
@@ -59,10 +61,16 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     var pickerPropertyArea = UIPickerView()
     var pickerPropertyType = UIPickerView()
     
+    var propertyFeature: Array = [Any]()
+    var propertyFeature2: Array = [Any]()
+    
     let alert = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     let alert2 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     let alert3 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     let alert4 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+    
+    let alert5 = UIAlertController(title: "Pilih Fasilitas", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+    let alert6 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     
     var imagePicker = UIImagePickerController()
     var totalImage: Int = 0
@@ -73,6 +81,8 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         super.viewDidLoad()
         
         loadProvince()
+        loadFeature()
+        loadFeature2()
         
         txtPropertyTitle.delegate = self
         txtPropertyAddress.delegate = self
@@ -159,6 +169,9 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         
         alert4.isModalInPopover = true
         alert4.view.addSubview(pickerPropertyArea)
+        
+        alert5.isModalInPopover = true
+        alert5.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil))
     }
     
     func loadProvince(){
@@ -235,6 +248,32 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                 }
                 
                 self.pickerPropertyArea.delegate = self;
+            }
+            
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            
+        }
+    }
+    
+    func loadFeature2(){
+        let group = DispatchGroup()
+        group.enter()
+        
+        DispatchQueue.main.async {
+            Alamofire.request("http://api.rumahhokie.com/mstr_fitur?order_by=mstr_fitur_desc&order_type=asc&mstr_fitur_kategori=2", method: .get).responseJSON { response in
+                
+                if let json = response.result.value {
+                    if let res = (json as AnyObject).value(forKey: "mstr_fitur"){
+                        if let resArray = res as? Array<AnyObject>{
+                            for r in resArray{
+                                self.propertyFeature2.append(r)
+                            }
+                        }
+                    }
+                }
             }
             
             group.leave()
@@ -515,6 +554,83 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                 }
                 
                 tagVar = tagVar - 1
+            }
+        }
+    }
+    
+    func loadFeature(){
+        let group = DispatchGroup()
+        group.enter()
+        
+        DispatchQueue.main.async {
+            Alamofire.request("http://api.rumahhokie.com/mstr_fitur?order_by=mstr_fitur_desc&order_type=asc&mstr_fitur_kategori=1", method: .get).responseJSON { response in
+                
+                if let json = response.result.value {
+                    if let res = (json as AnyObject).value(forKey: "mstr_fitur"){
+                        if let resArray = res as? Array<AnyObject>{
+                            for r in resArray{
+                                self.propertyFeature.append(r)
+                                
+                                let featureBtn : UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+                                featureBtn.setTitle((r.value(forKey: "mstr_fitur_desc") as! String), for: .normal)
+                                featureBtn.addTarget(self, action: #selector(self.checkBoxFeatureAction), for: .touchUpInside)
+                                self.alert5.view.addSubview(featureBtn)
+                            }
+                        }
+                    }
+                }
+            }
+            
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            
+        }
+    }
+    
+    @objc func checkBoxFeatureAction(sender: UIButton){
+        if sender.isSelected
+        {
+            sender.isSelected = false
+            let btnImage    = UIImage(named: "icon-checked")!
+            sender.setBackgroundImage(btnImage, for: UIControlState())
+        }else {
+            sender.isSelected = true
+            let btnImage    = UIImage(named: "icon-unchecked")!
+            sender.setBackgroundImage(btnImage, for: UIControlState())
+        }
+    }
+    
+    @IBAction func btnFacilityAction(_ sender: Any) {
+        self.present(alert5, animated: true, completion:{
+            self.alert5.view.superview?.isUserInteractionEnabled = true
+            self.alert5.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertController5BackgroundTapped)))
+        })
+    }
+    
+    @IBAction func btnFacility2Action(_ sender: Any) {
+        
+    }
+    
+    @objc func alertController5BackgroundTapped(){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func saveAction(_ sender: Any) {
+        if totalImage > 0{
+            
+        } else{
+            let msgStatus: String = "Posting tidak bisa dilanjutkan karena belum ada gambar yang diupload!"
+            let delay = DispatchTime.now() + 3
+            
+            let alert = UIAlertController(title: msgStatus, message: "", preferredStyle: .alert)
+            
+            self.present(alert, animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: delay){
+                alert.dismiss(animated: true, completion: nil)
             }
         }
     }

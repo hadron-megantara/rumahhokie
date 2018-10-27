@@ -28,6 +28,8 @@
 		79470D362149279A007E5090 /* BottomMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79470D352149279A007E5090 /* BottomMenu.xib */; };
 		79488FE3217DA41B0056A6B8 /* NewsMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79488FE2217DA41B0056A6B8 /* NewsMenu.xib */; };
 		79488FE5217DAAEB0056A6B8 /* NewsMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79488FE4217DAAEB0056A6B8 /* NewsMenu.swift */; };
+		795BA8E921846170006ECA72 /* icon-checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 795BA8E72184616F006ECA72 /* icon-checked.png */; };
+		795BA8EA21846170006ECA72 /* icon-unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 795BA8E821846170006ECA72 /* icon-unchecked.png */; };
 		795F3B482173ACE100EDF3CE /* UserAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795F3B472173ACE100EDF3CE /* UserAccountController.swift */; };
 		796739622177F6CB00A92C2F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79470D0B21476409007E5090 /* Main.storyboard */; };
 		796739642177FBD500A92C2F /* AddAdvertisementController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796739632177FBD500A92C2F /* AddAdvertisementController.swift */; };
@@ -144,6 +146,8 @@
 		79470D352149279A007E5090 /* BottomMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenu.xib; sourceTree = "<group>"; };
 		79488FE2217DA41B0056A6B8 /* NewsMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewsMenu.xib; sourceTree = "<group>"; };
 		79488FE4217DAAEB0056A6B8 /* NewsMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsMenu.swift; sourceTree = "<group>"; };
+		795BA8E72184616F006ECA72 /* icon-checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-checked.png"; sourceTree = "<group>"; };
+		795BA8E821846170006ECA72 /* icon-unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-unchecked.png"; sourceTree = "<group>"; };
 		795F3B472173ACE100EDF3CE /* UserAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAccountController.swift; sourceTree = "<group>"; };
 		796739632177FBD500A92C2F /* AddAdvertisementController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAdvertisementController.swift; sourceTree = "<group>"; };
 		796B5E04215158ED008BB1C3 /* MidBanner-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MidBanner-2.png"; sourceTree = "<group>"; };
@@ -419,6 +423,8 @@
 		79DE9B56214CE3D3000B4147 /* Icon */ = {
 			isa = PBXGroup;
 			children = (
+				795BA8E72184616F006ECA72 /* icon-checked.png */,
+				795BA8E821846170006ECA72 /* icon-unchecked.png */,
 				79C9031A217511DA007DB37D /* radio-btn-checked.png */,
 				79C90319217511D6007DB37D /* radio-btn-unchecked.png */,
 				792B1E4D216DB8CA00F63CA6 /* share-white.jpg */,
@@ -581,6 +587,7 @@
 				79DE9B7E214CE3EF000B4147 /* bedroom.svg in Resources */,
 				79DE9B77214CE3EF000B4147 /* land_area.png in Resources */,
 				796B5E0F215168B4008BB1C3 /* SquareBanner-1.png in Resources */,
+				795BA8E921846170006ECA72 /* icon-checked.png in Resources */,
 				79DE9B73214CE3EF000B4147 /* Icon Apps_Komersial.png in Resources */,
 				79DE9B76214CE3EF000B4147 /* garage.png in Resources */,
 				79DE9B6F214CE3EF000B4147 /* bedroom.png in Resources */,
@@ -593,6 +600,7 @@
 				796B5E08215158ED008BB1C3 /* MidBanner-1.png in Resources */,
 				79DE9B74214CE3EF000B4147 /* Icon Apps_apartemen.png in Resources */,
 				796739622177F6CB00A92C2F /* Main.storyboard in Resources */,
+				795BA8EA21846170006ECA72 /* icon-unchecked.png in Resources */,
 				796B5E07215158ED008BB1C3 /* MidBanner-2.png in Resources */,
 				79C9031C217511DB007DB37D /* radio-btn-checked.png in Resources */,
 				79DE9B55214A7BE7000B4147 /* rumahhokie-icon.png in Resources */,

@@ -37,6 +37,9 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
     var url = [String]()
     var titleArray = [String]()
     var idDetail: Int = 1
+    let shareStringDefault: String = "Lihatlah properti yang menakjubkan ini \n "
+    let shareUrlDefault: String = "http://rumahhokie.com/home/detaillisting/"
+    var shareString: String = ""
     
     @IBAction func backButtonAction(_ sender: Any) {
         let vc = self.storyboard!.instantiateViewController(withIdentifier: "propertyListView") as? PropertyListController
@@ -49,11 +52,23 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
         loadDetail()
         
         let btnShare = UIButton(type: .custom)
-        btnShare.setImage(UIImage(named: "shareIconBlack"), for: [])
-        //        btn_filter.addTarget(self, action: #selector(PPTrainSearchResultViewController.showFilter), for: UIControlEvents.touchUpInside)
+        btnShare.titleLabel?.font = UIFont(name: "FontAwesome", size: 20)
+        btnShare.setTitle("", for: .normal)
+        btnShare.addTarget(self, action: #selector(shareAction), for: UIControlEvents.touchUpInside)
         navItem.rightBarButtonItem = UIBarButtonItem(customView: btnShare)
         
         navigationController?.navigationBar.isHidden = true
+    }
+    
+    @objc func shareAction(sender: UIButton){
+        let activityViewController = UIActivityViewController(activityItems: [self.shareString], applicationActivities: nil)
+        
+        activityViewController.popoverPresentationController?.sourceView = sender
+        activityViewController.popoverPresentationController?.sourceRect = sender.bounds
+        
+        activityViewController.excludedActivityTypes = [ UIActivityType.postToVimeo, UIActivityType.postToFlickr]
+        
+        self.present(activityViewController, animated: true, completion: nil)
     }
     
     func loadDetail(){
@@ -64,6 +79,12 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
             Alamofire.request("http://api.rumahhokie.com/cnt_listing/\(self.idDetail)", method: .get).responseJSON { response in
                 
                 if let json = response.result.value {
+                    if let resSlug = (json as AnyObject).value(forKey: "slug_listing") as? String{
+                        let resId = (json as AnyObject).value(forKey: "cnt_listing_id") as! Int
+                        
+                        self.shareString = self.shareStringDefault + self.shareUrlDefault + String(resId) + "/" + resSlug
+                    }
+                    
                     if let resImage = (json as AnyObject).value(forKey: "cnt_foto"){
                         if let resArray = resImage as? Array<AnyObject>{
                             for r in resArray{

@@ -108,6 +108,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        txtEmail.delegate = self
+        txtPassword.delegate = self
         txtPassword.isSecureTextEntry = true
         
         whiteBar.layer.borderWidth = 1
@@ -122,6 +124,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
             txtPassword.isSecureTextEntry = true
             passwordIsSecure = true
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
 }
