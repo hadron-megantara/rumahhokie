@@ -30,6 +30,9 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     @IBOutlet weak var btnPropertyProvince: UIButton!
     @IBOutlet weak var btnPropertyCity: UIButton!
     @IBOutlet weak var btnPropertyArea: UIButton!
+    @IBOutlet weak var btnUploadPhoto: UIButton!
+    @IBOutlet weak var btnFacility: UIButton!
+    @IBOutlet weak var btnFacilityArea: UIButton!
     
     var propertyType: Int = 0
     var propertyTypeString: String = ""
@@ -74,6 +77,20 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         txtPropertyPrice.delegate = self
         txtPropertyUrl.delegate = self
         txtPropertyTag.delegate = self
+        
+        let margin: CGFloat = 10.0
+        
+        btnUploadPhoto.layer.borderWidth = 1
+        btnUploadPhoto.layer.borderColor = UIColor.gray.cgColor
+        btnUploadPhoto.widthAnchor.constraint(equalToConstant: btnUploadPhoto.titleLabel!.intrinsicContentSize.width + margin * 2.0).isActive = true
+        
+        btnFacility.layer.borderWidth = 1
+        btnFacility.layer.borderColor = UIColor.gray.cgColor
+        btnFacility.widthAnchor.constraint(equalToConstant: btnFacility.titleLabel!.intrinsicContentSize.width + margin * 2.0).isActive = true
+        
+        btnFacilityArea.layer.borderWidth = 1
+        btnFacilityArea.layer.borderColor = UIColor.gray.cgColor
+        btnFacilityArea.widthAnchor.constraint(equalToConstant: btnFacilityArea.titleLabel!.intrinsicContentSize.width + margin * 2.0).isActive = true
         
         navigationController?.navigationBar.isHidden = true
         

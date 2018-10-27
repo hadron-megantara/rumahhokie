@@ -5893,10 +5893,13 @@
                     </view>
                     <size key="freeformSize" width="375" height="1100"/>
                     <connections>
+                        <outlet property="btnFacility" destination="cwb-JK-dYb" id="TPt-ez-wc5"/>
+                        <outlet property="btnFacilityArea" destination="Unq-P6-VpE" id="gLe-Pe-uiC"/>
                         <outlet property="btnPropertyArea" destination="Vle-Dj-HTe" id="mbh-Wx-4C9"/>
                         <outlet property="btnPropertyCity" destination="qBT-vv-rB9" id="f0L-5X-Zv7"/>
                         <outlet property="btnPropertyProvince" destination="Bay-U8-gXg" id="kMR-LR-zGm"/>
                         <outlet property="btnPropertyType" destination="oqb-an-fmS" id="EYv-8D-LZW"/>
+                        <outlet property="btnUploadPhoto" destination="rU0-JD-pUq" id="FFg-Iz-mDk"/>
                         <outlet property="propertyViewRent" destination="5Ju-Bn-BRg" id="AKM-Zr-QbM"/>
                         <outlet property="propertyViewSold" destination="ug4-Pv-7zI" id="3cB-KQ-wsb"/>
                         <outlet property="radioPropertyStatusRent" destination="eue-Jk-rjs" id="rAo-ie-dQM"/>
