@@ -19,7 +19,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCC-uT-QEC">
                     <rect key="frame" x="0.0" y="20" width="444" height="491"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qVS-6e-xgR">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qVS-6e-xgR">
                             <rect key="frame" x="0.0" y="0.0" width="444" height="350"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="350" id="1vt-Re-FZi"/>
@@ -35,7 +35,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gekbrong, Cianjur, Jawa Barat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfV-ea-kFe">
-                                    <rect key="frame" x="27" y="33" width="171" height="15"/>
+                                    <rect key="frame" x="27" y="33" width="417" height="15"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -144,6 +144,7 @@
                                 <constraint firstItem="8g3-4Z-qa1" firstAttribute="leading" secondItem="YI2-Af-7Dt" secondAttribute="leading" constant="8" id="7wf-b6-Yn1"/>
                                 <constraint firstItem="saD-qn-fJC" firstAttribute="leading" secondItem="YI2-Af-7Dt" secondAttribute="leading" constant="8" id="D8Y-Ni-wYf"/>
                                 <constraint firstAttribute="bottom" secondItem="x7m-O8-ObN" secondAttribute="bottom" constant="24" id="Dj9-DY-eTc"/>
+                                <constraint firstItem="McS-Yq-zlh" firstAttribute="top" secondItem="WfV-ea-kFe" secondAttribute="bottom" constant="35" id="IfE-DG-PzJ"/>
                                 <constraint firstAttribute="bottom" secondItem="RPY-gz-ItD" secondAttribute="bottom" constant="24" id="JTX-eF-VkZ"/>
                                 <constraint firstItem="x7m-O8-ObN" firstAttribute="top" secondItem="Cd8-Fb-tWL" secondAttribute="bottom" constant="4" id="R0G-W0-PY7"/>
                                 <constraint firstAttribute="trailing" secondItem="McS-Yq-zlh" secondAttribute="trailing" constant="8" id="R5Q-PB-MhH"/>
@@ -161,6 +162,7 @@
                                 <constraint firstItem="jPz-7b-eh5" firstAttribute="leading" secondItem="YI2-Af-7Dt" secondAttribute="leading" constant="8" id="qMy-jw-VnL"/>
                                 <constraint firstItem="TP1-R1-byx" firstAttribute="top" secondItem="saD-qn-fJC" secondAttribute="bottom" constant="8" id="rCb-CK-NSe"/>
                                 <constraint firstItem="Cd8-Fb-tWL" firstAttribute="leading" secondItem="AML-zV-j0s" secondAttribute="trailing" constant="4" id="sks-7b-Ma1"/>
+                                <constraint firstAttribute="trailing" secondItem="WfV-ea-kFe" secondAttribute="trailing" id="tI0-eg-yWG"/>
                                 <constraint firstItem="WfV-ea-kFe" firstAttribute="centerY" secondItem="TP1-R1-byx" secondAttribute="centerY" id="yK3-1q-NJh"/>
                             </constraints>
                         </view>

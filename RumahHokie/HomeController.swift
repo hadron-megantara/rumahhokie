@@ -186,9 +186,8 @@ class HomeController: UIViewController, AACarouselDelegate {
                             
                             for i in 0 ..< countResult{
                                 let listingView = Bundle.main.loadNibNamed("TopListing", owner: nil, options: nil)![0] as! UIView
-                                listingView.frame.size.width = self.view.frame.width
-                                
                                 let viewWidth = self.view.frame.width
+                                
                                 let xVar = CGFloat(i) * viewWidth
                                 
                                 let totalViewWidth = CGFloat(countResult) * viewWidth
@@ -257,15 +256,33 @@ class HomeController: UIViewController, AACarouselDelegate {
                                                 
                                                 DispatchQueue.global().async {
                                                     if let data = try? Data(contentsOf: pictUrl){
-                                                        if let dataImage = UIImage(data: data){
+                                                        if let image = UIImage(data: data){
                                                             DispatchQueue.main.async {
-                                                                lbl1.image = dataImage
+                                                                let containerView = UIView(frame: CGRect(x:0,y:0,width:self.view.frame.width,height:lbl1.frame.height))
+                                                                
+                                                                let ratio = image.size.width / image.size.height
+                                                                if containerView.frame.width > containerView.frame.height {
+                                                                    let newHeight = containerView.frame.width / ratio
+                                                                    lbl1.frame.size = CGSize(width: containerView.frame.width, height: newHeight)
+                                                                }
+                                                                else{
+                                                                    let newWidth = containerView.frame.height * ratio
+                                                                    lbl1.frame.size = CGSize(width: newWidth, height: containerView.frame.height)
+                                                                }
+                                                                lbl1.image = image
                                                             }
                                                         }
                                                     }
                                                 }
                                             }
                                         }
+                                    }
+                                }
+                                
+                                if let label8 = listingView.viewWithTag(8) as? UILabel{
+                                    if let cntViewCount = (self.topListingArray[i] as AnyObject).value(forKey: "view_count"){
+                                        let cntViewCountInt = cntViewCount as! Int
+                                        label8.text = String(cntViewCountInt)
                                     }
                                 }
                                 
