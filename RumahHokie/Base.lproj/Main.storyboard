@@ -387,19 +387,19 @@
                                         <rect key="frame" x="0.0" y="1388" width="375" height="550"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Top Listing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bi7-Wq-wgH">
-                                                <rect key="frame" x="8" y="8" width="84" height="26"/>
+                                                <rect key="frame" x="8" y="8" width="84" height="35"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAO-Wk-gb7">
-                                                <rect key="frame" x="0.0" y="50" width="375" height="500"/>
+                                                <rect key="frame" x="0.0" y="59" width="375" height="491"/>
                                                 <subviews>
-                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jV2-2T-pI8">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jV2-2T-pI8">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="491"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WNa-gR-d5X">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="491"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="375" id="trC-Bc-Glz"/>
@@ -411,15 +411,17 @@
                                                             <constraint firstItem="WNa-gR-d5X" firstAttribute="leading" secondItem="jV2-2T-pI8" secondAttribute="leading" id="Dr0-js-0xs"/>
                                                             <constraint firstItem="WNa-gR-d5X" firstAttribute="height" secondItem="jV2-2T-pI8" secondAttribute="height" id="LlW-3V-XXO"/>
                                                             <constraint firstItem="WNa-gR-d5X" firstAttribute="top" secondItem="jV2-2T-pI8" secondAttribute="top" id="Q6y-qA-aBL"/>
-                                                            <constraint firstAttribute="height" constant="500" id="mDa-Dh-pfi"/>
+                                                            <constraint firstAttribute="height" constant="491" id="mDa-Dh-pfi"/>
                                                             <constraint firstAttribute="bottom" secondItem="WNa-gR-d5X" secondAttribute="bottom" id="ub7-CY-lkI"/>
                                                         </constraints>
                                                     </scrollView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="jV2-2T-pI8" firstAttribute="leading" secondItem="iAO-Wk-gb7" secondAttribute="leading" id="0Aa-c0-kfc"/>
                                                     <constraint firstAttribute="trailing" secondItem="jV2-2T-pI8" secondAttribute="trailing" id="1rV-Ky-IxV"/>
+                                                    <constraint firstAttribute="height" constant="491" id="97y-zE-Bwp"/>
                                                     <constraint firstItem="jV2-2T-pI8" firstAttribute="top" secondItem="iAO-Wk-gb7" secondAttribute="top" id="LHl-Go-xWs"/>
                                                     <constraint firstAttribute="bottom" secondItem="jV2-2T-pI8" secondAttribute="bottom" id="XGf-HL-LbP"/>
                                                 </constraints>

@@ -19,7 +19,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZCC-uT-QEC">
                     <rect key="frame" x="0.0" y="20" width="444" height="491"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qVS-6e-xgR">
+                        <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qVS-6e-xgR">
                             <rect key="frame" x="0.0" y="0.0" width="444" height="350"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="350" id="1vt-Re-FZi"/>
@@ -157,6 +157,7 @@
                                 <constraint firstAttribute="trailing" secondItem="RPY-gz-ItD" secondAttribute="trailing" constant="8" id="n5J-Fq-38Y"/>
                                 <constraint firstItem="Cd8-Fb-tWL" firstAttribute="centerY" secondItem="AML-zV-j0s" secondAttribute="centerY" id="ndt-iX-5N2"/>
                                 <constraint firstAttribute="bottom" secondItem="jPz-7b-eh5" secondAttribute="bottom" constant="24" id="oal-nX-cnO"/>
+                                <constraint firstAttribute="height" constant="141" id="qFK-Hg-YJS"/>
                                 <constraint firstItem="jPz-7b-eh5" firstAttribute="leading" secondItem="YI2-Af-7Dt" secondAttribute="leading" constant="8" id="qMy-jw-VnL"/>
                                 <constraint firstItem="TP1-R1-byx" firstAttribute="top" secondItem="saD-qn-fJC" secondAttribute="bottom" constant="8" id="rCb-CK-NSe"/>
                                 <constraint firstItem="Cd8-Fb-tWL" firstAttribute="leading" secondItem="AML-zV-j0s" secondAttribute="trailing" constant="4" id="sks-7b-Ma1"/>

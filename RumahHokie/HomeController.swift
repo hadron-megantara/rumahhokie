@@ -195,7 +195,7 @@ class HomeController: UIViewController, AACarouselDelegate {
                                 
                                 self.constraintTopListingViewWidth.constant = CGFloat(totalViewWidth)
                                 
-                                listingView.frame = CGRect(x: xVar, y: 0, width: viewWidth, height: 350)
+                                listingView.frame = CGRect(x: xVar, y: 0, width: viewWidth, height: 491)
                                 
                                 if let label2 = listingView.viewWithTag(2) as? UILabel{
                                     if let cntListName = (self.topListingArray[i] as AnyObject).value(forKey: "cnt_listing_name"){
@@ -259,7 +259,6 @@ class HomeController: UIViewController, AACarouselDelegate {
                                                     if let data = try? Data(contentsOf: pictUrl){
                                                         if let dataImage = UIImage(data: data){
                                                             DispatchQueue.main.async {
-                                                                
                                                                 lbl1.image = dataImage
                                                             }
                                                         }
