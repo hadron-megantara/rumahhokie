@@ -65,6 +65,8 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     var propertyFeatureText: String = ""
     var propertyFeatureId: Array = [Any]()
     var propertyFeature2: Array = [Any]()
+    var propertyFeatureText2: String = ""
+    var propertyFeatureId2: Array = [Any]()
     
     let alert = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     let alert2 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
@@ -72,10 +74,10 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     let alert4 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     
     let alert5 = UIAlertController(title: "Pilih Fasilitas", message: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
-    let alert6 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+    let alert6 = UIAlertController(title: "Pilih Fasilitas Sekitar", message: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     
     private var featureTableView: UITableView!
-
+    private var featureTableView2: UITableView!
     
     var imagePicker = UIImagePickerController()
     var totalImage: Int = 0
@@ -178,14 +180,28 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         alert5.isModalInPopover = true
         alert5.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil))
         
+        alert6.isModalInPopover = true
+        alert6.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil))
+        
         self.featureTableView = UITableView(frame: CGRect(x: 24, y: 50, width: 220, height: 320))
         self.featureTableView.register(UITableViewCell.self, forCellReuseIdentifier: "featureCell")
         self.featureTableView.separatorStyle = UITableViewCellSeparatorStyle.none
         self.featureTableView.isEditing = false
         self.featureTableView.allowsSelection = true
+        self.featureTableView.tag = 1
         self.featureTableView.dataSource = self
         self.featureTableView.delegate = self
         self.alert5.view.addSubview(self.featureTableView)
+        
+        self.featureTableView2 = UITableView(frame: CGRect(x: 24, y: 50, width: 220, height: 320))
+        self.featureTableView2.register(UITableViewCell.self, forCellReuseIdentifier: "featureCell2")
+        self.featureTableView2.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.featureTableView2.isEditing = false
+        self.featureTableView2.allowsSelection = true
+        self.featureTableView2.tag = 2
+        self.featureTableView2.dataSource = self
+        self.featureTableView2.delegate = self
+        self.alert6.view.addSubview(self.featureTableView2)
     }
     
     func loadProvince(){
@@ -262,32 +278,6 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                 }
                 
                 self.pickerPropertyArea.delegate = self;
-            }
-            
-            group.leave()
-        }
-        
-        group.notify(queue: DispatchQueue.main) {
-            
-        }
-    }
-    
-    func loadFeature2(){
-        let group = DispatchGroup()
-        group.enter()
-        
-        DispatchQueue.main.async {
-            Alamofire.request("http://api.rumahhokie.com/mstr_fitur?order_by=mstr_fitur_desc&order_type=asc&mstr_fitur_kategori=2", method: .get).responseJSON { response in
-                
-                if let json = response.result.value {
-                    if let res = (json as AnyObject).value(forKey: "mstr_fitur"){
-                        if let resArray = res as? Array<AnyObject>{
-                            for r in resArray{
-                                self.propertyFeature2.append(r)
-                            }
-                        }
-                    }
-                }
             }
             
             group.leave()
@@ -636,13 +626,19 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     }
     
     @IBAction func btnFacility2Action(_ sender: Any) {
-        
+        self.present(alert6, animated: true, completion:{
+            self.alert6.view.superview?.isUserInteractionEnabled = true
+            self.alert6.view.superview?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertController6BackgroundTapped)))
+        })
     }
     
     @objc func alertController5BackgroundTapped(){
 //        self.dismiss(animated: true, completion: nil)
     }
     
+    @objc func alertController6BackgroundTapped(){
+        //        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func saveAction(_ sender: Any) {
         if totalImage > 0{
@@ -662,16 +658,42 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.propertyFeature.count
+        if tableView.tag == 1{
+            return self.propertyFeature.count
+        }
+        
+        return self.propertyFeature2.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "featureCell", for: indexPath as IndexPath)
+        if tableView.tag == 1{
+            let cell = tableView.dequeueReusableCell(withIdentifier: "featureCell", for: indexPath as IndexPath)
+            
+            if let objData = self.propertyFeature[indexPath.row] as? Array<AnyObject>{
+                cell.textLabel?.font = UIFont(name: "FontAwesome", size: 14)
+                cell.backgroundColor = UIColor.white
+                
+                if objData[2] as! Int == 0{
+                    cell.textLabel!.text = "     " + (objData[1] as! String)
+                } else{
+                    cell.textLabel!.text = "     " + (objData[1] as! String)
+                }
+                
+                cell.tag = indexPath.row
+                
+                let gesture = UITapGestureRecognizer(target: self, action: #selector(featureTableTap))
+                cell.addGestureRecognizer(gesture)
+            }
+            
+            return cell
+        }
         
-        if let objData = self.propertyFeature[indexPath.row] as? Array<AnyObject>{
+        let cell = tableView.dequeueReusableCell(withIdentifier: "featureCell2", for: indexPath as IndexPath)
+        
+        if let objData = self.propertyFeature2[indexPath.row] as? Array<AnyObject>{
             cell.textLabel?.font = UIFont(name: "FontAwesome", size: 14)
             cell.backgroundColor = UIColor.white
-            print(objData)
+            
             if objData[2] as! Int == 0{
                 cell.textLabel!.text = "     " + (objData[1] as! String)
             } else{
@@ -680,7 +702,7 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
             
             cell.tag = indexPath.row
             
-            let gesture = UITapGestureRecognizer(target: self, action: #selector(featureTableTap))
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(featureTableTap2))
             cell.addGestureRecognizer(gesture)
         }
         
@@ -743,5 +765,106 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         }
         
         self.featureTableView.reloadData()
+    }
+    
+    func loadFeature2(){
+        let group = DispatchGroup()
+        group.enter()
+        
+        DispatchQueue.main.async {
+            Alamofire.request("http://api.rumahhokie.com/mstr_fitur?order_by=mstr_fitur_desc&order_type=asc&mstr_fitur_kategori=2", method: .get).responseJSON { response in
+                
+                if let json = response.result.value {
+                    if let res = (json as AnyObject).value(forKey: "mstr_fitur"){
+                        if let resArray = res as? Array<AnyObject>{
+                            for r in resArray{
+                                var dataId: Int = 0
+                                var dataDesc: String = ""
+                                
+                                if let objId = r["mstr_fitur_id"] as? Int {
+                                    dataId = objId
+                                }
+                                
+                                if let objDesc = r["mstr_fitur_desc"] as? String {
+                                    dataDesc = objDesc
+                                }
+                                
+                                let status: Int = 0
+                                
+                                let returnArray = [dataId, dataDesc, status] as [Any]
+                                
+                                self.propertyFeature2.append(returnArray)
+                            }
+                            
+                            self.featureTableView2.reloadData()
+                        }
+                    }
+                }
+            }
+            
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            
+        }
+    }
+    
+    @objc func featureTableTap2(sender: UITapGestureRecognizer){
+        if let propertyData = self.propertyFeature2 as? Array<AnyObject>{
+            var objIndexId: Int = 0
+            if let objIndex = self.propertyFeature2[(sender.view?.tag)!] as? Array<AnyObject>{
+                objIndexId = objIndex[0] as! Int
+            }
+            
+            self.propertyFeature2.removeAll()
+            self.propertyFeatureId2.removeAll()
+            
+            self.propertyFeatureText2 = ""
+            
+            for r in propertyData{
+                if var respond = r as? Array<AnyObject>{
+                    var dataId: Int = 0
+                    var dataDesc: String = ""
+                    var dataStatus: Int = 0
+                    
+                    if let objId = respond[0] as? Int {
+                        dataId = objId
+                    }
+                    
+                    if let objDesc = respond[1] as? String {
+                        dataDesc = objDesc
+                    }
+                    
+                    if let objStatus = respond[2] as? Int {
+                        if dataId == objIndexId{
+                            if objStatus == 0{
+                                dataStatus = 1
+                            } else{
+                                dataStatus = 0
+                            }
+                        } else{
+                            dataStatus = objStatus
+                        }
+                        
+                        if dataStatus == 1{
+                            if self.propertyFeatureText2 == ""{
+                                self.propertyFeatureText2 = dataDesc
+                            } else{
+                                self.propertyFeatureText2 = self.propertyFeatureText2 + ", " + dataDesc
+                            }
+                        }
+                    }
+                    
+                    let returnArray = [dataId, dataDesc, dataStatus] as [Any]
+                    
+                    self.propertyFeature2.append(returnArray)
+                }
+            }
+            
+            facilityText2.text = self.propertyFeatureText2
+        }
+        
+        self.featureTableView2.reloadData()
     }
 }
