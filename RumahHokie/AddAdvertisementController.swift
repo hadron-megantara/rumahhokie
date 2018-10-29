@@ -695,6 +695,7 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
             }
             
             self.propertyFeature.removeAll()
+            self.propertyFeatureId.removeAll()
             
             self.propertyFeatureText = ""
             
