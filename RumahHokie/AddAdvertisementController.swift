@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import Alamofire
 
-class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var txtPropertyTitle: UITextField!
     @IBOutlet weak var txtPropertyAddress: UITextField!
     @IBOutlet weak var txtPropertyDesc: UITextField!
@@ -62,6 +62,8 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     var pickerPropertyType = UIPickerView()
     
     var propertyFeature: Array = [Any]()
+    var propertyFeatureText: String = ""
+    var propertyFeatureId: Array = [Any]()
     var propertyFeature2: Array = [Any]()
     
     let alert = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
@@ -69,8 +71,11 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     let alert3 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     let alert4 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     
-    let alert5 = UIAlertController(title: "Pilih Fasilitas", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+    let alert5 = UIAlertController(title: "Pilih Fasilitas", message: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
     let alert6 = UIAlertController(title: "", message: "\n\n\n\n\n\n\n\n\n\n", preferredStyle: .alert)
+    
+    private var featureTableView: UITableView!
+
     
     var imagePicker = UIImagePickerController()
     var totalImage: Int = 0
@@ -172,6 +177,15 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         
         alert5.isModalInPopover = true
         alert5.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil))
+        
+        self.featureTableView = UITableView(frame: CGRect(x: 24, y: 50, width: 220, height: 320))
+        self.featureTableView.register(UITableViewCell.self, forCellReuseIdentifier: "featureCell")
+        self.featureTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        self.featureTableView.isEditing = false
+        self.featureTableView.allowsSelection = true
+        self.featureTableView.dataSource = self
+        self.featureTableView.delegate = self
+        self.alert5.view.addSubview(self.featureTableView)
     }
     
     func loadProvince(){
@@ -569,13 +583,25 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                     if let res = (json as AnyObject).value(forKey: "mstr_fitur"){
                         if let resArray = res as? Array<AnyObject>{
                             for r in resArray{
-                                self.propertyFeature.append(r)
+                                var dataId: Int = 0
+                                var dataDesc: String = ""
                                 
-                                let featureBtn : UIButton = UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
-                                featureBtn.setTitle((r.value(forKey: "mstr_fitur_desc") as! String), for: .normal)
-                                featureBtn.addTarget(self, action: #selector(self.checkBoxFeatureAction), for: .touchUpInside)
-                                self.alert5.view.addSubview(featureBtn)
+                                if let objId = r["mstr_fitur_id"] as? Int {
+                                    dataId = objId
+                                }
+                                
+                                if let objDesc = r["mstr_fitur_desc"] as? String {
+                                    dataDesc = objDesc
+                                }
+                                
+                                let status: Int = 0
+                                
+                                let returnArray = [dataId, dataDesc, status] as [Any]
+                                
+                                self.propertyFeature.append(returnArray)
                             }
+                            
+                            self.featureTableView.reloadData()
                         }
                     }
                 }
@@ -614,7 +640,7 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     }
     
     @objc func alertController5BackgroundTapped(){
-        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
     }
     
     
@@ -635,4 +661,86 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         }
     }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.propertyFeature.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "featureCell", for: indexPath as IndexPath)
+        
+        if let objData = self.propertyFeature[indexPath.row] as? Array<AnyObject>{
+            cell.textLabel?.font = UIFont(name: "FontAwesome", size: 14)
+            cell.backgroundColor = UIColor.white
+            print(objData)
+            if objData[2] as! Int == 0{
+                cell.textLabel!.text = "     " + (objData[1] as! String)
+            } else{
+                cell.textLabel!.text = "     " + (objData[1] as! String)
+            }
+            
+            cell.tag = indexPath.row
+            
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(featureTableTap))
+            cell.addGestureRecognizer(gesture)
+        }
+        
+        return cell
+    }
+    
+    @objc func featureTableTap(sender: UITapGestureRecognizer){
+        if let propertyData = self.propertyFeature as? Array<AnyObject>{
+            var objIndexId: Int = 0
+            if let objIndex = self.propertyFeature[(sender.view?.tag)!] as? Array<AnyObject>{
+                objIndexId = objIndex[0] as! Int
+            }
+            
+            self.propertyFeature.removeAll()
+            
+            self.propertyFeatureText = ""
+            
+            for r in propertyData{
+                if var respond = r as? Array<AnyObject>{
+                    var dataId: Int = 0
+                    var dataDesc: String = ""
+                    var dataStatus: Int = 0
+
+                    if let objId = respond[0] as? Int {
+                        dataId = objId
+                    }
+
+                    if let objDesc = respond[1] as? String {
+                        dataDesc = objDesc
+                    }
+                    
+                    if let objStatus = respond[2] as? Int {
+                        if dataId == objIndexId{
+                            if objStatus == 0{
+                                dataStatus = 1
+                            } else{
+                                dataStatus = 0
+                            }
+                        } else{
+                            dataStatus = objStatus
+                        }
+                        
+                        if dataStatus == 1{
+                            if self.propertyFeatureText == ""{
+                                self.propertyFeatureText = dataDesc
+                            } else{
+                                self.propertyFeatureText = self.propertyFeatureText + ", " + dataDesc
+                            }
+                        }
+                    }
+
+                    let returnArray = [dataId, dataDesc, dataStatus] as [Any]
+
+                    self.propertyFeature.append(returnArray)
+                }
+            }
+            
+            facilityText.text = self.propertyFeatureText
+        }
+        
+        self.featureTableView.reloadData()
+    }
 }
