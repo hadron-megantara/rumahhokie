@@ -642,6 +642,27 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     
     @IBAction func saveAction(_ sender: Any) {
         if totalImage > 0{
+            let data = [
+                "cnt_status_id" : self.propertyStatus,
+                "cnt_listing_name" : txtPropertyTitle.text!,
+                "cnt_listing_alamat" : txtPropertyTitle.text!,
+                "cnt_listing_desc" : txtPropertyTitle.text!,
+                "cnt_listing_created_on" : txtPropertyTitle.text!,
+                "cnt_listing_kmr_tdr" : txtPropertyTitle.text!,
+                "cnt_listing_url" : txtPropertyTitle.text!,
+                "cnt_listing_kmr_mandi" : txtPropertyTitle.text!,
+                "mstr_status_id" : txtPropertyTitle.text!,
+                "mstr_provinsi_id" : txtPropertyTitle.text!,
+                "mstr_kota_id" : txtPropertyTitle.text!,
+                "mstr_tipe_id" : txtPropertyTitle.text!,
+                "mstr_wilayah_id" : txtPropertyTitle.text!,
+                "cnt_listing_garasi" : txtPropertyTitle.text!,
+                "cnt_listing_harga" : txtPropertyTitle.text!,
+                "cnt_listing_lt" : txtPropertyTitle.text!,
+                "cnt_listing_lb" : txtPropertyTitle.text!,
+                "cnt_listing_tagging" : txtPropertyTitle.text!,
+                "cnt_fitur" : txtPropertyTitle.text!,
+            ] as [String : Any]
             
         } else{
             let msgStatus: String = "Posting tidak bisa dilanjutkan karena belum ada gambar yang diupload!"
