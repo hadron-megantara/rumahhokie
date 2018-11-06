@@ -12,10 +12,7 @@
 		7903129A2152B36600026314 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 790312992152B36600026314 /* LoginController.swift */; };
 		792AC2F921500D1C0010966A /* TopBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792AC2F821500D1C0010966A /* TopBanner.swift */; };
 		792B1E4E216DB8CC00F63CA6 /* share-white.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 792B1E4D216DB8CA00F63CA6 /* share-white.jpg */; };
-		792B1E52216F1D4B00F63CA6 /* AgentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B1E51216F1D4B00F63CA6 /* AgentList.swift */; };
-		792B6D7921703D420054505A /* BottomMenuUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792B6D7821703D420054505A /* BottomMenuUser.swift */; };
 		79331E2D217DE0FD007B281F /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79331E2C217DE0FD007B281F /* ForgotPasswordController.swift */; };
-		793BA3AD216F1F66003ADBB4 /* AgentList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792B1E53216F1D7E00F63CA6 /* AgentList.xib */; };
 		79466B4F21522B75004160B7 /* EmptyListProperty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79466B4E21522B75004160B7 /* EmptyListProperty.xib */; };
 		79466B5121522B85004160B7 /* EmptyListProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79466B5021522B85004160B7 /* EmptyListProperty.swift */; };
 		79466B57215230D6004160B7 /* mapMarker.png in Resources */ = {isa = PBXBuildFile; fileRef = 79466B56215230D5004160B7 /* mapMarker.png */; };
@@ -63,7 +60,6 @@
 		79CED995217BA27E00A4E32C /* BottomMenuUser.xib in Resources */ = {isa = PBXBuildFile; fileRef = 792B6D7021703CE70054505A /* BottomMenuUser.xib */; };
 		79D1BDBA2173D02D0054A8A0 /* PaidTopListingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D1BDB92173D02D0054A8A0 /* PaidTopListingController.swift */; };
 		79DBDAA4217E645500345976 /* AdvertisementListSoldController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DBDAA3217E645500345976 /* AdvertisementListSoldController.swift */; };
-		79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3A214A5E51000B4147 /* BottomMenu.swift */; };
 		79DE9B3D214A630F000B4147 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3C214A630F000B4147 /* HomeController.swift */; };
 		79DE9B3F214A6359000B4147 /* AgentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B3E214A6359000B4147 /* AgentController.swift */; };
 		79DE9B41214A639E000B4147 /* NewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79DE9B40214A639E000B4147 /* NewsController.swift */; };
@@ -94,6 +90,10 @@
 		79DE9B7E214CE3EF000B4147 /* bedroom.svg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B69214CE3EF000B4147 /* bedroom.svg */; };
 		79DE9B7F214CE3EF000B4147 /* building_area.svg in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B6A214CE3EF000B4147 /* building_area.svg */; };
 		79DE9B80214CE3EF000B4147 /* bathroom.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DE9B6B214CE3EF000B4147 /* bathroom.png */; };
+		79F57F742191F3BD001E0284 /* AgentList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F57F732191F3BD001E0284 /* AgentList.swift */; };
+		79F57F762191F461001E0284 /* BottomMenuUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F57F752191F461001E0284 /* BottomMenuUser.swift */; };
+		79F57F782191F479001E0284 /* BottomMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79F57F772191F478001E0284 /* BottomMenu.swift */; };
+		79F57F7A2191F499001E0284 /* AgentList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79F57F792191F499001E0284 /* AgentList.xib */; };
 		81E1046CF409FBF53AFA300D /* Pods_RumahHokieTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC83A07F643A0AB8C408CC25 /* Pods_RumahHokieTests.framework */; };
 		CF07D608156844A86ED6C7A6 /* Pods_RumahHokieUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19085F48BE8E9901235998E2 /* Pods_RumahHokieUITests.framework */; };
 /* End PBXBuildFile section */
@@ -124,10 +124,7 @@
 		790312992152B36600026314 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		792AC2F821500D1C0010966A /* TopBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBanner.swift; sourceTree = "<group>"; };
 		792B1E4D216DB8CA00F63CA6 /* share-white.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "share-white.jpg"; sourceTree = "<group>"; };
-		792B1E51216F1D4B00F63CA6 /* AgentList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentList.swift; sourceTree = "<group>"; };
-		792B1E53216F1D7E00F63CA6 /* AgentList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AgentList.xib; path = /Users/hadron/Code/iOS/RumahHokie/RumahHokie/AgentList.xib; sourceTree = "<absolute>"; };
 		792B6D7021703CE70054505A /* BottomMenuUser.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BottomMenuUser.xib; sourceTree = "<group>"; };
-		792B6D7821703D420054505A /* BottomMenuUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BottomMenuUser.swift; path = /Users/hadron/Code/iOS/RumahHokie/RumahHokie/View/BottomMenuUser.swift; sourceTree = "<absolute>"; };
 		79331E2C217DE0FD007B281F /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		79466B4E21522B75004160B7 /* EmptyListProperty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyListProperty.xib; sourceTree = "<group>"; };
 		79466B5021522B85004160B7 /* EmptyListProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListProperty.swift; sourceTree = "<group>"; };
@@ -183,7 +180,6 @@
 		79C9031A217511DA007DB37D /* radio-btn-checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio-btn-checked.png"; sourceTree = "<group>"; };
 		79D1BDB92173D02D0054A8A0 /* PaidTopListingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidTopListingController.swift; sourceTree = "<group>"; };
 		79DBDAA3217E645500345976 /* AdvertisementListSoldController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementListSoldController.swift; sourceTree = "<group>"; };
-		79DE9B3A214A5E51000B4147 /* BottomMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomMenu.swift; sourceTree = "<group>"; };
 		79DE9B3C214A630F000B4147 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		79DE9B3E214A6359000B4147 /* AgentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentController.swift; sourceTree = "<group>"; };
 		79DE9B40214A639E000B4147 /* NewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsController.swift; sourceTree = "<group>"; };
@@ -217,6 +213,10 @@
 		79DE9B81214CE822000B4147 /* RumahHokie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RumahHokie-Bridging-Header.h"; sourceTree = "<group>"; };
 		79DE9B83214E6C5A000B4147 /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		79DE9B85214E6C5B000B4147 /* fa-brands-400.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fa-brands-400.ttf"; sourceTree = "<group>"; };
+		79F57F732191F3BD001E0284 /* AgentList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AgentList.swift; sourceTree = "<group>"; };
+		79F57F752191F461001E0284 /* BottomMenuUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomMenuUser.swift; sourceTree = "<group>"; };
+		79F57F772191F478001E0284 /* BottomMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomMenu.swift; sourceTree = "<group>"; };
+		79F57F792191F499001E0284 /* AgentList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgentList.xib; sourceTree = "<group>"; };
 		97452C77B5A0E1F7F600A9C6 /* Pods-RumahHokieTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieTests/Pods-RumahHokieTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC83A07F643A0AB8C408CC25 /* Pods_RumahHokieTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RumahHokieTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C26419AD2F277AEE7420E4E9 /* Pods-RumahHokieUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RumahHokieUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RumahHokieUITests/Pods-RumahHokieUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -278,16 +278,16 @@
 		79466B4D21522B53004160B7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				792B6D7821703D420054505A /* BottomMenuUser.swift */,
 				79466B4E21522B75004160B7 /* EmptyListProperty.xib */,
 				797B3B35216F728300191E1F /* EmptyListAgent.xib */,
 				797B3B37216F729100191E1F /* EmptyListAgent.swift */,
 				79466B5021522B85004160B7 /* EmptyListProperty.swift */,
-				792B1E53216F1D7E00F63CA6 /* AgentList.xib */,
-				792B1E51216F1D4B00F63CA6 /* AgentList.swift */,
+				79F57F732191F3BD001E0284 /* AgentList.swift */,
+				79F57F792191F499001E0284 /* AgentList.xib */,
+				79F57F752191F461001E0284 /* BottomMenuUser.swift */,
+				79F57F772191F478001E0284 /* BottomMenu.swift */,
 				792B6D7021703CE70054505A /* BottomMenuUser.xib */,
 				79470D352149279A007E5090 /* BottomMenu.xib */,
-				79DE9B3A214A5E51000B4147 /* BottomMenu.swift */,
 				799CC02E2177F14600A6AF68 /* SideBar.xib */,
 				799CC0302177F15D00A6AF68 /* SideBar.swift */,
 				79488FE2217DA41B0056A6B8 /* NewsMenu.xib */,
@@ -582,6 +582,7 @@
 				79DE9B4B214A7518000B4147 /* fontawesome-webfont.ttf in Resources */,
 				79466B57215230D6004160B7 /* mapMarker.png in Resources */,
 				796B5E09215158ED008BB1C3 /* MidBanner-3.png in Resources */,
+				79F57F7A2191F499001E0284 /* AgentList.xib in Resources */,
 				79DE9B80214CE3EF000B4147 /* bathroom.png in Resources */,
 				79DE9B70214CE3EF000B4147 /* newspaper.png in Resources */,
 				79470D122147640E007E5090 /* LaunchScreen.storyboard in Resources */,
@@ -622,7 +623,6 @@
 				79DE9B79214CE3EF000B4147 /* building_area.png in Resources */,
 				79DE9B6C214CE3EF000B4147 /* land_area.svg in Resources */,
 				79DE9B72214CE3EF000B4147 /* Icon Apps_tanah_revisi.png in Resources */,
-				793BA3AD216F1F66003ADBB4 /* AgentList.xib in Resources */,
 				79DE9B75214CE3EF000B4147 /* man-with-tie.svg in Resources */,
 				79DE9B7F214CE3EF000B4147 /* building_area.svg in Resources */,
 				79DE9B7B214CE3EF000B4147 /* bathroom.svg in Resources */,
@@ -748,9 +748,7 @@
 				79B49137217E673100E21C48 /* AdvertisementListBlockedController.swift in Sources */,
 				79D1BDBA2173D02D0054A8A0 /* PaidTopListingController.swift in Sources */,
 				7980AD712177F57700D85315 /* AdvertisementListController.swift in Sources */,
-				792B1E52216F1D4B00F63CA6 /* AgentList.swift in Sources */,
 				79488FE5217DAAEB0056A6B8 /* NewsMenu.swift in Sources */,
-				79DE9B3B214A5E51000B4147 /* BottomMenu.swift in Sources */,
 				79C9031821750AE3007DB37D /* PropertyFilterController.swift in Sources */,
 				799CC0312177F15D00A6AF68 /* SideBar.swift in Sources */,
 				79470D0821476409007E5090 /* AppDelegate.swift in Sources */,
@@ -759,15 +757,17 @@
 				79DE9B3F214A6359000B4147 /* AgentController.swift in Sources */,
 				79815AC5214EC1ED00238433 /* CoreAPi.m in Sources */,
 				79815AC7214EC40C00238433 /* CoreEndpoints.m in Sources */,
+				79F57F782191F479001E0284 /* BottomMenu.swift in Sources */,
 				790312982152B35600026314 /* RegisterController.swift in Sources */,
 				795BA8EC2184999C006ECA72 /* TopListing.swift in Sources */,
 				79466B5921523B20004160B7 /* PropertyDetailController.swift in Sources */,
+				79F57F742191F3BD001E0284 /* AgentList.swift in Sources */,
 				792AC2F921500D1C0010966A /* TopBanner.swift in Sources */,
 				79929A0A2173B1B600BF2FE0 /* UserEditController.swift in Sources */,
 				796B5E1521517DF8008BB1C3 /* PropertyListController.swift in Sources */,
 				79DBDAA4217E645500345976 /* AdvertisementListSoldController.swift in Sources */,
-				792B6D7921703D420054505A /* BottomMenuUser.swift in Sources */,
 				797B3B38216F729100191E1F /* EmptyListAgent.swift in Sources */,
+				79F57F762191F461001E0284 /* BottomMenuUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -942,15 +942,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99JTWX5P26;
+				DEVELOPMENT_TEAM = T5WVS8752F;
 				INFOPLIST_FILE = RumahHokie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokie123;
+				PRODUCT_BUNDLE_IDENTIFIER = id.ios.rumahhokie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RumahHokie/Controller/RumahHokie-Bridging-Header.h";
@@ -965,15 +965,15 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 99JTWX5P26;
+				DEVELOPMENT_TEAM = T5WVS8752F;
 				INFOPLIST_FILE = RumahHokie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = test.RumahHokie123;
+				PRODUCT_BUNDLE_IDENTIFIER = id.ios.rumahhokie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RumahHokie/Controller/RumahHokie-Bridging-Header.h";

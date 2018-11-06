@@ -642,6 +642,14 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     
     @IBAction func saveAction(_ sender: Any) {
         if totalImage > 0{
+            let group = DispatchGroup()
+            group.enter()
+            
+            let decoded  = UserDefaults.standard.object(forKey: "User") as! Data
+            let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded)
+            
+            let userId = (decodedTeams as AnyObject).value(forKey: "agt_user_id") as? Int
+            
             var paramPropertyFeature: Array = [Any]()
             
             for i in 0 ..< propertyFeatureId.count{
@@ -674,69 +682,13 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                 "cnt_listing_created_on" : txtPropertyTitle.text!,
                 "cnt_fitur" : paramPropertyFeature,
             ] as [String : Any]
-            
-            let group = DispatchGroup()
-            group.enter()
+            let url = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing"
             
             DispatchQueue.main.async {
-                
-                Alamofire.request("http://api.rumahhokie.com/token", method: .post, parameters: data as Parameters, encoding: URLEncoding.default, headers: nil)
+                Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil)
                     .responseJSON { response in
                         if let json = response.result.value {
-                            
-                            let resCode = response.response?.statusCode
-                            
-                            if(resCode == 200){
-                                if let accessToken = (json as AnyObject).value(forKey: "access_token"){
-                                    let bearerToken: String = "Bearer " + String(describing: accessToken)
-                                    let group2 = DispatchGroup()
-                                    group2.enter()
-                                    
-                                    let header = [
-                                        "Authorization" : bearerToken
-                                    ]
-                                    
-                                    DispatchQueue.main.async {
-                                        Alamofire.request("http://api.rumahhokie.com/agent/account", method: .get, parameters: nil, encoding: URLEncoding.default, headers: header)
-                                            .responseJSON { response2 in
-                                                if let json2 = response2.result.value {
-                                                    let encodedData = NSKeyedArchiver.archivedData(withRootObject: json2)
-                                                    
-                                                    self.defaults.set(encodedData, forKey: "User")
-                                                    
-                                                    let encodedData2 = NSKeyedArchiver.archivedData(withRootObject: bearerToken)
-                                                    
-                                                    self.defaults.set(encodedData2, forKey: "UserToken")
-                                                    
-                                                    if self.txtPassword.text != "12345"{
-                                                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "advertisementListView") as? AdvertisementListController
-                                                        self.navigationController!.pushViewController(vc!, animated: true)
-                                                    } else{
-                                                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "resetPasswordView") as? ResetPasswordController
-                                                        self.navigationController!.pushViewController(vc!, animated: true)
-                                                    }
-                                                }
-                                        }
-                                        
-                                        group2.leave()
-                                    }
-                                    
-                                    group2.notify(queue: DispatchQueue.main) {
-                                        
-                                    }
-                                }
-                            } else{
-                                let msgStatus: String = "Email atau Password salah. Silahkan Masukkan Data yang Valid"
-                                let delay = DispatchTime.now() + 3
-                                
-                                let alert = UIAlertController(title: msgStatus, message: "", preferredStyle: .alert)
-                                
-                                self.present(alert, animated: true)
-                                
-                                DispatchQueue.main.asyncAfter(deadline: delay){
-                                    alert.dismiss(animated: true, completion: nil)
-                                }
-                            }
+                            print(json)
                         }
                 }
                 
