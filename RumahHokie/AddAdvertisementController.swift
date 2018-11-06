@@ -642,6 +642,16 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     
     @IBAction func saveAction(_ sender: Any) {
         if totalImage > 0{
+            var paramPropertyFeature: Array = [Any]()
+            
+            for i in 0 ..< propertyFeatureId.count{
+                paramPropertyFeature.append(["mstr_fitur_id": propertyFeatureId[i]])
+            }
+            
+            for i in 0 ..< propertyFeatureId2.count{
+                paramPropertyFeature.append(["mstr_fitur_id": propertyFeatureId2[i]])
+            }
+            
             let data = [
                 "stat" : 3,
                 "cnt_status_id" : 2,
@@ -662,9 +672,80 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                 "cnt_listing_lt" : txtPropertyArea.text!,
                 "cnt_listing_tagging" : txtPropertyTag.text!,
                 "cnt_listing_created_on" : txtPropertyTitle.text!,
-                "cnt_fitur" : txtPropertyTitle.text!,
+                "cnt_fitur" : paramPropertyFeature,
             ] as [String : Any]
             
+            let group = DispatchGroup()
+            group.enter()
+            
+            DispatchQueue.main.async {
+                
+                Alamofire.request("http://api.rumahhokie.com/token", method: .post, parameters: data as Parameters, encoding: URLEncoding.default, headers: nil)
+                    .responseJSON { response in
+                        if let json = response.result.value {
+                            
+                            let resCode = response.response?.statusCode
+                            
+                            if(resCode == 200){
+                                if let accessToken = (json as AnyObject).value(forKey: "access_token"){
+                                    let bearerToken: String = "Bearer " + String(describing: accessToken)
+                                    let group2 = DispatchGroup()
+                                    group2.enter()
+                                    
+                                    let header = [
+                                        "Authorization" : bearerToken
+                                    ]
+                                    
+                                    DispatchQueue.main.async {
+                                        Alamofire.request("http://api.rumahhokie.com/agent/account", method: .get, parameters: nil, encoding: URLEncoding.default, headers: header)
+                                            .responseJSON { response2 in
+                                                if let json2 = response2.result.value {
+                                                    let encodedData = NSKeyedArchiver.archivedData(withRootObject: json2)
+                                                    
+                                                    self.defaults.set(encodedData, forKey: "User")
+                                                    
+                                                    let encodedData2 = NSKeyedArchiver.archivedData(withRootObject: bearerToken)
+                                                    
+                                                    self.defaults.set(encodedData2, forKey: "UserToken")
+                                                    
+                                                    if self.txtPassword.text != "12345"{
+                                                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "advertisementListView") as? AdvertisementListController
+                                                        self.navigationController!.pushViewController(vc!, animated: true)
+                                                    } else{
+                                                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "resetPasswordView") as? ResetPasswordController
+                                                        self.navigationController!.pushViewController(vc!, animated: true)
+                                                    }
+                                                }
+                                        }
+                                        
+                                        group2.leave()
+                                    }
+                                    
+                                    group2.notify(queue: DispatchQueue.main) {
+                                        
+                                    }
+                                }
+                            } else{
+                                let msgStatus: String = "Email atau Password salah. Silahkan Masukkan Data yang Valid"
+                                let delay = DispatchTime.now() + 3
+                                
+                                let alert = UIAlertController(title: msgStatus, message: "", preferredStyle: .alert)
+                                
+                                self.present(alert, animated: true)
+                                
+                                DispatchQueue.main.asyncAfter(deadline: delay){
+                                    alert.dismiss(animated: true, completion: nil)
+                                }
+                            }
+                        }
+                }
+                
+                group.leave()
+            }
+            
+            group.notify(queue: DispatchQueue.main) {
+                
+            }
         } else{
             let msgStatus: String = "Posting tidak bisa dilanjutkan karena belum ada gambar yang diupload!"
             let delay = DispatchTime.now() + 3
@@ -774,6 +855,8 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                             } else{
                                 self.propertyFeatureText = self.propertyFeatureText + ", " + dataDesc
                             }
+                            
+                            self.propertyFeatureId.append(dataId)
                         }
                     }
 
@@ -875,6 +958,8 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                             } else{
                                 self.propertyFeatureText2 = self.propertyFeatureText2 + ", " + dataDesc
                             }
+                            
+                            self.propertyFeatureId2.append(dataId)
                         }
                     }
                     
