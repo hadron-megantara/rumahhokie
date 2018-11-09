@@ -164,7 +164,9 @@ class HomeController: UIViewController, AACarouselDelegate {
         let urlAppended = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         
         imageView.kf.setImage(with: URL(string: urlAppended!)!, placeholder: UIImage.init(named: "defaultImage"), options: [.transition(.fade(0))], progressBlock: nil, completionHandler: { (downloadImage, error, cacheType, url) in
-            self.carouselView.images[index] = downloadImage!
+            if let imageData = downloadImage {
+                self.carouselView.images[index] = imageData
+            }
         })
     }
     
