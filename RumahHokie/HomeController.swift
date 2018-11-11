@@ -253,25 +253,27 @@ class HomeController: UIViewController, AACarouselDelegate {
                                 if let lbl1 = listingView.viewWithTag(1) as? UIImageView{
                                     if let cntFoto = (self.topListingArray[i] as AnyObject).value(forKey: "cnt_foto"){
                                         if let resPhoto = cntFoto as? Array<AnyObject>{
-                                            if let photoName = resPhoto[0].value(forKey: "nama_foto") as? String{
-                                                let pictUrl = URL(string: "http://rumahhokie.com/upload-foto/"+photoName )!
-                                                
-                                                DispatchQueue.global().async {
-                                                    if let data = try? Data(contentsOf: pictUrl){
-                                                        if let image = UIImage(data: data){
-                                                            DispatchQueue.main.async {
-                                                                let containerView = UIView(frame: CGRect(x:0,y:0,width:self.view.frame.width,height:lbl1.frame.height))
-                                                                
-                                                                let ratio = image.size.width / image.size.height
-                                                                if containerView.frame.width > containerView.frame.height {
-                                                                    let newHeight = containerView.frame.width / ratio
-                                                                    lbl1.frame.size = CGSize(width: containerView.frame.width, height: newHeight)
+                                            if resPhoto.count > 0{
+                                                if let photoName = resPhoto[0].value(forKey: "nama_foto") as? String{
+                                                    let pictUrl = URL(string: "http://rumahhokie.com/upload-foto/"+photoName )!
+                                                    
+                                                    DispatchQueue.global().async {
+                                                        if let data = try? Data(contentsOf: pictUrl){
+                                                            if let image = UIImage(data: data){
+                                                                DispatchQueue.main.async {
+                                                                    let containerView = UIView(frame: CGRect(x:0,y:0,width:self.view.frame.width,height:lbl1.frame.height))
+                                                                    
+                                                                    let ratio = image.size.width / image.size.height
+                                                                    if containerView.frame.width > containerView.frame.height {
+                                                                        let newHeight = containerView.frame.width / ratio
+                                                                        lbl1.frame.size = CGSize(width: containerView.frame.width, height: newHeight)
+                                                                    }
+                                                                    else{
+                                                                        let newWidth = containerView.frame.height * ratio
+                                                                        lbl1.frame.size = CGSize(width: newWidth, height: containerView.frame.height)
+                                                                    }
+                                                                    lbl1.image = image
                                                                 }
-                                                                else{
-                                                                    let newWidth = containerView.frame.height * ratio
-                                                                    lbl1.frame.size = CGSize(width: newWidth, height: containerView.frame.height)
-                                                                }
-                                                                lbl1.image = image
                                                             }
                                                         }
                                                     }
