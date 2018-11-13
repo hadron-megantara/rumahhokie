@@ -706,7 +706,8 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                                     switch encodingResult {
                                     case .success(let upload, _, _):
                                         upload.responseJSON { response in
-                                            
+                                            let vc = self.storyboard!.instantiateViewController(withIdentifier: "advertisementListView") as? AdvertisementListController
+                                            self.navigationController!.pushViewController(vc!, animated: true)
                                         }
                                     case .failure(let error):
                                         print(error)
