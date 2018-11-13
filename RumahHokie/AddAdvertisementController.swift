@@ -80,6 +80,7 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     private var featureTableView2: UITableView!
     
     var imagePicker = UIImagePickerController()
+    var uploadImages: [UIImage] = []
     var totalImage: Int = 0
     let maxPhoto: Int = 15
     var tagVar: Int = 70
@@ -505,11 +506,11 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
             totalImage = totalImage + 1
             constraintViewUploadPhotoHeight.constant = 70
             
-            
             if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+                uploadImages.append(image)
+                
                 tagVar = tagVar + 1
                 let xVar = (totalImage - 1) * 70 + (totalImage - 1) * 8
-                
                 let viewWidth = totalImage * 70 + totalImage * 8
                 
                 constraintViewUploadPhotoWidth.constant = CGFloat(viewWidth)
@@ -637,7 +638,7 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     }
     
     @objc func alertController6BackgroundTapped(){
-        //        self.dismiss(animated: true, completion: nil)
+//        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func saveAction(_ sender: Any) {
@@ -697,7 +698,21 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                             if let listingId = (json as AnyObject).value(forKey: "cnt_listing_id"){
                                 let urlUpload = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing/\(listingId)/cnt_foto"
                                 
-                                print(urlUpload)
+                                Alamofire.upload(multipartFormData: { multipartFormData in
+                                    for imageData in self.uploadImages { multipartFormData.append(UIImageJPEGRepresentation(imageData, 0.5)!, withName: "cnt_foto[]", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
+                                    }
+                                }, to: urlUpload,
+                                   encodingCompletion: { encodingResult in
+                                    switch encodingResult {
+                                    case .success(let upload, _, _):
+                                        upload.responseJSON { response in
+                                            
+                                        }
+                                    case .failure(let error):
+                                        print(error)
+                                    }
+                                    
+                                })
                             }
                         }
                 }
