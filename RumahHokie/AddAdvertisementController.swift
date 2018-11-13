@@ -684,14 +684,21 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
             ] as [String : Any]
             let url = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing"
             
+            let decodedToken  = UserDefaults.standard.object(forKey: "UserToken") as! Data
+            let bearerToken = NSKeyedUnarchiver.unarchiveObject(with: decodedToken)
+            let header = [
+                "Authorization" : bearerToken as! String
+            ]
+            
             DispatchQueue.main.async {
-                Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: nil)
+                Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: header)
                     .responseJSON { response in
                         if let json = response.result.value {
                             print(json)
                         }
                 }
                 
+                print(url)
                 group.leave()
             }
             
