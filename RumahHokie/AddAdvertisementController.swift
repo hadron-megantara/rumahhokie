@@ -694,11 +694,14 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                 Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: header)
                     .responseJSON { response in
                         if let json = response.result.value {
-                            print(json)
+                            if let listingId = (json as AnyObject).value(forKey: "cnt_listing_id"){
+                                let urlUpload = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing/\(listingId)/cnt_foto"
+                                
+                                print(urlUpload)
+                            }
                         }
                 }
                 
-                print(url)
                 group.leave()
             }
             
