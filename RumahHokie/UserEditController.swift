@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Alamofire
 
 class UserEditController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UIPickerViewDelegate, UINavigationControllerDelegate, UIPickerViewDataSource {
     
@@ -18,6 +19,7 @@ class UserEditController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     @IBOutlet weak var btnChoosePhoto: UIButton!
     @IBOutlet weak var btnAgentType: UIButton!
     
+    let defaults = UserDefaults.standard
     var imagePicker = UIImagePickerController()
     var totalImage: Int = 0
     var userId: Int = 0
@@ -52,6 +54,18 @@ class UserEditController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
         alert.isModalInPopover = true
         alert.view.addSubview(pickerAgentType)
+        
+        if let agentStatusId = (decodedTeams as AnyObject).value(forKey: "agt_status_id") as? Int{
+            agentTypeId = agentStatusId
+            
+            if agentStatusId == 2{
+                btnAgentType.setTitle("Agen Independen", for: .normal)
+            } else if agentStatusId == 8{
+                btnAgentType.setTitle("Agen Properti", for: .normal)
+            } else if agentStatusId == 9{
+                btnAgentType.setTitle("Pemilik Properti", for: .normal)
+            }
+        }
         
         navigationController?.navigationBar.isHidden = true;
     }
@@ -117,7 +131,76 @@ class UserEditController: UIViewController, UITextFieldDelegate, UIImagePickerCo
     }
     
     @IBAction func saveAction(_ sender: Any) {
+        let group = DispatchGroup()
+        group.enter()
         
+        let data = [
+            "agt_name" : txtFullName.text! as String,
+            "agt_email" : txtEmail.text! as String,
+            "agt_telp" : txtPhone.text! as String,
+            "agt_status_id" : agentTypeId as Int
+            ] as [String : Any]
+        let url = "http://api.rumahhokie.com/agent/account"
+        let decodedToken  = UserDefaults.standard.object(forKey: "UserToken") as! Data
+        let bearerToken = NSKeyedUnarchiver.unarchiveObject(with: decodedToken)
+        let header = [
+            "Authorization" : bearerToken as! String
+        ]
+        
+        DispatchQueue.main.async {
+            Alamofire.request(url, method: .put, parameters: data, encoding: JSONEncoding.default, headers: header)
+                .responseJSON { response in
+                    let group2 = DispatchGroup()
+                    group2.enter()
+                    
+                    DispatchQueue.main.async {
+                        Alamofire.request("http://api.rumahhokie.com/agent/account", method: .get, parameters: nil, encoding: URLEncoding.default, headers: header)
+                            .responseJSON { response2 in
+                                if let json2 = response2.result.value {
+                                    let encodedData = NSKeyedArchiver.archivedData(withRootObject: json2)
+                                    
+                                    self.defaults.set(encodedData, forKey: "User")
+                                }
+                        }
+                        
+                        group2.leave()
+                    }
+                    
+                    group2.notify(queue: DispatchQueue.main) {
+                        
+                    }
+                    
+                    if self.totalImage > 0{
+                        let urlUpload = "http://api.rumahhokie.com/agent/account/profilepic"
+                        
+                        Alamofire.upload(multipartFormData: { multipartFormData in multipartFormData.append(UIImageJPEGRepresentation(self.imgPhoto.image!, 0.5)!, withName: "profilepic[]", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
+                        }, to: urlUpload,
+                           headers: header,
+                           encodingCompletion: { encodingResult in
+                            switch encodingResult {
+                            case .success(let upload, _, _):
+                                upload.responseJSON { response in
+                                    print(response)
+                                    let vc = self.storyboard!.instantiateViewController(withIdentifier: "userAccountView") as? UserAccountController
+                                    self.navigationController!.pushViewController(vc!, animated: true)
+                                }
+                            case .failure(let error):
+                                print(error)
+                            }
+                            
+                        })
+                    } else{
+                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "userAccountView") as? UserAccountController
+                        self.navigationController!.pushViewController(vc!, animated: true)
+                    }
+            }
+            
+            group.leave()
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
