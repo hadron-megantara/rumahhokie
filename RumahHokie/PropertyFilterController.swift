@@ -73,6 +73,7 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     @IBOutlet weak var baseView: UIView!
     @IBOutlet weak var viewBtnPropertyType: UIView!
     
+    var senderVar: Int = 1
     let defaults = UserDefaults.standard
     var propertyStatus: Int = 0
     var propertyType: Int = 0
@@ -211,9 +212,13 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     @IBAction func backAction(_ sender: Any) {
-        let switchViewController = self.navigationController?.viewControllers[1] as! PropertyListController
-        
-        self.navigationController?.popToViewController(switchViewController, animated: true)
+        if senderVar == 1{
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "propertyListView") as? PropertyListController
+            self.navigationController!.pushViewController(vc!, animated: true)
+        } else{
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "homeView") as? HomeController
+            self.navigationController!.pushViewController(vc!, animated: true)
+        }
     }
     
     @IBAction func btnPropertyTypeAction(_ sender: Any) {

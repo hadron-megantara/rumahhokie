@@ -20,6 +20,7 @@ class HomeController: UIViewController, AACarouselDelegate {
     @IBOutlet weak var scrollViewTopListing: UIScrollView!
     @IBOutlet weak var topListingView: UIView!
     @IBOutlet weak var constraintTopListingViewWidth: NSLayoutConstraint!
+    @IBOutlet weak var btnSearch: UIButton!
     
     var sideIsOpened: Bool = false
     var topListingArray: Array = [Any]()
@@ -79,6 +80,12 @@ class HomeController: UIViewController, AACarouselDelegate {
             let bottomMenuView = Bundle.main.loadNibNamed("BottomMenu", owner: nil, options: nil)![0] as! UIView
             bottomMenu.addSubview(bottomMenuView)
         }
+    }
+    
+    @IBAction func btnOpenFilterSearch(_ sender: Any) {
+        let vc = storyboard!.instantiateViewController(withIdentifier: "propertyFilterView") as? PropertyFilterController
+        vc?.senderVar = 0
+        navigationController!.pushViewController(vc!, animated: true)
     }
     
     @objc func openFilter(){
