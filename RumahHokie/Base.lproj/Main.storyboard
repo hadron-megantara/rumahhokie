@@ -5234,11 +5234,8 @@
                                         <color key="textColor" white="0.47999999999999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pE4-q7-Q5N">
-                                        <rect key="frame" x="16" y="217" width="343" height="216"/>
-                                    </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M7P-Kd-loF">
-                                        <rect key="frame" x="16" y="587" width="343" height="40"/>
+                                        <rect key="frame" x="16" y="421" width="343" height="40"/>
                                         <color key="backgroundColor" red="0.1333333333" green="0.21176470589999999" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="Lha-HP-s8g"/>
@@ -5251,52 +5248,74 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXA-OL-6NM">
-                                        <rect key="frame" x="16" y="541" width="125" height="30"/>
+                                        <rect key="frame" x="16" y="375" width="125" height="30"/>
                                         <state key="normal" title="Update Foto Profil"/>
                                         <connections>
                                             <action selector="choosePhoto:" destination="wtu-hv-xOp" eventType="touchUpInside" id="ciW-mX-FN0"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Ub-qr-poJ">
-                                        <rect key="frame" x="16" y="441" width="100" height="100"/>
+                                        <rect key="frame" x="16" y="275" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="Tis-yS-pw2"/>
                                             <constraint firstAttribute="height" constant="100" id="hQQ-B3-tPU"/>
                                         </constraints>
                                     </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AHo-vI-kBu">
+                                        <rect key="frame" x="16" y="217" width="343" height="26"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q43-44-kIB">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="26"/>
+                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="14"/>
+                                                <state key="normal" title="Pilih Tipe Agen  ">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnPropertyTypeAction:" destination="c3U-qx-7iH" eventType="touchUpInside" id="abg-6A-Olm"/>
+                                                    <action selector="chooseAgentType:" destination="wtu-hv-xOp" eventType="touchUpInside" id="mFm-Sf-aWX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="q43-44-kIB" secondAttribute="trailing" id="5rJ-PP-LFN"/>
+                                            <constraint firstAttribute="bottom" secondItem="q43-44-kIB" secondAttribute="bottom" id="Egt-9S-B1q"/>
+                                            <constraint firstItem="q43-44-kIB" firstAttribute="top" secondItem="AHo-vI-kBu" secondAttribute="top" id="Fve-w5-c1K"/>
+                                            <constraint firstItem="q43-44-kIB" firstAttribute="leading" secondItem="AHo-vI-kBu" secondAttribute="leading" id="XQE-MO-NDX"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="pE4-q7-Q5N" secondAttribute="trailing" constant="16" id="0d2-1Q-1GT"/>
+                                    <constraint firstItem="AHo-vI-kBu" firstAttribute="leading" secondItem="Doq-f2-V5I" secondAttribute="leading" constant="16" id="0E1-KC-KgP"/>
                                     <constraint firstItem="3Ub-qr-poJ" firstAttribute="leading" secondItem="Doq-f2-V5I" secondAttribute="leading" constant="16" id="4fq-Ot-bWO"/>
                                     <constraint firstItem="n1x-k6-FLZ" firstAttribute="top" secondItem="6L0-pM-WSl" secondAttribute="bottom" constant="4" id="6jc-Hj-FAg"/>
                                     <constraint firstItem="zKs-k9-kgF" firstAttribute="leading" secondItem="Doq-f2-V5I" secondAttribute="leading" constant="16" id="8kS-Ic-YP5"/>
                                     <constraint firstItem="mXA-OL-6NM" firstAttribute="leading" secondItem="Doq-f2-V5I" secondAttribute="leading" constant="16" id="9O9-1o-hmF"/>
-                                    <constraint firstItem="pE4-q7-Q5N" firstAttribute="leading" secondItem="Doq-f2-V5I" secondAttribute="leading" constant="16" id="E8Z-gH-qUb"/>
                                     <constraint firstAttribute="trailing" secondItem="mnv-Vz-6ie" secondAttribute="trailing" constant="16" id="HE8-1f-bWL"/>
                                     <constraint firstItem="mnv-Vz-6ie" firstAttribute="top" secondItem="ui2-hr-gwS" secondAttribute="bottom" constant="4" id="I8S-14-KyZ"/>
                                     <constraint firstItem="n1x-k6-FLZ" firstAttribute="leading" secondItem="Doq-f2-V5I" secondAttribute="leading" constant="16" id="Iwg-8e-sRT"/>
                                     <constraint firstAttribute="trailing" secondItem="zKs-k9-kgF" secondAttribute="trailing" constant="16" id="JJF-GQ-Ml7"/>
                                     <constraint firstItem="6L0-pM-WSl" firstAttribute="top" secondItem="Doq-f2-V5I" secondAttribute="top" constant="16" id="MON-pU-Z7P"/>
-                                    <constraint firstItem="pE4-q7-Q5N" firstAttribute="leading" secondItem="Doq-f2-V5I" secondAttribute="leading" constant="16" id="Pd3-EG-Gk8"/>
                                     <constraint firstItem="cWB-nK-2XI" firstAttribute="top" secondItem="mnv-Vz-6ie" secondAttribute="bottom" constant="16" id="Rnf-Tx-mkx"/>
                                     <constraint firstItem="M7P-Kd-loF" firstAttribute="top" secondItem="mXA-OL-6NM" secondAttribute="bottom" constant="16" id="X7D-zx-ZL9"/>
                                     <constraint firstItem="6L0-pM-WSl" firstAttribute="leading" secondItem="Doq-f2-V5I" secondAttribute="leading" constant="16" id="Xbq-p9-UbH"/>
                                     <constraint firstItem="cWB-nK-2XI" firstAttribute="leading" secondItem="Doq-f2-V5I" secondAttribute="leading" constant="16" id="apA-JT-wVM"/>
                                     <constraint firstAttribute="trailing" secondItem="cWB-nK-2XI" secondAttribute="trailing" constant="16" id="b6X-Gy-JPL"/>
-                                    <constraint firstAttribute="trailing" secondItem="pE4-q7-Q5N" secondAttribute="trailing" constant="16" id="eTo-HM-WCH"/>
                                     <constraint firstItem="ui2-hr-gwS" firstAttribute="leading" secondItem="Doq-f2-V5I" secondAttribute="leading" constant="16" id="fyT-t9-uEe"/>
                                     <constraint firstItem="ui2-hr-gwS" firstAttribute="top" secondItem="n1x-k6-FLZ" secondAttribute="bottom" constant="16" id="gfo-3F-8Z7"/>
                                     <constraint firstItem="M7P-Kd-loF" firstAttribute="leading" secondItem="Doq-f2-V5I" secondAttribute="leading" constant="16" id="k5R-8j-iRl"/>
-                                    <constraint firstItem="3Ub-qr-poJ" firstAttribute="top" secondItem="pE4-q7-Q5N" secondAttribute="bottom" constant="8" id="l8Z-dL-hPX"/>
                                     <constraint firstItem="mnv-Vz-6ie" firstAttribute="leading" secondItem="Doq-f2-V5I" secondAttribute="leading" constant="16" id="pEj-0j-tMQ"/>
+                                    <constraint firstItem="3Ub-qr-poJ" firstAttribute="top" secondItem="AHo-vI-kBu" secondAttribute="bottom" constant="32" id="pUZ-O9-yoe"/>
                                     <constraint firstAttribute="trailing" secondItem="ui2-hr-gwS" secondAttribute="trailing" constant="16" id="pXN-NV-cEA"/>
+                                    <constraint firstItem="AHo-vI-kBu" firstAttribute="top" secondItem="zKs-k9-kgF" secondAttribute="bottom" constant="16" id="phH-NM-jYo"/>
                                     <constraint firstAttribute="trailing" secondItem="6L0-pM-WSl" secondAttribute="trailing" constant="16" id="pjv-co-eNm"/>
-                                    <constraint firstItem="pE4-q7-Q5N" firstAttribute="top" secondItem="zKs-k9-kgF" secondAttribute="bottom" constant="16" id="qPg-I6-hxj"/>
                                     <constraint firstItem="mXA-OL-6NM" firstAttribute="top" secondItem="3Ub-qr-poJ" secondAttribute="bottom" id="rAE-lg-SNo"/>
                                     <constraint firstAttribute="trailing" secondItem="n1x-k6-FLZ" secondAttribute="trailing" constant="16" id="rSf-XD-tbo"/>
                                     <constraint firstItem="zKs-k9-kgF" firstAttribute="top" secondItem="cWB-nK-2XI" secondAttribute="bottom" constant="4" id="sB0-px-6MB"/>
                                     <constraint firstAttribute="trailing" secondItem="M7P-Kd-loF" secondAttribute="trailing" constant="16" id="wC9-HP-qAm"/>
+                                    <constraint firstAttribute="trailing" secondItem="AHo-vI-kBu" secondAttribute="trailing" constant="16" id="xUZ-6g-htw"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -5313,7 +5332,7 @@
                         <viewLayoutGuide key="safeArea" id="YZt-ZV-iaB"/>
                     </view>
                     <connections>
-                        <outlet property="accountTypePicker" destination="pE4-q7-Q5N" id="gTC-SN-no2"/>
+                        <outlet property="btnAgentType" destination="q43-44-kIB" id="ab9-8b-RNO"/>
                         <outlet property="btnChoosePhoto" destination="mXA-OL-6NM" id="aCI-8w-HFy"/>
                         <outlet property="constraintPhotoHeight" destination="hQQ-B3-tPU" id="yqW-Lc-soS"/>
                         <outlet property="imgPhoto" destination="3Ub-qr-poJ" id="63d-wi-FeL"/>
