@@ -206,29 +206,31 @@ extension NewsController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellListNews", for: indexPath) as UITableViewCell
         
-        if let objData = self.newsArray[indexPath.row] as? Array<AnyObject>{
-            if let label1 = cell.viewWithTag(1) as? UIImageView{
-                if ((objData[1] as? String) != ""){
-                    let pictUrl = URL(string: objData[1] as! String)!
-                    
-                    DispatchQueue.global().async {
-                        if let data = try? Data(contentsOf: pictUrl){
-                            if let dataImage = UIImage(data: data){
-                                DispatchQueue.main.async {
-                                    label1.image = dataImage
+        if self.newsArray.indices.contains(indexPath.row){
+            if let objData = self.newsArray[indexPath.row] as? Array<AnyObject>{
+                if let label1 = cell.viewWithTag(1) as? UIImageView{
+                    if ((objData[1] as? String) != ""){
+                        let pictUrl = URL(string: objData[1] as! String)!
+                        
+                        DispatchQueue.global().async {
+                            if let data = try? Data(contentsOf: pictUrl){
+                                if let dataImage = UIImage(data: data){
+                                    DispatchQueue.main.async {
+                                        label1.image = dataImage
+                                    }
                                 }
                             }
                         }
                     }
                 }
-            }
-            
-            if let label2 = cell.viewWithTag(2) as? UILabel{
-                label2.text = objData[0] as? String
-            }
-            
-            if let label3 = cell.viewWithTag(3) as? UILabel{
-                label3.text = objData[2] as? String
+                
+                if let label2 = cell.viewWithTag(2) as? UILabel{
+                    label2.text = objData[0] as? String
+                }
+                
+                if let label3 = cell.viewWithTag(3) as? UILabel{
+                    label3.text = objData[2] as? String
+                }
             }
         }
         
