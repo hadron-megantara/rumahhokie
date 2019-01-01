@@ -10,6 +10,7 @@ target 'RumahHokie' do
   pod 'Alamofire', '~> 4.7'
   pod 'Kingfisher'
   pod 'KYDrawerController'
+  pod 'OpalImagePicker', '~> 1.4.0'
 
   # Pods for RumahHokie
 
