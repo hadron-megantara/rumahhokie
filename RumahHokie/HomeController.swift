@@ -163,12 +163,16 @@ class HomeController: UIViewController, AACarouselDelegate {
     }
     
     func callBackFirstDisplayView(_ imageView: UIImageView, _ url: [String], _ index: Int) {
-        imageView.kf.setImage(with: URL(string: url[index]), placeholder: UIImage.init(named: "defaultImage"), options: [.transition(.fade(1))], progressBlock: nil, completionHandler: nil)
+        let url = URL(string: url[index])
+        
+        imageView.kf.setImage(with: url, placeholder: UIImage.init(named: "defaultImage"), options: [.transition(.fade(1))], progressBlock: nil)
+        
     }
     
     func downloadImages(_ url: String, _ index: Int) {
         let imageView = UIImageView()
         let urlAppended = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        
         
         imageView.kf.setImage(with: URL(string: urlAppended!)!, placeholder: UIImage.init(named: "defaultImage"), options: [.transition(.fade(0))], progressBlock: nil, completionHandler: { (downloadImage, error, cacheType, url) in
             if let imageData = downloadImage {

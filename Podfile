@@ -9,8 +9,7 @@ target 'RumahHokie' do
   pod 'AACarousel'
   pod 'Alamofire', '~> 4.7'
   pod 'Kingfisher'
-  pod 'KYDrawerController'
-  pod 'OpalImagePicker', '~> 1.4.0'
+  pod 'OpalImagePicker', '~> 1.7.1'
 
   # Pods for RumahHokie
 

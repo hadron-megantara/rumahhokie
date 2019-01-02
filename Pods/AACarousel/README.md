@@ -8,7 +8,7 @@
 
 # Feature
 
-- [x] pure swift 3.1 code
+- [x] pure swift 4.2 code
 - [x] class is custom UIView , not UIPageViewController
 - [x] you can download image use iOS native SDK or other 3rd SDK 
 - [x] require iOS 8 or later
@@ -24,7 +24,7 @@
 
 #### CocoaPods
 
-AACarousel is available through [CocoaPods](http://cocoapods.org).
+AACarousel is available through [CocoaPods](https://cocoapods.org/pods/AACarousel).
 
 Simply add AACarousel to your `Podfile`.
 

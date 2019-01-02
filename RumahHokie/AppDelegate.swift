@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import KYDrawerController
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Alamofire
+import OpalImagePicker
 
 class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var txtPropertyTitle: UITextField!
@@ -79,7 +80,7 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     private var featureTableView: UITableView!
     private var featureTableView2: UITableView!
     
-    var imagePicker = UIImagePickerController()
+    var imagePicker = OpalImagePickerController()
     var uploadImages: [UIImage] = []
     var totalImage: Int = 0
     let maxPhoto: Int = 15
@@ -104,7 +105,7 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         txtPropertyUrl.delegate = self
         txtPropertyTag.delegate = self
         
-        imagePicker.delegate = self
+        imagePicker.imagePickerDelegate = self as! OpalImagePickerControllerDelegate
         
         constraintViewUploadPhotoHeight.constant = 0
         
@@ -486,8 +487,10 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     
     @IBAction func btnUploadPhotoAction(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-            imagePicker.sourceType = .savedPhotosAlbum;
-            imagePicker.allowsEditing = false
+//            imagePicker.sourceType = .savedPhotosAlbum;
+//            imagePicker.allowsEditing = false
+            
+            present(imagePicker, animated: true, completion: nil)
             
             self.present(imagePicker, animated: true, completion: nil)
         }

@@ -1,5 +1,5 @@
 PODS:
-  - AACarousel (1.1.0)
+  - AACarousel (1.1.1)
   - AFNetworking (3.2.1):
     - AFNetworking/NSURLSession (= 3.2.1)
     - AFNetworking/Reachability (= 3.2.1)
@@ -15,16 +15,16 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
-  - Alamofire (4.7.3)
-  - Kingfisher (4.9.0)
-  - KYDrawerController (2.0.4)
+  - Alamofire (4.8.0)
+  - Kingfisher (5.0.1)
+  - OpalImagePicker (1.7.2)
 
 DEPENDENCIES:
   - AACarousel
   - AFNetworking (~> 3.0)
   - Alamofire (~> 4.7)
   - Kingfisher
-  - KYDrawerController
+  - OpalImagePicker (~> 1.7.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -32,15 +32,15 @@ SPEC REPOS:
     - AFNetworking
     - Alamofire
     - Kingfisher
-    - KYDrawerController
+    - OpalImagePicker
 
 SPEC CHECKSUMS:
-  AACarousel: 6131fa3650201a3ce10b6581621f3cade221b079
+  AACarousel: e0dbd2d3153c56c36df8aa282553f20fc88e132b
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
-  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
-  Kingfisher: 64539b51826b778206daa6ed815d12653caa69dd
-  KYDrawerController: cf5839877c442132123e9d482f458821026defdf
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
+  OpalImagePicker: 770b495a9700fa1d02a5a3c7c8303f1ac4e6c54d
 
-PODFILE CHECKSUM: 64792f600e5a05be6baf831473c068010f552cb7
+PODFILE CHECKSUM: 47d599c3e840fb558c1107a7dadde9519b2edffa
 
 COCOAPODS: 1.5.3
