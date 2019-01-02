@@ -221,7 +221,7 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
     }
     
     func callBackFirstDisplayView(_ imageView: UIImageView, _ url: [String], _ index: Int) {
-        imageView.kf.setImage(with: URL(string: url[index]), placeholder: UIImage.init(named: "defaultIcon"), options: [.transition(.fade(1))], progressBlock: nil, completionHandler: nil)
+        imageView.kf.setImage(with: URL(string: url[index]), placeholder: UIImage.init(named: "defaultIcon"), options: [.transition(.fade(1))], progressBlock: nil)
     }
     
     func downloadImages(_ url: String, _ index: Int) {

@@ -11,7 +11,7 @@ import UIKit
 import Alamofire
 import OpalImagePicker
 
-class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource, OpalImagePickerControllerDelegate {
     @IBOutlet weak var txtPropertyTitle: UITextField!
     @IBOutlet weak var txtPropertyAddress: UITextField!
     @IBOutlet weak var txtPropertyDesc: UITextField!
@@ -104,8 +104,6 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         txtPropertyPrice.delegate = self
         txtPropertyUrl.delegate = self
         txtPropertyTag.delegate = self
-        
-        imagePicker.imagePickerDelegate = self as! OpalImagePickerControllerDelegate
         
         constraintViewUploadPhotoHeight.constant = 0
         
@@ -487,12 +485,10 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     
     @IBAction func btnUploadPhotoAction(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
-//            imagePicker.sourceType = .savedPhotosAlbum;
-//            imagePicker.allowsEditing = false
-            
+            imagePicker = OpalImagePickerController()
+            imagePicker.imagePickerDelegate = self
+            imagePicker.maximumSelectionsAllowed = 15
             present(imagePicker, animated: true, completion: nil)
-            
-            self.present(imagePicker, animated: true, completion: nil)
         }
     }
     
@@ -500,17 +496,17 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    func imagePicker(_ picker: OpalImagePickerController, didFinishPickingImages images: [UIImage]) {
         self.dismiss(animated: true, completion: { () -> Void in
             
         })
         
-        if(totalImage <= maxPhoto - 1){
-            totalImage = totalImage + 1
+        if totalImage <= maxPhoto - 1 {
             constraintViewUploadPhotoHeight.constant = 70
             
-            if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-                uploadImages.append(image)
+            for element in images {
+                totalImage = totalImage + 1
+                uploadImages.append(element)
                 
                 tagVar = tagVar + 1
                 let xVar = (totalImage - 1) * 70 + (totalImage - 1) * 8
@@ -518,7 +514,7 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                 
                 constraintViewUploadPhotoWidth.constant = CGFloat(viewWidth)
                 
-                let imageView = UIImageView(image: image)
+                let imageView = UIImageView(image: element)
                 imageView.frame = CGRect(x: xVar, y: 0, width: 70, height: 70)
                 
                 let gesturePhoto = UITapGestureRecognizer(target: self, action: #selector(imagePhotoRemove))
@@ -528,6 +524,7 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                 
                 viewUploadPhoto.addSubview(imageView)
             }
+            
         } else{
             let msgStatus: String = "Hanya diperbolehkan maksimum 15 foto!"
             let delay = DispatchTime.now() + 3
