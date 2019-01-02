@@ -33,6 +33,10 @@ class RegisterController: UIViewController, UITextFieldDelegate, UIPickerViewDel
         
         pickerView.delegate = self
         pickerView.dataSource = self
+        
+        txtName.delegate = self
+        txtPhone.delegate = self
+        txtEmail.delegate = self
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -49,6 +53,11 @@ class RegisterController: UIViewController, UITextFieldDelegate, UIPickerViewDel
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerViewVal = agentType[row]
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     @IBAction func registerAction(_ sender: Any) {
