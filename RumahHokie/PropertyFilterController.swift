@@ -103,6 +103,18 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        txtKeyWord.delegate = self
+        txtPriceMin.delegate = self
+        txtPriceMin.delegate = self
+        txtPriceMax.delegate = self
+        txtPropertyBuildingMin.delegate = self
+        txtPropertyBuildingMax.delegate = self
+        txtPropertyAreaMin.delegate = self
+        txtPropertyAreaMax.delegate = self
+        txtPropertyBedRoom.delegate = self
+        txtPropertyBathRoom.delegate = self
+        txtPropertyGarage.delegate = self
+        
         propertyProvinceData.append(["mstr_provinsi_id": 0, "mstr_provinsi_desc": "Semua"])
         
         loadProvince()
@@ -373,6 +385,11 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
         txtPropertyBedRoom.resignFirstResponder()
         txtPropertyBathRoom.resignFirstResponder()
         txtPropertyGarage.resignFirstResponder()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 }
 
