@@ -39,6 +39,12 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     @IBOutlet weak var constraintViewUploadPhotoWidth: NSLayoutConstraint!
     @IBOutlet weak var facilityText: UILabel!
     @IBOutlet weak var facilityText2: UILabel!
+    @IBOutlet weak var constraintCoverHeight: NSLayoutConstraint!
+    @IBOutlet weak var coverImage: UIImageView!
+    @IBOutlet weak var btnUploadCoverPhoto: UIButton!
+    @IBOutlet weak var constraintBtnUploadCover: NSLayoutConstraint!
+    
+    var isSetCover: Bool = false
     
     var propertyType: Int = 0
     var propertyTypeString: String = ""
@@ -81,6 +87,7 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     private var featureTableView2: UITableView!
     
     var imagePicker = OpalImagePickerController()
+    var coverPicker = UIImagePickerController()
     var uploadImages: [UIImage] = []
     var totalImage: Int = 0
     let maxPhoto: Int = 15
@@ -92,6 +99,8 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         loadProvince()
         loadFeature()
         loadFeature2()
+        
+        coverPicker.delegate = self
         
         txtPropertyTitle.delegate = self
         txtPropertyAddress.delegate = self
@@ -106,8 +115,13 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         txtPropertyTag.delegate = self
         
         constraintViewUploadPhotoHeight.constant = 0
+        constraintCoverHeight.constant = 0
         
         let margin: CGFloat = 10.0
+        
+        btnUploadCoverPhoto.layer.borderWidth = 1
+        btnUploadCoverPhoto.layer.borderColor = UIColor.gray.cgColor
+        btnUploadCoverPhoto.widthAnchor.constraint(equalToConstant: btnUploadCoverPhoto.titleLabel!.intrinsicContentSize.width + margin * 2.0).isActive = true
         
         btnUploadPhoto.layer.borderWidth = 1
         btnUploadPhoto.layer.borderColor = UIColor.gray.cgColor
@@ -483,6 +497,15 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
         return false
     }
     
+    @IBAction func btnUploadCoverPhotoAction(_ sender: Any) {
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
+            coverPicker.sourceType = .savedPhotosAlbum;
+            coverPicker.allowsEditing = false
+            
+            present(coverPicker, animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func btnUploadPhotoAction(_ sender: Any) {
         if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum){
             imagePicker = OpalImagePickerController()
@@ -490,6 +513,32 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
             imagePicker.maximumSelectionsAllowed = 15
             present(imagePicker, animated: true, completion: nil)
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        self.dismiss(animated: true, completion: { () -> Void in
+            
+        })
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            coverImage.image = image
+            constraintCoverHeight.constant = 200
+            constraintBtnUploadCover.constant = 0
+            btnUploadCoverPhoto.isHidden = true
+            isSetCover = true
+            
+            let gesturePhoto = UITapGestureRecognizer(target: self, action: #selector(imageCoverPhotoRemove))
+            coverImage.isUserInteractionEnabled = true
+            coverImage.addGestureRecognizer(gesturePhoto)
+        }
+    }
+    
+    @objc func imageCoverPhotoRemove(sender: UITapGestureRecognizer){
+        constraintCoverHeight.constant = 0
+        constraintBtnUploadCover.constant = 27
+        btnUploadCoverPhoto.isHidden = false
+        isSetCover = false
     }
     
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!){
