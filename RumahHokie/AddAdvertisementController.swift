@@ -745,18 +745,32 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
                     .responseJSON { response in
                         if let json = response.result.value {
                             if let listingId = (json as AnyObject).value(forKey: "cnt_listing_id"){
-                                let urlUpload = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing/\(listingId)/cnt_foto"
+                                let urlUploadCover = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing/\(listingId)/cnt_foto/cover"
                                 
-                                Alamofire.upload(multipartFormData: { multipartFormData in
-                                    for imageData in self.uploadImages { multipartFormData.append(UIImageJPEGRepresentation(imageData, 0.5)!, withName: "cnt_foto[]", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
-                                    }
-                                }, to: urlUpload,
+                                Alamofire.upload(multipartFormData: { multipartFormData in multipartFormData.append(UIImageJPEGRepresentation(self.coverImage.image!, 0.5)!, withName: "cnt_foto[]", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
+                                }, to: urlUploadCover,
                                    encodingCompletion: { encodingResult in
                                     switch encodingResult {
                                     case .success(let upload, _, _):
                                         upload.responseJSON { response in
-                                            let vc = self.storyboard!.instantiateViewController(withIdentifier: "advertisementListView") as? AdvertisementListController
-                                            self.navigationController!.pushViewController(vc!, animated: true)
+                                            let urlUpload = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing/\(listingId)/cnt_foto"
+                                            
+                                            Alamofire.upload(multipartFormData: { multipartFormData in
+                                                for imageData in self.uploadImages { multipartFormData.append(UIImageJPEGRepresentation(imageData, 0.5)!, withName: "cnt_foto[]", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
+                                                }
+                                            }, to: urlUpload,
+                                               encodingCompletion: { encodingResult in
+                                                switch encodingResult {
+                                                case .success(let upload, _, _):
+                                                    upload.responseJSON { response in
+                                                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "advertisementListView") as? AdvertisementListController
+                                                        self.navigationController!.pushViewController(vc!, animated: true)
+                                                    }
+                                                case .failure(let error):
+                                                    print(error)
+                                                }
+                                                
+                                            })
                                         }
                                     case .failure(let error):
                                         print(error)

@@ -5371,7 +5371,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dlQ-LR-Jqe">
-                                <rect key="frame" x="0.0" y="20" width="375" height="1400"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="1480"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nem-IE-z6R">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
@@ -5415,11 +5415,11 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OPL-qF-QO6">
                                         <rect key="frame" x="0.0" y="50" width="375" height="1480"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qX5-cG-AWV">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qX5-cG-AWV">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="1380"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fF3-7V-Jax">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1300"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Judul Properti" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3s-hG-Aah">
                                                                 <rect key="frame" x="16" y="20" width="343" height="17"/>
@@ -5926,7 +5926,7 @@
                                                             <constraint firstItem="Bay-U8-gXg" firstAttribute="leading" secondItem="fF3-7V-Jax" secondAttribute="leading" constant="16" id="GFa-6e-dC8"/>
                                                             <constraint firstItem="0DR-fM-moO" firstAttribute="leading" secondItem="fF3-7V-Jax" secondAttribute="leading" constant="16" id="GRZ-e2-us0"/>
                                                             <constraint firstAttribute="trailing" secondItem="U3s-hG-Aah" secondAttribute="trailing" constant="16" id="HJ3-Fu-WWB"/>
-                                                            <constraint firstAttribute="height" constant="1300" id="HcT-4f-bre"/>
+                                                            <constraint firstAttribute="height" constant="1400" id="HcT-4f-bre"/>
                                                             <constraint firstAttribute="trailing" secondItem="OYf-Cy-mBh" secondAttribute="trailing" constant="16" id="HfA-sK-eoN"/>
                                                             <constraint firstAttribute="trailing" secondItem="LJf-H9-kZv" secondAttribute="trailing" constant="16" id="HlP-te-7yY"/>
                                                             <constraint firstItem="qFJ-Fd-86q" firstAttribute="leading" secondItem="fF3-7V-Jax" secondAttribute="leading" constant="16" id="HtI-cS-VuD"/>
