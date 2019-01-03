@@ -40,10 +40,16 @@ class PropertyDetailController: UIViewController, AACarouselDelegate {
     let shareStringDefault: String = "Lihatlah properti yang menakjubkan ini \n "
     let shareUrlDefault: String = "http://rumahhokie.com/home/detaillisting/"
     var shareString: String = ""
+    var senderVc: Int = 0
     
     @IBAction func backButtonAction(_ sender: Any) {
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "propertyListView") as? PropertyListController
-        self.navigationController!.pushViewController(vc!, animated: true)
+        if senderVc == 0{
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "propertyListView") as? PropertyListController
+            self.navigationController!.pushViewController(vc!, animated: true)
+        } else if senderVc == 1{
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "homeView") as? HomeController
+            self.navigationController!.pushViewController(vc!, animated: true)
+        }
     }
     
     override func viewDidLoad() {

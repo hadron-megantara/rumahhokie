@@ -209,6 +209,11 @@ class HomeController: UIViewController, AACarouselDelegate {
                                 
                                 listingView.frame = CGRect(x: xVar, y: 0, width: viewWidth, height: 491)
                                 
+                                var cntListingId = 0
+                                if let cntListId = (self.topListingArray[i] as AnyObject).value(forKey: "cnt_listing_id"){
+                                    cntListingId = cntListId as! Int
+                                }
+                                
                                 if let label2 = listingView.viewWithTag(2) as? UILabel{
                                     if let cntListName = (self.topListingArray[i] as AnyObject).value(forKey: "cnt_listing_name"){
                                         label2.text = cntListName as? String
@@ -301,6 +306,11 @@ class HomeController: UIViewController, AACarouselDelegate {
                                     }
                                 }
                                 
+                                listingView.tag = cntListingId
+                                let gesturePhoto = UITapGestureRecognizer(target: self, action: #selector(self.topListingDetail))
+                                listingView.isUserInteractionEnabled = true
+                                listingView.addGestureRecognizer(gesturePhoto)
+                                
                                 self.topListingView.addSubview(listingView)
                                 
                                 self.constraintTopListingViewWidth.constant = viewWidth * CGFloat(countResult)
@@ -316,6 +326,15 @@ class HomeController: UIViewController, AACarouselDelegate {
         group.notify(queue: DispatchQueue.main) {
             
         }
+    }
+
+    @objc func topListingDetail(sender: UITapGestureRecognizer){
+        let vc = storyboard?.instantiateViewController(withIdentifier: "propertyDetailView") as? PropertyDetailController
+        let v = sender.view
+        vc?.idDetail = v!.tag
+        vc?.senderVc = 1
+        
+        navigationController?.pushViewController(vc!, animated: true)
     }
     
 }
