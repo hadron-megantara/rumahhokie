@@ -104,6 +104,7 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
         super.viewDidLoad()
         
         txtKeyWord.delegate = self
+        txtKeyWord.tag = 200
         txtPriceMin.delegate = self
         txtPriceMin.delegate = self
         txtPriceMax.delegate = self
@@ -369,10 +370,14 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
-        let compSepByCharInSet = string.components(separatedBy: aSet)
-        let numberFiltered = compSepByCharInSet.joined(separator: "")
-        return string == numberFiltered
+        if textField.tag != 200 {
+            let aSet = NSCharacterSet(charactersIn:"0123456789").inverted
+            let compSepByCharInSet = string.components(separatedBy: aSet)
+            let numberFiltered = compSepByCharInSet.joined(separator: "")
+            return string == numberFiltered
+        } else{
+            return true
+        }
     }
     
     @objc func doneButtonTappedForMyNumericTextField() {
