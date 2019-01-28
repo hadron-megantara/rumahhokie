@@ -49,13 +49,13 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     var propertyType: Int = 0
     var propertyTypeString: String = ""
     
-    var propertyProvince: Int = 1
+    var propertyProvince: Int = 0
     var propertyProvinceString: String = ""
     
-    var propertyCity: Int = 1
+    var propertyCity: Int = 0
     var propertyCityString: String = ""
     
-    var propertyArea: Int = 1
+    var propertyArea: Int = 0
     var propertyAreaString: String = ""
     
     var propertyStatus: Int = 0
@@ -692,100 +692,113 @@ class AddAdvertisementController: UIViewController, UITextFieldDelegate, UIPicke
     
     @IBAction func saveAction(_ sender: Any) {
         if totalImage > 0{
-            let group = DispatchGroup()
-            group.enter()
-            
-            let decoded  = UserDefaults.standard.object(forKey: "User") as! Data
-            let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded)
-            
-            let userId = (decodedTeams as AnyObject).value(forKey: "agt_user_id") as? Int
-            
-            var paramPropertyFeature: Array = [Any]()
-            
-            for i in 0 ..< propertyFeatureId.count{
-                paramPropertyFeature.append(["mstr_fitur_id": propertyFeatureId[i]])
-            }
-            
-            for i in 0 ..< propertyFeatureId2.count{
-                paramPropertyFeature.append(["mstr_fitur_id": propertyFeatureId2[i]])
-            }
-            
-            let data = [
-                "stat" : 3,
-                "cnt_status_id" : 2,
-                "cnt_listing_name" : txtPropertyTitle.text!,
-                "cnt_listing_alamat" : txtPropertyAddress.text!,
-                "cnt_listing_desc" : txtPropertyDesc.text!,
-                "cnt_listing_url" : txtPropertyUrl.text!,
-                "mstr_status_id" : self.propertyStatus,
-                "mstr_provinsi_id" : self.propertyProvince,
-                "mstr_kota_id" : self.propertyCity,
-                "mstr_wilayah_id" : self.propertyArea,
-                "mstr_tipe_id" : self.propertyType,
-                "cnt_listing_kmr_tdr" : txtPropertyBedRoom.text!,
-                "cnt_listing_kmr_mandi" : txtProperyBathRoom.text!,
-                "cnt_listing_garasi" : txtPropertyGarage.text!,
-                "cnt_listing_harga" : txtPropertyPrice.text!,
-                "cnt_listing_lb" : txtPropertyBuilding.text!,
-                "cnt_listing_lt" : txtPropertyArea.text!,
-                "cnt_listing_tagging" : txtPropertyTag.text!,
-                "cnt_listing_created_on" : txtPropertyTitle.text!,
-                "cnt_fitur" : paramPropertyFeature,
-            ] as [String : Any]
-            let url = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing"
-            
-            let decodedToken  = UserDefaults.standard.object(forKey: "UserToken") as! Data
-            let bearerToken = NSKeyedUnarchiver.unarchiveObject(with: decodedToken)
-            let header = [
-                "Authorization" : bearerToken as! String
-            ]
-            
-            DispatchQueue.main.async {
-                Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: header)
-                    .responseJSON { response in
-                        if let json = response.result.value {
-                            if let listingId = (json as AnyObject).value(forKey: "cnt_listing_id"){
-                                let urlUploadCover = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing/\(listingId)/cnt_foto/cover"
-                                
-                                Alamofire.upload(multipartFormData: { multipartFormData in multipartFormData.append(UIImageJPEGRepresentation(self.coverImage.image!, 0.5)!, withName: "cnt_foto[]", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
-                                }, to: urlUploadCover,
-                                   encodingCompletion: { encodingResult in
-                                    switch encodingResult {
-                                    case .success(let upload, _, _):
-                                        upload.responseJSON { response in
-                                            let urlUpload = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing/\(listingId)/cnt_foto"
-                                            
-                                            Alamofire.upload(multipartFormData: { multipartFormData in
-                                                for imageData in self.uploadImages { multipartFormData.append(UIImageJPEGRepresentation(imageData, 0.5)!, withName: "cnt_foto[]", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
-                                                }
-                                            }, to: urlUpload,
-                                               encodingCompletion: { encodingResult in
-                                                switch encodingResult {
-                                                case .success(let upload, _, _):
-                                                    upload.responseJSON { response in
-                                                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "advertisementListView") as? AdvertisementListController
-                                                        self.navigationController!.pushViewController(vc!, animated: true)
-                                                    }
-                                                case .failure(let error):
-                                                    print(error)
-                                                }
-                                                
-                                            })
-                                        }
-                                    case .failure(let error):
-                                        print(error)
-                                    }
-                                    
-                                })
-                            }
-                        }
+            if txtPropertyTitle.text != "" && self.propertyProvince > 0 && self.propertyCity > 0 && self.propertyArea > 0 && self.propertyType > 0 && txtPropertyBedRoom.text != "" && txtProperyBathRoom.text != "" && txtPropertyPrice.text != "" && txtPropertyBuilding.text != "" && txtPropertyArea.text != ""{
+                let group = DispatchGroup()
+                group.enter()
+                
+                let decoded  = UserDefaults.standard.object(forKey: "User") as! Data
+                let decodedTeams = NSKeyedUnarchiver.unarchiveObject(with: decoded)
+                
+                let userId = (decodedTeams as AnyObject).value(forKey: "agt_user_id") as? Int
+                
+                var paramPropertyFeature: Array = [Any]()
+                
+                for i in 0 ..< propertyFeatureId.count{
+                    paramPropertyFeature.append(["mstr_fitur_id": propertyFeatureId[i]])
                 }
                 
-                group.leave()
-            }
-            
-            group.notify(queue: DispatchQueue.main) {
+                for i in 0 ..< propertyFeatureId2.count{
+                    paramPropertyFeature.append(["mstr_fitur_id": propertyFeatureId2[i]])
+                }
                 
+                let data = [
+                    "stat" : 3,
+                    "cnt_status_id" : 2,
+                    "cnt_listing_name" : txtPropertyTitle.text!,
+                    "cnt_listing_alamat" : txtPropertyAddress.text!,
+                    "cnt_listing_desc" : txtPropertyDesc.text!,
+                    "cnt_listing_url" : txtPropertyUrl.text!,
+                    "mstr_status_id" : self.propertyStatus,
+                    "mstr_provinsi_id" : self.propertyProvince,
+                    "mstr_kota_id" : self.propertyCity,
+                    "mstr_wilayah_id" : self.propertyArea,
+                    "mstr_tipe_id" : self.propertyType,
+                    "cnt_listing_kmr_tdr" : txtPropertyBedRoom.text!,
+                    "cnt_listing_kmr_mandi" : txtProperyBathRoom.text!,
+                    "cnt_listing_garasi" : txtPropertyGarage.text!,
+                    "cnt_listing_harga" : txtPropertyPrice.text!,
+                    "cnt_listing_lb" : txtPropertyBuilding.text!,
+                    "cnt_listing_lt" : txtPropertyArea.text!,
+                    "cnt_listing_tagging" : txtPropertyTag.text!,
+                    "cnt_listing_created_on" : txtPropertyTitle.text!,
+                    "cnt_fitur" : paramPropertyFeature,
+                ] as [String : Any]
+                let url = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing"
+                
+                let decodedToken  = UserDefaults.standard.object(forKey: "UserToken") as! Data
+                let bearerToken = NSKeyedUnarchiver.unarchiveObject(with: decodedToken)
+                let header = [
+                    "Authorization" : bearerToken as! String
+                ]
+                
+                DispatchQueue.main.async {
+                    Alamofire.request(url, method: .post, parameters: data, encoding: JSONEncoding.default, headers: header)
+                        .responseJSON { response in
+                            if let json = response.result.value {
+                                if let listingId = (json as AnyObject).value(forKey: "cnt_listing_id"){
+                                    let urlUploadCover = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing/\(listingId)/cnt_foto/cover"
+                                    
+                                    Alamofire.upload(multipartFormData: { multipartFormData in multipartFormData.append(UIImageJPEGRepresentation(self.coverImage.image!, 0.5)!, withName: "cnt_foto[]", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
+                                    }, to: urlUploadCover,
+                                       encodingCompletion: { encodingResult in
+                                        switch encodingResult {
+                                        case .success(let upload, _, _):
+                                            upload.responseJSON { response in
+                                                let urlUpload = "http://api.rumahhokie.com/agt_user/\(userId ?? 0)/cnt_listing/\(listingId)/cnt_foto"
+                                                
+                                                Alamofire.upload(multipartFormData: { multipartFormData in
+                                                    for imageData in self.uploadImages { multipartFormData.append(UIImageJPEGRepresentation(imageData, 0.5)!, withName: "cnt_foto[]", fileName: "\(Date().timeIntervalSince1970).jpeg", mimeType: "image/jpeg")
+                                                    }
+                                                }, to: urlUpload,
+                                                   encodingCompletion: { encodingResult in
+                                                    switch encodingResult {
+                                                    case .success(let upload, _, _):
+                                                        upload.responseJSON { response in
+                                                            let vc = self.storyboard!.instantiateViewController(withIdentifier: "advertisementListView") as? AdvertisementListController
+                                                            self.navigationController!.pushViewController(vc!, animated: true)
+                                                        }
+                                                    case .failure(let error):
+                                                        print(error)
+                                                    }
+                                                    
+                                                })
+                                            }
+                                        case .failure(let error):
+                                            print(error)
+                                        }
+                                        
+                                    })
+                                }
+                            }
+                    }
+                    
+                    group.leave()
+                }
+                
+                group.notify(queue: DispatchQueue.main) {
+                    
+                }
+            } else{
+                let msgStatus: String = "Posting tidak bisa dilanjutkan, silahkan melengkapi data yang diperlukan"
+                let delay = DispatchTime.now() + 3
+                
+                let alert = UIAlertController(title: msgStatus, message: "", preferredStyle: .alert)
+                
+                self.present(alert, animated: true)
+                
+                DispatchQueue.main.asyncAfter(deadline: delay){
+                    alert.dismiss(animated: true, completion: nil)
+                }
             }
         } else{
             let msgStatus: String = "Posting tidak bisa dilanjutkan karena belum ada gambar yang diupload!"
