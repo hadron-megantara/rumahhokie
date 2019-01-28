@@ -264,7 +264,7 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
     }
     
     @IBAction func btnSearchAction(_ sender: Any) {
-        if let switchViewController = self.navigationController?.viewControllers[1] as? PropertyListController{
+        if let switchViewController = self.storyboard!.instantiateViewController(withIdentifier: "propertyListView") as? PropertyListController{
             switchViewController.propertyStatus = self.propertyStatus
             switchViewController.propertyType = self.propertyType
             switchViewController.propertyProvince = self.propertyProvince
@@ -309,7 +309,7 @@ class PropertyFilterController: UIViewController, UITextFieldDelegate, UIPickerV
                 switchViewController.propertyKeyword = txtKeyWord.text!
             }
             
-            self.navigationController?.popToViewController(switchViewController, animated: true)
+            self.navigationController!.pushViewController(switchViewController, animated: true)
         }
     }
     
